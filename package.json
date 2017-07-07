@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "node-debug": "^0.1.0",
     "request-promise-native": "^1.0.4"
   },
   "devDependencies": {

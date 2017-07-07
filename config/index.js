@@ -1,3 +1,5 @@
-import baseConfig from 'config/base';
+const baseConfig = require('./base');
 
-export const getConfigParam = (param) => baseConfig[param]
+module.exports = {
+    getConfigParam: (param) => baseConfig[param],
+};

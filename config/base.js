@@ -1,3 +1,3 @@
-export default {
-    CORE_NLP_HOST: 'localhost:9000'
+module.exports = {
+    CORE_NLP_HOST: 'http://localhost:9000'
 };
