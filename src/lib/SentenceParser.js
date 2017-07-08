@@ -7,7 +7,7 @@ module.exports = class SentenceParser {
         this.nlpClient = nlpClient;
     }
 
-    async enhance(sentence) {
+    async parse(sentence) {
         const parsedSentence = await this.nlpClient.parse(sentence);
         const tokens = parsedSentence.sentences[0].tokens.map(tokenData => new Token(tokenData));
         const rootToken = new Token({
@@ -25,6 +25,6 @@ module.exports = class SentenceParser {
             const dependencyType = dependency.dep;
             dependent.setGovernor(governor, dependencyType);
         }
-        return new Sentence(tokens);
+        return new Sentence(sentence, tokens);
     }
 };

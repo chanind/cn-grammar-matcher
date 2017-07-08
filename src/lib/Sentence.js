@@ -1,15 +1,13 @@
+'use strict';
+
 module.exports = class Sentence {
     
-    constructor(tokens) {
+    constructor(original, tokens) {
+        this.original = original;
         this.tokens = tokens;
     }
 
     get text() {
         return this.tokens.map(token => token.word).join('');
     }
-
-    toString() {
-        return this.text;
-    }
-
 };

@@ -1,3 +1,5 @@
+'use strict';
+
 const request = require('request-promise-native');
 const { getConfigParam } = require('../../config');
 
