@@ -1,25 +1,25 @@
-'use strict';
+/* eslint-disable no-await-in-loop */
 
 const SentenceParser = require('./SentenceParser');
 const tf = require('./tokenFilters');
 
 
-const parseSentence = exports.parseSentence = async text => new SentenceParser().parse(text);
+const parseSentence = async text => new SentenceParser().parse(text);
 
-exports.assertAllExamplesMatch = async (matcher) => {
-    for (const example of matcher.examples) {
-        const sentence = await parseSentence(example.zh);
-        expect(matcher).toMatchSentence(sentence);
-    }
+const assertAllExamplesMatch = async (matcher) => {
+  for (const example of matcher.examples) {
+    const sentence = await parseSentence(example.zh);
+    expect(matcher).toMatchSentence(sentence);
+  }
 };
 
-exports.assertNoneMatch = async (matcher, texts) => {
-    for (const text of texts) {
-        const sentence = await parseSentence(text);
-        expect(matcher).not.toMatchSentence(sentence);
-    }
+const assertNoneMatch = async (matcher, texts) => {
+  for (const text of texts) {
+    const sentence = await parseSentence(text);
+    expect(matcher).not.toMatchSentence(sentence);
+  }
 };
 
-exports.findTokens = (sentence, word) => {
-    return sentence.tokens.filter(tf.word(word));
-};
+const findTokens = (sentence, word) => sentence.tokens.filter(tf.word(word));
+
+module.exports = { parseSentence, assertAllExamplesMatch, assertNoneMatch, findTokens };
