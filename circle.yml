@@ -10,7 +10,8 @@ dependencies:
 
 test:
   override:
-    - docker run -d -p 9000:9000 --memory=4g skywidesoft/corenlp-chinese:3.7.0
-    - curl --retry 10 --retry-delay 5 -v http://localhost:9000
+    - docker run -d -p 9000:9000 --memory=4g skywidesoft/corenlp-chinese:3.7.0; sleep 10
+    # Start a request going to get the nlp server warmed up
+    - curl 'http://localhost:9000/?properties=%7B%22annotators%22%3A%20%22tokenize%2Cssplit%2Cpos%2Cner%2Cdepparse%2Copenie%22%2C%20%22date%22%3A%20%222017-07-09T17%3A17%3A01%22%7D&pipelineLanguage=zh' --data '%E4%BD%A0%E5%A5%BD' --compressed &
     - yarn lint
     - yarn test
