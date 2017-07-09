@@ -2,7 +2,7 @@ const {
   and,
   pos,
   word,
-  any
+  any,
 } = require('../lib/tokenFilters');
 const { regexMatchTokensMulti } = require('../lib/tokenRegexMatchers');
 
@@ -28,8 +28,8 @@ module.exports = {
     shortTermChineseSrc,
     eChineseLearningSrc,
   ],
-  match: (sentence) => {
-    return regexMatchTokensMulti(sentence.tokens, '(:gen:):any:*:person::any:*(:guobuqu:|:guo::bu::qu:)', {
+  match: sentence => (
+    regexMatchTokensMulti(sentence.tokens, '(:gen:):any:*:person::any:*(:guobuqu:|:guo::bu::qu:)', {
       gen: and(pos('P'), word('^跟|和$')),
       guobuqu: and(pos('V.'), word('^过不去$')),
       guo: and(pos('A.|V.'), word('^过$')),
@@ -37,8 +37,8 @@ module.exports = {
       qu: and(pos('V.'), word('^去$')),
       person: pos('PN|NN|NR'),
       any,
-    });
-  },
+    })
+  ),
   examples: [
     {
       zh: '别人迟到领导不批评，为什么专门批评我呢？这不是跟我过不去吗？',
@@ -62,12 +62,12 @@ module.exports = {
     },
     {
       zh: '别提她妈妈的身体，你想跟她过不去吗？',
-      en: "Don’t talk about the health of her mother. Do you want to make difficulties for her?",
+      en: "Don't talk about the health of her mother. Do you want to make difficulties for her?",
       src: eChineseLearningSrc,
     },
     {
       zh: '别跟我提那件事，否则你就是跟我过不去。',
-      en: "Don’t talk about this thing any more, or you will make a difficulty for me. ",
+      en: "Don't talk about this thing any more, or you will make a difficulty for me. ",
       src: eChineseLearningSrc,
     },
   ],

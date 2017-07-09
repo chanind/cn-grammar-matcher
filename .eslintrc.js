@@ -7,7 +7,7 @@ module.exports = {
     "jsx-a11y/href-no-hash": "off",
     "no-mixed-operators": "off",
     "no-restricted-syntax": "off",
-    "max-len": [2, { code: 120 }],
+    "max-len": [2, { code: 120, ignoreStrings: true }],
     "no-continue": "off",
   }
 };
