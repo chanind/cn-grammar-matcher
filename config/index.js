@@ -1,5 +1,5 @@
 const baseConfig = require('./base');
 
 module.exports = {
-    getConfigParam: (param) => baseConfig[param],
+  getConfigParam: (param) => baseConfig[param],
 };
