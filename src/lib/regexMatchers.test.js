@@ -2,7 +2,7 @@
 
 const Token = require('./Token');
 const tf = require('./tokenFilters');
-const { regexMatchTokens } = require('./regexMatchers');
+const { regexMatchTokens, indicesFromTokens } = require('./regexMatchers');
 
 describe('regexMatchTokens', () => {
   test('it returns null if there are no matches', () => {
@@ -71,5 +71,22 @@ describe('regexMatchTokens', () => {
       any: tf.any,
     });
     expect(matchResult).toEqual([[tokens[1], tokens[2]]]);
+  });
+});
+
+describe('indicesFromTokens', () => {
+  test('it returns null if there are no matches', () => {
+    expect(indicesFromTokens(null)).toBeNull();
+  });
+
+  test('it tuns token matches into index matches', () => {
+    const tokenMatches = [
+      [new Token({ word: '你', characterOffsetBegin: 1, characterOffsetEnd: 2 })],
+      [new Token({ word: '好', characterOffsetBegin: 6, characterOffsetEnd: 7 })],
+    ];
+    expect(indicesFromTokens(tokenMatches)).toEqual([
+      [{ start: 1, end: 2 }],
+      [{ start: 6, end: 7 }],
+    ]);
   });
 });

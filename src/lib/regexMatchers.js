@@ -79,6 +79,29 @@ exports.regexMatchTokens = (tokens, regexTemplate, matchParams) => {
 };
 
 /**
+* Given an array of indices, combine adject indices into 1 bigger index
+*/
+// TODO: make this smart enough to handle overlapping and out of order indices
+const combineAdjacentIndices = (indices) => {
+  if (indices.length <= 1) {
+    return indices;
+  }
+  const combinedIndices = [];
+  let currentIndex = Object.assign({}, indices[0]);
+  for (let i = 1; i < indices.length; i += 1) {
+    const index = indices[i];
+    if (index.start === currentIndex.end + 1) {
+      currentIndex.end = index.end;
+    } else {
+      combinedIndices.push(currentIndex);
+      currentIndex = Object.assign({}, index);
+    }
+  }
+  combinedIndices.push(currentIndex);
+  return combinedIndices;
+};
+
+/**
 * Extract match indices from a returned list of token matches
 *
 * @param {Tokens[][]|null} the tokens representing the match
@@ -86,8 +109,8 @@ exports.regexMatchTokens = (tokens, regexTemplate, matchParams) => {
 *     Useful if tokens might contain extra characters inside of tokens
 * @returns {Indices[][]|null} The 
 */
-exports.indicesFromTokens = (tokenMatches, matchRegex = null) => {
-  if (!tokens) return null;
+exports.indicesFromTokens = (tokenMatches) => {
+  if (!tokenMatches) return null;
   const matches = [];
   for (const tokenMatch of tokenMatches) {
     let match = [];
@@ -102,4 +125,4 @@ exports.indicesFromTokens = (tokenMatches, matchRegex = null) => {
     matches.push(match);
   }
   return matches;
-}
+};

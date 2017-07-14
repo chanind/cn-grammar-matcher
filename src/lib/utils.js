@@ -6,5 +6,3 @@ exports.padLeft = (target, n, padStr = '0') => {
   const padLen = Math.max(n - String(target).length + 1, 0);
   return Array(padLen).join(padStr) + target;
 };
-
-

@@ -24,8 +24,10 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
-    "jest": "^20.0.4"
+    "jest": "^20.0.4",
+    "pre-commit": "^1.2.2"
   },
+  "pre-commit": ["lint"],
   "jest": {
     "setupTestFrameworkScriptFile": "./jestInit"
   }
