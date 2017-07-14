@@ -101,4 +101,5 @@ exports.indicesFromTokens = (tokenMatches, matchRegex = null) => {
     match = combineAdjacentIndices(match);
     matches.push(match);
   }
+  return matches;
 }
