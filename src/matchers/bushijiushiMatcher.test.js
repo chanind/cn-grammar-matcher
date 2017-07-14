@@ -33,8 +33,6 @@ test('sentence where 就是 parses as separate tokens', async () => {
   ]);
 });
 
-
-
 test("doesn't match negative examples", async () => {
   await assertNoneMatch(bushijiushiMatcher, [
     '就是咖啡不好。',
