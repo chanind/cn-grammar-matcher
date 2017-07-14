@@ -4,7 +4,7 @@ const {
   word,
   any,
 } = require('../lib/tokenFilters');
-const { regexMatchTokensMulti } = require('../lib/tokenRegexMatchers');
+const { regexMatchTokens } = require('../lib/regexMatchers');
 
 const shortTermChineseSrc = {
   type: 'book',
@@ -29,7 +29,7 @@ module.exports = {
     eChineseLearningSrc,
   ],
   match: sentence => (
-    regexMatchTokensMulti(sentence.tokens, '(:gen:):any:*:person::any:*(:guobuqu:|:guo::bu::qu:)', {
+    regexMatchTokens(sentence.tokens, '(:gen:):any:*:person::any:*(:guobuqu:|:guo::bu::qu:)', {
       gen: and(pos('P'), word('^跟|和$')),
       guobuqu: and(pos('V.'), word('^过不去$')),
       guo: and(pos('A.|V.'), word('^过$')),

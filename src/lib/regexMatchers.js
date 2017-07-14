@@ -58,28 +58,13 @@ const getCapturedTokensFromMatch = (matchResults, tokens) => {
   return matchingTokens;
 };
 
-/**
-* Match patterns of tokens using a regex
-* Only returns the first match found
-* ex: regexMatchTokens(tokens, '(:adv:):noPunc:*(:yijing:)', {adv: pos('adv'), noPunc, yijing: word('已经')})
-*
-* @returns {Tokens[]|null} the capured tokens or null if no match was found
-*/
-exports.regexMatchTokens = (tokens, regexTemplate, matchParams) => {
-  const filteredTokens = tokens.filter(notRoot); // remove the root node from matches
-  const tokensStr = constructTokensStr(filteredTokens);
-  const regexStr = constructRegexStr(filteredTokens, regexTemplate, matchParams);
-  const matchResult = tokensStr.match(new RegExp(regexStr));
-  return matchResult ? getCapturedTokensFromMatch(matchResult, filteredTokens) : null;
-};
-
 
 /**
 * Multi-match version of regexMatchTokens
 *
 * @returns {Tokens[][]|null} the capured tokens or null if no match was found
 */
-exports.regexMatchTokensMulti = (tokens, regexTemplate, matchParams) => {
+exports.regexMatchTokens = (tokens, regexTemplate, matchParams) => {
   const filteredTokens = tokens.filter(notRoot); // remove the root node from matches
   const tokensStr = constructTokensStr(filteredTokens);
   const regexStr = constructRegexStr(filteredTokens, regexTemplate, matchParams);
@@ -92,3 +77,28 @@ exports.regexMatchTokensMulti = (tokens, regexTemplate, matchParams) => {
   }
   return matchResults;
 };
+
+/**
+* Extract match indices from a returned list of token matches
+*
+* @param {Tokens[][]|null} the tokens representing the match
+* @param {matchRegex} an optional regex to further filter the resulting indices.
+*     Useful if tokens might contain extra characters inside of tokens
+* @returns {Indices[][]|null} The 
+*/
+exports.indicesFromTokens = (tokenMatches, matchRegex = null) => {
+  if (!tokens) return null;
+  const matches = [];
+  for (const tokenMatch of tokenMatches) {
+    let match = [];
+    for (const token of tokenMatch) {
+      const indices = {
+        start: token.characterOffsetBegin,
+        end: token.characterOffsetEnd,
+      };
+      match.push(indices);
+    }
+    match = combineAdjacentIndices(match);
+    matches.push(match);
+  }
+}

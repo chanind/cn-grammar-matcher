@@ -4,7 +4,7 @@ const {
   word,
   not,
 } = require('../lib/tokenFilters');
-const { regexMatchTokensMulti } = require('../lib/tokenRegexMatchers');
+const { regexMatchTokens } = require('../lib/regexMatchers');
 
 const shortTermChineseSrc = {
   type: 'book',
@@ -27,7 +27,7 @@ module.exports = {
     allSetSrc,
   ],
   match: sentence => (
-    regexMatchTokensMulti(sentence.tokens, '(:bushi:|:bu::shi:):notBushi:+(:jiushi:|:jiu::shi:)', {
+    regexMatchTokens(sentence.tokens, '(:bushi:|:bu::shi:):notBushi:+(:jiushi:|:jiu::shi:)', {
       bu: and(pos('AD'), word('^不$')),
       shi: and(pos('V.'), word('^是$')),
       bushi: and(pos('AD'), word('^不是$')),
