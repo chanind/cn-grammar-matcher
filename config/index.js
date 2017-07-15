@@ -1,5 +1,7 @@
 const baseConfig = require('./base');
 
 module.exports = {
-  getConfigParam: (param) => baseConfig[param],
+  getConfigParam: (param) => {
+    return process.env[param] || baseConfig[param];
+  },
 };
