@@ -1,5 +1,6 @@
 const { padLeft } = require('./utils');
 const { notRoot } = require('./tokenFilters');
+const MultiRegExp = require('../vendor/MultiRegExp');
 
 
 // This returns a 0-padded string representing this token ID which can be used in the token regex
@@ -58,9 +59,27 @@ const getCapturedTokensFromMatch = (matchResults, tokens) => {
   return matchingTokens;
 };
 
+const getCapturedLocsFromMatch = (multiMatchResults, startIndex) => {
+  const matchingLocs = [];
+  // the first result is the whole match, not captured groups
+  for (const key of Object.keys(multiMatchResults)) {
+    const matchData = multiMatchResults[key];
+    // if there's an optional capture group that didn't match, it will have a value of null
+    // ignore those matches here. Revisit later if we find we want to keep them null, or
+    // keep grouping each match by capture group regardless
+    if (matchData === null) continue;
+    matchingLocs.push({
+      start: matchData.index + startIndex,
+      end: matchData.index + startIndex + matchData.text.length,
+    });
+  }
+  return matchingLocs;
+};
 
 /**
-* Multi-match version of regexMatchTokens
+* Match patterns of tokens using a regex
+* returns an array of tokens for each capture group match
+* ex: regexMatchTokens(tokens, '(:adv:):noPunc:*(:yijing:)', {adv: pos('adv'), noPunc, yijing: word('已经')})
 *
 * @returns {Tokens[][]|null} the capured tokens or null if no match was found
 */
@@ -79,25 +98,61 @@ exports.regexMatchTokens = (tokens, regexTemplate, matchParams) => {
 };
 
 /**
+* Match a raw string and retun an array of locations of each capture group match
+* ex: regexMatchLocs(text, /(已经).*(了)/)
+*
+* @returns {Tokens[][]|null} the capured match locations or null if no match was found
+*/
+exports.regexMatchLocs = (text, regex) => {
+  const mainMatches = text.match(new RegExp(regex, 'gui'));
+  if (!mainMatches) return null;
+  const matchResults = [];
+  let lastMatchEndIndex = 0;
+  const multiRegex = new MultiRegExp(new RegExp(regex, 'ui'));
+  for (const innerMatchStr of mainMatches) {
+    const innerMatchStartPos = text.indexOf(innerMatchStr, lastMatchEndIndex);
+    const innerMatch = multiRegex.exec(innerMatchStr);
+    matchResults.push(getCapturedLocsFromMatch(innerMatch, innerMatchStartPos));
+    lastMatchEndIndex = innerMatchStartPos + innerMatchStr.length;
+  }
+  return matchResults;
+};
+
+const locationFromToken = (token, matchRegex = null) => {
+  const baseLocation = {
+    start: token.characterOffsetBegin,
+    end: token.characterOffsetEnd,
+  };
+  if (!matchRegex) return baseLocation;
+  const matchData = token.word.match(new RegExp(matchRegex, 'ui'));
+  if (!matchData) return null;
+  baseLocation.start += matchData.index;
+  baseLocation.end = baseLocation.start + matchData[0].length;
+  return baseLocation;
+};
+
+/**
 * Given an array of locs, combine adject locs into 1 bigger index
 */
-// TODO: make this smart enough to handle overlapping and out of order locs
 const combineAdjacentLocations = (locs) => {
   if (locs.length <= 1) {
     return locs;
   }
+
+  const sortedLocs = [...locs];
+  sortedLocs.sort((locA, locB) => locA.start - locB.start);
   const combinedIndices = [];
-  let currentLocation = Object.assign({}, locs[0]);
-  for (let i = 1; i < locs.length; i += 1) {
-    const index = locs[i];
-    if (index.start === currentLocation.end) {
-      currentLocation.end = index.end;
-    } else {
-      combinedIndices.push(currentLocation);
-      currentLocation = Object.assign({}, index);
+  let currentLoc = Object.assign({}, sortedLocs[0]);
+  for (let i = 1; i < sortedLocs.length; i += 1) {
+    const loc = sortedLocs[i];
+    if (loc.start <= currentLoc.end && loc.end > currentLoc.end) {
+      currentLoc.end = loc.end;
+    } else if (loc.start > currentLoc.end) {
+      combinedIndices.push(currentLoc);
+      currentLoc = Object.assign({}, loc);
     }
   }
-  combinedIndices.push(currentLocation);
+  combinedIndices.push(currentLoc);
   return combinedIndices;
 };
 
@@ -106,19 +161,17 @@ const combineAdjacentLocations = (locs) => {
 *
 * @param {Tokens[][]|null} the tokens representing the match
 * @param {matchRegex} an optional regex to further filter the resulting locs.
-*     Useful if tokens might contain extra characters inside of tokens
+*     Useful if tokens might contain extra characters besides just those we want to match
 * @returns {Location[][]|null} The 
 */
-exports.locsFromTokens = (tokenMatches) => {
+exports.locsFromTokens = (tokenMatches, matchRegex = null) => {
   if (!tokenMatches) return null;
   const matches = [];
   for (const tokenMatch of tokenMatches) {
     let locations = [];
     for (const token of tokenMatch) {
-      const location = {
-        start: token.characterOffsetBegin,
-        end: token.characterOffsetEnd,
-      };
+      const location = locationFromToken(token, matchRegex);
+      if (!location) continue;
       locations.push(location);
     }
     locations = combineAdjacentLocations(locations);

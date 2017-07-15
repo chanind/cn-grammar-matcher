@@ -103,4 +103,68 @@ describe('locsFromTokens', () => {
       [{ start: 6, end: 7 }],
     ]);
   });
+
+  test('it collapses overlapping tokens into a single range', () => {
+    const tokenMatches = [
+      [
+        new Token({ word: '你', characterOffsetBegin: 1, characterOffsetEnd: 3 }),
+        new Token({ word: '你', characterOffsetBegin: 2, characterOffsetEnd: 4 }),
+      ],
+      [
+        new Token({ word: '好', characterOffsetBegin: 6, characterOffsetEnd: 9 }),
+        new Token({ word: '好', characterOffsetBegin: 7, characterOffsetEnd: 8 }),
+      ],
+    ];
+    expect(locsFromTokens(tokenMatches)).toEqual([
+      [{ start: 1, end: 4 }],
+      [{ start: 6, end: 9 }],
+    ]);
+  });
+
+  test('it works with out-of-order token matches', () => {
+    const tokenMatches = [
+      [
+        new Token({ word: '你', characterOffsetBegin: 2, characterOffsetEnd: 4 }),
+        new Token({ word: '你', characterOffsetBegin: 1, characterOffsetEnd: 3 }),
+      ],
+      [
+        new Token({ word: '好', characterOffsetBegin: 7, characterOffsetEnd: 8 }),
+        new Token({ word: '好', characterOffsetBegin: 6, characterOffsetEnd: 9 }),
+      ],
+    ];
+    expect(locsFromTokens(tokenMatches)).toEqual([
+      [{ start: 1, end: 4 }],
+      [{ start: 6, end: 9 }],
+    ]);
+  });
+
+  test('it can use a regex to further filter match positions', () => {
+    const tokenMatches = [
+      [
+        new Token({ word: '你好', characterOffsetBegin: 2, characterOffsetEnd: 4 }),
+      ],
+      [
+        new Token({ word: '好', characterOffsetBegin: 7, characterOffsetEnd: 8 }),
+      ],
+    ];
+    expect(locsFromTokens(tokenMatches, /好/)).toEqual([
+      [{ start: 3, end: 4 }],
+      [{ start: 7, end: 8 }],
+    ]);
+  });
+
+  test("it removes matches if the regex doesn't match at all", () => {
+    const tokenMatches = [
+      [
+        new Token({ word: '你好', characterOffsetBegin: 2, characterOffsetEnd: 4 }),
+      ],
+      [
+        new Token({ word: '好', characterOffsetBegin: 7, characterOffsetEnd: 8 }),
+      ],
+    ];
+    expect(locsFromTokens(tokenMatches, '你')).toEqual([
+      [{ start: 2, end: 3 }],
+      [],
+    ]);
+  });
 });

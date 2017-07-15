@@ -2,7 +2,7 @@ const yijingLeMatcher = require('./yijingLeMatcher');
 const {
   assertAllExamplesMatch,
   assertNoneMatch,
-  findTokens,
+  findLocsRegex,
   parseSentence,
 } = require('../lib/testUtils');
 
@@ -12,10 +12,7 @@ test('matches all examples', async () => {
 
 test('sentence with multiple occurrences', async () => {
   const sentence = await parseSentence('你已经点了的那杯咖啡已经凉了');
-  expect(yijingLeMatcher.match(sentence)).toEqual([
-    [findTokens(sentence, '已经')[0], findTokens(sentence, '了')[0]],
-    [findTokens(sentence, '已经')[1], findTokens(sentence, '了')[1]],
-  ]);
+  expect(yijingLeMatcher.match(sentence)).toEqual(findLocsRegex(sentence, /(已经)[^了]+(了)/));
 });
 
 test("doesn't match negative examples", async () => {
