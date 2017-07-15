@@ -6,11 +6,11 @@ ex: sentence.tokens.filter(pos('AD'))
 
 // return a function which filters tokens with a matching pos
 // posStr is treated as a regex
-const pos = posStr => token => token.pos.match(new RegExp(posStr, 'iu'));
+const pos = posStr => token => token.pos.match(new RegExp(`^${posStr}$`, 'iu'));
 
 // return a function which filters tokens with a matching word
 // wordStr is treated as a regex
-const word = wordStr => token => token.word.match(new RegExp(wordStr, 'iu'));
+const word = wordStr => token => token.word.match(new RegExp(`^${wordStr}$`, 'iu'));
 
 // return a new filter function that retuns the inverse of the input
 const not = filter => token => !filter(token);

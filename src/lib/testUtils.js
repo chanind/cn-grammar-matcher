@@ -1,6 +1,7 @@
 /* eslint-disable no-await-in-loop */
 
 const SentenceParser = require('./SentenceParser');
+const { regexMatchLocs } = require('./regexMatchers');
 const tf = require('./tokenFilters');
 
 
@@ -20,6 +21,7 @@ const assertNoneMatch = async (matcher, texts) => {
   }
 };
 
-const findTokens = (sentence, word) => sentence.tokens.filter(tf.word(word));
+const findTokens = (sentence, word) => sentence.tokens.filter(tf.word(`.*${word}.*`));
+const findLocsRegex = (sentence, regex) => regexMatchLocs(sentence.original, regex);
 
-module.exports = { parseSentence, assertAllExamplesMatch, assertNoneMatch, findTokens };
+module.exports = { parseSentence, assertAllExamplesMatch, assertNoneMatch, findTokens, findLocsRegex };

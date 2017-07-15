@@ -5,7 +5,7 @@ const {
   pos,
   word,
 } = require('../lib/tokenFilters');
-const { regexMatchTokensMulti } = require('../lib/tokenRegexMatchers');
+const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
 
 const allSetSrc = 'https://resources.allsetlearning.com/chinese/grammar/Expressing_%22already%22_with_%22yijing%22';
 
@@ -18,12 +18,12 @@ module.exports = {
     allSetSrc,
   ],
   match: (sentence) => {
-    const yijing = and(pos('AD'), word('^已经?$'));
-    return regexMatchTokensMulti(sentence.tokens, '(:yijing:):notYijing:*(:le:)', {
+    const yijing = and(pos('AD'), word('已经?'));
+    return locsFromTokens(regexMatchTokens(sentence.tokens, '(:yijing:):notYijing:*(:le:)', {
       yijing,
       notYijing: not(yijing),
-      le: or(word('^了$'), and(word('.+了$'), pos('V.'))),
-    });
+      le: or(word('了'), and(word('.+了'), pos('V.'))),
+    }), /[已经了]+/);
   },
   examples: [
     {

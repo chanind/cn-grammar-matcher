@@ -3,7 +3,7 @@ const {
   pos,
   word,
 } = require('../lib/tokenFilters');
-const { regexMatchTokensMulti } = require('../lib/tokenRegexMatchers');
+const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
 
 const allSetSrc = 'https://resources.allsetlearning.com/chinese/grammar/Negation_of_%22you%22_with_%22mei%22';
 
@@ -16,8 +16,8 @@ module.exports = {
     allSetSrc,
   ],
   match: (sentence) => {
-    const meiyou = and(pos('AD|VE'), word('^没有?$'));
-    return regexMatchTokensMulti(sentence.tokens, '(:meiyou:)', { meiyou });
+    const meiyou = and(pos('AD|VE'), word('没有?'));
+    return locsFromTokens(regexMatchTokens(sentence.tokens, '(:meiyou:)', { meiyou }), /[没有]+/);
   },
   examples: [
     {

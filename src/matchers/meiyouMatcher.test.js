@@ -2,7 +2,7 @@ const meiyouMatcher = require('./meiyouMatcher');
 const {
   assertAllExamplesMatch,
   assertNoneMatch,
-  findTokens,
+  findLocsRegex,
   parseSentence,
 } = require('../lib/testUtils');
 
@@ -12,18 +12,12 @@ test('matches all examples', async () => {
 
 test('sentence with multiple occurrences with just 没', async () => {
   const sentence = await parseSentence('我没工作，我老公也没工作');
-  expect(meiyouMatcher.match(sentence)).toEqual([
-    [findTokens(sentence, '没')[0]],
-    [findTokens(sentence, '没')[1]],
-  ]);
+  expect(meiyouMatcher.match(sentence)).toEqual(findLocsRegex(sentence, /(没)/));
 });
 
 test('sentence with multiple occurrences with full 没有', async () => {
   const sentence = await parseSentence('我没有工作，我老公也没有工作');
-  expect(meiyouMatcher.match(sentence)).toEqual([
-    [findTokens(sentence, '没有')[0]],
-    [findTokens(sentence, '没有')[1]],
-  ]);
+  expect(meiyouMatcher.match(sentence)).toEqual(findLocsRegex(sentence, /(没有)/));
 });
 
 test("doesn't match negative examples", async () => {
