@@ -2,7 +2,7 @@
 
 const Token = require('./Token');
 const tf = require('./tokenFilters');
-const { regexMatchTokens, indicesFromTokens } = require('./regexMatchers');
+const { regexMatchTokens, locsFromTokens } = require('./regexMatchers');
 
 describe('regexMatchTokens', () => {
   test('it returns null if there are no matches', () => {
@@ -74,18 +74,32 @@ describe('regexMatchTokens', () => {
   });
 });
 
-describe('indicesFromTokens', () => {
+describe('locsFromTokens', () => {
   test('it returns null if there are no matches', () => {
-    expect(indicesFromTokens(null)).toBeNull();
+    expect(locsFromTokens(null)).toBeNull();
   });
 
-  test('it tuns token matches into index matches', () => {
+  test('it turns token matches into index matches', () => {
     const tokenMatches = [
       [new Token({ word: '你', characterOffsetBegin: 1, characterOffsetEnd: 2 })],
       [new Token({ word: '好', characterOffsetBegin: 6, characterOffsetEnd: 7 })],
     ];
-    expect(indicesFromTokens(tokenMatches)).toEqual([
+    expect(locsFromTokens(tokenMatches)).toEqual([
       [{ start: 1, end: 2 }],
+      [{ start: 6, end: 7 }],
+    ]);
+  });
+
+  test('it collapses adjacent tokens into a single range', () => {
+    const tokenMatches = [
+      [
+        new Token({ word: '你', characterOffsetBegin: 1, characterOffsetEnd: 2 }),
+        new Token({ word: '你', characterOffsetBegin: 2, characterOffsetEnd: 4 }),
+      ],
+      [new Token({ word: '好', characterOffsetBegin: 6, characterOffsetEnd: 7 })],
+    ];
+    expect(locsFromTokens(tokenMatches)).toEqual([
+      [{ start: 1, end: 4 }],
       [{ start: 6, end: 7 }],
     ]);
   });

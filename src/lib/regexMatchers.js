@@ -79,50 +79,50 @@ exports.regexMatchTokens = (tokens, regexTemplate, matchParams) => {
 };
 
 /**
-* Given an array of indices, combine adject indices into 1 bigger index
+* Given an array of locs, combine adject locs into 1 bigger index
 */
-// TODO: make this smart enough to handle overlapping and out of order indices
-const combineAdjacentIndices = (indices) => {
-  if (indices.length <= 1) {
-    return indices;
+// TODO: make this smart enough to handle overlapping and out of order locs
+const combineAdjacentLocations = (locs) => {
+  if (locs.length <= 1) {
+    return locs;
   }
   const combinedIndices = [];
-  let currentIndex = Object.assign({}, indices[0]);
-  for (let i = 1; i < indices.length; i += 1) {
-    const index = indices[i];
-    if (index.start === currentIndex.end + 1) {
-      currentIndex.end = index.end;
+  let currentLocation = Object.assign({}, locs[0]);
+  for (let i = 1; i < locs.length; i += 1) {
+    const index = locs[i];
+    if (index.start === currentLocation.end) {
+      currentLocation.end = index.end;
     } else {
-      combinedIndices.push(currentIndex);
-      currentIndex = Object.assign({}, index);
+      combinedIndices.push(currentLocation);
+      currentLocation = Object.assign({}, index);
     }
   }
-  combinedIndices.push(currentIndex);
+  combinedIndices.push(currentLocation);
   return combinedIndices;
 };
 
 /**
-* Extract match indices from a returned list of token matches
+* Extract match locations from a returned list of token matches
 *
 * @param {Tokens[][]|null} the tokens representing the match
-* @param {matchRegex} an optional regex to further filter the resulting indices.
+* @param {matchRegex} an optional regex to further filter the resulting locs.
 *     Useful if tokens might contain extra characters inside of tokens
-* @returns {Indices[][]|null} The 
+* @returns {Location[][]|null} The 
 */
-exports.indicesFromTokens = (tokenMatches) => {
+exports.locsFromTokens = (tokenMatches) => {
   if (!tokenMatches) return null;
   const matches = [];
   for (const tokenMatch of tokenMatches) {
-    let match = [];
+    let locations = [];
     for (const token of tokenMatch) {
-      const indices = {
+      const location = {
         start: token.characterOffsetBegin,
         end: token.characterOffsetEnd,
       };
-      match.push(indices);
+      locations.push(location);
     }
-    match = combineAdjacentIndices(match);
-    matches.push(match);
+    locations = combineAdjacentLocations(locations);
+    matches.push(locations);
   }
   return matches;
 };
