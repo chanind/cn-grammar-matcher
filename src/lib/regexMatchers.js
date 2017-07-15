@@ -77,6 +77,31 @@ const getCapturedLocsFromMatch = (multiMatchResults, startIndex) => {
 };
 
 /**
+* Given an array of locs, combine adject locs into 1 bigger index
+*/
+const combineAdjacentLocations = (locs) => {
+  if (locs.length <= 1) {
+    return locs;
+  }
+
+  const sortedLocs = [...locs];
+  sortedLocs.sort((locA, locB) => locA.start - locB.start);
+  const combinedIndices = [];
+  let currentLoc = Object.assign({}, sortedLocs[0]);
+  for (let i = 1; i < sortedLocs.length; i += 1) {
+    const loc = sortedLocs[i];
+    if (loc.start <= currentLoc.end && loc.end > currentLoc.end) {
+      currentLoc.end = loc.end;
+    } else if (loc.start > currentLoc.end) {
+      combinedIndices.push(currentLoc);
+      currentLoc = Object.assign({}, loc);
+    }
+  }
+  combinedIndices.push(currentLoc);
+  return combinedIndices;
+};
+
+/**
 * Match patterns of tokens using a regex
 * returns an array of tokens for each capture group match
 * ex: regexMatchTokens(tokens, '(:adv:):noPunc:*(:yijing:)', {adv: pos('adv'), noPunc, yijing: word('已经')})
@@ -112,7 +137,9 @@ exports.regexMatchLocs = (text, regex) => {
   for (const innerMatchStr of mainMatches) {
     const innerMatchStartPos = text.indexOf(innerMatchStr, lastMatchEndIndex);
     const innerMatch = multiRegex.exec(innerMatchStr);
-    matchResults.push(getCapturedLocsFromMatch(innerMatch, innerMatchStartPos));
+    let locs = getCapturedLocsFromMatch(innerMatch, innerMatchStartPos);
+    locs = combineAdjacentLocations(locs);
+    matchResults.push(locs);
     lastMatchEndIndex = innerMatchStartPos + innerMatchStr.length;
   }
   return matchResults;
@@ -129,31 +156,6 @@ const locationFromToken = (token, matchRegex = null) => {
   baseLocation.start += matchData.index;
   baseLocation.end = baseLocation.start + matchData[0].length;
   return baseLocation;
-};
-
-/**
-* Given an array of locs, combine adject locs into 1 bigger index
-*/
-const combineAdjacentLocations = (locs) => {
-  if (locs.length <= 1) {
-    return locs;
-  }
-
-  const sortedLocs = [...locs];
-  sortedLocs.sort((locA, locB) => locA.start - locB.start);
-  const combinedIndices = [];
-  let currentLoc = Object.assign({}, sortedLocs[0]);
-  for (let i = 1; i < sortedLocs.length; i += 1) {
-    const loc = sortedLocs[i];
-    if (loc.start <= currentLoc.end && loc.end > currentLoc.end) {
-      currentLoc.end = loc.end;
-    } else if (loc.start > currentLoc.end) {
-      combinedIndices.push(currentLoc);
-      currentLoc = Object.assign({}, loc);
-    }
-  }
-  combinedIndices.push(currentLoc);
-  return combinedIndices;
 };
 
 /**

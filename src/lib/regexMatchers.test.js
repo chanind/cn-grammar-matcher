@@ -2,7 +2,7 @@
 
 const Token = require('./Token');
 const tf = require('./tokenFilters');
-const { regexMatchTokens, locsFromTokens } = require('./regexMatchers');
+const { regexMatchTokens, locsFromTokens, regexMatchLocs } = require('./regexMatchers');
 
 describe('regexMatchTokens', () => {
   test('it returns null if there are no matches', () => {
@@ -71,6 +71,21 @@ describe('regexMatchTokens', () => {
       any: tf.any,
     });
     expect(matchResult).toEqual([[tokens[1], tokens[2]]]);
+  });
+});
+
+describe('regexMatchLocs', () => {
+  test('it returns match locations from a raw string', () => {
+    expect(regexMatchLocs('你好吗？我很好。', /(你?好)/)).toEqual([
+      [{ start: 0, end: 2 }],
+      [{ start: 6, end: 7 }],
+    ]);
+  });
+
+  test('it collapses adjacent match positions', () => {
+    expect(regexMatchLocs('你好你好。', /(你好).*(你好)/)).toEqual([
+      [{ start: 0, end: 4 }],
+    ]);
   });
 });
 
