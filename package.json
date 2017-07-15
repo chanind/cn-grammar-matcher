@@ -2,7 +2,7 @@
   "name": "cn-grammar-matcher",
   "version": "0.0.1",
   "description": "A Chinese grammar pattern matcher",
-  "main": "index.js",
+  "main": "src/GrammarMatcher.js",
   "repository": "git@github.com:chanind/cn-grammar-matcher.git",
   "author": "David Chanin <chanindav@gmail.com>",
   "license": "MIT",
