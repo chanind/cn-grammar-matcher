@@ -1,0 +1,19 @@
+.intro-container {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.intro-description {
+    margin: 60px 0;
+}
+
+.sentence-input-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: 'row';
+
+    & > :last-child {
+        margin-left: 5px;
+    }
+}
