@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "lint": "eslint src",
+    "lint": "eslint --ext .js --ext .jsx src demo",
     "build": "webpack",
     "start": "webpack-dev-server --hot --inline"
   },
