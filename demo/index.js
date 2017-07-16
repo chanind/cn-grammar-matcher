@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Intro from './components/Intro.jsx';
+import Main from './Main.jsx';
 
-ReactDOM.render(React.createElement(Intro), document.getElementById('root'));
+ReactDOM.render(React.createElement(Main), document.getElementById('root'));

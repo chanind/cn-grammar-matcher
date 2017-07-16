@@ -33,6 +33,11 @@ var config = {
       }
     ]
   },
+  node: {
+    net: "empty",
+    fs: "empty",
+    tls: "empty"
+  },
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',

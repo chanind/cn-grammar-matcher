@@ -22,7 +22,7 @@ module.exports = {
     return locsFromTokens(regexMatchTokens(sentence.tokens, '(:yijing:):notYijing:*(:le:)', {
       yijing,
       notYijing: not(yijing),
-      le: or(word('了'), and(word('.+了'), pos('V.'))),
+      le: or(word('了'), and(word('.+了'), pos('V.|P'))),
     }), /[已经了]+/);
   },
   examples: [

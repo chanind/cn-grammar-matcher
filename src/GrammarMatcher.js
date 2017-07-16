@@ -10,6 +10,7 @@ const matchAndFormatGrammar = (sentence) => {
       grammarMatches.push({
         id: matcher.id,
         name: matcher.name,
+        description: matcher.description,
         sources: matcher.sources,
         examples: matcher.examples,
         matches,
@@ -23,7 +24,7 @@ const matchAndFormatGrammar = (sentence) => {
   };
 };
 
-let defaultNlpHost = 'localhost:9000';
+let defaultNlpHost = 'http://localhost:9000';
 
 class GrammarMatcher {
   static set defaultNlpHost(nlpHost) {
