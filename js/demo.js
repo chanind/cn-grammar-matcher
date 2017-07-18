@@ -35484,7 +35484,7 @@ const matchAndFormatGrammar = sentence => {
   };
 };
 
-let defaultNlpHost = 'http://localhost:9000';
+let defaultNlpHost = 'http://nlp-chinese.us-west-2.elasticbeanstalk.com';
 
 class GrammarMatcher {
   static set defaultNlpHost(nlpHost) {
