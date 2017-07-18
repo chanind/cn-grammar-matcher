@@ -15,6 +15,12 @@ test('sentence with multiple occurrences', async () => {
   expect(yijingLeMatcher.match(sentence)).toEqual(findLocsRegex(sentence, /(已经)[^了]+(了)/));
 });
 
+test('extra sentences', async () => {
+  const sentence = await parseSentence('我们已经到了。');
+  expect(yijingLeMatcher.match(sentence)).toEqual(findLocsRegex(sentence, /(已经)[^了]+(了)/));
+});
+
+
 test("doesn't match negative examples", async () => {
   await assertNoneMatch(yijingLeMatcher, [
     '我们已了解。',

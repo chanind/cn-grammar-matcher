@@ -1,0 +1,47 @@
+.content {
+    padding-top: 80px;
+}
+
+.error {
+    text-align: center;
+    padding-top: 25vh;
+}
+
+.grammar-results {
+    padding-top: 20px;
+}
+
+.grammar {
+    padding: 20px;
+    border-top: 1px solid #EEE;
+    background: #FFF;
+    transition: all 500ms;
+
+    &.highlight {
+        background: RGB(255,251,230);
+    }
+}
+
+.char {
+    transition: all 500ms;
+    transition: bottom 100ms;
+    background: #FFF;
+    position: relative;
+    bottom: 0;
+    
+    &.highlight {
+        background: RGB(255,251,230);
+        bottom: 2px;
+    }
+}
+
+.examples {
+    padding-left: 20px;
+}
+
+.example {
+    h6 {
+        margin: 0;
+    }
+    margin: 5px 0;
+}

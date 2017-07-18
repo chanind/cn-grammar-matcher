@@ -8,13 +8,26 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "lint": "eslint src"
+    "lint": "eslint --ext .js --ext .jsx src demo",
+    "build": "webpack",
+    "start": "webpack-dev-server --hot --inline"
   },
   "dependencies": {
-    "node-debug": "^0.1.0",
     "request-promise-native": "^1.0.4"
   },
   "devDependencies": {
+    "babel-loader": "^7.1.1",
+    "babel-plugin-check-es2015-constants": "^6.22.0",
+    "babel-plugin-transform-es2015-block-scoping": "^6.24.1",
+    "babel-plugin-transform-es2015-function-name": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-es3-property-literals": "^6.22.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "classnames": "^2.2.5",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.4",
     "eslint": "^4.2.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-config-standard": "^10.2.1",
@@ -24,10 +37,21 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.29.0",
     "jest": "^20.0.4",
-    "pre-commit": "^1.2.2"
+    "node-debug": "^0.1.0",
+    "node-sass": "^4.5.3",
+    "pre-commit": "^1.2.2",
+    "react-router-dom": "^4.1.1",
+    "react-spin": "^0.6.2",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
   },
-  "pre-commit": ["lint"],
+  "pre-commit": [
+    "lint"
+  ],
   "jest": {
     "setupTestFrameworkScriptFile": "./jestInit"
   }
