@@ -5,12 +5,15 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const output = process.env.OUTPUT || '/dist';
+const nlpPath = process.env.NLP_PATH || 'http://localhost:9000';
+
 var config = {
   entry: {
     demo: path.resolve(__dirname, 'demo/index.js'),
   },
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, output),
     publicPath: '/',
     filename: 'js/[name].js'
   },
@@ -57,6 +60,7 @@ var config = {
       filename: 'index.html',
       template: 'demo/index.ejs',
       chunks: ['demo'],
+      nlpPath: nlpPath,
     }),
     new CopyWebpackPlugin([
       { from: path.resolve(__dirname, 'demo/assets') }
