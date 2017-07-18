@@ -1,13 +1,13 @@
 import React from 'react';
 import Spinner from 'react-spin';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import classes from './ResultsPage.scss';
 import Header from './Header.jsx';
 import GrammarMatcher from '../../src/GrammarMatcher';
 
 class ResultsPage extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -18,16 +18,16 @@ class ResultsPage extends React.Component {
       highlightGrammar: [],
     };
   }
-  
+
+  componentWillMount() {
+    this.runQuery(this.props.match.params.query);
+  }
+
   componentWillReceiveProps({ match }) {
     const { query } = match.params;
     if (this.state.query !== query) {
       this.runQuery(query);
     }
-  }
-
-  componentWillMount() {
-    this.runQuery(this.props.match.params.query);
   }
 
   runQuery(query) {
@@ -74,24 +74,22 @@ class ResultsPage extends React.Component {
     return text.split('').map((char, i) => (
       <span
         key={i}
-        className={classNames(classes.char, { [classes.highlight]: isCharHighlighted(i)})}
+        className={classNames(classes.char, { [classes.highlight]: isCharHighlighted(i) })}
       >
         {char}
       </span>
-    ))
+    ));
   }
 
   renderResults() {
     return this.state.results.map((result) => {
-      const grammar = result.grammar.map(match => {
-        const examples = match.examples.slice(0,3).map((example, i) => {
-          return (
-            <div className={classes.example} key={i}>
-              <h6>{example.zh}</h6>
-              <div>{example.en}</div>
-            </div>
-          );
-        });
+      const grammar = result.grammar.map((match) => {
+        const examples = match.examples.slice(0, 3).map((example, i) => (
+          <div className={classes.example} key={i}>
+            <h6>{example.zh}</h6>
+            <div>{example.en}</div>
+          </div>
+        ));
 
         const isHighlighted = this.state.highlightGrammar.indexOf(match) >= 0;
 
@@ -99,8 +97,8 @@ class ResultsPage extends React.Component {
           <div
             className={classNames(classes.grammar, { [classes.highlight]: isHighlighted })}
             key={match.id}
-            onMouseEnter={() => this.setState({ highlightGrammar: [match]})}
-            onMouseLeave={() => this.setState({ highlightGrammar: []})}
+            onMouseEnter={() => this.setState({ highlightGrammar: [match] })}
+            onMouseLeave={() => this.setState({ highlightGrammar: [] })}
           >
             <h4>{match.name}</h4>
             <p>{match.description}</p>
@@ -134,5 +132,13 @@ class ResultsPage extends React.Component {
     );
   }
 }
+
+ResultsPage.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      query: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default ResultsPage;

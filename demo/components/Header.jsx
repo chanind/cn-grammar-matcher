@@ -40,8 +40,14 @@ const Header = (props) => {
   );
 };
 
+Header.defaultProps = {
+  query: null,
+};
+
 Header.propTypes = {
-  history: PropTypes.object.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.function,
+  }).isRequired,
   query: PropTypes.string,
 };
 

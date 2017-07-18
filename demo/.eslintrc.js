@@ -18,5 +18,6 @@ module.exports = {
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": ["error", { ignore: ['^react$','^react-dom$'] }],
     "no-return-assign": "off",
+    "react/no-array-index-key": "off",
   }
 };

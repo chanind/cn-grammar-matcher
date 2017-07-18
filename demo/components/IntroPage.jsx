@@ -29,7 +29,7 @@ const IntroPage = ({ history }) => {
 
 IntroPage.propTypes = {
   history: PropTypes.shape({
-    
+    push: PropTypes.function,
   }).isRequired,
 };
 
