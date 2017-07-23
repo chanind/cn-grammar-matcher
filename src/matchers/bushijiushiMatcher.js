@@ -12,7 +12,7 @@ const shortTermChineseSrc = {
   isbn13: '9787301263761',
   isbn10: '7301263767',
   author: 'Jianfei Ma',
-  pages: 30,
+  pages: [30],
 };
 
 const allSetSrc = 'https://resources.allsetlearning.com/chinese/grammar/Expressing_the_only_two_possibilities';
