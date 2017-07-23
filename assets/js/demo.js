@@ -1943,7 +1943,7 @@ exports.deprecate = function (fn, msg) {
 var debugs = {};
 var debugEnviron;
 exports.debuglog = function (set) {
-  if (isUndefined(debugEnviron)) debugEnviron = Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_DEBUG || '';
+  if (isUndefined(debugEnviron)) debugEnviron = Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_DEBUG || '';
   set = set.toUpperCase();
   if (!debugs[set]) {
     if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
@@ -2510,7 +2510,7 @@ function _setExports(ndebug) {
     var out;
 
     /* re-export standard assert */
-    if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_NDEBUG) {
+    if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_NDEBUG) {
         out = noop;
     } else {
         out = function (arg, msg) {
@@ -2618,7 +2618,7 @@ function _setExports(ndebug) {
     return out;
 }
 
-module.exports = _setExports(Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_NDEBUG);
+module.exports = _setExports(Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_NDEBUG);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
@@ -2634,7 +2634,7 @@ module.exports = _setExports(Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
+if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
   var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element') || 0xeac7;
 
   var isValidElement = function (object) {
@@ -9527,7 +9527,7 @@ module.exports = {
 
 var warning = function () {};
 
-if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
+if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
   warning = function (condition, format, args) {
     var len = arguments.length;
     args = new Array(len > 2 ? len - 2 : 0);
@@ -15804,7 +15804,7 @@ Identity._oldVersionDetect = function (obj) {
  */
 
 var invariant = function (condition, format, a, b, c, d, e, f) {
-  if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
+  if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
     if (format === undefined) {
       throw new Error('invariant requires an error message argument');
     }
@@ -17583,7 +17583,7 @@ function _setExports(ndebug) {
     var out;
 
     /* re-export standard assert */
-    if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_NDEBUG) {
+    if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_NDEBUG) {
         out = noop;
     } else {
         out = function (arg, msg) {
@@ -17691,7 +17691,7 @@ function _setExports(ndebug) {
     return out;
 }
 
-module.exports = _setExports(Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_NDEBUG);
+module.exports = _setExports(Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_NDEBUG);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
@@ -18788,7 +18788,7 @@ module.exports = emptyFunction;
 
 var validateFormat = function validateFormat(format) {};
 
-if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
+if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
   validateFormat = function validateFormat(format) {
     if (format === undefined) {
       throw new Error('invariant requires an error message argument');
@@ -21731,7 +21731,7 @@ var emptyFunction = __webpack_require__(70);
 
 var warning = emptyFunction;
 
-if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
+if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
   (function () {
     var printWarning = function printWarning(format) {
       for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -31665,8 +31665,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-const nlpPath = "https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod" || 'http://localhost:9000';
-__WEBPACK_IMPORTED_MODULE_3__src_GrammarMatcher___default.a.defaultNlpPath = nlpPath;
+const nlpHost = "https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod" || 'http://localhost:9000';
+__WEBPACK_IMPORTED_MODULE_3__src_GrammarMatcher___default.a.defaultNlpHost = nlpHost;
 
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Main_jsx__["a" /* default */]), document.getElementById('root'));
 
@@ -31929,7 +31929,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
   PropTypeError.prototype = Error.prototype;
 
   function createChainableTypeChecker(validate) {
-    if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
+    if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
       var manualPropTypeCallCache = {};
       var manualPropTypeWarningCount = 0;
     }
@@ -31941,7 +31941,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
         if (throwOnDirectAccess) {
           // New behavior only for users of `prop-types` package
           invariant(false, 'Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use `PropTypes.checkPropTypes()` to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
-        } else if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production' && typeof console !== 'undefined') {
+        } else if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production' && typeof console !== 'undefined') {
           // Old behavior for people using React.PropTypes
           var cacheKey = componentName + ':' + propName;
           if (!manualPropTypeCallCache[cacheKey] &&
@@ -32040,7 +32040,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
   function createEnumTypeChecker(expectedValues) {
     if (!Array.isArray(expectedValues)) {
-      Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
+      Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
       return emptyFunction.thatReturnsNull;
     }
 
@@ -32083,7 +32083,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
   function createUnionTypeChecker(arrayOfTypeCheckers) {
     if (!Array.isArray(arrayOfTypeCheckers)) {
-      Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
       return emptyFunction.thatReturnsNull;
     }
 
@@ -32288,7 +32288,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
 
 
-if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
+if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
   var invariant = __webpack_require__(71);
   var warning = __webpack_require__(98);
   var ReactPropTypesSecret = __webpack_require__(72);
@@ -32307,7 +32307,7 @@ if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/p
  * @private
  */
 function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-  if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
+  if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_ENV !== 'production') {
     for (var typeSpecName in typeSpecs) {
       if (typeSpecs.hasOwnProperty(typeSpecName)) {
         var error;
@@ -45587,7 +45587,7 @@ function Request(options) {
 util.inherits(Request, stream.Stream);
 
 // Debugging
-Request.debug = Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_DEBUG && /\brequest\b/.test(Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_DEBUG);
+Request.debug = Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_DEBUG && /\brequest\b/.test(Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_DEBUG);
 function debug() {
   if (Request.debug) {
     console.error('REQUEST %s', util.format.apply(util, arguments));
@@ -54935,7 +54935,7 @@ RequestSigner.prototype.credentialString = function () {
 };
 
 RequestSigner.prototype.defaultCredentials = function () {
-  var env = Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"});
+  var env = Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"});
   return {
     accessKeyId: env.AWS_ACCESS_KEY_ID || env.AWS_ACCESS_KEY,
     secretAccessKey: env.AWS_SECRET_ACCESS_KEY || env.AWS_SECRET_KEY,
@@ -67466,7 +67466,7 @@ function getProxyFromURI(uri) {
   // environmental variables (NO_PROXY, HTTP_PROXY, etc.)
   // respect NO_PROXY environment variables (see: http://lynx.isc.org/current/breakout/lynx_help/keystrokes/environments.html)
 
-  var noProxy = Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NO_PROXY || Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).no_proxy || '';
+  var noProxy = Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NO_PROXY || Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).no_proxy || '';
 
   // if the noProxy is a wildcard then return null
 
@@ -67483,11 +67483,11 @@ function getProxyFromURI(uri) {
   // Check for HTTP or HTTPS Proxy in environment Else default to null
 
   if (uri.protocol === 'http:') {
-    return Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).HTTP_PROXY || Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).http_proxy || null;
+    return Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).HTTP_PROXY || Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).http_proxy || null;
   }
 
   if (uri.protocol === 'https:') {
-    return Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).HTTPS_PROXY || Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).https_proxy || Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).HTTP_PROXY || Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).http_proxy || null;
+    return Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).HTTPS_PROXY || Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).https_proxy || Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).HTTP_PROXY || Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).http_proxy || null;
   }
 
   // if none of that works, return null
@@ -75471,7 +75471,7 @@ function mergeOptions(target) {
 }
 
 var debug;
-if (Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_DEBUG && /\btunnel\b/.test(Object({"NLP_PATH":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_DEBUG)) {
+if (Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_DEBUG && /\btunnel\b/.test(Object({"NLP_HOST":"https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod"}).NODE_DEBUG)) {
   debug = function () {
     var args = Array.prototype.slice.call(arguments);
     if (typeof args[0] === 'string') {
