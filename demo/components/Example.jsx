@@ -10,4 +10,11 @@ const Example = ({ example }) => (
   </div>
 );
 
+Example.propTypes = {
+  example: PropTypes.shape({
+    zh: PropTypes.string,
+    en: PropTypes.string,
+  }).isRequired,
+};
+
 export default Example;

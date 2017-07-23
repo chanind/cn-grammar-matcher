@@ -22,12 +22,16 @@ const Sentence = ({ text, highlightLocations }) => {
       {char}
     </span>
   ));
-  return (<h2>{chars}</h2>)
+  return (<h2>{chars}</h2>);
 };
 
 Sentence.propTypes = {
   text: PropTypes.string.isRequired,
-  highlightLocations: PropTypes.array.isRequired,
+  highlightLocations: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.number,
+    ),
+  ).isRequired,
 };
 
 export default Sentence;

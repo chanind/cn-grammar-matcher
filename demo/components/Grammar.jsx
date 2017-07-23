@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import classes from './Grammar.scss';
-import Example from './Example.jsx'
+import Example from './Example.jsx';
 
 const Grammar = ({ isHighlighted, onMouseEnter, onMouseLeave, name, description, examples }) => {
   const exampleElms = examples.slice(0, 3).map((example, i) => (
@@ -23,6 +23,33 @@ const Grammar = ({ isHighlighted, onMouseEnter, onMouseLeave, name, description,
       </div>
     </div>
   );
+};
+
+Grammar.propTypes = {
+  isHighlighted: PropTypes.boolean.isRequired,
+  onMouseEnter: PropTypes.function.isRequired,
+  onMouseLeave: PropTypes.function.isRequired,
+  name: PropTypes.string.isRequired,
+  examples: PropTypes.arrayOf(
+    PropTypes.shape({
+      zh: PropTypes.string,
+      en: PropTypes.string,
+    }),
+  ).isRequired,
+  description: PropTypes.string.isRequired,
+  // sources: PropTypes.arrayOf(
+  //   PropTypes.oneOfType([
+  //     PropTypes.string,
+  //     PropTypes.shape({
+  //       type: PropTypes.string,
+  //       title: PropTypes.string,
+  //       isbn13: PropTypes.string,
+  //       isbn10: PropTypes.string,
+  //       author: PropTypes.string,
+  //       pages: PropTypes.number,
+  //     }),
+  //   ]),
+  // ).isRequired,
 };
 
 export default Grammar;

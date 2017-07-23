@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import classes from './Result.scss';
-import Sentence from './Sentence.jsx'
-import Grammar from './Grammar.jsx'
+import Sentence from './Sentence.jsx';
+import Grammar from './Grammar.jsx';
 
 class Result extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -25,9 +24,9 @@ class Result extends React.Component {
     }
     return locs;
   }
-  
+
   render() {
-    const grammar = this.props.result.grammar.map((grammarMatch) => (
+    const grammar = this.props.result.grammar.map(grammarMatch => (
       <Grammar
         key={grammarMatch.id}
         onMouseEnter={() => this.setState({ highlightGrammar: [grammarMatch] })}
@@ -51,6 +50,37 @@ class Result extends React.Component {
       </div>
     );
   }
+}
+
+Result.propTypes = {
+  result: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    grammar: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+        examples: PropTypes.arrayOf(
+          PropTypes.shape({
+            zh: PropTypes.string,
+            en: PropTypes.string,
+          }),
+        ),
+        sources: PropTypes.arrayOf(
+          PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.shape({
+              type: PropTypes.string,
+              title: PropTypes.string,
+              isbn13: PropTypes.string,
+              isbn10: PropTypes.string,
+              author: PropTypes.string,
+              pages: PropTypes.number,
+            }),
+          ]),
+        ),
+      }),
+    ).isRequired,
+  }).isRequired,
 };
 
 export default Result;
