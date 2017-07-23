@@ -1,0 +1,23 @@
+.grammar {
+    padding: 20px;
+    border-top: 1px solid #EEE;
+    background: #FFF;
+    transition: all 500ms;
+
+    &.highlight {
+        background: RGB(255,251,230);
+    }
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.examples {
+    padding-left: 20px;
+}
+
+.more-examples {
+    cursor: pointer;
+}

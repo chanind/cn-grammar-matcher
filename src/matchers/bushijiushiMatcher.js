@@ -15,7 +15,11 @@ const shortTermChineseSrc = {
   pages: [30],
 };
 
-const allSetSrc = 'https://resources.allsetlearning.com/chinese/grammar/Expressing_the_only_two_possibilities';
+const allSetSrc = {
+  type: 'website',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/Expressing_the_only_two_possibilities',
+  name: 'AllSet Chinese Grammar Wiki',
+};
 
 
 module.exports = {

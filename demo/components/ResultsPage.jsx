@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import classes from './ResultsPage.scss';
 import Header from './Header.jsx';
+import Result from './Result.jsx';
+
 import GrammarMatcher from '../../src/GrammarMatcher';
 
 class ResultsPage extends React.Component {
@@ -15,7 +17,6 @@ class ResultsPage extends React.Component {
       error: null,
       query: null,
       results: null,
-      highlightGrammar: [],
     };
   }
 
@@ -57,66 +58,10 @@ class ResultsPage extends React.Component {
   }
 
 
-  renderSentence(text) {
-    const isCharHighlighted = (index) => {
-      for (const grammar of this.state.highlightGrammar) {
-        for (const match of grammar.matches) {
-          for (const location of match) {
-            if (location.start <= index && location.end > index) {
-              return true;
-            }
-          }
-        }
-      }
-      return false;
-    };
-
-    return text.split('').map((char, i) => (
-      <span
-        key={i}
-        className={classNames(classes.char, { [classes.highlight]: isCharHighlighted(i) })}
-      >
-        {char}
-      </span>
-    ));
-  }
-
   renderResults() {
-    return this.state.results.map((result) => {
-      const grammar = result.grammar.map((match) => {
-        const examples = match.examples.slice(0, 3).map((example, i) => (
-          <div className={classes.example} key={i}>
-            <h6>{example.zh}</h6>
-            <div>{example.en}</div>
-          </div>
-        ));
-
-        const isHighlighted = this.state.highlightGrammar.indexOf(match) >= 0;
-
-        return (
-          <div
-            className={classNames(classes.grammar, { [classes.highlight]: isHighlighted })}
-            key={match.id}
-            onMouseEnter={() => this.setState({ highlightGrammar: [match] })}
-            onMouseLeave={() => this.setState({ highlightGrammar: [] })}
-          >
-            <h4>{match.name}</h4>
-            <p>{match.description}</p>
-            <div className={classes.examples}>{examples}</div>
-          </div>
-        );
-      });
-
-      return (
-        <div className={classes.result}>
-          <h5>Grammar results for</h5>
-          <h2>{this.renderSentence(result.text)}</h2>
-          <div className={classes.grammarResults}>
-            {grammar.length > 0 ? grammar : <p>No grammar matches found</p>}
-          </div>
-        </div>
-      );
-    });
+    return this.state.results.map((result, i) => (
+      <Result result={result} key={`${i}-${result.text}`} />
+    ));
   }
 
   render() {

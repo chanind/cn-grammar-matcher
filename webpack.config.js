@@ -5,6 +5,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
+
 const output = process.env.OUTPUT || '/dist';
 const nlpPath = process.env.NLP_PATH || 'http://localhost:9000';
 

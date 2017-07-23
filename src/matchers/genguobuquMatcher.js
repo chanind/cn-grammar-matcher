@@ -15,8 +15,11 @@ const shortTermChineseSrc = {
   pages: [75],
 };
 
-const eChineseLearningSrc = 'http://echineselearning2006.weebly.com/blog/what-does-mean1';
-
+const eChineseLearningSrc = {
+  type: 'website',
+  url: 'http://echineselearning2006.weebly.com/blog/what-does-mean1',
+  name: 'eChineseLearning',
+};
 
 module.exports = {
   id: 'gen_guobuqu',
