@@ -7,7 +7,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 const output = process.env.OUTPUT || '/dist';
-const nlpPath = process.env.NLP_PATH || 'http://localhost:9000';
 
 var config = {
   entry: {
@@ -56,12 +55,16 @@ var config = {
   devtool: 'source-map',
   plugins: [
     new Clean(['dist']),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NLP_PATH: JSON.stringify(process.env.NLP_PATH),
+      },
+    }),
     new ExtractTextPlugin('css/[name].css'),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'demo/index.ejs',
       chunks: ['demo'],
-      nlpPath: nlpPath,
     }),
     new CopyWebpackPlugin([
       { from: path.resolve(__dirname, 'demo/assets') }
