@@ -12,12 +12,12 @@ class Grammar extends React.Component {
     this.state = {
       isExpanded: false,
     };
+    this.onShowMoreExamples = this.onShowMoreExamples.bind(this);
   }
 
   onShowMoreExamples(evt) {
     evt.preventDefault();
     this.setState({ isExpanded: true });
-    this.onShowMoreExamples = this.onShowMoreExamples.bind(this);
   }
 
   render() {
