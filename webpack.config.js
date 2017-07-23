@@ -57,7 +57,7 @@ var config = {
     new Clean(['dist']),
     new webpack.DefinePlugin({
       'process.env': {
-        NLP_PATH: JSON.stringify(process.env.NLP_PATH),
+        NLP_HOST: JSON.stringify(process.env.NLP_HOST),
       },
     }),
     new ExtractTextPlugin('css/[name].css'),
