@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import classes from './ResultsPage.scss';
 import Header from './Header.jsx';
 import Result from './Result.jsx';
+
 import GrammarMatcher from '../../src/GrammarMatcher';
 
 class ResultsPage extends React.Component {
