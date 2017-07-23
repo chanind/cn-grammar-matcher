@@ -58,9 +58,9 @@ class ResultsPage extends React.Component {
 
 
   renderResults() {
-    return this.state.results.map((result) => {
-      <Result result={result} />
-    });
+    return this.state.results.map((result, i) => (
+      <Result result={result} key={`${i}-${result.text}`} />
+    ));
   }
 
   render() {

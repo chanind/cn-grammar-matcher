@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import classes from './ResultsPage.scss';
+import classes from './Result.scss';
 import Sentence from './Sentence.jsx'
 import Grammar from './Grammar.jsx'
 
@@ -15,10 +15,10 @@ class Result extends React.Component {
   }
 
   getHighlightLocs() {
-    locs = [];
-    for (const grammar in this.highlightGrammar) {
-      for (const match in grammar.matches) {
-        for (const loc in match) {
+    const locs = [];
+    for (const grammar of this.state.highlightGrammar) {
+      for (const match of grammar.matches) {
+        for (const loc of match) {
           locs.push(loc);
         }
       }
@@ -32,6 +32,7 @@ class Result extends React.Component {
         key={grammarMatch.id}
         onMouseEnter={() => this.setState({ highlightGrammar: [grammarMatch] })}
         onMouseLeave={() => this.setState({ highlightGrammar: [] })}
+        isHighlighted={this.state.highlightGrammar.indexOf(grammarMatch) >= 0}
         {...grammarMatch}
       />
     ));
@@ -40,12 +41,10 @@ class Result extends React.Component {
     return (
       <div className={classes.result}>
         <h5>Grammar results for</h5>
-        <h2>
-          <Sentence
-            text={this.props.result.text}
-            highlightLocations={this.getHighlightLocs()}
-          />
-        </h2>
+        <Sentence
+          text={this.props.result.text}
+          highlightLocations={this.getHighlightLocs()}
+        />
         <div className={classes.grammarResults}>
           {grammar.length > 0 ? grammar : <p>No grammar matches found</p>}
         </div>
