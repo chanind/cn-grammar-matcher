@@ -12,11 +12,14 @@ const shortTermChineseSrc = {
   isbn13: '9787301263761',
   isbn10: '7301263767',
   author: 'Jianfei Ma',
-  pages: 75,
+  pages: [75],
 };
 
-const eChineseLearningSrc = 'http://echineselearning2006.weebly.com/blog/what-does-mean1';
-
+const eChineseLearningSrc = {
+  type: 'website',
+  url: 'http://echineselearning2006.weebly.com/blog/what-does-mean1',
+  name: 'eChineseLearning',
+};
 
 module.exports = {
   id: 'gen_guobuqu',

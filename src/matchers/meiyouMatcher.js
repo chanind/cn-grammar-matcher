@@ -5,8 +5,11 @@ const {
 } = require('../lib/tokenFilters');
 const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
 
-const allSetSrc = 'https://resources.allsetlearning.com/chinese/grammar/Negation_of_%22you%22_with_%22mei%22';
-
+const allSetSrc = {
+  type: 'website',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/Negation_of_%22you%22_with_%22mei%22',
+  name: 'AllSet Chinese Grammar Wiki',
+};
 
 module.exports = {
   id: 'meiyou',

@@ -7,8 +7,11 @@ const {
 } = require('../lib/tokenFilters');
 const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
 
-const allSetSrc = 'https://resources.allsetlearning.com/chinese/grammar/Expressing_%22already%22_with_%22yijing%22';
-
+const allSetSrc = {
+  type: 'website',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/Expressing_%22already%22_with_%22yijing%22',
+  name: 'AllSet Chinese Grammar Wiki',
+};
 
 module.exports = {
   id: 'yijing_le',

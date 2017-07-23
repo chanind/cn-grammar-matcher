@@ -8,10 +8,11 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "lint": "eslint --ext .js --ext .jsx src demo",
+    "lint": "eslint --ext .js --ext .jsx src demo scripts",
     "build": "webpack",
-    "gh-pages": "OUTPUT=/ NLP_PATH=http://nlp-chinese.us-west-2.elasticbeanstalk.com webpack",
-    "start": "webpack-dev-server --hot --inline"
+    "gh-pages": "OUTPUT=/assets NLP_PATH=https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod webpack; node scripts/fixGhPagesIndex.js",
+    "start": "webpack-dev-server --hot --inline",
+    "gen-matcher": "node scripts/genMatcher.js"
   },
   "dependencies": {
     "request-promise-native": "^1.0.4"
@@ -27,6 +28,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "classnames": "^2.2.5",
     "clean-webpack-plugin": "^0.1.16",
+    "commander": "^2.11.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "eslint": "^4.2.0",
