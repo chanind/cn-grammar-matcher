@@ -9,6 +9,15 @@
     }
 }
 
+.header-info {
+    display: flex;
+    justify-content: space-between;
+}
+
 .examples {
     padding-left: 20px;
+}
+
+.more-examples {
+    cursor: pointer;
 }

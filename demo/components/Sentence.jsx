@@ -28,9 +28,10 @@ const Sentence = ({ text, highlightLocations }) => {
 Sentence.propTypes = {
   text: PropTypes.string.isRequired,
   highlightLocations: PropTypes.arrayOf(
-    PropTypes.arrayOf(
-      PropTypes.number,
-    ),
+    PropTypes.shape({
+      start: PropTypes.number,
+      end: PropTypes.number,
+    }),
   ).isRequired,
 };
 
