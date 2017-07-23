@@ -22155,15 +22155,9 @@ const matchAndFormatGrammar = sentence => {
   };
 };
 
-let defaultNlpHost = 'http://localhost:9000';
-
 class GrammarMatcher {
-  static set defaultNlpHost(nlpHost) {
-    defaultNlpHost = nlpHost;
-  }
-
   constructor(nlpHost = null) {
-    const nlpClient = new CoreNLPClient(nlpHost || defaultNlpHost);
+    const nlpClient = new CoreNLPClient(nlpHost || GrammarMatcher.defaultNlpHost);
     this.sentenceParser = new SentenceParser(nlpClient);
   }
 
@@ -22176,6 +22170,8 @@ class GrammarMatcher {
     })();
   }
 }
+
+GrammarMatcher.defaultNlpHost = 'http://localhost:9000';
 
 // set up window.GrammarMatcher if we're in the browser
 if (typeof window !== 'undefined') {
