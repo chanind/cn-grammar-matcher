@@ -10,6 +10,11 @@ const run = () => {
 
   const matcherName = program.args[0];
 
+  if (!matcherName) {
+    console.log('ERROR: Missing matcher name parameter');
+    return;
+  }
+
   if (matcherName.match(/matcher$/i)) {
     console.log('ERROR: Cannot have the word "matcher" in the matcher name');
     return;

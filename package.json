@@ -45,6 +45,7 @@
     "jest": "^20.0.4",
     "node-debug": "^0.1.0",
     "node-sass": "^4.5.3",
+    "osmosis": "^1.1.4",
     "pre-commit": "^1.2.2",
     "react-router-dom": "^4.1.1",
     "react-spin": "^0.6.2",
