@@ -52,7 +52,7 @@ const run = () => {
   };
 
   module.exports = {
-    id: '${fullMatcherName}',
+    id: '${matcherName}',
     name: 'FILL ME IN',
     description: 'FILL ME IN',
     sources: [
