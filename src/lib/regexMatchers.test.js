@@ -202,7 +202,7 @@ describe('mergeLocMatchGroups', () => {
     const match2 = [[{ start: 3, end: 7 }], [{ start: 8, end: 10 }, { start: 12, end: 15 }]];
     expect(mergeLocMatchGroups([match1, match2])).toEqual([
       [{ start: 3, end: 4 }],
-      match2[1]
+      match2[1],
     ]);
   });
 
@@ -211,7 +211,7 @@ describe('mergeLocMatchGroups', () => {
     const match2 = [[{ start: 3, end: 7 }], [{ start: 8, end: 10 }, { start: 12, end: 15 }]];
     expect(mergeLocMatchGroups([match1, match2], false)).toEqual([
       [{ start: 2, end: 7 }, { start: 17, end: 22 }],
-      match2[1]
+      match2[1],
     ]);
   });
 });

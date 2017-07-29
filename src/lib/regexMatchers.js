@@ -220,7 +220,7 @@ const intersectMatches = (match1, match2) => {
     }
   }
   return combinedMatch;
-}
+};
 
 const unionMatches = (match1, match2) => {
   const allLocs = [...match1, ...match2].sort((locA, locB) => locA.start - locB.start);
@@ -240,21 +240,21 @@ const unionMatches = (match1, match2) => {
   }
   combinedMatch.push(allLocs.pop());
   return combinedMatch;
-}
+};
 
-
-/* NOTE: This will mutate the matchesList */
 const appendOrMergeMatch = (matchesList, match, conservative) => {
-  for (let i = 0; i < matchesList.length; i++) {
-    const existingMatch = matchesList[i];
-    if (matchesOverlap(existingMatch, match)){
+  const updatedMatchesList = matchesList.slice();
+  for (let i = 0; i < updatedMatchesList.length; i += 1) {
+    const existingMatch = updatedMatchesList[i];
+    if (matchesOverlap(existingMatch, match)) {
       const combineMethod = conservative ? intersectMatches : unionMatches;
       const combinedMatch = combineMethod(existingMatch, match);
-      matchesList[i] = combinedMatch;
-      return;
+      updatedMatchesList[i] = combinedMatch;
+      return updatedMatchesList;
     }
   }
-  matchesList.push(match);
+  updatedMatchesList.push(match);
+  return updatedMatchesList;
 };
 
 /**
@@ -266,11 +266,11 @@ const appendOrMergeMatch = (matchesList, match, conservative) => {
 * @returns {Location[][]} The merged listed of matches
 */
 exports.mergeLocMatchGroups = (locMatchGroups, conservative = true) => {
-  mergedMatches = [];
+  let mergedMatches = [];
   // NOTE: this has a bad big O. This can be improved if needed, but probably doesn't matter
   for (const locMatchGroup of locMatchGroups) {
     for (const locMatch of locMatchGroup) {
-      appendOrMergeMatch(mergedMatches, locMatch, conservative);
+      mergedMatches = appendOrMergeMatch(mergedMatches, locMatch, conservative);
     }
   }
   return mergedMatches;
