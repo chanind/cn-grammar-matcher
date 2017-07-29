@@ -1,6 +1,7 @@
 const program = require('commander');
 const cheerio = require('cheerio');
 const request = require('request-promise-native');
+const camelCase = require('lodash.camelcase');
 const removeDiacritics = require('diacritics').remove;
 const { trim, regexFromAllsetPattern, writeOutMatcher } = require('./scriptUtils');
 
@@ -12,7 +13,12 @@ const formatZh = text => (
     .replace(/\s+/gi, '')
 );
 
-const formatStr = str => JSON.stringify(str).replace(/'/g, "\\'").replace(/^"|"$/g, '');
+const formatStr = str => (
+  JSON.stringify(trim(str))
+    .replace(/\\"/g, '"')
+    .replace(/'/g, "\\'")
+    .replace(/^"|"$/g, '')
+);
 
 const run = async () => {
   program
@@ -33,19 +39,19 @@ const run = async () => {
   }
 
   const content = await request(allsetUrl);
-  const $ = cheerio(content);
+  const $ = cheerio.load(content);
 
-  const matcherId = removeDiacritics($('#ibox+ p').text().match(/\(([^)]*)\)/i)[1]).replace(/\s+/, '_');
+  const matcherId = camelCase(removeDiacritics($('#ibox+ p').text().match(/\(([^)]*)\)/i)[1]).replace(/\s+/, '_'));
   const fullMatcherName = `${matcherId}Matcher`;
 
   const $rules = $('.jiegou p');
-  const matchRegexes = $rules.map((i, elm) => regexFromAllsetPattern($(elm).text()));
+  const matchRegexes = $rules.map((i, elm) => regexFromAllsetPattern($(elm).text())).toArray();
   const matchRegexStrings = matchRegexes.map(regex => `regexMatchLocs(text, ${regex}),`);
   const matchString = trim(`
-      const text = sentence.original;
-      return mergeLocMatchGroups([
-        ${matchRegexStrings.join('\n        ')}
-      ]);
+    const text = sentence.original;
+    return mergeLocMatchGroups([
+      ${matchRegexStrings.join('\n        ')}
+    ]);
   `);
 
   const getExampleFields = ($exampleElm) => {
@@ -58,13 +64,13 @@ const run = async () => {
 
   const getExamplesString = (exampleFields) => {
     const strings = exampleFields.map(field => trim(`
-      {
-        zh: '${formatStr(field.zh)}',
-        en: '${formatStr(field.en)}',
-        src: allSetSrc,
-      },
+    {
+      zh: '${formatStr(field.zh)}',
+      en: '${formatStr(field.en)}',
+      src: allSetSrc,
+    },
     `));
-    return strings.join('\n');
+    return strings.join('\n    ');
   };
 
   const exampleFields = $('.liju li').map((i, li) => getExampleFields($(li))).toArray().filter(x => x);
@@ -104,8 +110,6 @@ const ${fullMatcherName} = require('./${fullMatcherName}');
 const {
   assertAllExamplesMatch,
   assertNoneMatch,
-  findLocsRegex,
-  parseSentence,
 } = require('../lib/testUtils');
 
 test('matches all examples', async () => {

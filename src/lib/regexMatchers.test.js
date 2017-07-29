@@ -197,6 +197,23 @@ describe('mergeLocMatchGroups', () => {
     expect(mergeLocMatchGroups([match1, match2])).toEqual([match1[0], match2[1]]);
   });
 
+  it('ignores any nulls in the passed-in matches', () => {
+    const match1 = [[{ start: 2, end: 4 }, { start: 17, end: 22 }]];
+    const match2 = [[{ start: 3, end: 7 }], [{ start: 8, end: 10 }, { start: 12, end: 15 }]];
+    expect(mergeLocMatchGroups([match1, null, match2])).toEqual([
+      [{ start: 3, end: 4 }],
+      match2[1],
+    ]);
+  });
+
+  it('returns null if no matches are passed in', () => {
+    expect(mergeLocMatchGroups([null, null, null])).toBeNull();
+  });
+
+  it('returns null if null is passed in', () => {
+    expect(mergeLocMatchGroups(null)).toBeNull();
+  });
+
   it('uses the intersection of overlapping matches by default', () => {
     const match1 = [[{ start: 2, end: 4 }, { start: 17, end: 22 }]];
     const match2 = [[{ start: 3, end: 7 }], [{ start: 8, end: 10 }, { start: 12, end: 15 }]];

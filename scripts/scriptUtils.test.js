@@ -44,7 +44,7 @@ describe('regexFromAllsetPattern', () => {
   });
 
   it('should handle making hanzi in parenthesis optional', () => {
-    expect(regexFromAllsetPattern('Adj. + 了（一）点儿')).toEqual(/(了一?点儿)/);
+    expect(regexFromAllsetPattern('Adj. + 了（一）点儿\n')).toEqual(/(了一?点儿)/);
     expect(regexFromAllsetPattern('Adj. + 了（一个）点儿')).toEqual(/(了(?:一个)?点儿)/);
   });
 

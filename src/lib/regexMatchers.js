@@ -266,12 +266,13 @@ const appendOrMergeMatch = (matchesList, match, conservative) => {
 * @returns {Location[][]} The merged listed of matches
 */
 exports.mergeLocMatchGroups = (locMatchGroups, conservative = true) => {
+  if (!locMatchGroups) return null;
   let mergedMatches = [];
   // NOTE: this has a bad big O. This can be improved if needed, but probably doesn't matter
-  for (const locMatchGroup of locMatchGroups) {
+  for (const locMatchGroup of locMatchGroups.filter(x => x)) {
     for (const locMatch of locMatchGroup) {
       mergedMatches = appendOrMergeMatch(mergedMatches, locMatch, conservative);
     }
   }
-  return mergedMatches;
+  return mergedMatches.length > 0 ? mergedMatches : null;
 };

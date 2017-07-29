@@ -11,7 +11,7 @@ const isOnlyHanzi = (string, exceptions = []) => {
   }
   return !searchStr.split('').find(char => !hasHanzi(char));
 };
-const trim = text => text.replace(/^\s+|\s+$/, '');
+const trim = text => text.replace(/^\s+|\s+$/giu, '');
 const fixNewlines = text => `${trim(text)}\n`;
 
 const collapseAdjacentHanzi = (allsetPatternParts) => {
@@ -57,7 +57,9 @@ const makeParensOptional = (allsetPatternPart) => {
 
 const preprocessAllsetPattern = allsetPattern => (
   // remove any + from inside parens, ex (很 +)
-  allsetPattern.replace(/\s*\+\s*[)）]/igu, ') +')
+  allsetPattern
+    .replace(/\s*\+\s*[)）]/igu, ') +')
+    .replace(/\s+/igu, '')
 );
 
 const regexFromAllsetPattern = (allsetPattern) => {
