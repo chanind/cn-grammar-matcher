@@ -35,7 +35,10 @@ describe('isOnlyHanzi', () => {
 });
 
 describe('regexFromAllsetPattern', () => {
-  it('should put collapse adjacent hanzi into one capture group', () => {
+  it('should put hanzi into a capture group', () => {
+    expect(regexFromAllsetPattern('差不多 ＋ [Quantity Phrase] / [Time Phrase]')).toEqual(/(差不多)/);
+  });
+  it('should collapse adjacent hanzi into one capture group', () => {
     expect(regexFromAllsetPattern('Subj. + 并 + 不 + Verb / Adj.\n')).toEqual(/(并不)/);
     expect(regexFromAllsetPattern('Subj. + 也 + Verb / [Verb Phrase]')).toEqual(/(也)/);
   });
