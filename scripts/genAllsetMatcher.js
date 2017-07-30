@@ -24,7 +24,7 @@ const run = async () => {
   program
     .usage('yarn run gen-allset-matcher <allset url>')
     .option('-f, --force', 'Overwrite existing files')
-    .option('-i, --matcher-id', 'filename to use for this matcher')
+    .option('-i, --matcher-id [value]', 'filename to use for this matcher')
     .parse(process.argv);
 
   const allsetUrl = program.args[0];
