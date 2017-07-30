@@ -56,9 +56,13 @@ describe('regexFromAllsetPattern', () => {
     expect(regexFromAllsetPattern('Adj. + 了（一个）点儿')).toEqual(/(了(?:一个)?点儿)/);
   });
 
-  it('should make use | for hanzi with a / between them', () => {
+  it('should use | for hanzi with a / between them', () => {
     expect(regexFromAllsetPattern('Subj. + 没有 / 没 + Verb')).toEqual(/((?:没有|没))/);
     expect(regexFromAllsetPattern('⋯⋯， 好 / 对 / 是 / 可以 + 吗？')).toEqual(/(，(?:好|对|是|可以)吗？)/);
+  });
+
+  it('should treat ... like a +', () => {
+    expect(regexFromAllsetPattern('Time / Verb + 以后, ....')).toEqual(/(以后，)/);
   });
 
   it('should handle + inside parenthesis', () => {

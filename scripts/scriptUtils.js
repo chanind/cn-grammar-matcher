@@ -65,8 +65,10 @@ const preprocessAllsetPattern = allsetPattern => (
   allsetPattern
     .replace(/\s+/igu, '')
     .replace(/⋯+/iu, '+')
+    .replace(/\.{3,4}/iu, '+')
     .replace(/？/iu, '+？+')
     .replace(/，/iu, '+，+')
+    .replace(/,/iu, '+，+')
     .replace(/＋/iu, '+')
     .replace(/\+[)）]/igu, ') +')
     .replace(/[(（]\+/igu, '+ (')
