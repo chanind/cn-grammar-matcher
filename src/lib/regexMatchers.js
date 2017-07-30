@@ -181,3 +181,98 @@ exports.locsFromTokens = (tokenMatches, matchRegex = null) => {
   }
   return matches;
 };
+
+const locsOverlap = (loc1, loc2) => {
+  // loc2.start is inside of loc1
+  if (loc1.start <= loc2.start && loc1.end > loc2.start) {
+    return true;
+  }
+  // loc2.end is inside of loc1
+  if (loc1.start < loc2.end && loc1.end >= loc2.end) {
+    return true;
+  }
+  return false;
+};
+
+const matchesOverlap = (match1, match2) => {
+  // NOTE: this has a bad big O. This can be improved if needed, but probably doesn't matter
+  for (const loc1 of match1) {
+    for (const loc2 of match2) {
+      if (locsOverlap(loc1, loc2)) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
+const intersectMatches = (match1, match2) => {
+  const allLocs = [...match1, ...match2].sort((locA, locB) => locA.start - locB.start);
+  if (allLocs.length === 0) return [];
+  const combinedMatch = [];
+  while (allLocs.length > 1) {
+    const curLoc = allLocs.shift();
+    if (locsOverlap(curLoc, allLocs[0])) {
+      combinedMatch.push({
+        start: Math.max(curLoc.start, allLocs[0].start),
+        end: Math.min(curLoc.end, allLocs[0].end),
+      });
+    }
+  }
+  return combinedMatch;
+};
+
+const unionMatches = (match1, match2) => {
+  const allLocs = [...match1, ...match2].sort((locA, locB) => locA.start - locB.start);
+  if (allLocs.length === 0) return [];
+  const combinedMatch = [];
+  while (allLocs.length > 1) {
+    const curLoc = allLocs.shift();
+    if (locsOverlap(curLoc, allLocs[0])) {
+      const comboLoc = {
+        start: Math.min(curLoc.start, allLocs[0].start),
+        end: Math.max(curLoc.end, allLocs[0].end),
+      };
+      allLocs[0] = comboLoc;
+    } else {
+      combinedMatch.push(curLoc);
+    }
+  }
+  combinedMatch.push(allLocs.pop());
+  return combinedMatch;
+};
+
+const appendOrMergeMatch = (matchesList, match, conservative) => {
+  const updatedMatchesList = matchesList.slice();
+  for (let i = 0; i < updatedMatchesList.length; i += 1) {
+    const existingMatch = updatedMatchesList[i];
+    if (matchesOverlap(existingMatch, match)) {
+      const combineMethod = conservative ? intersectMatches : unionMatches;
+      const combinedMatch = combineMethod(existingMatch, match);
+      updatedMatchesList[i] = combinedMatch;
+      return updatedMatchesList;
+    }
+  }
+  updatedMatchesList.push(match);
+  return updatedMatchesList;
+};
+
+/**
+* Merge multiple groups of matches together
+*
+* @param {locMatchGroups} the list of matches to merge together
+* @param {conservative} a bool indicating whether in the event of overlapping matches
+*                       to use the intersection (true) or union (false)
+* @returns {Location[][]} The merged listed of matches
+*/
+exports.mergeLocMatchGroups = (locMatchGroups, conservative = true) => {
+  if (!locMatchGroups) return null;
+  let mergedMatches = [];
+  // NOTE: this has a bad big O. This can be improved if needed, but probably doesn't matter
+  for (const locMatchGroup of locMatchGroups.filter(x => x)) {
+    for (const locMatch of locMatchGroup) {
+      mergedMatches = appendOrMergeMatch(mergedMatches, locMatch, conservative);
+    }
+  }
+  return mergedMatches.length > 0 ? mergedMatches : null;
+};

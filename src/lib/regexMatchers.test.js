@@ -2,7 +2,7 @@
 
 const Token = require('./Token');
 const tf = require('./tokenFilters');
-const { regexMatchTokens, locsFromTokens, regexMatchLocs } = require('./regexMatchers');
+const { regexMatchTokens, locsFromTokens, regexMatchLocs, mergeLocMatchGroups } = require('./regexMatchers');
 
 describe('regexMatchTokens', () => {
   test('it returns null if there are no matches', () => {
@@ -180,6 +180,55 @@ describe('locsFromTokens', () => {
     expect(locsFromTokens(tokenMatches, '你')).toEqual([
       [{ start: 2, end: 3 }],
       [],
+    ]);
+  });
+});
+
+describe('mergeLocMatchGroups', () => {
+  it('appends matches together if they dont overlap', () => {
+    const match1 = [[{ start: 3, end: 4 }]];
+    const match2 = [[{ start: 8, end: 10 }, { start: 12, end: 15 }]];
+    expect(mergeLocMatchGroups([match1, match2])).toEqual([match1[0], match2[0]]);
+  });
+
+  it('strips duplicate matches', () => {
+    const match1 = [[{ start: 3, end: 4 }]];
+    const match2 = [[{ start: 3, end: 4 }], [{ start: 8, end: 10 }, { start: 12, end: 15 }]];
+    expect(mergeLocMatchGroups([match1, match2])).toEqual([match1[0], match2[1]]);
+  });
+
+  it('ignores any nulls in the passed-in matches', () => {
+    const match1 = [[{ start: 2, end: 4 }, { start: 17, end: 22 }]];
+    const match2 = [[{ start: 3, end: 7 }], [{ start: 8, end: 10 }, { start: 12, end: 15 }]];
+    expect(mergeLocMatchGroups([match1, null, match2])).toEqual([
+      [{ start: 3, end: 4 }],
+      match2[1],
+    ]);
+  });
+
+  it('returns null if no matches are passed in', () => {
+    expect(mergeLocMatchGroups([null, null, null])).toBeNull();
+  });
+
+  it('returns null if null is passed in', () => {
+    expect(mergeLocMatchGroups(null)).toBeNull();
+  });
+
+  it('uses the intersection of overlapping matches by default', () => {
+    const match1 = [[{ start: 2, end: 4 }, { start: 17, end: 22 }]];
+    const match2 = [[{ start: 3, end: 7 }], [{ start: 8, end: 10 }, { start: 12, end: 15 }]];
+    expect(mergeLocMatchGroups([match1, match2])).toEqual([
+      [{ start: 3, end: 4 }],
+      match2[1],
+    ]);
+  });
+
+  it('uses the union of overlapping matches if conservative=false', () => {
+    const match1 = [[{ start: 2, end: 4 }, { start: 17, end: 22 }]];
+    const match2 = [[{ start: 3, end: 7 }], [{ start: 8, end: 10 }, { start: 12, end: 15 }]];
+    expect(mergeLocMatchGroups([match1, match2], false)).toEqual([
+      [{ start: 2, end: 7 }, { start: 17, end: 22 }],
+      match2[1],
     ]);
   });
 });
