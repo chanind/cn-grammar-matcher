@@ -36,6 +36,8 @@ describe('isOnlyHanzi', () => {
 
 describe('regexFromAllsetPattern', () => {
   it('should put hanzi into a capture group', () => {
+    expect(regexFromAllsetPattern('(Reason,) 恐怕 + Fact / Conclusion')).toEqual(/(恐怕)/);
+    expect(regexFromAllsetPattern('Subj. + 包括 + Obj.1 ( , + Obj.2, Obj.3 ... )')).toEqual(/(包括)/);
     expect(regexFromAllsetPattern('差不多 ＋ [Quantity Phrase] / [Time Phrase]')).toEqual(/(差不多)/);
   });
   it('should collapse adjacent hanzi into one capture group', () => {

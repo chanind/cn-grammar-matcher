@@ -23,7 +23,7 @@ const collapseAdjacentHanzi = (allsetPatternParts) => {
   const collapsedParts = [];
   let currentPart;
   for (const part of allsetPatternParts) {
-    const partIsHanzi = isOnlyHanzi(part, 'xyzXYZ|()?，？:') && hasHanzi(part, '，？');
+    const partIsHanzi = isOnlyHanzi(part, 'xyzXYZ|()?，？:') && hasHanzi(part, '，？') && part !== '，)' && part !== '(，';
     if (currentPart && partIsHanzi) {
       currentPart += part;
     } else if (partIsHanzi) {
@@ -76,6 +76,7 @@ const preprocessAllsetPattern = allsetPattern => (
     .replace(/\+[)）]/igu, ') +')
     .replace(/[(（]\+/igu, '+ (')
     .replace(/[／/]/igu, '|')
+    .replace(/[(（][^)）\u3400-\u9FBF]+[)）]/igu, '')
 );
 
 const regexFromAllsetPattern = (allsetPattern) => {
