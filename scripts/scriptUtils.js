@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const escapeRegExp = require('lodash.escaperegexp');
 
+const numRegex = '[零一二三四五六七八九十百千万亿0-9]+';
+
 const hasHanzi = (string, exceptions = '') => {
   const hanziRegex = new RegExp(`[${escapeRegExp(exceptions)}\u3400-\u9FBF]`, 'giu');
   return !!string.match(hanziRegex);
@@ -21,7 +23,7 @@ const collapseAdjacentHanzi = (allsetPatternParts) => {
   const collapsedParts = [];
   let currentPart;
   for (const part of allsetPatternParts) {
-    const partIsHanzi = isOnlyHanzi(part, '|()?，？:') && hasHanzi(part, '，？');
+    const partIsHanzi = isOnlyHanzi(part, 'xyzXYZ|()?，？:') && hasHanzi(part, '，？');
     if (currentPart && partIsHanzi) {
       currentPart += part;
     } else if (partIsHanzi) {
@@ -43,7 +45,8 @@ const generateRegex = (allsetPatternParts) => {
     if (regexPieces.length > 0) {
       regexPieces.push(`[^${part}]+`);
     }
-    regexPieces.push(`(${part})`);
+    const processedPart = part.replace(/[xyz]/giu, numRegex);
+    regexPieces.push(`(${processedPart})`);
   }
   return new RegExp(regexPieces.join(''));
 };
@@ -64,12 +67,12 @@ const preprocessAllsetPattern = allsetPattern => (
   // remove any + from inside parens, ex (很 +)
   allsetPattern
     .replace(/\s+/igu, '')
-    .replace(/⋯+/iu, '+')
-    .replace(/\.{3,4}/iu, '+')
-    .replace(/？/iu, '+？+')
-    .replace(/，/iu, '+，+')
-    .replace(/,/iu, '+，+')
-    .replace(/＋/iu, '+')
+    .replace(/⋯+/igu, '+')
+    .replace(/\.{3,4}/igu, '+')
+    .replace(/？/igu, '+？+')
+    .replace(/，/igu, '+，+')
+    .replace(/,/igu, '+，+')
+    .replace(/＋/igu, '+')
     .replace(/\+[)）]/igu, ') +')
     .replace(/[(（]\+/igu, '+ (')
     .replace(/[／/]/igu, '|')

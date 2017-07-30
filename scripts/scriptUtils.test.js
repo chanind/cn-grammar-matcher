@@ -56,8 +56,16 @@ describe('regexFromAllsetPattern', () => {
     expect(regexFromAllsetPattern('Adj. + 了（一个）点儿')).toEqual(/(了(?:一个)?点儿)/);
   });
 
+  it('should replace x, y, and z with number matchers', () => {
+    const nums = '[零一二三四五六七八九十百千万亿0-9]+';
+    expect(regexFromAllsetPattern('x 年 + y 月 + z 号')).toEqual(new RegExp(`(${nums}年${nums}月${nums}号)`));
+    expect(regexFromAllsetPattern('x 点 + 半')).toEqual(new RegExp(`(${nums}点半)`));
+    expect(regexFromAllsetPattern('(Date and/or time of day +) x 点')).toEqual(new RegExp(`(${nums}点)`));
+  });
+
   it('should use | for hanzi with a / between them', () => {
     expect(regexFromAllsetPattern('Subj. + 没有 / 没 + Verb')).toEqual(/((?:没有|没))/);
+    expect(regexFromAllsetPattern('Subj.＋不 / 没＋全都＋Verb / Adj.')).toEqual(/((?:不|没)全都)/);
     expect(regexFromAllsetPattern('⋯⋯， 好 / 对 / 是 / 可以 + 吗？')).toEqual(/(，(?:好|对|是|可以)吗？)/);
   });
 

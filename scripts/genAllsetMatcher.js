@@ -44,8 +44,12 @@ const run = async () => {
 
   let matcherId = program.matcherId;
   if (!matcherId) {
-    const pinyinText = $('#ibox+ p').text().match(/\(([^)]*)\)/i)[1];
-    matcherId = camelCase(removeDiacritics(pinyinText).replace(/\s+/, '_'));
+    const pinyinTextMatch = $('#ibox+ p').text().match(/\(([^)]*)\)/i);
+    if (pinyinTextMatch) {
+      matcherId = camelCase(removeDiacritics(pinyinTextMatch[1]).replace(/\s+/, '_'));
+    } else {
+      matcherId = camelCase($('h1').text().replace(/[^\sa-z]+/giu, '').replace(/\s+/, '_'));
+    }
   }
   const fullMatcherName = `${matcherId}Matcher`;
 
