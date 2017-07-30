@@ -44,6 +44,10 @@ describe('regexFromAllsetPattern', () => {
     expect(regexFromAllsetPattern('已经 + Verb / [Verb Phrase] + 了')).toEqual(/(已经)[^了]+(了)/);
   });
 
+  it('should allow chinese question marks', () => {
+    expect(regexFromAllsetPattern('Topic + 呢 ？')).toEqual(/(呢？)/);
+  });
+
   it('should handle making hanzi in parenthesis optional', () => {
     expect(regexFromAllsetPattern('Adj. + 了（一）点儿\n')).toEqual(/(了一?点儿)/);
     expect(regexFromAllsetPattern('Adj. + 了（一个）点儿')).toEqual(/(了(?:一个)?点儿)/);

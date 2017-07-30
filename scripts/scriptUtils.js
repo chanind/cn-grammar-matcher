@@ -18,7 +18,7 @@ const collapseAdjacentHanzi = (allsetPatternParts) => {
   const collapsedParts = [];
   let currentPart;
   for (const part of allsetPatternParts) {
-    const partIsHanzi = isOnlyHanzi(part, ['(', ')', '?', ':']) && hasHanzi(part);
+    const partIsHanzi = isOnlyHanzi(part, ['(', ')', '?', ' ？', ':']) && hasHanzi(part);
     if (currentPart && partIsHanzi) {
       currentPart += part;
     } else if (partIsHanzi) {
