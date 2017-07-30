@@ -58,7 +58,7 @@ const makeParensOptional = (allsetPatternPart) => {
   return allsetPatternPart;
 };
 
-const wrapOr = allsetPattern => allsetPattern.indexOf('|') >= 0 ? `(?:${allsetPattern})` : allsetPattern;
+const wrapOr = allsetPattern => (allsetPattern.indexOf('|') >= 0 ? `(?:${allsetPattern})` : allsetPattern);
 
 const preprocessAllsetPattern = allsetPattern => (
   // remove any + from inside parens, ex (很 +)
