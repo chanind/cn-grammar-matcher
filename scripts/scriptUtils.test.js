@@ -48,9 +48,14 @@ describe('regexFromAllsetPattern', () => {
     expect(regexFromAllsetPattern('Topic + 呢 ？')).toEqual(/(呢？)/);
   });
 
-  it('should handle making hanzi in parenthesis optional', () => {
+  it('should make hanzi in parenthesis optional', () => {
     expect(regexFromAllsetPattern('Adj. + 了（一）点儿\n')).toEqual(/(了一?点儿)/);
     expect(regexFromAllsetPattern('Adj. + 了（一个）点儿')).toEqual(/(了(?:一个)?点儿)/);
+  });
+
+  it('should make use | for hanzi with a / between them', () => {
+    expect(regexFromAllsetPattern('Subj. + 没有 / 没 + Verb')).toEqual(/((?:没有|没))/);
+    expect(regexFromAllsetPattern('⋯⋯， 好 / 对 / 是 / 可以 + 吗？')).toEqual(/(，(?:好|对|是|可以)吗？)/);
   });
 
   it('should handle + inside parenthesis', () => {

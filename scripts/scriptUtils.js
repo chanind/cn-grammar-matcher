@@ -2,11 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const escapeRegExp = require('lodash.escaperegexp');
 
-const hasHanzi = string => !!string.match(/[\u3400-\u9FBF]/);
-const isOnlyHanzi = (string, exceptions = []) => {
+const hasHanzi = (string, exceptions = '') => {
+  const hanziRegex = new RegExp(`[${escapeRegExp(exceptions)}\u3400-\u9FBF]`, 'giu');
+  return !!string.match(hanziRegex);
+};
+const isOnlyHanzi = (string, exceptions = '') => {
   let searchStr = string;
   if (exceptions.length > 0) {
-    const exceptionsRegexp = new RegExp(`[${exceptions.map(escapeRegExp).join()}]`, 'giu');
+    const exceptionsRegexp = new RegExp(`[${escapeRegExp(exceptions)}]`, 'giu');
     searchStr = searchStr.replace(exceptionsRegexp, '');
   }
   return !searchStr.split('').find(char => !hasHanzi(char));
@@ -18,7 +21,7 @@ const collapseAdjacentHanzi = (allsetPatternParts) => {
   const collapsedParts = [];
   let currentPart;
   for (const part of allsetPatternParts) {
-    const partIsHanzi = isOnlyHanzi(part, ['(', ')', '?', ' ？', ':']) && hasHanzi(part);
+    const partIsHanzi = isOnlyHanzi(part, '|()?，？:') && hasHanzi(part, '，？');
     if (currentPart && partIsHanzi) {
       currentPart += part;
     } else if (partIsHanzi) {
@@ -55,17 +58,25 @@ const makeParensOptional = (allsetPatternPart) => {
   return allsetPatternPart;
 };
 
+const wrapOr = allsetPattern => allsetPattern.indexOf('|') >= 0 ? `(?:${allsetPattern})` : allsetPattern;
+
 const preprocessAllsetPattern = allsetPattern => (
   // remove any + from inside parens, ex (很 +)
   allsetPattern
-    .replace(/\s*\+\s*[)）]/igu, ') +')
-    .replace(/[(（]\s*\+\s*/igu, '+ (')
     .replace(/\s+/igu, '')
+    .replace(/⋯+/iu, '+')
+    .replace(/？/iu, '+？+')
+    .replace(/，/iu, '+，+')
+    .replace(/\+[)）]/igu, ') +')
+    .replace(/[(（]\+/igu, '+ (')
+    .replace(/[／/]/igu, '|')
 );
 
 const regexFromAllsetPattern = (allsetPattern) => {
-  let parts = preprocessAllsetPattern(allsetPattern).split(/\s*\+\s*/);
-  parts = parts.map(makeParensOptional);
+  const parts = preprocessAllsetPattern(allsetPattern)
+    .split(/\s*\+\s*/)
+    .map(makeParensOptional)
+    .map(wrapOr);
   const collapsedHanzi = collapseAdjacentHanzi(parts);
   if (collapsedHanzi.length === 0) {
     throw new Error(`No regex could be generated from input: ${allsetPattern}`);

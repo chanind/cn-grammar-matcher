@@ -24,6 +24,7 @@ const run = async () => {
   program
     .usage('yarn run gen-allset-matcher <allset url>')
     .option('-f, --force', 'Overwrite existing files')
+    .option('-i, --matcher-id', 'filename to use for this matcher')
     .parse(process.argv);
 
   const allsetUrl = program.args[0];
@@ -41,7 +42,11 @@ const run = async () => {
   const content = await request(allsetUrl);
   const $ = cheerio.load(content);
 
-  const matcherId = camelCase(removeDiacritics($('#ibox+ p').text().match(/\(([^)]*)\)/i)[1]).replace(/\s+/, '_'));
+  let matcherId = program.matcherId;
+  if (!matcherId) {
+    const pinyinText = $('#ibox+ p').text().match(/\(([^)]*)\)/i)[1];
+    matcherId = camelCase(removeDiacritics(pinyinText).replace(/\s+/, '_'));
+  }
   const fullMatcherName = `${matcherId}Matcher`;
 
   const $rules = $('.jiegou p');
