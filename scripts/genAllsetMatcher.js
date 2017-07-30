@@ -45,12 +45,16 @@ const run = async () => {
   const fullMatcherName = `${matcherId}Matcher`;
 
   const $rules = $('.jiegou p');
+  if ($rules.length === 0) {
+    console.log('Error: No rules found!');
+    return;
+  }
   const matchRegexes = $rules.map((i, elm) => regexFromAllsetPattern($(elm).text())).toArray();
   const matchRegexStrings = matchRegexes.map(regex => `regexMatchLocs(text, ${regex}),`);
   const matchString = trim(`
     const text = sentence.original;
     return mergeLocMatchGroups([
-      ${matchRegexStrings.join('\n        ')}
+      ${matchRegexStrings.join('\n      ')}
     ]);
   `);
 
@@ -127,4 +131,7 @@ test("doesn't match negative examples", async () => {
   writeOutMatcher(fullMatcherName, mainTemplate, testTemplate, program.force);
   console.log('Done! :D');
 };
-run();
+run().catch((err) => {
+  console.log(err);
+  process.exit(1);
+});

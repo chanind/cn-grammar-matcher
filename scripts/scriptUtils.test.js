@@ -37,6 +37,7 @@ describe('isOnlyHanzi', () => {
 describe('regexFromAllsetPattern', () => {
   it('should put collapse adjacent hanzi into one capture group', () => {
     expect(regexFromAllsetPattern('Subj. + 并 + 不 + Verb / Adj.\n')).toEqual(/(并不)/);
+    expect(regexFromAllsetPattern('Subj. + 也 + Verb / [Verb Phrase]')).toEqual(/(也)/);
   });
 
   it('should enforce spaces between parts of the sentence', () => {
@@ -51,5 +52,10 @@ describe('regexFromAllsetPattern', () => {
   it('should handle + inside parenthesis', () => {
     expect(regexFromAllsetPattern('已经 + (很 +) Adj. + 了')).toEqual(/(已经很?)[^了]+(了)/);
     expect(regexFromAllsetPattern('没 + 有 (+ Obj.)')).toEqual(/(没有)/);
+    expect(regexFromAllsetPattern('Subj. + 也 (+ Adv.) + Adj.')).toEqual(/(也)/);
+  });
+
+  it("should raise an error if if can't find a pattern", () => {
+    expect(() => regexFromAllsetPattern('Pronoun + Noun')).toThrow();
   });
 });

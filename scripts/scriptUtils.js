@@ -18,7 +18,7 @@ const collapseAdjacentHanzi = (allsetPatternParts) => {
   const collapsedParts = [];
   let currentPart;
   for (const part of allsetPatternParts) {
-    const partIsHanzi = isOnlyHanzi(part, ['(', ')', '?', ':']);
+    const partIsHanzi = isOnlyHanzi(part, ['(', ')', '?', ':']) && hasHanzi(part);
     if (currentPart && partIsHanzi) {
       currentPart += part;
     } else if (partIsHanzi) {
@@ -67,6 +67,9 @@ const regexFromAllsetPattern = (allsetPattern) => {
   let parts = preprocessAllsetPattern(allsetPattern).split(/\s*\+\s*/);
   parts = parts.map(makeParensOptional);
   const collapsedHanzi = collapseAdjacentHanzi(parts);
+  if (collapsedHanzi.length === 0) {
+    throw new Error(`No regex could be generated from input: ${allsetPattern}`);
+  }
   return generateRegex(collapsedHanzi);
 };
 
