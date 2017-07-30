@@ -59,6 +59,7 @@ const preprocessAllsetPattern = allsetPattern => (
   // remove any + from inside parens, ex (很 +)
   allsetPattern
     .replace(/\s*\+\s*[)）]/igu, ') +')
+    .replace(/[(（]\s*\+\s*/igu, '+ (')
     .replace(/\s+/igu, '')
 );
 

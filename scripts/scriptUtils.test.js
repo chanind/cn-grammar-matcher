@@ -50,5 +50,6 @@ describe('regexFromAllsetPattern', () => {
 
   it('should handle + inside parenthesis', () => {
     expect(regexFromAllsetPattern('已经 + (很 +) Adj. + 了')).toEqual(/(已经很?)[^了]+(了)/);
+    expect(regexFromAllsetPattern('没 + 有 (+ Obj.)')).toEqual(/(没有)/);
   });
 });
