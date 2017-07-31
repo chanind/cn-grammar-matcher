@@ -68,6 +68,7 @@ const preprocessAllsetPattern = allsetPattern => (
   allsetPattern
     .replace(/\s+/igu, '')
     .replace(/⋯+/igu, '+')
+    .replace(/…+/igu, '+')
     .replace(/\.{3,4}/igu, '+')
     .replace(/？/igu, '+？+')
     .replace(/，/igu, '+，+')
@@ -77,6 +78,7 @@ const preprocessAllsetPattern = allsetPattern => (
     .replace(/[(（]\+/igu, '+ (')
     .replace(/[／/]/igu, '|')
     .replace(/[(（][^)）\u3400-\u9FBF]+[)）]/igu, '')
+    .replace(/verb/igu, '+ verb +')
 );
 
 const regexFromAllsetPattern = (allsetPattern) => {

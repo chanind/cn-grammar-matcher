@@ -53,12 +53,12 @@ const run = async () => {
   }
   const fullMatcherName = `${matcherId}Matcher`;
 
-  const $rules = $('.jiegou p');
-  if ($rules.length === 0) {
+  const rules = $('.jiegou p').map((i, elm) => $(elm).text()).toArray().filter(x => x);
+  if (rules.length === 0) {
     console.log('Error: No rules found!');
     return;
   }
-  const matchRegexes = $rules.map((i, elm) => regexFromAllsetPattern($(elm).text())).toArray();
+  const matchRegexes = rules.map(regexFromAllsetPattern);
   const matchRegexStrings = matchRegexes.map(regex => `regexMatchLocs(text, ${regex}),`);
   const matchString = trim(`
     const text = sentence.original;
@@ -90,7 +90,7 @@ const run = async () => {
   const examplesString = getExamplesString(exampleFields);
 
   const description = $('#ibox+ p').text();
-  const name = $($rules[0]).text();
+  const name = rules[0];
 
   const mainTemplate = `
 const { mergeLocMatchGroups, regexMatchLocs } = require('../lib/regexMatchers');

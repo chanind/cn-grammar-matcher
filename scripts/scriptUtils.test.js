@@ -40,9 +40,14 @@ describe('regexFromAllsetPattern', () => {
     expect(regexFromAllsetPattern('Subj. + 包括 + Obj.1 ( , + Obj.2, Obj.3 ... )')).toEqual(/(包括)/);
     expect(regexFromAllsetPattern('差不多 ＋ [Quantity Phrase] / [Time Phrase]')).toEqual(/(差不多)/);
   });
+
   it('should collapse adjacent hanzi into one capture group', () => {
     expect(regexFromAllsetPattern('Subj. + 并 + 不 + Verb / Adj.\n')).toEqual(/(并不)/);
     expect(regexFromAllsetPattern('Subj. + 也 + Verb / [Verb Phrase]')).toEqual(/(也)/);
+  });
+
+  it('should correct missing + around the word Verb', () => {
+    expect(regexFromAllsetPattern('要 Verb 就 Verb')).toEqual(/(要)[^就]+(就)/);
   });
 
   it('should enforce spaces between parts of the sentence', () => {
@@ -72,6 +77,7 @@ describe('regexFromAllsetPattern', () => {
   });
 
   it('should treat ... like a +', () => {
+    expect(regexFromAllsetPattern('多亏（了）……')).toEqual(/(多亏了?)/);
     expect(regexFromAllsetPattern('Time / Verb + 以后, ....')).toEqual(/(以后，)/);
   });
 
