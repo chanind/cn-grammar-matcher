@@ -1,9 +1,8 @@
 const program = require('commander');
 const cheerio = require('cheerio');
-const request = require('request-promise-native');
 const camelCase = require('lodash.camelcase');
 const removeDiacritics = require('diacritics').remove;
-const { trim, regexFromAllsetPattern, writeOutMatcher } = require('./scriptUtils');
+const { trim, regexFromAllsetPattern, writeOutMatcher, requestWithCache } = require('./scriptUtils');
 
 const formatZh = text => (
   text
@@ -39,7 +38,7 @@ const run = async () => {
     console.log(`ERROR: Invalid allset url. Should be something like: ${exUrl}`);
   }
 
-  const content = await request(allsetUrl);
+  const content = await requestWithCache(allsetUrl);
   const $ = cheerio.load(content);
 
   let matcherId = program.matcherId;
@@ -47,7 +46,9 @@ const run = async () => {
     const pinyinTextMatch = $('#ibox+ p').text().match(/\(([^)]*)\)/i);
     if (pinyinTextMatch) {
       matcherId = camelCase(removeDiacritics(pinyinTextMatch[1]).replace(/\s+/, '_'));
-    } else {
+    }
+
+    if (!matcherId || matcherId.length <= 3) {
       matcherId = camelCase($('h1').text().replace(/[^\sa-z]+/giu, '').replace(/\s+/, '_'));
     }
   }

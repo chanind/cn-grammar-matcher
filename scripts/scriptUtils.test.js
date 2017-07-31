@@ -63,6 +63,10 @@ describe('regexFromAllsetPattern', () => {
     expect(regexFromAllsetPattern('Adj. + 了（一个）点儿')).toEqual(/(了(?:一个)?点儿)/);
   });
 
+  it('should treat A and B as +', () => {
+    expect(regexFromAllsetPattern('或者 A，或者 B')).toEqual(/(或者)[^，或者]+(，或者)/);
+  });
+
   it('should replace x, y, and z with number matchers', () => {
     const nums = '[零一二三四五六七八九十百千万亿0-9]+';
     expect(regexFromAllsetPattern('x 年 + y 月 + z 号')).toEqual(new RegExp(`(${nums}年${nums}月${nums}号)`));

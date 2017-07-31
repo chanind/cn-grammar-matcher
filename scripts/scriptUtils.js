@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const request = require('request-promise-native');
 const escapeRegExp = require('lodash.escaperegexp');
+const crypto = require('crypto');
 
 const numRegex = '[零一二三四五六七八九十百千万亿0-9]+';
 
@@ -74,6 +76,8 @@ const preprocessAllsetPattern = allsetPattern => (
     .replace(/，/igu, '+，+')
     .replace(/,/igu, '+，+')
     .replace(/＋/igu, '+')
+    .replace(/\ba\b/igu, '+')
+    .replace(/\bb\b/igu, '+')
     .replace(/\+[)）]/igu, ') +')
     .replace(/[(（]\+/igu, '+ (')
     .replace(/[／/]/igu, '|')
@@ -87,10 +91,22 @@ const regexFromAllsetPattern = (allsetPattern) => {
     .map(makeParensOptional)
     .map(wrapOr);
   const collapsedHanzi = collapseAdjacentHanzi(parts);
-  if (collapsedHanzi.length === 0) {
+  if (collapsedHanzi.length === 0 || !hasHanzi(collapsedHanzi.join(''))) {
     throw new Error(`No regex could be generated from input: ${allsetPattern}`);
   }
   return generateRegex(collapsedHanzi);
+};
+
+const requestWithCache = async (url, cacheDir = path.resolve(__dirname, '../cache')) => {
+  const md5 = crypto.createHash('md5').update(url).digest('hex');
+  const cacheFile = path.join(cacheDir, md5);
+  if (fs.existsSync(cacheFile)) {
+    console.log('loaded from cache');
+    return fs.readFileSync(cacheFile, 'utf-8');
+  }
+  const result = await request(url);
+  fs.writeFileSync(cacheFile, result);
+  return result;
 };
 
 const writeOutMatcher = (fullMatcherName, mainTemplate, testTemplate, force = false) => {
@@ -123,4 +139,12 @@ const writeOutMatcher = (fullMatcherName, mainTemplate, testTemplate, force = fa
   }
 };
 
-module.exports = { hasHanzi, isOnlyHanzi, regexFromAllsetPattern, trim, fixNewlines, writeOutMatcher };
+module.exports = {
+  hasHanzi,
+  isOnlyHanzi,
+  regexFromAllsetPattern,
+  trim,
+  fixNewlines,
+  writeOutMatcher,
+  requestWithCache,
+};
