@@ -1,0 +1,87 @@
+const { trim } = require('../scriptUtils');
+
+const formatStr = str => (
+  JSON.stringify(trim(str))
+    .replace(/\\"/g, '"')
+    .replace(/'/g, "\\'")
+    .replace(/^"|"$/g, '')
+);
+
+const getExamplesString = (exampleFields) => {
+  const strings = exampleFields.map(field => trim(`
+  {
+    zh: '${formatStr(field.zh)}',
+    en: '${formatStr(field.en)}',
+    src: allSetSrc,
+  },
+  `));
+  return strings.join('\n    ');
+};
+
+module.exports = (fields) => {
+  const { matcherId, name, examples, description, url, regexes } = fields;
+
+  const fullMatcherName = `${matcherId}Matcher`;
+
+  const matchRegexStrings = regexes.map(regex => `regexMatchLocs(text, ${regex}),`);
+  const matchString = trim(`
+    const text = sentence.original;
+    return mergeLocMatchGroups([
+      ${matchRegexStrings.join('\n      ')}
+    ]);
+  `);
+
+  const examplesString = getExamplesString(examples);
+
+  const mainTemplate = `
+const { mergeLocMatchGroups, regexMatchLocs } = require('../lib/regexMatchers');
+
+const allSetSrc = {
+  type: 'website',
+  url: '${formatStr(url)}',
+  name: 'AllSet Chinese Grammar Wiki',
+};
+
+
+module.exports = {
+  id: '${formatStr(matcherId)}',
+  name: '${formatStr(name)}',
+  description: '${formatStr(trim(description))}',
+  sources: [
+    allSetSrc,
+  ],
+  match: (sentence) => {
+    ${trim(matchString)}
+  },
+  examples: [
+    ${trim(examplesString)}
+  ],
+};
+  `;
+
+  const testTemplate = `
+const ${fullMatcherName} = require('./${fullMatcherName}');
+const {
+  assertAllExamplesMatch,
+  assertNoneMatch,
+} = require('../lib/testUtils');
+
+test('matches all examples', async () => {
+  await assertAllExamplesMatch(${fullMatcherName});
+});
+
+// TODO: Add more tests
+
+test("doesn't match negative examples", async () => {
+  await assertNoneMatch(${fullMatcherName}, [
+    // TODO: add negative examples here
+  ]);
+});
+  `;
+
+  return {
+    fullMatcherName,
+    mainTemplate,
+    testTemplate,
+  };
+};

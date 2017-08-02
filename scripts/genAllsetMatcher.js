@@ -1,5 +1,7 @@
 const program = require('commander');
-const genMatcher = require('./allset/genMatcher');
+const scrapeAllset = require('./allset/scrapeAllset');
+const extractMatcher = require('./allset/extractMatcher');
+const { writeOutMatcher } = require('./scriptUtils');
 
 const run = async () => {
   program
@@ -20,7 +22,13 @@ const run = async () => {
     console.log(`ERROR: Invalid allset url. Should be something like: ${exUrl}`);
   }
 
-  await genMatcher(allsetUrl, { force: program.force, matcherId: program.matcherId });
+  const scrapedFields = await scrapeAllset(allsetUrl);
+  if (program.matcherId) {
+    scrapedFields.matcherId = program.matcherId;
+  }
+  const { mainTemplate, testTemplate, fullMatcherName } = extractMatcher(scrapedFields);
+
+  writeOutMatcher(fullMatcherName, mainTemplate, testTemplate, program.force);
 
   console.log('Done! :D');
 };
