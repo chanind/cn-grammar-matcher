@@ -5,21 +5,36 @@ const extractMatcher = require('./allset/extractMatcher');
 const urls = require('./allset/urls');
 const { writeOutMatcher, hasHanzi, isMatcherFileWriteable } = require('./scriptUtils');
 
-const isRegexWeak = (regex) => {
+const WEAK = 1;
+const MEDIUM = 2;
+const STRONG = 3;
+
+const strengthLabel = (strength) => {
+  if (strength === WEAK) return 'WEAK';
+  if (strength === MEDIUM) return 'MEDIUM';
+  if (strength === STRONG) return 'STRONG';
+  return 'UNDEFINED';
+};
+
+const getRegexStrength = (regex) => {
   const regexStr = regex.toString();
   const numHanzi = regexStr.split('').filter(hasHanzi).length;
   const hasMultiParts = regexStr.indexOf('[^') >= 0;
-  return numHanzi <= 3 || (hasMultiParts && numHanzi <= 6);
+  if (numHanzi <= 1 || (hasMultiParts && numHanzi <= 2)) return WEAK;
+  if (numHanzi <= 3 || (hasMultiParts && numHanzi <= 4)) return MEDIUM;
+  return STRONG;
 };
 
 const run = async () => {
   program
     .usage('yarn run allset-full-import')
     .option('-w, --write-weak-matchers', 'Write out poor quality matchers')
+    .option('-m, --write-medium-matchers', 'Write out medium quality matchers')
     .parse(process.argv);
 
   const results = {
     strong: [],
+    medium: [],
     weak: [],
     broken: [],
     empty: [],
@@ -40,14 +55,13 @@ const run = async () => {
         continue;
       }
 
-      let isWeak = false;
+      let strength = STRONG;
       for (const regex of scrapedFields.regexes) {
-        if (isRegexWeak(regex)) {
-          console.log(`Weak regex: ${regex}`);
-          isWeak = true;
-        } else {
-          console.log(`Strong regex: ${regex}`);
+        const regexStrength = getRegexStrength(regex);
+        if (strength > regexStrength) {
+          strength = regexStrength;
         }
+        console.log(`${strengthLabel(regexStrength)} regex: ${regex}`);
       }
 
       let skipped = false;
@@ -58,14 +72,19 @@ const run = async () => {
         results.skipped.push(url);
         console.log('SKIPPED');
       }
-      if (program.writeWeak || !isWeak) {
+      if (
+        strength === STRONG ||
+        (program.writeMediumMatchers && strength === MEDIUM) ||
+        (program.writeWeakMatchers && strength === WEAK)
+      ) {
         writeOutMatcher(fullMatcherName, mainTemplate, testTemplate);
       }
 
       if (!skipped) {
-        console.log(isWeak ? 'WEAK' : 'STRONG');
-        const target = isWeak ? results.weak : results.strong;
-        target.push(url);
+        console.log(strengthLabel(strength));
+        if (strength === STRONG) results.strong.push(url);
+        if (strength === MEDIUM) results.medium.push(url);
+        if (strength === WEAK) results.weak.push(url);
       }
     } catch (err) {
       console.log(err);
@@ -75,6 +94,7 @@ const run = async () => {
 
   console.log('SUMMARY');
   console.log(`${results.strong.length} strong`);
+  console.log(`${results.medium.length} medium`);
   console.log(`${results.weak.length} weak`);
   console.log(`${results.empty.length} empty`);
   console.log(`${results.skipped.length} skipped`);
