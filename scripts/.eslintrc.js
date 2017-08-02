@@ -12,5 +12,6 @@ module.exports = {
     "class-methods-use-this": "off",
     "no-console": "off",
     "import/no-extraneous-dependencies": "off",
+    "no-await-in-loop": "off",
   }
 };
