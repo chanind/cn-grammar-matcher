@@ -17,6 +17,7 @@ describe('regexFromRule', () => {
   });
 
   it('should enforce spaces between parts of the sentence', () => {
+    expect(regexFromRule('Verb + 了 + 又 + Verb，还是 / 就是 ……')).toEqual(/(了又)[^，还是就是]+(，(?:还是|就是))/);
     expect(regexFromRule('已经 + Verb / [Verb Phrase] + 了')).toEqual(/(已经)[^了]+(了)/);
   });
 

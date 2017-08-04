@@ -27,7 +27,8 @@ const generateRegex = (allsetPatternParts) => {
   const regexPieces = [];
   for (const part of allsetPatternParts) {
     if (regexPieces.length > 0) {
-      regexPieces.push(`[^${part}]+`);
+      const negativePart = part.replace(/[?:|()]/gu, '');
+      regexPieces.push(`[^${negativePart}]+`);
     }
     const processedPart = part.replace(/[xyz]/giu, numRegex);
     regexPieces.push(`(${processedPart})`);
