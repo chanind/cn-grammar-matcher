@@ -13,6 +13,7 @@
     "gh-pages": "OUTPUT=/assets NLP_HOST=https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod webpack; node scripts/fixGhPagesIndex.js",
     "start": "webpack-dev-server --hot --inline",
     "gen-matcher": "node scripts/genMatcher.js",
+    "allset-full-import": "node scripts/allsetFullImport.js",
     "gen-allset-matcher": "node scripts/genAllsetMatcher.js"
   },
   "dependencies": {
@@ -32,6 +33,7 @@
     "clean-webpack-plugin": "^0.1.16",
     "commander": "^2.11.0",
     "copy-webpack-plugin": "^4.0.1",
+    "crypto": "^0.0.3",
     "css-loader": "^0.28.4",
     "diacritics": "^1.3.0",
     "eslint": "^4.2.0",

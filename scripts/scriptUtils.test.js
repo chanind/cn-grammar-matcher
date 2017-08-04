@@ -1,4 +1,4 @@
-const { hasHanzi, isOnlyHanzi, regexFromAllsetPattern } = require('./scriptUtils');
+const { hasHanzi, isOnlyHanzi } = require('./scriptUtils');
 
 describe('hasHanzi', () => {
   it('should return true if a string has hanzi in it', () => {
@@ -31,25 +31,5 @@ describe('isOnlyHanzi', () => {
     expect(isOnlyHanzi('好')).toBe(true);
     expect(isOnlyHanzi('(?:好)?', ['(', ')', '?', ':'])).toBe(true);
     expect(isOnlyHanzi('--  hao --', [])).toBe(false);
-  });
-});
-
-describe('regexFromAllsetPattern', () => {
-  it('should put collapse adjacent hanzi into one capture group', () => {
-    expect(regexFromAllsetPattern('Subj. + 并 + 不 + Verb / Adj.\n')).toEqual(/(并不)/);
-  });
-
-  it('should enforce spaces between parts of the sentence', () => {
-    expect(regexFromAllsetPattern('已经 + Verb / [Verb Phrase] + 了')).toEqual(/(已经)[^了]+(了)/);
-  });
-
-  it('should handle making hanzi in parenthesis optional', () => {
-    expect(regexFromAllsetPattern('Adj. + 了（一）点儿\n')).toEqual(/(了一?点儿)/);
-    expect(regexFromAllsetPattern('Adj. + 了（一个）点儿')).toEqual(/(了(?:一个)?点儿)/);
-  });
-
-  it('should handle + inside parenthesis', () => {
-    expect(regexFromAllsetPattern('已经 + (很 +) Adj. + 了')).toEqual(/(已经很?)[^了]+(了)/);
-    expect(regexFromAllsetPattern('没 + 有 (+ Obj.)')).toEqual(/(没有)/);
   });
 });
