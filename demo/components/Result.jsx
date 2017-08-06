@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 import classes from './Result.scss';
 import Sentence from './Sentence.jsx';
@@ -27,27 +29,37 @@ class Result extends React.Component {
 
   render() {
     const grammar = this.props.result.grammar.map(grammarMatch => (
-      <Grammar
-        key={grammarMatch.id}
-        onMouseEnter={() => this.setState({ highlightGrammar: [grammarMatch] })}
-        onMouseLeave={() => this.setState({ highlightGrammar: [] })}
-        isHighlighted={this.state.highlightGrammar.indexOf(grammarMatch) >= 0}
-        {...grammarMatch}
-      />
+      <div className={classes.grammar} key={grammarMatch.id}>
+        <Grammar
+          onMouseEnter={() => this.setState({ highlightGrammar: [grammarMatch] })}
+          onMouseLeave={() => this.setState({ highlightGrammar: [] })}
+          isHighlighted={this.state.highlightGrammar.indexOf(grammarMatch) >= 0}
+          {...grammarMatch}
+        />
+      </div>
     ));
 
 
     return (
-      <div className={classes.result}>
-        <h5>Grammar results for</h5>
-        <Sentence
-          text={this.props.result.text}
-          highlightLocations={this.getHighlightLocs()}
-        />
-        <div className={classes.grammarResults}>
+      <StickyContainer className={classes.result}>
+        <Sticky topOffset={-60} bottomOffset={60}>
+          {
+            ({ style }) => (
+              <div style={{ ...style, top: style.top + 60 }} className={classes.headerPositioner}>
+                <div className={classNames('container', classes.header)}>
+                  <Sentence
+                    text={this.props.result.text}
+                    highlightLocations={this.getHighlightLocs()}
+                  />
+                </div>
+              </div>
+            )
+          }
+        </Sticky>
+        <div className={classNames('container', classes.grammarResults)}>
           {grammar.length > 0 ? grammar : <p>No grammar matches found</p>}
         </div>
-      </div>
+      </StickyContainer>
     );
   }
 }
