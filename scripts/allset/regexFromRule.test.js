@@ -17,7 +17,7 @@ describe('regexFromRule', () => {
   });
 
   it('should enforce spaces between parts of the sentence', () => {
-    expect(regexFromRule('Verb + 了 + 又 + Verb，还是 / 就是 ……')).toEqual(/(了又)[^，还是就是]+(，(?:还是|就是))/);
+    expect(regexFromRule('Verb + 了 + 又 + Verb，还是 / 就是 ……')).toEqual(/(了又)[^还是就是]+((?:还是|就是))/);
     expect(regexFromRule('已经 + Verb / [Verb Phrase] + 了')).toEqual(/(已经)[^了]+(了)/);
   });
 
@@ -31,11 +31,11 @@ describe('regexFromRule', () => {
   });
 
   it('should treat A and B as +', () => {
-    expect(regexFromRule('或者 A，或者 B')).toEqual(/(或者)[^，或者]+(，或者)/);
+    expect(regexFromRule('或者 A，或者 B')).toEqual(/(或者)[^或者]+(或者)/);
   });
 
   it('should replace x, y, and z with number matchers', () => {
-    const nums = '[零一二三四五六七八九十百千万亿0-9]+';
+    const nums = '[零一二三四五六七八九十百千万亿两0-9]+';
     expect(regexFromRule('x 年 + y 月 + z 号')).toEqual(new RegExp(`(${nums}年${nums}月${nums}号)`));
     expect(regexFromRule('x 点 + 半')).toEqual(new RegExp(`(${nums}点半)`));
     expect(regexFromRule('(Date and/or time of day +) x 点')).toEqual(new RegExp(`(${nums}点)`));
@@ -44,7 +44,7 @@ describe('regexFromRule', () => {
   it('should use | for hanzi with a / between them', () => {
     expect(regexFromRule('Subj. + 没有 / 没 + Verb')).toEqual(/((?:没有|没))/);
     expect(regexFromRule('Subj.＋不 / 没＋全都＋Verb / Adj.')).toEqual(/((?:不|没)全都)/);
-    expect(regexFromRule('⋯⋯， 好 / 对 / 是 / 可以 + 吗？')).toEqual(/(，(?:好|对|是|可以)吗？)/);
+    expect(regexFromRule('⋯⋯， 好 / 对 / 是 / 可以 + 吗？')).toEqual(/((?:好|对|是|可以)吗？)/);
   });
 
   it('should treat ... like a +', () => {

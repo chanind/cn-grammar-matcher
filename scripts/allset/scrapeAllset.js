@@ -4,20 +4,12 @@ const removeDiacritics = require('diacritics').remove;
 const { requestWithCache } = require('../scriptUtils');
 const regexFromRule = require('./regexFromRule');
 
-const formatZh = text => (
-  text
-    .replace(/。.*$/, '。')
-    .replace(/？.*$/, '？')
-    .replace(/！.*$/, '！')
-    .replace(/\s+/gi, '')
-);
-
 const getExampleFields = ($exampleElm) => {
   if ($exampleElm.find('.trans').length === 0) return null;
-  return {
-    zh: formatZh($exampleElm.text()),
-    en: $exampleElm.find('.trans').text(),
-  };
+  const pinyin = $exampleElm.find('.pinyin').text();
+  const en = $exampleElm.find('.trans').text();
+  const zh = $exampleElm.text().replace(pinyin, '').replace(en, '').replace(/\s+/gi, '');
+  return { zh, en };
 };
 
 module.exports = async (allsetUrl) => {
@@ -36,8 +28,14 @@ module.exports = async (allsetUrl) => {
     matcherId = camelCase($('h1').text().replace(/[^\sa-z]+/giu, '').replace(/\s+/, '_'));
   }
 
-  const examples = $('.liju li').map((i, li) => getExampleFields($(li))).toArray().filter(x => x);
-  const description = $('#ibox+ p').text();
+  const noClasses = (i, li) => !$(li).attr('class');
+  const mapExFields = (i, li) => getExampleFields($(li));
+  const examples = $('.liju li')
+    .filter(noClasses)
+    .map(mapExFields)
+    .toArray()
+    .filter(x => x);
+  const description = $('#ibox+ p, .stub+ p').text();
   const name = rules[0];
 
   return {

@@ -1,7 +1,7 @@
-const { isOnlyHanzi, hasHanzi } = require('../scriptUtils');
+const { isOnlyHanzi, hasHanzi, getNumHanzi } = require('../scriptUtils');
 
 
-const numRegex = '[零一二三四五六七八九十百千万亿0-9]+';
+const numRegex = '[零一二三四五六七八九十百千万亿两0-9]+';
 
 const collapseAdjacentHanzi = (allsetPatternParts) => {
   const collapsedParts = [];
@@ -48,9 +48,13 @@ const makeParensOptional = (allsetPatternPart) => {
 
 const wrapOr = allsetPattern => (allsetPattern.indexOf('|') >= 0 ? `(?:${allsetPattern})` : allsetPattern);
 
-const preprocessAllsetPattern = allsetPattern => (
-  // remove any + from inside parens, ex (很 +)
-  allsetPattern
+const preprocessAllsetPattern = (allsetPattern) => {
+  let processedPattern = allsetPattern;
+  const numHanzi = getNumHanzi(allsetPattern);
+  if (numHanzi >= 4) {
+    processedPattern = processedPattern.replace(/，/igu, '+');
+  }
+  return processedPattern
     .replace(/\s+/igu, '')
     .replace(/⋯+/igu, '+')
     .replace(/…+/igu, '+')
@@ -62,11 +66,11 @@ const preprocessAllsetPattern = allsetPattern => (
     .replace(/\ba\b/igu, '+')
     .replace(/\bb\b/igu, '+')
     .replace(/\+[)）]/igu, ') +')
-    .replace(/[(（]\+/igu, '+ (')
+    .replace(/[(（]\+/igu, '+ (') // remove any + from inside parens, ex (很 +)
     .replace(/[／/]/igu, '|')
     .replace(/[(（][^)）\u3400-\u9FBF]+[)）]/igu, '')
-    .replace(/verb/igu, '+ verb +')
-);
+    .replace(/verb/igu, '+ verb +');
+};
 
 const regexFromRule = (allsetPattern) => {
   const parts = preprocessAllsetPattern(allsetPattern)
