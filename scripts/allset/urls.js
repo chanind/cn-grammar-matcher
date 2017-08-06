@@ -1411,6 +1411,7 @@ const b2 = [
   {
     label: "Limiting scope with \"jiu\"",
     url: "https://resources.allsetlearning.com/chinese/grammar/ASG8RW47",
+    skip: "too hard",
   },
   {
     label: "Opportune timing with \"chen\"",

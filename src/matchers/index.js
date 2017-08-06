@@ -37,7 +37,6 @@ exports.deBudeliaoMatcher = require('./deBudeliaoMatcher');
 exports.leYidianrMatcher = require('./leYidianrMatcher');
 exports.advancedUseOfYouMatcher = require('./advancedUseOfYouMatcher');
 exports.haoBuRongyiMatcher = require('./haoBuRongyiMatcher');
-exports.limitingScopeWithJiuMatcher = require('./limitingScopeWithJiuMatcher');
 exports.expressingIfItWereNotForWithYaobushiMatcher = require('./expressingIfItWereNotForWithYaobushiMatcher');
 exports.comparisonXiangMatcher = require('./comparisonXiangMatcher');
 exports.usingZheWhenVerbingAwayMatcher = require('./usingZheWhenVerbingAwayMatcher');

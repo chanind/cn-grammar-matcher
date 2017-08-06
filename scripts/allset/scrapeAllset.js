@@ -7,8 +7,13 @@ const regexFromRule = require('./regexFromRule');
 const getExampleFields = ($exampleElm) => {
   if ($exampleElm.find('.trans').length === 0) return null;
   const pinyin = $exampleElm.find('.pinyin').text();
+  const explanation = $exampleElm.find('.expl').text();
   const en = $exampleElm.find('.trans').text();
-  const zh = $exampleElm.text().replace(pinyin, '').replace(en, '').replace(/\s+/gi, '');
+  const zh = $exampleElm.text()
+    .replace(pinyin, '')
+    .replace(explanation, '')
+    .replace(en, '')
+    .replace(/\s+/gi, '');
   return { zh, en };
 };
 

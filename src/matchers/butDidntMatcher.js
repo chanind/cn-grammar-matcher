@@ -27,52 +27,52 @@ module.exports = {
   },
   examples: [
     {
-      zh: '我差点忘了。Ididn\'tforget.',
+      zh: '我差点忘了。',
       en: 'I almost forgot.',
       src: allSetSrc,
     },
     {
-      zh: '他们差点就分手了。Theydidn\'tbreakup.',
+      zh: '他们差点就分手了。',
       en: 'They almost break up.',
       src: allSetSrc,
     },
     {
-      zh: '我们队差点儿就输了。theteamdidn\'tlose',
+      zh: '我们队差点儿就输了。',
       en: 'Our team almost lost.',
       src: allSetSrc,
     },
     {
-      zh: '他们差点打起来。Theydidn\'tstartafight.',
+      zh: '他们差点打起来。',
       en: 'They almost started a fight.',
       src: allSetSrc,
     },
     {
-      zh: '这个东西差点就丢了。Idid\'tlostit.',
+      zh: '这个东西差点就丢了。',
       en: 'I almost lost the thing.',
       src: allSetSrc,
     },
     {
-      zh: '路上堵车，我差点儿就迟到了。Iwasn\'tlate',
+      zh: '路上堵车，我差点儿就迟到了。',
       en: 'The traffic is bad; I was almost late.',
       src: allSetSrc,
     },
     {
-      zh: '我差点犯了一个大错。Ididn\'tmakeabigmistake',
+      zh: '我差点犯了一个大错。',
       en: 'I nearly made a big mistake.',
       src: allSetSrc,
     },
     {
-      zh: '车差点撞到我。Thecardidn\'thitme.',
+      zh: '车差点撞到我。',
       en: 'The car almost hit me.',
       src: allSetSrc,
     },
     {
-      zh: '我差点笑出来。Ididn\'tlaugh.',
+      zh: '我差点笑出来。',
       en: 'I almost laughed.',
       src: allSetSrc,
     },
     {
-      zh: '我们差点儿错过最后一班地铁。Wedidn\'tmissit.',
+      zh: '我们差点儿错过最后一班地铁。',
       en: 'We almost missed the last metro.',
       src: allSetSrc,
     },
