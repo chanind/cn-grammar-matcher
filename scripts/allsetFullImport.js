@@ -3,7 +3,7 @@ const program = require('commander');
 const scrapeAllset = require('./allset/scrapeAllset');
 const extractMatcher = require('./allset/extractMatcher');
 const urls = require('./allset/urls');
-const { writeOutMatcher, hasHanzi, isMatcherFileWriteable } = require('./scriptUtils');
+const { writeOutMatcher, getNumHanzi, isMatcherFileWriteable } = require('./scriptUtils');
 
 const WEAK = 1;
 const MEDIUM = 2;
@@ -18,7 +18,7 @@ const strengthLabel = (strength) => {
 
 const getRegexStrength = (regex) => {
   const regexStr = regex.toString();
-  const numHanzi = regexStr.split('').filter(hasHanzi).length;
+  const numHanzi = getNumHanzi(regexStr);
   const hasMultiParts = regexStr.indexOf('[^') >= 0;
   if (numHanzi <= 1 || (hasMultiParts && numHanzi <= 2)) return WEAK;
   if (numHanzi <= 3 || (hasMultiParts && numHanzi <= 4)) return MEDIUM;
@@ -46,14 +46,23 @@ const run = async () => {
       console.log('-----------------------');
       console.log(url.label);
       console.log(url.url);
+
+      if (url.skip) {
+        results.skipped.push(url);
+        console.log('SKIPPED');
+        continue;
+      }
+
       const scrapedFields = await scrapeAllset(url.url);
-      if (url.id) scrapedFields.matcherId = url.id;
+
+      Object.assign(scrapedFields, url);
 
       if (scrapedFields.regexes.length === 0) {
         console.log('EMPTY');
         results.empty.push(url);
         continue;
       }
+
 
       let strength = STRONG;
       for (const regex of scrapedFields.regexes) {

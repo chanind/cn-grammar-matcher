@@ -33,6 +33,8 @@ const requestWithCache = async (url, cacheDir = path.resolve(__dirname, '../cach
   return result;
 };
 
+const getNumHanzi = str => str.split('').filter(hasHanzi).length;
+
 const isMatcherFileWriteable = (fileName) => {
   if (fs.existsSync(fileName)) {
     const contents = fs.readFileSync(fileName, 'utf-8');
@@ -79,6 +81,7 @@ const writeOutMatcher = (fullMatcherName, mainTemplate, testTemplate, force = fa
 
 module.exports = {
   hasHanzi,
+  getNumHanzi,
   isOnlyHanzi,
   isMatcherFileWriteable,
   trim,
