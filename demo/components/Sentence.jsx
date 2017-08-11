@@ -22,7 +22,7 @@ const Sentence = ({ text, highlightLocations }) => {
       {char}
     </span>
   ));
-  return (<h2>{chars}</h2>);
+  return (<h2 className={classes.header}>{chars}</h2>);
 };
 
 Sentence.propTypes = {

@@ -1,6 +1,5 @@
 import React from 'react';
 import Spinner from 'react-spin';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import classes from './ResultsPage.scss';
@@ -39,6 +38,7 @@ class ResultsPage extends React.Component {
       if (this.state.query !== query) return;
       this.setState({ loading: false, results, highlightGrammar: [] });
     }).catch((err) => {
+      // eslint-disable-next-line no-console
       console.log(err);
       this.setState({ loading: false, error: err, results: null });
     });
@@ -68,7 +68,7 @@ class ResultsPage extends React.Component {
     return (
       <div>
         <Header query={this.props.match.params.query} />
-        <div className={classNames('container', classes.content)}>
+        <div className={classes.content}>
           {this.state.loading ? this.renderSpinner() : null}
           {this.state.results ? this.renderResults() : null}
           {this.state.error ? this.renderError() : null}

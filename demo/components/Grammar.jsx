@@ -11,31 +11,51 @@ class Grammar extends React.Component {
     super(props);
     this.state = {
       isExpanded: false,
+      sizerHeight: null,
     };
+    this.resetSizerHeight = this.resetSizerHeight.bind(this);
     this.onShowMoreExamples = this.onShowMoreExamples.bind(this);
+  }
+
+  componentDidMount() {
+    global.window.addEventListener('resize', this.resetSizerHeight);
+  }
+
+  componentWillUnmount() {
+    global.window.removeEventListener('resize', this.resetSizerHeight);
   }
 
   onShowMoreExamples(evt) {
     evt.preventDefault();
-    this.setState({ isExpanded: true });
+    if (!this.state.sizerHeight) {
+      this.resetSizerHeight();
+    }
+    this.setState({ isExpanded: !this.state.isExpanded });
+  }
+
+  resetSizerHeight() {
+    this.setState({ sizerHeight: this.exSizer.getBoundingClientRect().height + 5 });
   }
 
   render() {
     const { isHighlighted, onMouseEnter, onMouseLeave, name, description, examples, sources } = this.props;
-    let visibleExamples = examples;
-    if (!this.state.isExpanded) {
-      visibleExamples = examples.slice(0, 3);
-    }
-    const exampleElms = visibleExamples.map((example, i) => (
+    const { isExpanded } = this.state;
+
+    const exampleElms = examples.map((example, i) => (
       <Example example={example} key={i} />
     ));
 
-    const hasMoreExamples = examples.length > visibleExamples.length;
-    const moreExamplesLink = !hasMoreExamples ? null : (
-      <a onClick={this.onShowMoreExamples} className={classes.moreExamples} role="button" href>
-        More examples
-      </a>
+    const examplesIconClasses = classNames(
+      'fa',
+      'fa-caret-right',
+      classes.moreExamplesIcon,
+      { [classes.expanded]: isExpanded },
     );
+
+    const exampleContainerStyle = {};
+    if (isExpanded) {
+      exampleContainerStyle.height = `${this.state.sizerHeight}px`;
+    }
 
     return (
       <div
@@ -48,19 +68,25 @@ class Grammar extends React.Component {
             <h4>{name}</h4>
             <p>{description}</p>
           </div>
-          <div className={classes.sources}>
-            <div><b>More info:</b></div>
-            {sources.map((source, i) => (
-              <div key={i}>
-                <Source {...source} />
-              </div>
-            ))}
-          </div>
         </div>
 
-        <div className={classes.examples}>
-          {exampleElms}
-          {moreExamplesLink}
+        <div className={classes.examplesContainer}>
+          <a onClick={this.onShowMoreExamples} className={classes.moreExamples} role="button" href>
+            <i className={examplesIconClasses} aria-hidden="true" /> Examples
+          </a>
+          <div className={classes.examples} style={exampleContainerStyle}>
+            <div ref={ref => this.exSizer = ref}>
+              {exampleElms}
+            </div>
+          </div>
+        </div>
+        <div className={classes.sources}>
+          <span className={classes.learnMoreLabel}>Learn more:</span>
+          {sources.map((source, i) => (
+            <span key={i} className={classes.source}>
+              <Source {...source} />
+            </span>
+          ))}
         </div>
       </div>
     );
