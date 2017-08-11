@@ -38,6 +38,7 @@ class ResultsPage extends React.Component {
       if (this.state.query !== query) return;
       this.setState({ loading: false, results, highlightGrammar: [] });
     }).catch((err) => {
+      // eslint-disable-next-line no-console
       console.log(err);
       this.setState({ loading: false, error: err, results: null });
     });
