@@ -20,7 +20,6 @@ exports.usingLaiToConnectTwoVerbPhrasesMatcher = require('./usingLaiToConnectTwo
 exports.zhiqianMatcher = require('./zhiqianMatcher');
 exports.definingScopeMatcher = require('./definingScopeMatcher');
 exports.expressingAgeDifferenceWithDaAndXiaoMatcher = require('./expressingAgeDifferenceWithDaAndXiaoMatcher');
-exports.expressingDoubleNegationMatcher = require('./expressingDoubleNegationMatcher');
 exports.yidianrYeBuMatcher = require('./yidianrYeBuMatcher');
 exports.concedingAPointWithShiMatcher = require('./concedingAPointWithShiMatcher');
 exports.suiranDanshiMatcher = require('./suiranDanshiMatcher');

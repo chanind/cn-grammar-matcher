@@ -1,6 +1,7 @@
 .grammar {
-    padding: 20px;
     background: #FFF;
+    padding: 20px 20px 5px;
+    position: relative;
     transition: all 500ms;
 
     &.highlight {
@@ -14,9 +15,40 @@
 }
 
 .examples {
+    height: 0;
+    overflow: hidden;
     padding-left: 20px;
+    transition: all 500ms;
 }
 
 .more-examples {
     cursor: pointer;
+
+    &, &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+
+.more-examples-icon {
+    display: inline-block;
+    margin-right: 5px;
+    transform: rotate(0);
+    transition: all 300ms;
+
+    &.expanded {
+        transform: rotate(90deg);
+    }
+}
+
+.sources {
+    margin-top: 10px;
+}
+
+.learn-more-label {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.source {
+    margin-right: 5px;
 }

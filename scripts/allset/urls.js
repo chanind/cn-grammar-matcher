@@ -890,7 +890,7 @@ const b1 = [
   {
     label: "Expressing \"double negation\"",
     url: "https://resources.allsetlearning.com/chinese/grammar/ASGEEA2D",
-    regexes: [/(不是(?:不|没))/, /(不(?:会|能|可能)(?:不|没))/, /(没有?)[^不没]+((?:不|没))/],
+    skip: "Too hard",
   },
   {
     label: "Appearance with \"kanqilai\"",
