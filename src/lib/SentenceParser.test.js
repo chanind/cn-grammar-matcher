@@ -176,8 +176,8 @@ describe('parse', () => {
         word: '我',
         originalText: '',
         lemma: '我',
-        characterOffsetBegin: 6,
-        characterOffsetEnd: 7,
+        characterOffsetBegin: 2,
+        characterOffsetEnd: 3,
         pos: 'PN',
         ner: 'O',
       }),
@@ -186,8 +186,8 @@ describe('parse', () => {
         word: '的',
         originalText: '',
         lemma: '的',
-        characterOffsetBegin: 12,
-        characterOffsetEnd: 13,
+        characterOffsetBegin: 3,
+        characterOffsetEnd: 4,
         pos: 'DEG',
         ner: 'O',
       }),
@@ -196,8 +196,8 @@ describe('parse', () => {
         word: '朋友',
         originalText: '',
         lemma: '朋友',
-        characterOffsetBegin: 13,
-        characterOffsetEnd: 15,
+        characterOffsetBegin: 4,
+        characterOffsetEnd: 6,
         pos: 'NN',
         ner: 'O',
       }),
@@ -208,11 +208,11 @@ describe('parse', () => {
     expectedTokens[4].setGovernor(expectedTokens[3], 'case');
     expectedTokens[5].setGovernor(expectedTokens[2], 'dobj');
 
-    const expectedSentence = new Sentence(inputSentence, expectedTokens);
+    const expectedSentence = new Sentence('你好我的朋友', expectedTokens);
 
     expect(resultSentence).toEqual(expectedSentence);
     expect(resultSentence.text).toEqual('你好我的朋友');
-    expect(resultSentence.original).toEqual(inputSentence);
+    expect(resultSentence.original).toEqual('你好我的朋友');
   });
 });
 

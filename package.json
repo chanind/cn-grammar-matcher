@@ -14,7 +14,8 @@
     "start": "webpack-dev-server --hot --inline",
     "gen-matcher": "node scripts/genMatcher.js",
     "allset-full-import": "node scripts/allsetFullImport.js",
-    "gen-allset-matcher": "node scripts/genAllsetMatcher.js"
+    "gen-allset-matcher": "node scripts/genAllsetMatcher.js",
+    "rank-examples": "node scripts/rankExamples.js"
   },
   "dependencies": {
     "request-promise-native": "^1.0.4"
