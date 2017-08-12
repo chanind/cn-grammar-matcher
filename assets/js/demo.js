@@ -2069,6 +2069,26 @@ const appendOrMergeMatch = (matchesList, match, conservative) => {
   return updatedMatchesList;
 };
 
+const matchesEqual = (match1, match2) => {
+  if (match1.length !== match2.length) return false;
+  for (let i = 0; i < match1.length; i += 1) {
+    const loc1 = match1[i];
+    const loc2 = match2[i];
+    if (loc1.start !== loc2.start || loc1.end !== loc2.end) return false;
+  }
+  return true;
+};
+
+/**
+* Does match A include all of match B?
+*
+* Returns true if B is completely contained by A, but false if the matches are identical
+*/
+exports.matchAContainsMatchB = (matchA, matchB) => {
+  const intersection = intersectMatches(matchA, matchB);
+  return matchesEqual(intersection, matchB) && !matchesEqual(intersection, matchA);
+};
+
 /**
 * Merge multiple groups of matches together
 *
@@ -22233,33 +22253,13 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 const matchers = __webpack_require__(236);
 const CoreNLPClient = __webpack_require__(295);
 const SentenceParser = __webpack_require__(506);
-
-const matchAndFormatGrammar = sentence => {
-  const grammarMatches = [];
-  for (const matcher of Object.values(matchers)) {
-    const matches = matcher.match(sentence);
-    if (matches) {
-      grammarMatches.push({
-        id: matcher.id,
-        name: matcher.name,
-        description: matcher.description,
-        sources: matcher.sources,
-        examples: matcher.examples,
-        matches
-      });
-    }
-  }
-  return {
-    text: sentence.original,
-    tokens: sentence.tokens,
-    grammar: grammarMatches
-  };
-};
+const MatchReducer = __webpack_require__(509);
 
 class GrammarMatcher {
   constructor(nlpHost = null) {
     const nlpClient = new CoreNLPClient(nlpHost || GrammarMatcher.defaultNlpHost);
     this.sentenceParser = new SentenceParser(nlpClient);
+    this.matchReducer = new MatchReducer(matchers);
   }
 
   matchGrammar(text) {
@@ -22267,7 +22267,9 @@ class GrammarMatcher {
 
     return _asyncToGenerator(function* () {
       const sentences = yield _this.sentenceParser.parseMulti(text);
-      return sentences.map(matchAndFormatGrammar);
+      return sentences.map(function (sentence) {
+        return _this.matchReducer.reduceAndFormat(sentence);
+      });
     })();
   }
 }
@@ -34842,7 +34844,7 @@ NavLink.defaultProps = {
 
 
 
-const samples = ['他女朋友漂亮是漂亮，就是有点矮。', '尽管实现这个目标不太容易，但是我们不能这么快就放弃。'];
+const samples = ['晚上六点以后，有的人下班了，有的人在加班。', '尽管实现这个目标不太容易，但是我们不能这么快就放弃。'];
 
 const IntroPage = ({ history }) => {
   let input;
@@ -79298,6 +79300,8 @@ const SENTENCE_SPLIT_REGEX_BASE = '[.](?!\\d)|[!?]+|[。]|[！？]+';
 const SENTENCE_SPLIT_REGEX = new RegExp(`(${SENTENCE_SPLIT_REGEX_BASE})`, 'gui');
 const SENTENCE_PUNCT_MATCH_REGEX = new RegExp(`^${SENTENCE_SPLIT_REGEX_BASE}$`, 'gui');
 
+const preprocess = text => text.replace(/\s+/igu, '');
+
 module.exports = class SentenceParser {
   constructor(nlpClient) {
     this.nlpClient = nlpClient;
@@ -79307,7 +79311,8 @@ module.exports = class SentenceParser {
     var _this = this;
 
     return _asyncToGenerator(function* () {
-      const parsedText = yield _this.nlpClient.parse(text);
+      const preprocessedText = preprocess(text);
+      const parsedText = yield _this.nlpClient.parse(preprocessedText);
       const tokens = parsedText.sentences[0].tokens.map(function (tokenData) {
         return new Token(tokenData);
       });
@@ -79326,7 +79331,7 @@ module.exports = class SentenceParser {
         const dependencyType = dependency.dep;
         dependent.setGovernor(governor, dependencyType);
       }
-      return new Sentence(text, tokens);
+      return new Sentence(preprocessedText, tokens);
     })();
   }
 
@@ -79398,6 +79403,75 @@ module.exports = class Token {
     governor.dependents.push(this);
   }
 };
+
+/***/ }),
+/* 509 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const { matchAContainsMatchB } = __webpack_require__(1);
+
+class MatchReducer {
+  constructor(matchersMap) {
+    this.matchersMap = matchersMap;
+  }
+
+  _formatMatches(matchesMap) {
+    const grammarMatches = [];
+    for (const matcherName of Object.keys(matchesMap)) {
+      const matches = matchesMap[matcherName];
+      const matcher = this.matchersMap[matcherName];
+      grammarMatches.push({
+        id: matcher.id,
+        name: matcher.name,
+        description: matcher.description,
+        sources: matcher.sources,
+        examples: matcher.examples,
+        matches
+      });
+    }
+    return grammarMatches;
+  }
+
+  _mapMatches(sentence) {
+    const matchesMap = {};
+    for (const matcherName of Object.keys(this.matchersMap)) {
+      const matches = this.matchersMap[matcherName].match(sentence);
+      if (matches) {
+        matchesMap[matcherName] = matches;
+      }
+    }
+    return matchesMap;
+  }
+
+  _filterMatches(matchesMap) {
+    const filteredMatchesMap = {};
+    const allMatches = Object.values(matchesMap).reduce((acc, matches) => acc.concat(matches), []);
+    for (const matcherName of Object.keys(matchesMap)) {
+      const filteredMatches = matchesMap[matcherName].filter(match => {
+        for (const otherMatch of allMatches) {
+          if (matchAContainsMatchB(otherMatch, match)) return false;
+        }
+        return true;
+      });
+      if (filteredMatches.length > 0) {
+        filteredMatchesMap[matcherName] = filteredMatches;
+      }
+    }
+    return filteredMatchesMap;
+  }
+
+  reduceAndFormat(sentence) {
+    const matchesMap = this._filterMatches(this._mapMatches(sentence));
+    const grammarMatches = this._formatMatches(matchesMap);
+    return {
+      text: sentence.original,
+      tokens: sentence.tokens,
+      grammar: grammarMatches
+    };
+  }
+}
+
+module.exports = MatchReducer;
 
 /***/ })
 /******/ ]);
