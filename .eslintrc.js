@@ -10,5 +10,6 @@ module.exports = {
     "max-len": [2, { code: 120, ignoreStrings: true }],
     "no-continue": "off",
     "class-methods-use-this": "off",
+    "no-underscore-dangle": "off",
   }
 };

@@ -257,6 +257,26 @@ const appendOrMergeMatch = (matchesList, match, conservative) => {
   return updatedMatchesList;
 };
 
+const matchesEqual = (match1, match2) => {
+  if (match1.length !== match2.length) return false;
+  for (let i = 0; i < match1.length; i += 1) {
+    const loc1 = match1[i];
+    const loc2 = match2[i];
+    if (loc1.start !== loc2.start || loc1.end !== loc2.end) return false;
+  }
+  return true;
+};
+
+/**
+* Does match A include all of match B?
+*
+* Returns true if B is completely contained by A, but false if the matches are identical
+*/
+exports.matchAContainsMatchB = (matchA, matchB) => {
+  const intersection = intersectMatches(matchA, matchB);
+  return matchesEqual(intersection, matchB) && !matchesEqual(intersection, matchA);
+};
+
 /**
 * Merge multiple groups of matches together
 *

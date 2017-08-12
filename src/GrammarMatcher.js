@@ -1,38 +1,18 @@
 const matchers = require('./matchers');
 const CoreNLPClient = require('./lib/CoreNLPClient');
 const SentenceParser = require('./lib/SentenceParser');
-
-const matchAndFormatGrammar = (sentence) => {
-  const grammarMatches = [];
-  for (const matcher of Object.values(matchers)) {
-    const matches = matcher.match(sentence);
-    if (matches) {
-      grammarMatches.push({
-        id: matcher.id,
-        name: matcher.name,
-        description: matcher.description,
-        sources: matcher.sources,
-        examples: matcher.examples,
-        matches,
-      });
-    }
-  }
-  return {
-    text: sentence.original,
-    tokens: sentence.tokens,
-    grammar: grammarMatches,
-  };
-};
+const MatchReducer = require('./lib/MatchReducer');
 
 class GrammarMatcher {
   constructor(nlpHost = null) {
     const nlpClient = new CoreNLPClient(nlpHost || GrammarMatcher.defaultNlpHost);
     this.sentenceParser = new SentenceParser(nlpClient);
+    this.matchReducer = new MatchReducer(matchers);
   }
 
   async matchGrammar(text) {
     const sentences = await this.sentenceParser.parseMulti(text);
-    return sentences.map(matchAndFormatGrammar);
+    return sentences.map(sentence => this.matchReducer.reduceAndFormat(sentence));
   }
 }
 
