@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import classes from './IntroPage.scss';
 
 const samples = [
-  '他女朋友漂亮是漂亮，就是有点矮。',
+  '晚上六点以后，有的人下班了，有的人在加班。',
   '尽管实现这个目标不太容易，但是我们不能这么快就放弃。',
 ];
 

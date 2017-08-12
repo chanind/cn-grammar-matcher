@@ -1,8 +1,12 @@
-
-
 const Token = require('./Token');
 const tf = require('./tokenFilters');
-const { regexMatchTokens, locsFromTokens, regexMatchLocs, mergeLocMatchGroups } = require('./regexMatchers');
+const {
+  regexMatchTokens,
+  locsFromTokens,
+  regexMatchLocs,
+  mergeLocMatchGroups,
+  matchAContainsMatchB,
+} = require('./regexMatchers');
 
 describe('regexMatchTokens', () => {
   test('it returns null if there are no matches', () => {
@@ -86,6 +90,46 @@ describe('regexMatchLocs', () => {
     expect(regexMatchLocs('你好你好。', /(你好).*(你好)/)).toEqual([
       [{ start: 0, end: 4 }],
     ]);
+  });
+});
+
+describe('matchAContainsMatchB', () => {
+  test('it returns true if match A fully contains match B', () => {
+    expect(matchAContainsMatchB([{ start: 0, end: 3 }], [{ start: 0, end: 2 }])).toEqual(true);
+    expect(matchAContainsMatchB([{ start: 0, end: 2 }], [{ start: 0, end: 3 }])).toEqual(false);
+    expect(matchAContainsMatchB([{ start: 1, end: 3 }], [{ start: 0, end: 2 }])).toEqual(false);
+    expect(matchAContainsMatchB([{ start: 1, end: 3 }], [{ start: 7, end: 12 }])).toEqual(false);
+    expect(matchAContainsMatchB([
+      { start: 0, end: 2 },
+      { start: 4, end: 7 },
+    ], [
+      { start: 1, end: 2 },
+      { start: 4, end: 7 },
+    ])).toEqual(true);
+    expect(matchAContainsMatchB([
+      { start: 0, end: 2 },
+      { start: 4, end: 7 },
+    ], [
+      { start: 0, end: 2 },
+    ])).toEqual(true);
+    expect(matchAContainsMatchB([
+      { start: 1, end: 2 },
+      { start: 4, end: 7 },
+    ], [
+      { start: 0, end: 2 },
+      { start: 4, end: 7 },
+    ])).toEqual(false);
+  });
+
+  test('it returns false if A and B are identical', () => {
+    expect(matchAContainsMatchB([{ start: 0, end: 2 }], [{ start: 0, end: 2 }])).toEqual(false);
+    expect(matchAContainsMatchB([
+      { start: 0, end: 2 },
+      { start: 4, end: 7 },
+    ], [
+      { start: 0, end: 2 },
+      { start: 4, end: 7 },
+    ])).toEqual(false);
   });
 });
 

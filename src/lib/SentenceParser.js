@@ -5,13 +5,16 @@ const SENTENCE_SPLIT_REGEX_BASE = '[.](?!\\d)|[!?]+|[。]|[！？]+';
 const SENTENCE_SPLIT_REGEX = new RegExp(`(${SENTENCE_SPLIT_REGEX_BASE})`, 'gui');
 const SENTENCE_PUNCT_MATCH_REGEX = new RegExp(`^${SENTENCE_SPLIT_REGEX_BASE}$`, 'gui');
 
+const preprocess = text => text.replace(/\s+/igu, '');
+
 module.exports = class SentenceParser {
   constructor(nlpClient) {
     this.nlpClient = nlpClient;
   }
 
   async parse(text) {
-    const parsedText = await this.nlpClient.parse(text);
+    const preprocessedText = preprocess(text);
+    const parsedText = await this.nlpClient.parse(preprocessedText);
     const tokens = parsedText.sentences[0].tokens.map(tokenData => new Token(tokenData));
     const rootToken = new Token({
       index: 0,
@@ -28,7 +31,7 @@ module.exports = class SentenceParser {
       const dependencyType = dependency.dep;
       dependent.setGovernor(governor, dependencyType);
     }
-    return new Sentence(text, tokens);
+    return new Sentence(preprocessedText, tokens);
   }
 
   async parseMulti(text) {
