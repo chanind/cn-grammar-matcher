@@ -924,6 +924,7 @@ const b1 = [
   {
     label: "Expressing \"not at all\" with \"yidianr ye bu\"",
     url: "https://resources.allsetlearning.com/chinese/grammar/ASGRURCZ",
+    regexes: [/(一点(?:也|都)(?:不|没))/],
   },
   {
     label: "Expressing \"thanks to\" somebody with \"duokui\"",

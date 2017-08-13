@@ -22,9 +22,7 @@ module.exports = {
   match: (sentence) => {
     const text = sentence.original;
     return mergeLocMatchGroups([
-      regexMatchLocs(text, /((?:一点也|都)不)/),
-      regexMatchLocs(text, /((?:一点也|都)不)/),
-      regexMatchLocs(text, /((?:一点都|也)没)/),
+      regexMatchLocs(text, /(一点(?:也|都)(?:不|没))/),
     ]);
   },
   examples: [
