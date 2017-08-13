@@ -21,6 +21,8 @@ const isOnlyHanzi = (string, exceptions = '') => {
 const trim = text => text.replace(/^\s+|\s+$/giu, '');
 const fixNewlines = text => `${trim(text)}\n`;
 
+const formatFullMatcherName = text => `${text.replace(/matcher.*/giu, '')}Matcher`;
+
 const requestWithCache = async (url, cacheDir = path.resolve(__dirname, '../cache')) => {
   const md5 = crypto.createHash('md5').update(url).digest('hex');
   const cacheFile = path.join(cacheDir, md5);
@@ -55,28 +57,45 @@ const writeOutTemplate = (fileName, template, force) => {
   return false;
 };
 
-const writeOutMatcher = (fullMatcherName, mainTemplate, testTemplate, force = false) => {
-  const mainFileName = path.resolve(__dirname, `../src/matchers/${fullMatcherName}.js`);
-  const testFileName = path.resolve(
-    __dirname,
-    `../src/matchers/${fullMatcherName}.test.js`
-  );
+const getMatcherIndexRequireLine = matcherName =>
+  `exports.${matcherName} = require('./${matcherName}');`;
+
+const getMatcherFileName = fullMatcherName =>
+  path.resolve(__dirname, `../src/matchers/${fullMatcherName}.js`);
+
+const getMatcherTestFileName = fullMatcherName =>
+  path.resolve(__dirname, `../src/matchers/${fullMatcherName}.test.js`);
+
+const rewriteFileContents = (fileName, rewriteFunc) => {
+  const contents = fs.readFileSync(fileName, 'utf-8');
+  fs.writeFileSync(fileName, rewriteFunc(contents));
+}
+
+const rewriteMatcherIndex = rewriteFunc => {
   const matchersIndexFile = path.resolve(__dirname, '../src/matchers/index.js');
+  rewriteFileContents(matchersIndexFile, rewriteFunc);
+};
+
+const writeOutMatcher = (fullMatcherName, mainTemplate, testTemplate, force = false) => {
+  const mainFileName = getMatcherFileName(fullMatcherName);
+  const testFileName = getMatcherTestFileName(fullMatcherName);
 
   const mainWritten = writeOutTemplate(mainFileName, mainTemplate, force);
   const testWritten = writeOutTemplate(testFileName, testTemplate, force);
   let indexWritten = true;
 
-  const matchersIndex = fs.readFileSync(matchersIndexFile, 'utf-8');
-  if (matchersIndex.indexOf(fullMatcherName) >= 0) {
-    console.log('Matcher already exists in index. Skipping.');
-    indexWritten = false;
-  } else {
-    const requireStatement = `exports.${fullMatcherName} = require('./${fullMatcherName}');`;
-    const updatedIndex = `${matchersIndex.replace(/\s+$/, '')}\n${requireStatement}`;
+  rewriteMatcherIndex(indexContents => {
+    if (indexContents.indexOf(fullMatcherName) >= 0) {
+      console.log('Matcher already exists in index. Skipping.');
+      indexWritten = false;
+      return indexContents;
+    }
+    const requireStatement = getMatcherIndexRequireLine(fullMatcherName);
+    const updatedIndex = `${indexContents.replace(/\s+$/, '')}\n${requireStatement}`;
     console.log('Updating matchers/index.js');
-    fs.writeFileSync(matchersIndexFile, fixNewlines(updatedIndex));
-  }
+    return fixNewlines(updatedIndex);
+  });
+
   return {
     mainWritten,
     testWritten,
@@ -88,7 +107,13 @@ module.exports = {
   hasHanzi,
   getNumHanzi,
   isOnlyHanzi,
+  getMatcherFileName,
+  rewriteMatcherIndex,
+  rewriteFileContents,
   isMatcherFileWriteable,
+  getMatcherIndexRequireLine,
+  formatFullMatcherName,
+  getMatcherTestFileName,
   trim,
   fixNewlines,
   writeOutMatcher,

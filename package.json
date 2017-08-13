@@ -16,6 +16,7 @@
     "gen-matcher": "node scripts/genMatcher.js",
     "allset-full-import": "node scripts/allsetFullImport.js",
     "gen-allset-matcher": "node scripts/genAllsetMatcher.js",
+    "mv": "node scripts/mv.js",
     "rank-examples": "node scripts/rankExamples.js"
   },
   "dependencies": {

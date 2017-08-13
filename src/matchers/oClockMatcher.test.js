@@ -3,18 +3,18 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const bigToSmallMatcher = require('./bigToSmallMatcher');
+const oClockMatcher = require('./oClockMatcher');
 const { assertAllExamplesMatch, assertNoneMatch } = require('../lib/testUtils');
 
 test('matches all examples', async () => {
-  await assertAllExamplesMatch(bigToSmallMatcher);
+  await assertAllExamplesMatch(oClockMatcher);
 });
 
 // TODO: Add more tests
 
 test("doesn't match negative examples", async () => {
   await assertNoneMatch(
-    bigToSmallMatcher,
+    oClockMatcher,
     [
       // TODO: add negative examples here
     ]

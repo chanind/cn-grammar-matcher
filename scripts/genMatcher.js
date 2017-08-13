@@ -1,5 +1,5 @@
 const program = require('commander');
-const { writeOutMatcher } = require('./scriptUtils');
+const { writeOutMatcher, formatFullMatcherName } = require('./scriptUtils');
 
 const run = () => {
   program
@@ -7,19 +7,20 @@ const run = () => {
     .option('-f, --force', 'Overwrite existing files')
     .parse(process.argv);
 
-  const matcherName = program.args[0];
+  const matcherNameInput = program.args[0];
 
-  if (!matcherName) {
+  if (!matcherNameInput) {
     console.log('ERROR: Missing matcher name parameter');
     return;
   }
 
-  if (matcherName.match(/matcher$/i)) {
+  if (matcherNameInput.match(/matcher$/i)) {
     console.log('ERROR: Cannot have the word "matcher" in the matcher name');
     return;
   }
 
-  const fullMatcherName = `${matcherName}Matcher`;
+  const fullMatcherName = formatFullMatcherName(matcherNameInput);
+  const matcherName = fullMatcherName.replace(/Matcher$/, '');
 
   const mainTemplate = `
 const {
