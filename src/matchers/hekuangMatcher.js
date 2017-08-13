@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'hekuang',
   name: 'Subj. + 连 + A + 都 + (不 / 没) + Verb， 何况 + B + 呢？',
-  description: '何况 (hékuàng) can mean "let alone" or "all the more." It can be used in the following structure:',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    '何况 (hékuàng) can mean "let alone" or "all the more." It can be used in the following structure:',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(连?)[^都]+(都(?:(?:不|没)?))?[^何况]+(何况)[^呢]+(呢)?/),
@@ -28,7 +26,7 @@ module.exports = {
   examples: [
     {
       zh: '我连一万块钱都有，何况一千呢？',
-      en: 'I have 10000 yuan, and you\'re saying I don\'t even have 1000?',
+      en: "I have 10000 yuan, and you're saying I don't even have 1000?",
       src: allSetSrc,
     },
     {
@@ -38,22 +36,24 @@ module.exports = {
     },
     {
       zh: '你连那么难的试题都会，何况这么容易的呢？',
-      en: 'You can answer questions that hard, something like this should be easy, right?',
+      en:
+        'You can answer questions that hard, something like this should be easy, right?',
       src: allSetSrc,
     },
     {
       zh: '我连一千块钱都没有，何况一万呢？',
-      en: 'I don\'t even have 1000 yuan, let alone 10000.',
+      en: "I don't even have 1000 yuan, let alone 10000.",
       src: allSetSrc,
     },
     {
       zh: '孩子连走路都不会，何况跑呢？',
-      en: 'The baby can\'t even walk, let alone run.',
+      en: "The baby can't even walk, let alone run.",
       src: allSetSrc,
     },
     {
       zh: '你连这么简单的试题都不会，何况那么难的呢？',
-      en: 'You couldn\'t answer a question that easy, and you\'re kidding yourself you could answer one that hard?',
+      en:
+        "You couldn't answer a question that easy, and you're kidding yourself you could answer one that hard?",
       src: allSetSrc,
     },
     {

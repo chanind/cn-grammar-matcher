@@ -11,24 +11,20 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'yibian',
   name: 'Subj. + 一边 + Verb（，）+ 一边 + Verb',
-  description: 'Multitasking is everywhere in the modern world (what else are you doing while you read this?), but you if can focus for just a minute, you can learn a way to express simultaneous tasks in Chinese! This can be done with 一边 (yībiān).',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'Multitasking is everywhere in the modern world (what else are you doing while you read this?), but you if can focus for just a minute, you can learn a way to express simultaneous tasks in Chinese! This can be done with 一边 (yībiān).',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(一边)[^一边]+(一边)/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(一边)[^一边]+(一边)/)]);
   },
   examples: [
     {
       zh: '不要一边吃东西，一边说话。',
-      en: 'Don\'t speak while eating.',
+      en: "Don't speak while eating.",
       src: allSetSrc,
     },
     {
@@ -48,7 +44,7 @@ module.exports = {
     },
     {
       zh: '我们一边走一边聊吧。',
-      en: 'Let\'s walk while we talk.',
+      en: "Let's walk while we talk.",
       src: allSetSrc,
     },
     {
@@ -58,7 +54,7 @@ module.exports = {
     },
     {
       zh: '不要一边开车，一边打电话。',
-      en: 'Don\'t talk on the phone while you drive.',
+      en: "Don't talk on the phone while you drive.",
       src: allSetSrc,
     },
     {

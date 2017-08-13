@@ -7,25 +7,26 @@ const AUTOGEN_COMMENT = trim(`
 * --------------------------------------------------- */
 `);
 
-const formatStr = str => (
+const formatStr = str =>
   JSON.stringify(trim(str))
     .replace(/\\"/g, '"')
     .replace(/'/g, "\\'")
-    .replace(/^"|"$/g, '')
-);
+    .replace(/^"|"$/g, '');
 
-const getExamplesString = (exampleFields) => {
-  const strings = exampleFields.map(field => trim(`
+const getExamplesString = exampleFields => {
+  const strings = exampleFields.map(field =>
+    trim(`
     {
       zh: '${formatStr(field.zh)}',
       en: '${formatStr(field.en)}',
       src: allSetSrc,
     },
-  `));
+  `)
+  );
   return strings.join('\n    ');
 };
 
-module.exports = (fields) => {
+module.exports = fields => {
   const { matcherId, name, examples, description, url, regexes } = fields;
 
   const fullMatcherName = `${matcherId}Matcher`;

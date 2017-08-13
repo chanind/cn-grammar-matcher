@@ -11,19 +11,15 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'expressingNotOnlyButAlsoWithBujin',
   name: 'Noun + 不仅 + A，而且 + B',
-  description: 'There are a few ways to express "not only ... but also" in Chinese. One of them is:',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'There are a few ways to express "not only ... but also" in Chinese. One of them is:',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(不仅)[^而且]+(而且)/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(不仅)[^而且]+(而且)/)]);
   },
   examples: [
     {

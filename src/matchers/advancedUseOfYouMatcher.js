@@ -11,34 +11,30 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'advancedUseOfYou',
   name: 'Subj. ＋Verb + 了 + 又 + Verb，还是 / 就是 ……',
-  description: 'Here we repeat the verb used and place 又 in the middle. The repetition of the verb emphasizes how the action is being repeated again and again. This one is definitely the most advanced usage of 又 here, and you\'re not going to use it nearly as much as the others.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    "Here we repeat the verb used and place 又 in the middle. The repetition of the verb emphasizes how the action is being repeated again and again. This one is definitely the most advanced usage of 又 here, and you're not going to use it nearly as much as the others.",
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(了又)[^还就终]+((?:还是|就是|终于))/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(了又)[^还就终]+((?:还是|就是|终于))/)]);
   },
   examples: [
     {
       zh: '这个人我看了又看，还是觉得我不认识他。',
-      en: 'I looked at him again and again, but I still think I don\'t know him.',
+      en: "I looked at him again and again, but I still think I don't know him.",
       src: allSetSrc,
     },
     {
       zh: '我想了又想，还是觉得不能这样做。',
-      en: 'I thought it over again and again, I think I  can\'t do it like this.',
+      en: "I thought it over again and again, I think I  can't do it like this.",
       src: allSetSrc,
     },
     {
       zh: '他找了又找，还是没找到他的钱包。',
-      en: 'He searched again and again, and still couldn\'t find his wallet.',
+      en: "He searched again and again, and still couldn't find his wallet.",
       src: allSetSrc,
     },
     {
@@ -48,12 +44,12 @@ module.exports = {
     },
     {
       zh: '我们问了又问，她就是不说。',
-      en: 'We asked again and again, but she wouldn\'t say it.',
+      en: "We asked again and again, but she wouldn't say it.",
       src: allSetSrc,
     },
     {
       zh: '他试了又试，就是打不开门。',
-      en: 'He tried again and again, but he still couldn\'t open the door.',
+      en: "He tried again and again, but he still couldn't open the door.",
       src: allSetSrc,
     },
     {
@@ -63,7 +59,7 @@ module.exports = {
     },
     {
       zh: '他闻了又闻，还是什么都没闻到。',
-      en: 'He smelled again and again, but he still didn\'t smell anything.',
+      en: "He smelled again and again, but he still didn't smell anything.",
       src: allSetSrc,
     },
     {
@@ -73,7 +69,7 @@ module.exports = {
     },
     {
       zh: '这件衣服妈妈洗了又洗，终于洗干净了。',
-      en: 'Mother washed this clothing again and again, and it\'s finally clean.',
+      en: "Mother washed this clothing again and again, and it's finally clean.",
       src: allSetSrc,
     },
   ],

@@ -11,15 +11,12 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'definingScope',
   name: '级别 / 次序 / 数目 + 以上 / 以下',
   description: '',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(以上|以下)/),
@@ -44,7 +41,8 @@ module.exports = {
     },
     {
       zh: '我们出差都住三星级以上的酒店。',
-      en: 'When we go on business trips, we stay at hotels with at least a 3-star rating.',
+      en:
+        'When we go on business trips, we stay at hotels with at least a 3-star rating.',
       src: allSetSrc,
     },
     {
@@ -54,7 +52,8 @@ module.exports = {
     },
     {
       zh: '以下就谈谈这个问题应该怎么解决。',
-      en: 'In the following conversation, we will discuss how we should resolve this problem.',
+      en:
+        'In the following conversation, we will discuss how we should resolve this problem.',
       src: allSetSrc,
     },
     {

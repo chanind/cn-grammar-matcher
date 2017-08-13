@@ -11,19 +11,15 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'deBudeliao',
   name: 'Adj. +  得不得了',
-  description: '得不得了 (de bùdéliǎo) can be used as a complement to suggest a situation is serious, or is likely to result in perhaps terrible consequences. It can be used in a positive sense, such as in English when we say "I\'m terribly happy."',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    '得不得了 (de bùdéliǎo) can be used as a complement to suggest a situation is serious, or is likely to result in perhaps terrible consequences. It can be used in a positive sense, such as in English when we say "I\'m terribly happy."',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(得不得了)/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(得不得了)/)]);
   },
   examples: [
     {
@@ -33,12 +29,13 @@ module.exports = {
     },
     {
       zh: '嗨，他跟老总的关系好得不得了，你一定要小心！',
-      en: 'The relationship between him and the chief officer is really good, you need to be careful!',
+      en:
+        'The relationship between him and the chief officer is really good, you need to be careful!',
       src: allSetSrc,
     },
     {
       zh: '爸爸气得不得了，你要倒霉啦。',
-      en: 'Dad is super angry. You\'re going to be unlucky.',
+      en: "Dad is super angry. You're going to be unlucky.",
       src: allSetSrc,
     },
     {

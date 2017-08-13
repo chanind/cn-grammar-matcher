@@ -4,10 +4,7 @@
 * --------------------------------------------------- */
 
 const buZhidaoHaoMatcher = require('./buZhidaoHaoMatcher');
-const {
-  assertAllExamplesMatch,
-  assertNoneMatch,
-} = require('../lib/testUtils');
+const { assertAllExamplesMatch, assertNoneMatch } = require('../lib/testUtils');
 
 test('matches all examples', async () => {
   await assertAllExamplesMatch(buZhidaoHaoMatcher);
@@ -16,7 +13,10 @@ test('matches all examples', async () => {
 // TODO: Add more tests
 
 test("doesn't match negative examples", async () => {
-  await assertNoneMatch(buZhidaoHaoMatcher, [
-    // TODO: add negative examples here
-  ]);
+  await assertNoneMatch(
+    buZhidaoHaoMatcher,
+    [
+      // TODO: add negative examples here
+    ]
+  );
 });

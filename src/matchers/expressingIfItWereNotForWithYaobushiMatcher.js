@@ -11,34 +11,30 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'expressingIfItWereNotForWithYaobushi',
   name: '要不是 ⋯⋯（的话），⋯⋯',
-  description: '要不是 (yàobushì) is almost the same as "如果不是⋯⋯ "， and it may followed by "的话," meaning "if it were not for" or "without."',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    '要不是 (yàobushì) is almost the same as "如果不是⋯⋯ "， and it may followed by "的话," meaning "if it were not for" or "without."',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(要不是(?:的话)?)/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(要不是(?:的话)?)/)]);
   },
   examples: [
     {
       zh: '要不是她帮忙，我们不可能这么快找到这个地方。',
-      en: 'We couldn\'t have found this place without her help.',
+      en: "We couldn't have found this place without her help.",
       src: allSetSrc,
     },
     {
       zh: '要不是你说你想吃，我不会做这个菜的。',
-      en: 'I wouldn\'t have made this dish if you hadn\'t said that you want to eat.',
+      en: "I wouldn't have made this dish if you hadn't said that you want to eat.",
       src: allSetSrc,
     },
     {
       zh: '要不是因为他是你朋友，我是不会帮他的。',
-      en: 'I wouldn\'t have helped him if it were not for him being a friend with you.',
+      en: "I wouldn't have helped him if it were not for him being a friend with you.",
       src: allSetSrc,
     },
     {
@@ -48,7 +44,7 @@ module.exports = {
     },
     {
       zh: '要不是你刚才说错话，他是不会生气的。',
-      en: 'He wouldn\'t be mad if it were not for something wrong you just said.',
+      en: "He wouldn't be mad if it were not for something wrong you just said.",
       src: allSetSrc,
     },
   ],

@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'haoBuRongyi',
   name: 'Subj. + 好容易 / 好不容易 + 才 + Verb，[Result Sentence]',
-  description: '好不容易 (hǎo bù róngyì) means "very difficult" or "really not easy." It is often used where the speaker wants to comment on the result of their hard work, something like "It was really hard for me do to do x, but then I realized y."',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    '好不容易 (hǎo bù róngyì) means "very difficult" or "really not easy." It is often used where the speaker wants to comment on the result of their hard work, something like "It was really hard for me do to do x, but then I realized y."',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /((?:好容易|好不容易)才)/),
@@ -29,22 +27,26 @@ module.exports = {
   examples: [
     {
       zh: '我们好不容易才做完这个项目，结果合同取消了。',
-      en: 'With great difficulty, we finally finished this project. As a result, the contract is up.',
+      en:
+        'With great difficulty, we finally finished this project. As a result, the contract is up.',
       src: allSetSrc,
     },
     {
       zh: '我好不容易才到市中心，却发现没带手机，只好回去拿。',
-      en: 'It took me a long time to reach the city center, then I realized I had forgotten my cell phone and had to go back and get it.',
+      en:
+        'It took me a long time to reach the city center, then I realized I had forgotten my cell phone and had to go back and get it.',
       src: allSetSrc,
     },
     {
       zh: '金融危机之后他好不容易才找到工作，现在又辞职了。',
-      en: 'After the financial crisis, he had a hard time finding a job. Now he\'s resigning.',
+      en:
+        "After the financial crisis, he had a hard time finding a job. Now he's resigning.",
       src: allSetSrc,
     },
     {
       zh: '我好不容易才打通了银行的服务热线。',
-      en: 'With great difficulty, they finally climbed to the top of the mountain.As a result,it started raining heavily.',
+      en:
+        'With great difficulty, they finally climbed to the top of the mountain.As a result,it started raining heavily.',
       src: allSetSrc,
     },
     {
@@ -64,7 +66,7 @@ module.exports = {
     },
     {
       zh: '创办一个公司好不容易啊。',
-      en: 'Starting a company isn\'t easy.',
+      en: "Starting a company isn't easy.",
       src: allSetSrc,
     },
   ],

@@ -1,15 +1,10 @@
-const {
-  and,
-  not,
-  or,
-  pos,
-  word,
-} = require('../lib/tokenFilters');
+const { and, not, or, pos, word } = require('../lib/tokenFilters');
 const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/Expressing_%22already%22_with_%22yijing%22',
+  url:
+    'https://resources.allsetlearning.com/chinese/grammar/Expressing_%22already%22_with_%22yijing%22',
   name: 'AllSet Chinese Grammar Wiki',
 };
 
@@ -17,16 +12,17 @@ module.exports = {
   id: 'yijing_le',
   name: '已经 ... 了 pattern',
   description: 'Pattern used to express something has already happened.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  sources: [allSetSrc],
+  match: sentence => {
     const yijing = and(pos('AD'), word('已经?'));
-    return locsFromTokens(regexMatchTokens(sentence.tokens, '(:yijing:):notYijing:*(:le:)', {
-      yijing,
-      notYijing: not(yijing),
-      le: or(word('了'), and(word('.+了'), pos('V.|P'))),
-    }), /[已经了]+/);
+    return locsFromTokens(
+      regexMatchTokens(sentence.tokens, '(:yijing:):notYijing:*(:le:)', {
+        yijing,
+        notYijing: not(yijing),
+        le: or(word('了'), and(word('.+了'), pos('V.|P'))),
+      }),
+      /[已经了]+/
+    );
   },
   examples: [
     {
@@ -67,7 +63,8 @@ module.exports = {
     {
       zh: '已经9点了。',
       en: "It's already nine o'clock.",
-      src: 'https://tatoeba.org/eng/sentences/search?from=cmn&to=eng&query=%E5%B7%B2%E7%BB%8F',
+      src:
+        'https://tatoeba.org/eng/sentences/search?from=cmn&to=eng&query=%E5%B7%B2%E7%BB%8F',
     },
   ],
 };

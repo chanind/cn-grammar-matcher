@@ -7,7 +7,6 @@ const examples = Object.values(matchers)
   .reduce((acc, matcher) => acc.concat(matcher.examples), [])
   .map(ex => ex.zh);
 
-
 program
   .usage('yarn run rank-examples')
   .option('-t, --top [value]', 'Print the top X examples, default 10')

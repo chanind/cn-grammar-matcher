@@ -5,7 +5,7 @@ const SENTENCE_SPLIT_REGEX_BASE = '[.](?!\\d)|[!?]+|[。]|[！？]+';
 const SENTENCE_SPLIT_REGEX = new RegExp(`(${SENTENCE_SPLIT_REGEX_BASE})`, 'gui');
 const SENTENCE_PUNCT_MATCH_REGEX = new RegExp(`^${SENTENCE_SPLIT_REGEX_BASE}$`, 'gui');
 
-const preprocess = text => text.replace(/\s+/igu, '');
+const preprocess = text => text.replace(/\s+/giu, '');
 
 module.exports = class SentenceParser {
   constructor(nlpClient) {

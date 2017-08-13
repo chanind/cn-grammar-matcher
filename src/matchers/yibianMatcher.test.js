@@ -4,10 +4,7 @@
 * --------------------------------------------------- */
 
 const yibianMatcher = require('./yibianMatcher');
-const {
-  assertAllExamplesMatch,
-  assertNoneMatch,
-} = require('../lib/testUtils');
+const { assertAllExamplesMatch, assertNoneMatch } = require('../lib/testUtils');
 
 test('matches all examples', async () => {
   await assertAllExamplesMatch(yibianMatcher);
@@ -16,7 +13,10 @@ test('matches all examples', async () => {
 // TODO: Add more tests
 
 test("doesn't match negative examples", async () => {
-  await assertNoneMatch(yibianMatcher, [
-    // TODO: add negative examples here
-  ]);
+  await assertNoneMatch(
+    yibianMatcher,
+    [
+      // TODO: add negative examples here
+    ]
+  );
 });

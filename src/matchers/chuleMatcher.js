@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'chule',
   name: '除了 + Noun Phrase + (以外) + Noun Phrase + 都 + Verb',
-  description: 'Using 除了 (chúle)⋯⋯ 以外 (yǐwài) will help you spruce up your sentences when you want to express "except," "besides," and "in addition."  You may feel that "except" has a pretty different meaning form the other two. Well, read on!',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'Using 除了 (chúle)⋯⋯ 以外 (yǐwài) will help you spruce up your sentences when you want to express "except," "besides," and "in addition."  You may feel that "except" has a pretty different meaning form the other two. Well, read on!',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(除了)[^以外]+((?:以外)?)[^都]+(都)/),

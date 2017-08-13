@@ -11,19 +11,15 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'yimian',
   name: '一面 + Verb +  一面 + Verb',
-  description: '一面 (yìmiàn)  is a more formal than 一边, but is used in the same way to express two simultaneous actions. It is used in the following way:',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    '一面 (yìmiàn)  is a more formal than 一边, but is used in the same way to express two simultaneous actions. It is used in the following way:',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(一面)[^一面]+(一面)/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(一面)[^一面]+(一面)/)]);
   },
   examples: [
     {
@@ -33,7 +29,8 @@ module.exports = {
     },
     {
       zh: '我告诉你多少次了，别一面躺在床上一面吃零食！弄得床上都是碎屑!',
-      en: 'I told you so many times, don\'t eat while laying on the bed. The "clean" bed now has crumbs all over it!',
+      en:
+        'I told you so many times, don\'t eat while laying on the bed. The "clean" bed now has crumbs all over it!',
       src: allSetSrc,
     },
     {
@@ -48,7 +45,8 @@ module.exports = {
     },
     {
       zh: '政府一面要控制通货膨胀，一面也要保证一定的经济增长速度。',
-      en: 'On one hand, the government is going to control inflation, but on the other hand, it\'s definitely going to protect economic growth.',
+      en:
+        "On one hand, the government is going to control inflation, but on the other hand, it's definitely going to protect economic growth.",
       src: allSetSrc,
     },
   ],

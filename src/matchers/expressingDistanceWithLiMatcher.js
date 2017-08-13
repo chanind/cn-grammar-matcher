@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'expressingDistanceWithLi',
   name: 'Place 1 + 离 + Place 2 + Adv. + 近 / 远',
-  description: 'Are we there yet? One of the ways to express distance is to use 离 (lí). The word order might seem a little tricky at first, but once you get it down, you\'ll be able to talk about distance with no problem.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    "Are we there yet? One of the ways to express distance is to use 离 (lí). The word order might seem a little tricky at first, but once you get it down, you'll be able to talk about distance with no problem.",
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(离)[^近远]+((?:近|远))/),
@@ -45,12 +43,12 @@ module.exports = {
     },
     {
       zh: '那个酒吧离这儿太远了，我不想去。',
-      en: 'That bar is too far away from here. I don\'t want to go.',
+      en: "That bar is too far away from here. I don't want to go.",
       src: allSetSrc,
     },
     {
       zh: '我不想去离家很远的地方工作。',
-      en: 'I don\'t want to go work at a place very far away from home.',
+      en: "I don't want to go work at a place very far away from home.",
       src: allSetSrc,
     },
     {

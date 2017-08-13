@@ -12,12 +12,16 @@ test('matches all examples', async () => {
 
 test('sentence where 不是 parses as separate tokens', async () => {
   const sentence = await parseSentence('他整天不是打游戏就是睡觉。');
-  expect(bushijiushiMatcher.match(sentence)).toEqual(findLocsRegex(sentence, '(不是).*(就是)'));
+  expect(bushijiushiMatcher.match(sentence)).toEqual(
+    findLocsRegex(sentence, '(不是).*(就是)')
+  );
 });
 
 test('sentence where 就是 parses as separate tokens', async () => {
   const sentence = await parseSentence('我买的衣服不是大就是小。');
-  expect(bushijiushiMatcher.match(sentence)).toEqual(findLocsRegex(sentence, '(不是).*(就是)'));
+  expect(bushijiushiMatcher.match(sentence)).toEqual(
+    findLocsRegex(sentence, '(不是).*(就是)')
+  );
 });
 
 test("doesn't match negative examples", async () => {

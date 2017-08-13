@@ -34,22 +34,34 @@ class Grammar extends React.Component {
   }
 
   resetSizerHeight() {
-    this.setState({ sizerHeight: this.exSizer.getBoundingClientRect().height + 5 });
+    this.setState({
+      sizerHeight: this.exSizer.getBoundingClientRect().height + 5,
+    });
   }
 
   render() {
-    const { isHighlighted, onMouseEnter, onMouseLeave, name, description, examples, sources } = this.props;
+    const {
+      isHighlighted,
+      onMouseEnter,
+      onMouseLeave,
+      name,
+      description,
+      examples,
+      sources,
+    } = this.props;
     const { isExpanded } = this.state;
 
-    const exampleElms = examples.map((example, i) => (
+    const exampleElms = examples.map((example, i) =>
       <Example example={example} key={i} />
-    ));
+    );
 
     const examplesIconClasses = classNames(
       'fa',
       'fa-caret-right',
       classes.moreExamplesIcon,
-      { [classes.expanded]: isExpanded },
+      {
+        [classes.expanded]: isExpanded,
+      }
     );
 
     const exampleContainerStyle = {};
@@ -59,34 +71,45 @@ class Grammar extends React.Component {
 
     return (
       <div
-        className={classNames(classes.grammar, { [classes.highlight]: isHighlighted })}
+        className={classNames(classes.grammar, {
+          [classes.highlight]: isHighlighted,
+        })}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
         <div className={classes.headerInfo}>
           <div>
-            <h4>{name}</h4>
-            <p>{description}</p>
+            <h4>
+              {name}
+            </h4>
+            <p>
+              {description}
+            </p>
           </div>
         </div>
 
         <div className={classes.examplesContainer}>
-          <a onClick={this.onShowMoreExamples} className={classes.moreExamples} role="button" href>
+          <a
+            onClick={this.onShowMoreExamples}
+            className={classes.moreExamples}
+            role="button"
+            href
+          >
             <i className={examplesIconClasses} aria-hidden="true" /> Examples
           </a>
           <div className={classes.examples} style={exampleContainerStyle}>
-            <div ref={ref => this.exSizer = ref}>
+            <div ref={ref => (this.exSizer = ref)}>
               {exampleElms}
             </div>
           </div>
         </div>
         <div className={classes.sources}>
           <span className={classes.learnMoreLabel}>Learn more:</span>
-          {sources.map((source, i) => (
+          {sources.map((source, i) =>
             <span key={i} className={classes.source}>
               <Source {...source} />
             </span>
-          ))}
+          )}
         </div>
       </div>
     );
@@ -107,7 +130,7 @@ Grammar.propTypes = {
     PropTypes.shape({
       zh: PropTypes.string,
       en: PropTypes.string,
-    }),
+    })
   ).isRequired,
   description: PropTypes.string.isRequired,
   sources: PropTypes.arrayOf(
@@ -120,7 +143,7 @@ Grammar.propTypes = {
       isbn10: PropTypes.string,
       author: PropTypes.string,
       pages: PropTypes.number,
-    }),
+    })
   ).isRequired,
 };
 

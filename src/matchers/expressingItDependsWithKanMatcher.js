@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'expressingItDependsWithKan',
   name: '(这 / 那) + 得看 / 要看 + [What "It" Depends On]',
-  description: 'Although there are a number of ways to express "it depends" in Chinese, the most common ones in spoken Chinese involve the verb 看 (kàn). Some common expressions include:',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'Although there are a number of ways to express "it depends" in Chinese, the most common ones in spoken Chinese involve the verb 看 (kàn). Some common expressions include:',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /((?:(?:这|那)?)(?:得看|要看))/),

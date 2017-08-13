@@ -33,15 +33,18 @@ class ResultsPage extends React.Component {
   runQuery(query) {
     this.setState({ query, loading: true, error: null, results: null });
     const matcher = new GrammarMatcher();
-    matcher.matchGrammar(query).then((results) => {
-      // make sure there's no out-of-order results loading
-      if (this.state.query !== query) return;
-      this.setState({ loading: false, results, highlightGrammar: [] });
-    }).catch((err) => {
-      // eslint-disable-next-line no-console
-      console.log(err);
-      this.setState({ loading: false, error: err, results: null });
-    });
+    matcher
+      .matchGrammar(query)
+      .then(results => {
+        // make sure there's no out-of-order results loading
+        if (this.state.query !== query) return;
+        this.setState({ loading: false, results, highlightGrammar: [] });
+      })
+      .catch(err => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+        this.setState({ loading: false, error: err, results: null });
+      });
   }
 
   renderError() {
@@ -54,14 +57,13 @@ class ResultsPage extends React.Component {
   }
 
   renderSpinner() {
-    return (<Spinner config={{ width: 3, length: 30, radius: 30 }} />);
+    return <Spinner config={{ width: 3, length: 30, radius: 30 }} />;
   }
 
-
   renderResults() {
-    return this.state.results.map((result, i) => (
+    return this.state.results.map((result, i) =>
       <Result result={result} key={`${i}-${result.text}`} />
-    ));
+    );
   }
 
   render() {

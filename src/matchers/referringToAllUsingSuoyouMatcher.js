@@ -11,19 +11,15 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'referringToAllUsingSuoyou',
   name: '所有的 + Noun + 都 + Verb / Adj.',
-  description: 'In this grammar structure, we learn about a way to say "all" that is, well, a bit more epic. Sort of like how we might say "all the king\'s men" or "all the money in the world."',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'In this grammar structure, we learn about a way to say "all" that is, well, a bit more epic. Sort of like how we might say "all the king\'s men" or "all the money in the world."',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(所有的?)[^都]+(都)?/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(所有的?)[^都]+(都)?/)]);
   },
   examples: [
     {
@@ -33,7 +29,7 @@ module.exports = {
     },
     {
       zh: '他记得所有人的生日。',
-      en: 'He remembers everyone\'s birthday.',
+      en: "He remembers everyone's birthday.",
       src: allSetSrc,
     },
     {
@@ -58,7 +54,7 @@ module.exports = {
     },
     {
       zh: '我看过所有的迪斯尼动画片。',
-      en: 'I\'ve seen all the Disney movies.',
+      en: "I've seen all the Disney movies.",
       src: allSetSrc,
     },
     {
@@ -68,7 +64,7 @@ module.exports = {
     },
     {
       zh: '钱不可能解决所有的问题。',
-      en: 'Money can\'t solve all the problems.',
+      en: "Money can't solve all the problems.",
       src: allSetSrc,
     },
     {

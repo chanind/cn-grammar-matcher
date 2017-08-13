@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'bigToSmall',
   name: '(Date and/or time of day +) x 点',
-  description: 'Time in Chinese, just like in English, is expressed by stating the hour first, and then the minute (big to small).',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'Time in Chinese, just like in English, is expressed by stating the hour first, and then the minute (big to small).',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /([零一二三四五六七八九十百千万亿两0-9]+点)/),
@@ -29,37 +27,37 @@ module.exports = {
   examples: [
     {
       zh: '九点',
-      en: '9 o\'clock',
+      en: "9 o'clock",
       src: allSetSrc,
     },
     {
       zh: '上午七点',
-      en: '7 o\'clock a.m.',
+      en: "7 o'clock a.m.",
       src: allSetSrc,
     },
     {
       zh: '下午四点',
-      en: '4 o\'clock p.m.',
+      en: "4 o'clock p.m.",
       src: allSetSrc,
     },
     {
       zh: '中午十二点',
-      en: '12 o\'clock noon',
+      en: "12 o'clock noon",
       src: allSetSrc,
     },
     {
       zh: '明天晚上七点',
-      en: '7 o\'clock p.m. tomorrow evening',
+      en: "7 o'clock p.m. tomorrow evening",
       src: allSetSrc,
     },
     {
       zh: '9月9号早上六点',
-      en: 'September 9th, 6 o\'clock a.m.',
+      en: "September 9th, 6 o'clock a.m.",
       src: allSetSrc,
     },
     {
       zh: '星期三上午九点',
-      en: 'Wednesday at 9 o\'clock a.m.',
+      en: "Wednesday at 9 o'clock a.m.",
       src: allSetSrc,
     },
     {

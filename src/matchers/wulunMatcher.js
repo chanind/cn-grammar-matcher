@@ -11,29 +11,25 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'wulun',
   name: '无论 + Circumstances + 都 / 也 + Inevitable Result',
-  description: '无论 (wúlùn)  means "no matter," and is generally used in the first part of the sentence. As with many other constructions, 都 and 也 can be used in the second part of the sentence to emphasize the action or decision will not change. It is more formal than 不管.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    '无论 (wúlùn)  means "no matter," and is generally used in the first part of the sentence. As with many other constructions, 都 and 也 can be used in the second part of the sentence to emphasize the action or decision will not change. It is more formal than 不管.',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(无论)[^都也，]+((?:都|也|，))/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(无论)[^都也，]+((?:都|也|，))/)]);
   },
   examples: [
     {
       zh: '无论怎么样，他都会放弃，别高估他。',
-      en: 'No matter what it\'s like, he will give up. Don\'t overestimate him.',
+      en: "No matter what it's like, he will give up. Don't overestimate him.",
       src: allSetSrc,
     },
     {
       zh: '无论多么成功，他总觉得自己不够好。',
-      en: 'No matter how successful he is, he always thinks he isn\'t enough.',
+      en: "No matter how successful he is, he always thinks he isn't enough.",
       src: allSetSrc,
     },
     {

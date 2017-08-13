@@ -1,5 +1,3 @@
-
-
 module.exports = class Token {
   constructor(tokenData) {
     for (const key of Object.keys(tokenData)) {

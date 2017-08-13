@@ -21,7 +21,5 @@ test('sentence with multiple occurrences with full 没有', async () => {
 });
 
 test("doesn't match negative examples", async () => {
-  await assertNoneMatch(meiyouMatcher, [
-    '我不是你的爸爸。',
-  ]);
+  await assertNoneMatch(meiyouMatcher, ['我不是你的爸爸。']);
 });

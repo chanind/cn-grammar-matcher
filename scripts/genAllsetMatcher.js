@@ -17,8 +17,11 @@ const run = async () => {
     return;
   }
 
-  if (!allsetUrl.match(/https:\/\/resources\.allsetlearning\.com\/chinese\/grammar\/.*/)) {
-    const exUrl = 'https://resources.allsetlearning.com/chinese/grammar/Adjectival_complement_%22de_budeliao%22';
+  if (
+    !allsetUrl.match(/https:\/\/resources\.allsetlearning\.com\/chinese\/grammar\/.*/)
+  ) {
+    const exUrl =
+      'https://resources.allsetlearning.com/chinese/grammar/Adjectival_complement_%22de_budeliao%22';
     console.log(`ERROR: Invalid allset url. Should be something like: ${exUrl}`);
   }
 
@@ -32,7 +35,7 @@ const run = async () => {
 
   console.log('Done! :D');
 };
-run().catch((err) => {
+run().catch(err => {
   console.log(err);
   process.exit(1);
 });

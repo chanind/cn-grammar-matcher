@@ -4,12 +4,13 @@ const removeDiacritics = require('diacritics').remove;
 const { requestWithCache } = require('../scriptUtils');
 const regexFromRule = require('./regexFromRule');
 
-const getExampleFields = ($exampleElm) => {
+const getExampleFields = $exampleElm => {
   if ($exampleElm.find('.trans').length === 0) return null;
   const pinyin = $exampleElm.find('.pinyin').text();
   const explanation = $exampleElm.find('.expl').text();
   const en = $exampleElm.find('.trans').text();
-  const zh = $exampleElm.text()
+  const zh = $exampleElm
+    .text()
     .replace(pinyin, '')
     .replace(explanation, '')
     .replace(en, '')
@@ -17,7 +18,7 @@ const getExampleFields = ($exampleElm) => {
   return { zh, en };
 };
 
-module.exports = async (allsetUrl) => {
+module.exports = async allsetUrl => {
   const content = await requestWithCache(allsetUrl);
   const $ = cheerio.load(content);
   let matcherId;

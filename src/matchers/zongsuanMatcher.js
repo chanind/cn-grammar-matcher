@@ -11,19 +11,15 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'zongsuan',
   name: 'Subj. + 总算 / 终于 + Verb',
-  description: 'One pair of confusing adverbs is 总算 (zǒngsuàn) and 终于 (zhōngyú). They both can be translated as "finally" or "in the end," but they subtly different in tone.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'One pair of confusing adverbs is 总算 (zǒngsuàn) and 终于 (zhōngyú). They both can be translated as "finally" or "in the end," but they subtly different in tone.',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /((?:总算|终于))/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /((?:总算|终于))/)]);
   },
   examples: [
     {
@@ -58,7 +54,7 @@ module.exports = {
     },
     {
       zh: '总算没迟到。',
-      en: 'You finally didn\'t arrive late.',
+      en: "You finally didn't arrive late.",
       src: allSetSrc,
     },
     {
@@ -73,12 +69,12 @@ module.exports = {
     },
     {
       zh: '终于要放假了，开心吧？',
-      en: 'You finally have your holidays. You\'re happy about it, aren\'t you?',
+      en: "You finally have your holidays. You're happy about it, aren't you?",
       src: allSetSrc,
     },
     {
       zh: '你们合作的项目终于成功了!',
-      en: 'This project you\'ve been working on together finally succeed!',
+      en: "This project you've been working on together finally succeed!",
       src: allSetSrc,
     },
   ],

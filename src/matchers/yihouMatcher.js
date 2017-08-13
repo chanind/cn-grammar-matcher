@@ -11,19 +11,15 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'yihou',
   name: 'Subj. + Verb + 以后／的时候， Comment',
-  description: 'When talking about when something happens, "以后" (yǐhòu) and "的时候" (de shíhou) are often used. They can both be translated as "when," but their meanings are different, so they can\'t be used in situations you might expect them to be used in. Take a look at this article if you want to figure it out!',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'When talking about when something happens, "以后" (yǐhòu) and "的时候" (de shíhou) are often used. They can both be translated as "when," but their meanings are different, so they can\'t be used in situations you might expect them to be used in. Take a look at this article if you want to figure it out!',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(以后|的时候)/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(以后|的时候)/)]);
   },
   examples: [
     {
@@ -38,7 +34,7 @@ module.exports = {
     },
     {
       zh: '下班以后我们一起去吃饭。',
-      en: 'After work, we\'re going to go eat together.',
+      en: "After work, we're going to go eat together.",
       src: allSetSrc,
     },
     {
@@ -63,12 +59,12 @@ module.exports = {
     },
     {
       zh: '公司规定工作的时候不能用QQ聊天。',
-      en: 'Company rules say that you can\'t chat on QQ when you\'re at work.',
+      en: "Company rules say that you can't chat on QQ when you're at work.",
       src: allSetSrc,
     },
     {
       zh: '无聊的时候可以做些什么？',
-      en: 'What can you do when you\'re bored?',
+      en: "What can you do when you're bored?",
       src: allSetSrc,
     },
     {
@@ -93,12 +89,12 @@ module.exports = {
     },
     {
       zh: '雨停了的时候，我们就去公园玩。',
-      en: 'When it stops raining, we\'ll go play in the park.',
+      en: "When it stops raining, we'll go play in the park.",
       src: allSetSrc,
     },
     {
       zh: '雨停了以后，我们就去公园玩。',
-      en: 'When it stops raining, we\'ll go play in the park.',
+      en: "When it stops raining, we'll go play in the park.",
       src: allSetSrc,
     },
     {

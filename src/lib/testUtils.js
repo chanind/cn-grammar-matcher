@@ -9,7 +9,7 @@ const nlpClient = new CoreNLPClient(global.CORE_NLP_HOST);
 
 const parseSentence = async text => new SentenceParser(nlpClient).parse(text);
 
-const assertAllExamplesMatch = async (matcher) => {
+const assertAllExamplesMatch = async matcher => {
   for (const example of matcher.examples) {
     const sentence = await parseSentence(example.zh);
     expect(matcher).toMatchSentence(sentence);

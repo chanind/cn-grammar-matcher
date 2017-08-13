@@ -1,13 +1,10 @@
-const {
-  and,
-  pos,
-  word,
-} = require('../lib/tokenFilters');
+const { and, pos, word } = require('../lib/tokenFilters');
 const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/Negation_of_%22you%22_with_%22mei%22',
+  url:
+    'https://resources.allsetlearning.com/chinese/grammar/Negation_of_%22you%22_with_%22mei%22',
   name: 'AllSet Chinese Grammar Wiki',
 };
 
@@ -15,12 +12,13 @@ module.exports = {
   id: 'meiyou',
   name: '没有 pattern',
   description: 'negation of 有, meaning to not have',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  sources: [allSetSrc],
+  match: sentence => {
     const meiyou = and(pos('AD|VE'), word('没有?'));
-    return locsFromTokens(regexMatchTokens(sentence.tokens, '(:meiyou:)', { meiyou }), /[没有]+/);
+    return locsFromTokens(
+      regexMatchTokens(sentence.tokens, '(:meiyou:)', { meiyou }),
+      /[没有]+/
+    );
   },
   examples: [
     {

@@ -12,7 +12,5 @@ test('it returns matching grammar rules', async () => {
   expect(results[0].grammar[0].sources).toBe(meiyouMatcher.sources);
   expect(results[0].grammar[0].examples).toBe(meiyouMatcher.examples);
   expect(results[0].grammar[0].name).toBe(meiyouMatcher.name);
-  expect(results[0].grammar[0].matches).toEqual([
-    [{ start: 1, end: 3 }],
-  ]);
+  expect(results[0].grammar[0].matches).toEqual([[{ start: 1, end: 3 }]]);
 });

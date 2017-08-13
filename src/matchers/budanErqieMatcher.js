@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'budanErqie',
   name: 'Subj. + 不但 + Adj. / Verb， 而且 + Adj. / Verb',
-  description: '"不但⋯⋯，而且⋯⋯" (bùdàn..., érqiě...) is a very commonly used pattern that indicates "not only, ... but also...."',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    '"不但⋯⋯，而且⋯⋯" (bùdàn..., érqiě...) is a very commonly used pattern that indicates "not only, ... but also...."',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(不但)[^而且]+(而且)/),

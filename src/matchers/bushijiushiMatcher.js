@@ -1,9 +1,4 @@
-const {
-  and,
-  pos,
-  word,
-  not,
-} = require('../lib/tokenFilters');
+const { and, pos, word, not } = require('../lib/tokenFilters');
 const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
 
 const shortTermChineseSrc = {
@@ -17,29 +12,33 @@ const shortTermChineseSrc = {
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/Expressing_the_only_two_possibilities',
+  url:
+    'https://resources.allsetlearning.com/chinese/grammar/Expressing_the_only_two_possibilities',
   name: 'AllSet Chinese Grammar Wiki',
 };
-
 
 module.exports = {
   id: 'bushi_jiushi',
   name: '不是 ... 就是 ...',
-  description: 'Pattern indicating there are only 2 possiblities, similar to "If it\'s not X then it must be Y".',
-  sources: [
-    shortTermChineseSrc,
-    allSetSrc,
-  ],
-  match: sentence => (
-    locsFromTokens(regexMatchTokens(sentence.tokens, '(:bushi:|:bu::shi:):notBushi:+(:jiushi:|:jiu::shi:)', {
-      bu: and(pos('AD'), word('不')),
-      shi: and(pos('V.'), word('是')),
-      bushi: and(pos('AD'), word('不是')),
-      jiushi: and(pos('AD'), word('就是')),
-      jiu: and(pos('AD'), word('就')),
-      notBushi: not(word('不|是')),
-    }), /[不是就]+/)
-  ),
+  description:
+    'Pattern indicating there are only 2 possiblities, similar to "If it\'s not X then it must be Y".',
+  sources: [shortTermChineseSrc, allSetSrc],
+  match: sentence =>
+    locsFromTokens(
+      regexMatchTokens(
+        sentence.tokens,
+        '(:bushi:|:bu::shi:):notBushi:+(:jiushi:|:jiu::shi:)',
+        {
+          bu: and(pos('AD'), word('不')),
+          shi: and(pos('V.'), word('是')),
+          bushi: and(pos('AD'), word('不是')),
+          jiushi: and(pos('AD'), word('就是')),
+          jiu: and(pos('AD'), word('就')),
+          notBushi: not(word('不|是')),
+        }
+      ),
+      /[不是就]+/
+    ),
   examples: [
     {
       zh: '他整天不是打游戏就是睡觉。',
@@ -48,12 +47,14 @@ module.exports = {
     },
     {
       zh: '他们约会不是去咖啡馆就是去电影院。',
-      en: "When they go on dates, if it's not to a coffee shop, then it's to the movie theater.",
+      en:
+        "When they go on dates, if it's not to a coffee shop, then it's to the movie theater.",
       src: allSetSrc,
     },
     {
       zh: '我买的衣服不是大就是小，都不能穿。',
-      en: "The clothes that I bought are either too big or too small, I can't wear any of them.",
+      en:
+        "The clothes that I bought are either too big or too small, I can't wear any of them.",
       src: allSetSrc,
     },
     {
@@ -78,7 +79,8 @@ module.exports = {
     },
     {
       zh: '他每天不是读书就是写文章，不干别的。',
-      en: "Every day if he's not studying then he's writing essays, he doesn't do anything else.",
+      en:
+        "Every day if he's not studying then he's writing essays, he doesn't do anything else.",
       src: shortTermChineseSrc,
     },
   ],

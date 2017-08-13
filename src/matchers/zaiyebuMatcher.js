@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'zaiyebu',
   name: 'Subj. + 再也不 + Verb + Obj. + 了',
-  description: 'Sometimes you may do something or experience something that you never ever want to do again. How do we express that in Chinese? One of the ways is to use 再也不 (zàiyěbù)!',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'Sometimes you may do something or experience something that you never ever want to do again. How do we express that in Chinese? One of the ways is to use 再也不 (zàiyěbù)!',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(再也不)[^了]+(了)/),
@@ -34,12 +32,12 @@ module.exports = {
     },
     {
       zh: '我再也不想跟你一起玩了。',
-      en: 'I don\'t want to play with you again.',
+      en: "I don't want to play with you again.",
       src: allSetSrc,
     },
     {
       zh: '我们再也不会相信你了！',
-      en: 'We\'re not going to believe you ever again!',
+      en: "We're not going to believe you ever again!",
       src: allSetSrc,
     },
     {
@@ -54,27 +52,27 @@ module.exports = {
     },
     {
       zh: '从那以后，我再也没见过他。',
-      en: 'I\'ve never seen him again since then.',
+      en: "I've never seen him again since then.",
       src: allSetSrc,
     },
     {
       zh: '出国以后，我再也没吃过地道的中国菜。',
-      en: 'I\'ve never eaten any authentic Chinese food ever since I left the country.',
+      en: "I've never eaten any authentic Chinese food ever since I left the country.",
       src: allSetSrc,
     },
     {
       zh: '分手以后，他们再也没说过话。',
-      en: 'They haven\'t talked to each other ever since they broke up.',
+      en: "They haven't talked to each other ever since they broke up.",
       src: allSetSrc,
     },
     {
       zh: '上大学以后，她再也没花过父母的钱。',
-      en: 'She has never spent her parents\' money after she went to college.',
+      en: "She has never spent her parents' money after she went to college.",
       src: allSetSrc,
     },
     {
       zh: '父母去世以后，他再也没回过老家。',
-      en: 'He hasn\'t gone back to hometown ever since his parents passed away.',
+      en: "He hasn't gone back to hometown ever since his parents passed away.",
       src: allSetSrc,
     },
   ],

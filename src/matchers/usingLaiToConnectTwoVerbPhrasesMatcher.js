@@ -11,19 +11,15 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'usingLaiToConnectTwoVerbPhrases',
   name: '通过 / 用 + Agent + 来 + Verb Phrase',
-  description: 'The word 来 (lái) can be used to connect two verb phrases, relating the actions to each other. It can be translated as "in order to" or "so that" and it can help in explaining reasoning.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'The word 来 (lái) can be used to connect two verb phrases, relating the actions to each other. It can be translated as "in order to" or "so that" and it can help in explaining reasoning.',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /((?:通过|用))[^来]+(来)/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /((?:通过|用))[^来]+(来)/)]);
   },
   examples: [
     {
@@ -33,7 +29,7 @@ module.exports = {
     },
     {
       zh: '用这个APP来学汉字更容易。',
-      en: 'It\'s easier to use this application to study Chinese characters.',
+      en: "It's easier to use this application to study Chinese characters.",
       src: allSetSrc,
     },
     {

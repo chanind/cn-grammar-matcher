@@ -11,24 +11,20 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'yidianrYeBu',
   name: 'Subj. + 一点也 / 都 + 不 + Adj.',
-  description: 'Sometimes we may want to say something is "not even the least bit [adjective]." For example, we might say in English: "I am not at all hungry."  In Chinese, we can use 一点也不 (yīdiǎnr yě bù) or 一点都不 (yīdiǎnr dōu bù) to express "not at all [adjective]."',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'Sometimes we may want to say something is "not even the least bit [adjective]." For example, we might say in English: "I am not at all hungry."  In Chinese, we can use 一点也不 (yīdiǎnr yě bù) or 一点都不 (yīdiǎnr dōu bù) to express "not at all [adjective]."',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(一点(?:也|都)(?:不|没))/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(一点(?:也|都)(?:不|没))/)]);
   },
   examples: [
     {
       zh: '你一点也不性感。',
-      en: 'You\'re not even a little bit sexy.',
+      en: "You're not even a little bit sexy.",
       src: allSetSrc,
     },
     {
@@ -43,17 +39,17 @@ module.exports = {
     },
     {
       zh: '他一点也不喜欢啤酒。',
-      en: 'He doesn\'t like beer even a little bit.',
+      en: "He doesn't like beer even a little bit.",
       src: allSetSrc,
     },
     {
       zh: '你一点也不会说吗？',
-      en: 'You can\'t even speak a little?',
+      en: "You can't even speak a little?",
       src: allSetSrc,
     },
     {
       zh: '她好像一点都不知道这件事。',
-      en: 'She doesn\'t seem to know even a little about this.',
+      en: "She doesn't seem to know even a little about this.",
       src: allSetSrc,
     },
     {
@@ -63,22 +59,22 @@ module.exports = {
     },
     {
       zh: '我一点也没生气。',
-      en: 'I didn\'t get even a little bit angry.',
+      en: "I didn't get even a little bit angry.",
       src: allSetSrc,
     },
     {
       zh: '宝宝打针的时候一点都没哭。',
-      en: 'The baby didn\'t even cry a little when it got the shot.',
+      en: "The baby didn't even cry a little when it got the shot.",
       src: allSetSrc,
     },
     {
       zh: '今天她一点也没吃东西。',
-      en: 'She didn\'t even eat a little today.',
+      en: "She didn't even eat a little today.",
       src: allSetSrc,
     },
     {
       zh: '工作虽然很累，但他一点都没抱怨。',
-      en: 'Although the job was tiring, he didn\'t even complain a bit.',
+      en: "Although the job was tiring, he didn't even complain a bit.",
       src: allSetSrc,
     },
   ],

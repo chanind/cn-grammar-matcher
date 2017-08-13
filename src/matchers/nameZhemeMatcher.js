@@ -11,19 +11,15 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'nameZheme',
   name: 'Subj. + 那么 / 这么 + Adj.',
-  description: 'In  English, the words "that" and "so" are often used to increase the extent of an adjective (ex. "he is so tall" or "this food is so good"). In Chinese, 那么 (nàme) and 这么 (zhème) serve the same function.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'In  English, the words "that" and "so" are often used to increase the extent of an adjective (ex. "he is so tall" or "this food is so good"). In Chinese, 那么 (nàme) and 这么 (zhème) serve the same function.',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /((?:那么|这么))/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /((?:那么|这么))/)]);
   },
   examples: [
     {
@@ -38,7 +34,7 @@ module.exports = {
     },
     {
       zh: '雨这么大，明天再去吧。',
-      en: 'It\'s raining so heavily. How about we go tomorrow?',
+      en: "It's raining so heavily. How about we go tomorrow?",
       src: allSetSrc,
     },
     {
@@ -48,12 +44,13 @@ module.exports = {
     },
     {
       zh: '中国人口这么多，当然会有很多社会问题。',
-      en: 'China has such a big  population. Of course there will be many social problems.',
+      en:
+        'China has such a big  population. Of course there will be many social problems.',
       src: allSetSrc,
     },
     {
       zh: '我没想到这个考试这么难。',
-      en: 'I didn\'t expect this exam is so difficult.',
+      en: "I didn't expect this exam is so difficult.",
       src: allSetSrc,
     },
     {
@@ -68,7 +65,7 @@ module.exports = {
     },
     {
       zh: '今天这么冷，你怎么穿那么少？',
-      en: 'It\'s so cold today. How come you wear so little?',
+      en: "It's so cold today. How come you wear so little?",
       src: allSetSrc,
     },
     {

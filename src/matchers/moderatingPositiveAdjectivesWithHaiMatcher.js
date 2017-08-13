@@ -11,24 +11,20 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'moderatingPositiveAdjectivesWithHai',
   name: 'Subj. + 还 + 好 / 可以 / 行 / 不错',
-  description: 'Whenever you want to imply that something is "good," but also kind of "meh," you can use 还 (hái) in front of the "good" adjective.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'Whenever you want to imply that something is "good," but also kind of "meh," you can use 还 (hái) in front of the "good" adjective.',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(还(?:好|可以|行|不错))/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(还(?:好|可以|行|不错))/)]);
   },
   examples: [
     {
       zh: '我还好。',
-      en: 'I\'m OK.',
+      en: "I'm OK.",
       src: allSetSrc,
     },
     {
@@ -43,12 +39,12 @@ module.exports = {
     },
     {
       zh: '这家店还行，不太贵。',
-      en: 'This shop is OK. It\'s not too expensive.',
+      en: "This shop is OK. It's not too expensive.",
       src: allSetSrc,
     },
     {
       zh: '我男朋友的工资还可以。',
-      en: 'My boyfriend\'s salary is OK.',
+      en: "My boyfriend's salary is OK.",
       src: allSetSrc,
     },
     {

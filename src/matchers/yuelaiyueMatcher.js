@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'yuelaiyue',
   name: 'Subj. + 越来越 + Adj. + 了',
-  description: '越来越 (yuèláiyuè) is used frequently in Chinese to express that some quality or state is increasing with time, or in tune with another factor.  There are two forms of this pattern, the "simple" one (using 来), and the more complex one (which uses two different adjectives/verbs).',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    '越来越 (yuèláiyuè) is used frequently in Chinese to express that some quality or state is increasing with time, or in tune with another factor.  There are two forms of this pattern, the "simple" one (using 来), and the more complex one (which uses two different adjectives/verbs).',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(越来越)[^了]+(了)/),
@@ -59,7 +57,7 @@ module.exports = {
     },
     {
       zh: '我越来越想家了。',
-      en: 'I\'m getting more and more homesick.',
+      en: "I'm getting more and more homesick.",
       src: allSetSrc,
     },
     {
@@ -69,7 +67,7 @@ module.exports = {
     },
     {
       zh: '你越来越会做菜了。',
-      en: 'You\'re getting better and better at cooking.',
+      en: "You're getting better and better at cooking.",
       src: allSetSrc,
     },
     {

@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'youde',
   name: '有的 + (Subj.) + Predicate， 有的 + (Subj.) + Predicate',
-  description: 'To refer to just certain members of group, you can use 有的 (yǒude). This usage is normally translated as "some" in English. It is often used multiple times in one sentence to refer to different groups.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'To refer to just certain members of group, you can use 有的 (yǒude). This usage is normally translated as "some" in English. It is often used multiple times in one sentence to refer to different groups.',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(有的)[^的]+(有的)/),
@@ -29,7 +27,7 @@ module.exports = {
   examples: [
     {
       zh: '外国人有的很有钱，有的没钱。',
-      en: 'Some foreigners are rich, but some aren\'t.',
+      en: "Some foreigners are rich, but some aren't.",
       src: allSetSrc,
     },
     {
@@ -39,12 +37,12 @@ module.exports = {
     },
     {
       zh: '他写了很多书，有的卖得很好，有的卖得不好。',
-      en: 'He has written a lot of books. Some sell well, but some don\'t.',
+      en: "He has written a lot of books. Some sell well, but some don't.",
       src: allSetSrc,
     },
     {
       zh: '中国菜有的好吃，有的不好吃。',
-      en: 'Some Chinese foods are tasty, while some aren\'t.',
+      en: "Some Chinese foods are tasty, while some aren't.",
       src: allSetSrc,
     },
     {
@@ -54,12 +52,13 @@ module.exports = {
     },
     {
       zh: '他有很多房子，有的在国内，有的在国外。',
-      en: 'He has a lot of houses, some of them are within the country and some are abroad.',
+      en:
+        'He has a lot of houses, some of them are within the country and some are abroad.',
       src: allSetSrc,
     },
     {
       zh: '晚上六点以后，有的人下班了，有的人在加班。',
-      en: 'After six o\'clock some people are off work, while some are still working.',
+      en: "After six o'clock some people are off work, while some are still working.",
       src: allSetSrc,
     },
     {
@@ -69,12 +68,14 @@ module.exports = {
     },
     {
       zh: '酒吧里，有的人在喝酒，有的人在跳舞，还有的人在聊天。',
-      en: 'In the bar, some people are drinking, some are dancing, and some are chatting.',
+      en:
+        'In the bar, some people are drinking, some are dancing, and some are chatting.',
       src: allSetSrc,
     },
     {
       zh: '因为工作，我认识了很多人，有的是大学老师，有的是CEO。',
-      en: 'I know a lot of people because of my work. Some are college teachers and some are CEOs.',
+      en:
+        'I know a lot of people because of my work. Some are college teachers and some are CEOs.',
       src: allSetSrc,
     },
   ],

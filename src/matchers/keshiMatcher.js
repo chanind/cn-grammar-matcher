@@ -11,24 +11,20 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'keshi',
   name: 'Statement， 可是 / 但是 + [Contrary Statement]',
-  description: 'Using "but" in Chinese is really simple to learn. It involves the two words 可是 (kěshì) and 但是 (dànshì). Make no "buts" about it; you\'ll understand it in no time!',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'Using "but" in Chinese is really simple to learn. It involves the two words 可是 (kěshì) and 但是 (dànshì). Make no "buts" about it; you\'ll understand it in no time!',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /((?:可是|但是))/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /((?:可是|但是))/)]);
   },
   examples: [
     {
       zh: '我喜欢他，可是他不喜欢我。',
-      en: 'I like him, but he doesn\'t like me.',
+      en: "I like him, but he doesn't like me.",
       src: allSetSrc,
     },
     {
@@ -48,27 +44,27 @@ module.exports = {
     },
     {
       zh: '老板昨天给他打电话，可是他没接。',
-      en: 'The boss gave him a call yesterday, but he didn\'t answer.',
+      en: "The boss gave him a call yesterday, but he didn't answer.",
       src: allSetSrc,
     },
     {
       zh: 'iPhone很好，但是我没钱买。',
-      en: 'The iPhone is great, but I don\'t have the money to buy it.',
+      en: "The iPhone is great, but I don't have the money to buy it.",
       src: allSetSrc,
     },
     {
       zh: '你们可以在这里看书，可是不可以说话。',
-      en: 'You can read books here, but you can\'t talk.',
+      en: "You can read books here, but you can't talk.",
       src: allSetSrc,
     },
     {
       zh: '你可以吃，但是不可以吃太多。',
-      en: 'You can eat, but you can\'t eat too much.',
+      en: "You can eat, but you can't eat too much.",
       src: allSetSrc,
     },
     {
       zh: '他说五点来见我，但是他没来。',
-      en: 'He said he would come to see me at five, but he didn\'t.',
+      en: "He said he would come to see me at five, but he didn't.",
       src: allSetSrc,
     },
     {

@@ -11,19 +11,23 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'structureOfDates',
   name: 'x 年 + y 月 + z 日',
-  description: 'Dates in Chinese follow the order "year, month, day." This is in keeping with the "from big to small" trend which pervades many facets of Chinese culture.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'Dates in Chinese follow the order "year, month, day." This is in keeping with the "from big to small" trend which pervades many facets of Chinese culture.',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
-      regexMatchLocs(text, /([零一二三四五六七八九十百千万亿0-9]+年)?([零一二三四五六七八九十百千万亿0-9]+月[零一二三四五六七八九十百千万亿0-9]+(?:号|日))/),
-      regexMatchLocs(text, /([零一二三四五六七八九十百千万亿0-9]+年[零一二三四五六七八九十百千万亿0-9]+月)([零一二三四五六七八九十百千万亿0-9]+(?:号|日))?/),
+      regexMatchLocs(
+        text,
+        /([零一二三四五六七八九十百千万亿0-9]+年)?([零一二三四五六七八九十百千万亿0-9]+月[零一二三四五六七八九十百千万亿0-9]+(?:号|日))/
+      ),
+      regexMatchLocs(
+        text,
+        /([零一二三四五六七八九十百千万亿0-9]+年[零一二三四五六七八九十百千万亿0-9]+月)([零一二三四五六七八九十百千万亿0-9]+(?:号|日))?/
+      ),
     ]);
   },
   examples: [
@@ -44,7 +48,7 @@ module.exports = {
     },
     {
       zh: '1月1日是新年。',
-      en: 'January 1st is New Year\'s Day.',
+      en: "January 1st is New Year's Day.",
       src: allSetSrc,
     },
     {

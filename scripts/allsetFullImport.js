@@ -10,14 +10,14 @@ const WEAK = 1;
 const MEDIUM = 2;
 const STRONG = 3;
 
-const strengthLabel = (strength) => {
+const strengthLabel = strength => {
   if (strength === WEAK) return 'WEAK';
   if (strength === MEDIUM) return 'MEDIUM';
   if (strength === STRONG) return 'STRONG';
   return 'UNDEFINED';
 };
 
-const getRegexStrength = (regex) => {
+const getRegexStrength = regex => {
   const regexStr = regex.toString();
   const numHanzi = getNumHanzi(regexStr);
   const hasMultiParts = regexStr.indexOf('[^') >= 0;
@@ -66,12 +66,13 @@ const run = async () => {
 
       // filterExamples means exclude examples that this matcher does not match successfully
       if (url.filterExamples) {
-        scrapedFields.examples = scrapedFields.examples.filter((example) => {
-          const regexMatches = scrapedFields.regexes.map(regex => regexMatchLocs(example.zh, regex));
+        scrapedFields.examples = scrapedFields.examples.filter(example => {
+          const regexMatches = scrapedFields.regexes.map(regex =>
+            regexMatchLocs(example.zh, regex)
+          );
           return mergeLocMatchGroups(regexMatches);
         });
       }
-
 
       let strength = STRONG;
       for (const regex of scrapedFields.regexes) {
@@ -83,7 +84,9 @@ const run = async () => {
       }
 
       let skipped = false;
-      const { mainTemplate, testTemplate, fullMatcherName } = extractMatcher(scrapedFields);
+      const { mainTemplate, testTemplate, fullMatcherName } = extractMatcher(
+        scrapedFields
+      );
       const mainFile = path.resolve(__dirname, `../src/matchers/${fullMatcherName}.js`);
       if (!isMatcherFileWriteable(mainFile)) {
         skipped = true;
@@ -120,7 +123,7 @@ const run = async () => {
 
   console.log('Done! :D');
 };
-run().catch((err) => {
+run().catch(err => {
   console.log(err);
   process.exit(1);
 });

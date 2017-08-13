@@ -11,44 +11,40 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'concedingAPointWithShi',
   name: 'Adj. + 是 + Adj. ， 但是 / 就是 ⋯⋯',
-  description: 'When conceding a point, we often put emphasis on the point we are conceding, and in Chinese there is a way to do that with 是 (shì).',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'When conceding a point, we often put emphasis on the point we are conceding, and in Chinese there is a way to do that with 是 (shì).',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(是)[^但是就是]+((?:但是|就是))/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(是)[^但是就是]+((?:但是|就是))/)]);
   },
   examples: [
     {
       zh: '好吃是好吃，就是不太健康。',
-      en: 'It is tasty, but it\'s not very healthy.',
+      en: "It is tasty, but it's not very healthy.",
       src: allSetSrc,
     },
     {
       zh: '这个东西好是好，就是太贵了。',
-      en: 'This thing is good, but it\'s too expensive.',
+      en: "This thing is good, but it's too expensive.",
       src: allSetSrc,
     },
     {
       zh: '工作忙是忙，但是我很开心。',
-      en: 'I am busy at work, but I\'m very happy with my job.',
+      en: "I am busy at work, but I'm very happy with my job.",
       src: allSetSrc,
     },
     {
       zh: '这件衣服便宜是便宜，但是质量不太好。',
-      en: 'This piece of clothing may be cheap, but the quality isn\'t very good.',
+      en: "This piece of clothing may be cheap, but the quality isn't very good.",
       src: allSetSrc,
     },
     {
       zh: '这个学生聪明是聪明，就是不太努力。',
-      en: 'This student may be smart, but he\'s not very hardworking.',
+      en: "This student may be smart, but he's not very hardworking.",
       src: allSetSrc,
     },
     {
@@ -73,7 +69,7 @@ module.exports = {
     },
     {
       zh: '这个运动危险是危险，但是很刺激。',
-      en: 'This sport may be dangerous, but it\'s also very exciting.',
+      en: "This sport may be dangerous, but it's also very exciting.",
       src: allSetSrc,
     },
   ],

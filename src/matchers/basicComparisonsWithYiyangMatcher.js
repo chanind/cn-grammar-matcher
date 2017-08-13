@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'basicComparisonsWithYiyang',
   name: 'Noun 1 + 跟 / 和 + Noun 2 + 一样',
-  description: 'Along with 比 (bǐ) and 没有 (méiyǒu), 一样 (yīyàng) is another way to make basic comparisons. However, 一样 (yīyàng) is used to express that two things are the same in some way.',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    'Along with 比 (bǐ) and 没有 (méiyǒu), 一样 (yīyàng) is another way to make basic comparisons. However, 一样 (yīyàng) is used to express that two things are the same in some way.',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /((?:跟|和))[^一样]+(一样)/),
@@ -74,7 +72,7 @@ module.exports = {
     },
     {
       zh: '这里的天气跟我老家一样舒服。',
-      en: 'The weather here is just as comfortable as my hometown\'s.',
+      en: "The weather here is just as comfortable as my hometown's.",
       src: allSetSrc,
     },
     {

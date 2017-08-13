@@ -2,7 +2,6 @@ const { padLeft } = require('./utils');
 const { notRoot } = require('./tokenFilters');
 const MultiRegExp = require('../vendor/MultiRegExp');
 
-
 // This returns a 0-padded string representing this token ID which can be used in the token regex
 const getTokenIdStr = (tokenId, tokens) => {
   const tokenIdDigits = Math.ceil(tokens.length / 10);
@@ -35,7 +34,7 @@ const constructRegexStr = (tokens, regexTemplate, matchParams) => {
 };
 
 // used to match the generated regex template against
-const constructTokensStr = (tokens) => {
+const constructTokensStr = tokens => {
   let tokensStr = '';
   for (let i = 0; i < tokens.length; i += 1) {
     tokensStr += getTokenIdStr(i, tokens);
@@ -79,7 +78,7 @@ const getCapturedLocsFromMatch = (multiMatchResults, startIndex) => {
 /**
 * Given an array of locs, combine adject locs into 1 bigger index
 */
-const combineAdjacentLocations = (locs) => {
+const combineAdjacentLocations = locs => {
   if (locs.length <= 1) {
     return locs;
   }

@@ -35,7 +35,7 @@ const requestWithCache = async (url, cacheDir = path.resolve(__dirname, '../cach
 
 const getNumHanzi = str => str.split('').filter(hasHanzi).length;
 
-const isMatcherFileWriteable = (fileName) => {
+const isMatcherFileWriteable = fileName => {
   if (fs.existsSync(fileName)) {
     const contents = fs.readFileSync(fileName, 'utf-8');
     return contents.indexOf(AUTOGEN_MARKER) >= 0;
@@ -49,13 +49,18 @@ const writeOutTemplate = (fileName, template, force) => {
     fs.writeFileSync(fileName, fixNewlines(template));
     return true;
   }
-  console.log(`${fileName} already exists. Skipping. Run with -- -f to overwrite this file.`);
+  console.log(
+    `${fileName} already exists. Skipping. Run with -- -f to overwrite this file.`
+  );
   return false;
 };
 
 const writeOutMatcher = (fullMatcherName, mainTemplate, testTemplate, force = false) => {
   const mainFileName = path.resolve(__dirname, `../src/matchers/${fullMatcherName}.js`);
-  const testFileName = path.resolve(__dirname, `../src/matchers/${fullMatcherName}.test.js`);
+  const testFileName = path.resolve(
+    __dirname,
+    `../src/matchers/${fullMatcherName}.test.js`
+  );
   const matchersIndexFile = path.resolve(__dirname, '../src/matchers/index.js');
 
   const mainWritten = writeOutTemplate(mainFileName, mainTemplate, force);

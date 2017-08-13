@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'ningke',
   name: '宁可……，也不……',
-  description: '宁可 (nìngkě) is used where the speaker wants to compare two unfavorable options, and choose a "unfavorable option" over a "most unfavorable option."',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    '宁可 (nìngkě) is used where the speaker wants to compare two unfavorable options, and choose a "unfavorable option" over a "most unfavorable option."',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(宁可)[^也不]+(也不)/),
@@ -29,27 +27,27 @@ module.exports = {
   examples: [
     {
       zh: '我宁可没有男朋友，也不要随便找一个男朋友。',
-      en: 'I\'d rather have no boyfriend than find a random one.',
+      en: "I'd rather have no boyfriend than find a random one.",
       src: allSetSrc,
     },
     {
       zh: '他宁可输，也不想放弃。',
-      en: 'He\'d rather lose than give up.',
+      en: "He'd rather lose than give up.",
       src: allSetSrc,
     },
     {
       zh: '我宁可在公司加班，也不想把工作带回家。',
-      en: 'I\'d rather work late in the office than take my work home.',
+      en: "I'd rather work late in the office than take my work home.",
       src: allSetSrc,
     },
     {
       zh: '他宁可每天吃方便面，也不找父母要钱。',
-      en: 'He\'d rather eat instant noodles every day than ask his parents for money.',
+      en: "He'd rather eat instant noodles every day than ask his parents for money.",
       src: allSetSrc,
     },
     {
       zh: '我宁可把这些东西送给陌生人，也不会扔掉。',
-      en: 'I\'d rather give these old things to strange people than throw it away.',
+      en: "I'd rather give these old things to strange people than throw it away.",
       src: allSetSrc,
     },
     {
@@ -59,12 +57,12 @@ module.exports = {
     },
     {
       zh: '他们宁可花光所有钱，也要治好女儿的病。',
-      en: 'They would spend all my money to cure their daughter\'s disease.',
+      en: "They would spend all my money to cure their daughter's disease.",
       src: allSetSrc,
     },
     {
       zh: '我们宁可多花点钱，也要解决这个问题。',
-      en: 'We\'d rather spend some more money to solve this problem.',
+      en: "We'd rather spend some more money to solve this problem.",
       src: allSetSrc,
     },
   ],

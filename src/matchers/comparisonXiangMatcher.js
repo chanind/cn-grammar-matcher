@@ -11,15 +11,13 @@ const allSetSrc = {
   name: 'AllSet Chinese Grammar Wiki',
 };
 
-
 module.exports = {
   id: 'comparisonXiang',
   name: 'Noun 1 + 像 + Noun 2 + 一样 + Adj. / Verb',
-  description: '像  (xiàng) is used to compare a specific characteristic of two things or people, and can be used in the following structure:',
-  sources: [
-    allSetSrc,
-  ],
-  match: (sentence) => {
+  description:
+    '像  (xiàng) is used to compare a specific characteristic of two things or people, and can be used in the following structure:',
+  sources: [allSetSrc],
+  match: sentence => {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(不?像|没有?)[^一样]+(一样)/),
@@ -44,7 +42,7 @@ module.exports = {
     },
     {
       zh: '我们没有你那么喜欢孩子。',
-      en: 'We don\'t like kids as much as you do.',
+      en: "We don't like kids as much as you do.",
       src: allSetSrc,
     },
   ],

@@ -4,10 +4,7 @@
 * --------------------------------------------------- */
 
 const keshiMatcher = require('./keshiMatcher');
-const {
-  assertAllExamplesMatch,
-  assertNoneMatch,
-} = require('../lib/testUtils');
+const { assertAllExamplesMatch, assertNoneMatch } = require('../lib/testUtils');
 
 test('matches all examples', async () => {
   await assertAllExamplesMatch(keshiMatcher);
@@ -16,7 +13,10 @@ test('matches all examples', async () => {
 // TODO: Add more tests
 
 test("doesn't match negative examples", async () => {
-  await assertNoneMatch(keshiMatcher, [
-    // TODO: add negative examples here
-  ]);
+  await assertNoneMatch(
+    keshiMatcher,
+    [
+      // TODO: add negative examples here
+    ]
+  );
 });
