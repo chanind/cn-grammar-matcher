@@ -3,7 +3,7 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { mergeLocMatchGroups, regexMatchLocs } = require('../lib/regexMatchers');
+const { mergeLocMatchGroups, regexMatchLocs } = require('../lib/matchingHelpers');
 
 const allSetSrc = {
   type: 'website',

@@ -1,5 +1,5 @@
 const { and, not, or, pos, word } = require('../lib/tokenFilters');
-const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
+const { regexMatchTokens, locsFromTokens } = require('../lib/matchingHelpers');
 
 const allSetSrc = {
   type: 'website',

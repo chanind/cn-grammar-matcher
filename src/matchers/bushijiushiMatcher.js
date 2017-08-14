@@ -1,5 +1,5 @@
 const { and, pos, word, not } = require('../lib/tokenFilters');
-const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
+const { regexMatchTokens, locsFromTokens } = require('../lib/matchingHelpers');
 
 const shortTermChineseSrc = {
   type: 'book',

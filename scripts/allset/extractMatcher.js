@@ -44,7 +44,7 @@ module.exports = fields => {
   const mainTemplate = `
 ${AUTOGEN_COMMENT}
 
-const { mergeLocMatchGroups, regexMatchLocs } = require('../lib/regexMatchers');
+const { mergeLocMatchGroups, regexMatchLocs } = require('../lib/matchingHelpers');
 
 const allSetSrc = {
   type: 'website',
