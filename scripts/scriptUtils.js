@@ -69,7 +69,7 @@ const getMatcherTestFileName = fullMatcherName =>
 const rewriteFileContents = (fileName, rewriteFunc) => {
   const contents = fs.readFileSync(fileName, 'utf-8');
   fs.writeFileSync(fileName, rewriteFunc(contents));
-}
+};
 
 const rewriteMatcherIndex = rewriteFunc => {
   const matchersIndexFile = path.resolve(__dirname, '../src/matchers/index.js');
