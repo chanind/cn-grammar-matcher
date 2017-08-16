@@ -14,6 +14,17 @@ module.exports = {
   description: 'Pattern used to express something has already happened.',
   sources: [allSetSrc],
   match: sentence => {
+    // graphMatch(
+    //   new Node({ filter: pos('V.|CD') }, [
+    //     new Edge({ type: 'advmod', ahead: true },
+    //       new Node({ filter: and(pos('AD'), word('已经?')), capture: '已经' })
+    //     ),
+    //     new Edge({ behind: true },
+    //       new Node()
+    //     )
+    //   ])
+    // )
+
     const yijing = and(pos('AD'), word('已经?'));
     return locsFromTokens(
       regexMatchTokens(sentence.tokens, '(:yijing:):notYijing:*(:le:)', {
@@ -21,7 +32,7 @@ module.exports = {
         notYijing: not(yijing),
         le: or(word('了'), and(word('.+了'), pos('V.|P'))),
       }),
-      /[已经了]+/
+      '已经了'
     );
   },
   examples: [

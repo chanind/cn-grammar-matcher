@@ -144,34 +144,35 @@ exports.regexMatchLocs = (text, regex) => {
   return matchResults;
 };
 
-const locationFromToken = (token, matchRegex = null) => {
+const locFromToken = (token, matchCharsStr = null) => {
   const baseLocation = {
     start: token.characterOffsetBegin,
     end: token.characterOffsetEnd,
   };
-  if (!matchRegex) return baseLocation;
-  const matchData = token.word.match(new RegExp(matchRegex, 'ui'));
+  if (!matchCharsStr) return baseLocation;
+  const matchData = token.word.match(new RegExp(`[${matchCharsStr}]+`, 'ui'));
   if (!matchData) return null;
   baseLocation.start += matchData.index;
   baseLocation.end = baseLocation.start + matchData[0].length;
   return baseLocation;
 };
+exports.locFromToken = locFromToken;
 
 /**
 * Extract match locations from a returned list of token matches
 *
 * @param {Tokens[][]|null} the tokens representing the match
-* @param {matchRegex} an optional regex to further filter the resulting locs.
+* @param {matchCharsStr} an optional string containing characters to further filter the resulting locs.
 *     Useful if tokens might contain extra characters besides just those we want to match
 * @returns {Location[][]|null} The 
 */
-exports.locsFromTokens = (tokenMatches, matchRegex = null) => {
+exports.locsFromTokens = (tokenMatches, matchCharsStr = null) => {
   if (!tokenMatches) return null;
   const matches = [];
   for (const tokenMatch of tokenMatches) {
     let locations = [];
     for (const token of tokenMatch) {
-      const location = locationFromToken(token, matchRegex);
+      const location = locFromToken(token, matchCharsStr);
       if (!location) continue;
       locations.push(location);
     }

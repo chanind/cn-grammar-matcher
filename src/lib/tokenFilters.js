@@ -34,9 +34,10 @@ const and = (...filters) => token => {
 };
 
 const any = () => true;
-const notRoot = token => token.index !== 0;
+const isRoot = token => token.index === 0;
+const notRoot = not(isRoot);
 
 // helper filter to remove all punctuation tokens
 const noPunct = not(pos('PU'));
 
-module.exports = { pos, word, not, or, and, any, notRoot, noPunct };
+module.exports = { pos, word, not, or, and, any, isRoot, notRoot, noPunct };

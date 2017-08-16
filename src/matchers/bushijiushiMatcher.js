@@ -37,7 +37,7 @@ module.exports = {
           notBushi: not(word('不|是')),
         }
       ),
-      /[不是就]+/
+      '不是就'
     ),
   examples: [
     {

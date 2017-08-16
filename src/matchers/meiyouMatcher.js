@@ -17,7 +17,7 @@ module.exports = {
     const meiyou = and(pos('AD|VE'), word('没有?'));
     return locsFromTokens(
       regexMatchTokens(sentence.tokens, '(:meiyou:)', { meiyou }),
-      /[没有]+/
+      '没有'
     );
   },
   examples: [

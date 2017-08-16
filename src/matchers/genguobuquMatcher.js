@@ -38,7 +38,7 @@ module.exports = {
           any,
         }
       ),
-      /[跟过不去]+/
+      '跟过不去'
     ),
   examples: [
     {
