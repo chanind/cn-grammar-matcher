@@ -45,11 +45,11 @@ class Edge {
     this.childNode = childNode;
   }
 
-  _matchesDependent(dependent) {
+  _matchesDependent(token, dependent) {
     if (dependent.dependencyType === 'ROOT') return false;
     const typeMatches = !this.opts.type || dependent.dependencyType.match(this.opts.type);
-    const aheadMatches = !this.opts.ahead || this.token.index < dependent.index;
-    const behindMatches = !this.opts.behind || this.token.index > dependent.index;
+    const aheadMatches = !this.opts.ahead || token.index > dependent.index;
+    const behindMatches = !this.opts.behind || token.index < dependent.index;
     return (
       typeMatches && aheadMatches && behindMatches && this.childNode.matches(dependent)
     );
@@ -57,14 +57,14 @@ class Edge {
 
   matches(token) {
     for (const dependent of token.dependents) {
-      if (this._matchesDependent(dependent)) return true;
+      if (this._matchesDependent(token, dependent)) return true;
     }
     return false;
   }
 
   getMatchLocs(token) {
     for (const dependent of token.dependents) {
-      if (this._matchesDependent(dependent)) {
+      if (this._matchesDependent(token, dependent)) {
         return this.childNode.getMatchLocs(dependent);
       }
     }
