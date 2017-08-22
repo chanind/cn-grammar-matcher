@@ -137,6 +137,21 @@ describe('graphMatch', () => {
     expect(matches).toEqual([[{ start: 5, end: 7 }, { start: 13, end: 14 }]]);
   });
 
+  it('can match edges coming ahead or behind their parent', () => {
+    const matchingTree = new Node({ filter: pos('V.') }, [
+      new Edge({ ahead: true }, new Node({ filter: word('狐狸'), capture: true })),
+      new Edge({ behind: true }, new Node({ filter: word('狗'), capture: true })),
+    ]);
+    const matches = graphMatch(fixtureSentence.tokens, matchingTree);
+    expect(matches).toEqual([[{ start: 5, end: 7 }, { start: 13, end: 14 }]]);
+
+    const failingTree = new Node({ filter: pos('V.') }, [
+      new Edge({ behind: true }, new Node({ filter: word('狐狸'), capture: true })),
+      new Edge({ ahead: true }, new Node({ filter: word('狗'), capture: true })),
+    ]);
+    expect(graphMatch(fixtureSentence.tokens, failingTree)).toBeNull();
+  });
+
   it('can still match with optional edges', () => {
     const matchTree = new Node({ filter: pos('V.') }, [
       new Edge({ type: 'nsubj' }, new Node({ filter: word('狐狸'), capture: true })),

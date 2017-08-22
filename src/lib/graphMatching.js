@@ -83,7 +83,7 @@ const recursiveSearchTree = (tokenTree, matchTree) => {
       matchLocs = matchLocs.concat(depMatchLocs);
     }
   }
-  return matchLocs;
+  return matchLocs.length === 0 ? null : matchLocs;
 };
 
 const graphMatch = (tokens, matchTree) => {
