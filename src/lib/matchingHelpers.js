@@ -78,7 +78,7 @@ const getCapturedLocsFromMatch = (multiMatchResults, startIndex) => {
 /**
 * Given an array of locs, combine adject locs into 1 bigger index
 */
-const combineAdjacentLocations = locs => {
+const combineAdjacentLocs = locs => {
   if (locs.length <= 1) {
     return locs;
   }
@@ -99,6 +99,7 @@ const combineAdjacentLocations = locs => {
   combinedIndices.push(currentLoc);
   return combinedIndices;
 };
+exports.combineAdjacentLocs = combineAdjacentLocs;
 
 /**
 * Match patterns of tokens using a regex
@@ -137,7 +138,7 @@ exports.regexMatchLocs = (text, regex) => {
     const innerMatchStartPos = text.indexOf(innerMatchStr, lastMatchEndIndex);
     const innerMatch = multiRegex.exec(innerMatchStr);
     let locs = getCapturedLocsFromMatch(innerMatch, innerMatchStartPos);
-    locs = combineAdjacentLocations(locs);
+    locs = combineAdjacentLocs(locs);
     matchResults.push(locs);
     lastMatchEndIndex = innerMatchStartPos + innerMatchStr.length;
   }
@@ -176,7 +177,7 @@ exports.locsFromTokens = (tokenMatches, matchCharsStr = null) => {
       if (!location) continue;
       locations.push(location);
     }
-    locations = combineAdjacentLocations(locations);
+    locations = combineAdjacentLocs(locations);
     matches.push(locations);
   }
   return matches;
