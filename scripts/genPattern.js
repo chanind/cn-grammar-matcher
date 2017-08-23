@@ -3,24 +3,19 @@ const { writeOutPattern, formatFullPatternName } = require('./scriptUtils');
 
 const run = () => {
   program
-    .usage('yarn run gen-matcher <matcher-name>')
+    .usage('yarn run gen-pattern <pattern-name>')
     .option('-f, --force', 'Overwrite existing files')
     .parse(process.argv);
 
-  const matcherNameInput = program.args[0];
+  const patternNameInput = program.args[0];
 
-  if (!matcherNameInput) {
-    console.log('ERROR: Missing matcher name parameter');
+  if (!patternNameInput) {
+    console.log('ERROR: Missing pattern name parameter');
     return;
   }
 
-  if (matcherNameInput.match(/matcher$/i)) {
-    console.log('ERROR: Cannot have the word "matcher" in the matcher name');
-    return;
-  }
-
-  const fullPatternName = formatFullPatternName(matcherNameInput);
-  const matcherName = fullPatternName.replace(/Pattern$/, '');
+  const fullPatternName = formatFullPatternName(patternNameInput);
+  const patternName = fullPatternName.replace(/Pattern$/, '');
 
   const mainTemplate = `
 const {
@@ -28,7 +23,8 @@ const {
   pos,
   word,
 } = require('../lib/tokenFilters');
-const { regexMatchTokens, locsFromTokens } = require('../lib/matching/regexMatch');
+const { regexMatchTokens } = require('../lib/matching/regexMatch');
+const { locsFromTokens } = require('../lib/matching/utils');
 
 const websiteSrc = {
   type: 'website',
@@ -46,7 +42,7 @@ const bookSrc = {
 };
 
 module.exports = {
-  id: '${matcherName}',
+  id: '${patternName}',
   name: 'FILL ME IN',
   description: 'FILL ME IN',
   sources: [

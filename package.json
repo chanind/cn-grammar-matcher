@@ -13,9 +13,9 @@
     "build": "webpack",
     "gh-pages": "OUTPUT=/assets NLP_HOST=https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod webpack; node scripts/fixGhPagesIndex.js",
     "start": "webpack-dev-server --hot --inline",
-    "gen-matcher": "node scripts/genMatcher.js",
+    "gen-pattern": "node scripts/genPattern.js",
     "allset-full-import": "node scripts/allsetFullImport.js",
-    "gen-allset-matcher": "node scripts/genAllsetPattern.js",
+    "gen-allset-pattern": "node scripts/genAllsetPattern.js",
     "mv": "node scripts/mv.js",
     "rank-examples": "node scripts/rankExamples.js"
   },

@@ -9,7 +9,7 @@ const {
   getPatternTestFileName,
 } = require('./scriptUtils');
 
-program.usage('yarn mv <old matcher name> <new matcher name>').parse(process.argv);
+program.usage('yarn mv <old pattern name> <new pattern name>').parse(process.argv);
 
 const run = () => {
   const oldName = formatFullPatternName(program.args[0]);
