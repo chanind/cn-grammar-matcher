@@ -147,6 +147,13 @@ const matchesEqual = (match1, match2) => {
   return true;
 };
 
+// Helper to filter match results
+exports.filterMatches = (matches, filterFunc) => {
+  if (!matches) return matches;
+  const filteredMatches = matches.filter(filterFunc);
+  return filteredMatches.length === 0 ? null : filteredMatches;
+};
+
 /**
 * Does match A include all of match B?
 *
@@ -156,6 +163,18 @@ exports.matchAContainsMatchB = (matchA, matchB) => {
   const intersection = intersectMatches(matchA, matchB);
   return matchesEqual(intersection, matchB) && !matchesEqual(intersection, matchA);
 };
+
+exports.tokensFromMatch = (allTokens, match) =>
+  allTokens.filter(token => {
+    const tokenLoc = locFromToken(token);
+    for (const loc of match) {
+      if (locsOverlap(tokenLoc, loc)) return true;
+    }
+    return false;
+  });
+
+exports.stringsFromMatch = (originalSentence, match) =>
+  match.map(loc => originalSentence.slice(loc.start, loc.end - loc.start));
 
 /**
 * Merge multiple groups of matches together

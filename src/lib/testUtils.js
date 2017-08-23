@@ -16,6 +16,13 @@ const assertAllExamplesMatch = async matcher => {
   }
 };
 
+const assertAllMatch = async (matcher, texts) => {
+  for (const text of texts) {
+    const sentence = await parseSentence(text);
+    expect(matcher).toMatchSentence(sentence);
+  }
+};
+
 const assertNoneMatch = async (matcher, texts) => {
   for (const text of texts) {
     const sentence = await parseSentence(text);
@@ -29,6 +36,7 @@ const findLocsRegex = (sentence, regex) => regexMatchLocs(sentence.original, reg
 module.exports = {
   assertAllExamplesMatch,
   assertNoneMatch,
+  assertAllMatch,
   findLocsRegex,
   findTokens,
   nlpClient,
