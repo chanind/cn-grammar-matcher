@@ -1,5 +1,6 @@
-const { and, not, or, pos, word } = require('../lib/tokenFilters');
-const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
+const { and, pos, word } = require('../lib/tokenFilters');
+const { mergeLocMatchGroups } = require('../lib/matchingHelpers');
+const { Node, Edge, graphMatch } = require('../lib/graphMatching');
 
 const allSetSrc = {
   type: 'website',
@@ -13,17 +14,28 @@ module.exports = {
   name: '已经 ... 了 pattern',
   description: 'Pattern used to express something has already happened.',
   sources: [allSetSrc],
-  match: sentence => {
-    const yijing = and(pos('AD'), word('已经?'));
-    return locsFromTokens(
-      regexMatchTokens(sentence.tokens, '(:yijing:):notYijing:*(:le:)', {
-        yijing,
-        notYijing: not(yijing),
-        le: or(word('了'), and(word('.+了'), pos('V.|P'))),
-      }),
-      /[已经了]+/
-    );
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      graphMatch(
+        sentence.tokens,
+        new Node({ filter: pos('V.|CD') }, [
+          new Edge(
+            { type: 'advmod', ahead: true },
+            new Node({ filter: and(pos('AD'), word('已经?')), capture: '已经' })
+          ),
+          new Edge({ behind: true }, new Node({ filter: word('了'), capture: '了' })),
+        ])
+      ),
+      graphMatch(
+        sentence.tokens,
+        new Node({ filter: and(pos('V.|P'), word('.*了')), capture: '了' }, [
+          new Edge(
+            { type: 'advmod', ahead: true },
+            new Node({ filter: and(pos('AD'), word('已经?')), capture: '已经' })
+          ),
+        ])
+      ),
+    ]),
   examples: [
     {
       zh: '他们已经走了。',

@@ -4,7 +4,7 @@ const scrapeAllset = require('./allset/scrapeAllset');
 const extractMatcher = require('./allset/extractMatcher');
 const urls = require('./allset/urls');
 const { writeOutMatcher, getNumHanzi, isMatcherFileWriteable } = require('./scriptUtils');
-const { mergeLocMatchGroups, regexMatchLocs } = require('../src/lib/regexMatchers');
+const { mergeLocMatchGroups, regexMatchLocs } = require('../src/lib/matchingHelpers');
 
 const WEAK = 1;
 const MEDIUM = 2;

@@ -6,7 +6,7 @@ const {
   regexMatchLocs,
   mergeLocMatchGroups,
   matchAContainsMatchB,
-} = require('./regexMatchers');
+} = require('./matchingHelpers');
 
 describe('regexMatchTokens', () => {
   test('it returns null if there are no matches', () => {

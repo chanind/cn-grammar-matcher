@@ -2,7 +2,7 @@
 
 const SentenceParser = require('./SentenceParser');
 const CoreNLPClient = require('./CoreNLPClient');
-const { regexMatchLocs } = require('./regexMatchers');
+const { regexMatchLocs } = require('./matchingHelpers');
 const tf = require('./tokenFilters');
 
 const nlpClient = new CoreNLPClient(global.CORE_NLP_HOST);

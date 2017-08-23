@@ -1,5 +1,5 @@
 const { and, pos, word, any } = require('../lib/tokenFilters');
-const { regexMatchTokens, locsFromTokens } = require('../lib/regexMatchers');
+const { regexMatchTokens, locsFromTokens } = require('../lib/matchingHelpers');
 
 const shortTermChineseSrc = {
   type: 'book',
@@ -38,7 +38,7 @@ module.exports = {
           any,
         }
       ),
-      /[跟过不去]+/
+      '跟过不去'
     ),
   examples: [
     {
