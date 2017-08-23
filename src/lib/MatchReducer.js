@@ -1,4 +1,4 @@
-const { matchAContainsMatchB } = require('./matchingHelpers');
+const { matchAContainsMatchB } = require('./matching/utils');
 
 class MatchReducer {
   constructor(matchersMap) {

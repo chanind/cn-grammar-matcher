@@ -1,10 +1,10 @@
 const path = require('path');
 const program = require('commander');
 const scrapeAllset = require('./allset/scrapeAllset');
-const extractMatcher = require('./allset/extractMatcher');
+const extractPattern = require('./allset/extractPattern');
 const urls = require('./allset/urls');
-const { writeOutMatcher, getNumHanzi, isMatcherFileWriteable } = require('./scriptUtils');
-const { mergeLocMatchGroups, regexMatchLocs } = require('../src/lib/matchingHelpers');
+const { writeOutPattern, getNumHanzi, isPatternFileWriteable } = require('./scriptUtils');
+const { mergeLocMatchGroups, regexMatchLocs } = require('../src/lib/matching/regexMatch');
 
 const WEAK = 1;
 const MEDIUM = 2;
@@ -84,21 +84,21 @@ const run = async () => {
       }
 
       let skipped = false;
-      const { mainTemplate, testTemplate, fullMatcherName } = extractMatcher(
+      const { mainTemplate, testTemplate, fullPatternName } = extractPattern(
         scrapedFields
       );
-      const mainFile = path.resolve(__dirname, `../src/matchers/${fullMatcherName}.js`);
-      if (!isMatcherFileWriteable(mainFile)) {
+      const mainFile = path.resolve(__dirname, `../src/patterns/${fullPatternName}.js`);
+      if (!isPatternFileWriteable(mainFile)) {
         skipped = true;
         results.skipped.push(url);
         console.log('SKIPPED');
       }
       if (
         strength === STRONG ||
-        (program.writeMediumMatchers && strength === MEDIUM) ||
-        (program.writeWeakMatchers && strength === WEAK)
+        (program.writeMediumPatterns && strength === MEDIUM) ||
+        (program.writeWeakPatterns && strength === WEAK)
       ) {
-        writeOutMatcher(fullMatcherName, mainTemplate, testTemplate);
+        writeOutPattern(fullPatternName, mainTemplate, testTemplate);
       }
 
       if (!skipped) {

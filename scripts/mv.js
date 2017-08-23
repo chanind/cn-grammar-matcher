@@ -1,25 +1,25 @@
 const fs = require('fs');
 const program = require('commander');
 const {
-  formatFullMatcherName,
-  getMatcherIndexRequireLine,
-  getMatcherFileName,
-  rewriteMatcherIndex,
+  formatFullPatternName,
+  getPatternIndexRequireLine,
+  getPatternFileName,
+  rewritePatternIndex,
   rewriteFileContents,
-  getMatcherTestFileName,
+  getPatternTestFileName,
 } = require('./scriptUtils');
 
 program.usage('yarn mv <old matcher name> <new matcher name>').parse(process.argv);
 
 const run = () => {
-  const oldName = formatFullMatcherName(program.args[0]);
-  const newName = formatFullMatcherName(program.args[1]);
+  const oldName = formatFullPatternName(program.args[0]);
+  const newName = formatFullPatternName(program.args[1]);
 
-  const oldFile = getMatcherFileName(oldName);
-  const newFile = getMatcherFileName(newName);
+  const oldFile = getPatternFileName(oldName);
+  const newFile = getPatternFileName(newName);
 
-  const oldTestFile = getMatcherTestFileName(oldName);
-  const newTestFile = getMatcherTestFileName(newName);
+  const oldTestFile = getPatternTestFileName(oldName);
+  const newTestFile = getPatternTestFileName(newName);
 
   if (!fs.existsSync(oldFile)) {
     console.log(`File does not exist ${oldFile}. Quitting`);
@@ -43,8 +43,8 @@ const run = () => {
     return;
   }
 
-  const oldRequire = getMatcherIndexRequireLine(oldName);
-  const newRequire = getMatcherIndexRequireLine(newName);
+  const oldRequire = getPatternIndexRequireLine(oldName);
+  const newRequire = getPatternIndexRequireLine(newName);
 
   console.log(`Moving ${oldFile} to ${newFile}`);
   fs.renameSync(oldFile, newFile);
@@ -55,6 +55,6 @@ const run = () => {
     testContents.replace(new RegExp(oldName, 'gu'), newName)
   );
   console.log('Rewriting index');
-  rewriteMatcherIndex(indexContents => indexContents.replace(oldRequire, newRequire));
+  rewritePatternIndex(indexContents => indexContents.replace(oldRequire, newRequire));
 };
 run();

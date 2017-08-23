@@ -1,5 +1,5 @@
 const program = require('commander');
-const { writeOutMatcher, formatFullMatcherName } = require('./scriptUtils');
+const { writeOutPattern, formatFullPatternName } = require('./scriptUtils');
 
 const run = () => {
   program
@@ -19,8 +19,8 @@ const run = () => {
     return;
   }
 
-  const fullMatcherName = formatFullMatcherName(matcherNameInput);
-  const matcherName = fullMatcherName.replace(/Matcher$/, '');
+  const fullPatternName = formatFullPatternName(matcherNameInput);
+  const matcherName = fullPatternName.replace(/Pattern$/, '');
 
   const mainTemplate = `
 const {
@@ -28,7 +28,7 @@ const {
   pos,
   word,
 } = require('../lib/tokenFilters');
-const { regexMatchTokens, locsFromTokens } = require('../lib/matchingHelpers');
+const { regexMatchTokens, locsFromTokens } = require('../lib/matching/regexMatch');
 
 const websiteSrc = {
   type: 'website',
@@ -76,7 +76,7 @@ module.exports = {
   `;
 
   const testTemplate = `
-const ${fullMatcherName} = require('./${fullMatcherName}');
+const ${fullPatternName} = require('./${fullPatternName}');
 const {
   assertAllExamplesMatch,
   assertNoneMatch,
@@ -85,23 +85,23 @@ const {
 } = require('../lib/testUtils');
 
 test('matches all examples', async () => {
-  await assertAllExamplesMatch(${fullMatcherName});
+  await assertAllExamplesMatch(${fullPatternName});
 });
 
 test('sentence with multiple occurrences with just 没', async () => {
   const sentence = await parseSentence('我没工作，我老公也没工作');
-  expect(${fullMatcherName}.match(sentence)).toEqual(findLocsRegex(sentence, /(没)/));
+  expect(${fullPatternName}.match(sentence)).toEqual(findLocsRegex(sentence, /(没)/));
 });
 
 test("doesn't match negative examples", async () => {
-  await assertNoneMatch(${fullMatcherName}, [
+  await assertNoneMatch(${fullPatternName}, [
     '我不是你的爸爸。',
     'MORE NEGATIVE EXAMPLES HERE',
   ]);
 });
   `;
 
-  writeOutMatcher(fullMatcherName, mainTemplate, testTemplate, program.force);
+  writeOutPattern(fullPatternName, mainTemplate, testTemplate, program.force);
   console.log('Done! :D');
 };
 run();
