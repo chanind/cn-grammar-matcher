@@ -147,11 +147,26 @@ const matchesEqual = (match1, match2) => {
   return true;
 };
 
-// Helper to filter match results
-exports.filterMatches = (matches, filterFunc) => {
+/** Helper to filter match results */
+const filterMatches = (matches, filterFunc) => {
   if (!matches) return matches;
   const filteredMatches = matches.filter(filterFunc);
   return filteredMatches.length === 0 ? null : filteredMatches;
+};
+exports.filterMatches = filterMatches;
+
+/** Helper to remove any matches that <pattern> also matches */
+exports.excludeMatchesFromPattern = (sentence, pattern, matches) => {
+  const patternMatches = pattern.match(sentence);
+  if (!patternMatches) return matches;
+  return filterMatches(matches, match => {
+    for (const patternMatch of patternMatches) {
+      if (matchesOverlap(patternMatch, match)) {
+        return false;
+      }
+    }
+    return true;
+  });
 };
 
 /**
