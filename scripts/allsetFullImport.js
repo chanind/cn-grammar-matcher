@@ -1,5 +1,7 @@
+const fs = require('fs');
 const path = require('path');
 const program = require('commander');
+const shuffle = require('lodash.shuffle');
 const scrapeAllset = require('./allset/scrapeAllset');
 const extractPattern = require('./allset/extractPattern');
 const urls = require('./allset/urls');
@@ -29,8 +31,9 @@ const getRegexStrength = regex => {
 const run = async () => {
   program
     .usage('yarn run allset-full-import')
-    .option('-w, --write-weak-matchers', 'Write out poor quality matchers')
-    .option('-m, --write-medium-matchers', 'Write out medium quality matchers')
+    .option('-w, --write-weak-patterns', 'Write out poor quality patterns')
+    .option('-m, --write-medium-patterns', 'Write out medium quality patterns')
+    .option('-n, --next <num>', 'Import the next [num] new patterns', parseInt)
     .parse(process.argv);
 
   const results = {
@@ -41,6 +44,8 @@ const run = async () => {
     empty: [],
     skipped: [],
   };
+
+  const potentialNew = [];
 
   for (const url of urls) {
     try {
@@ -93,12 +98,15 @@ const run = async () => {
         results.skipped.push(url);
         console.log('SKIPPED');
       }
+      const isNewPattern = !fs.existsSync(mainFile);
       if (
         strength === STRONG ||
         (program.writeMediumPatterns && strength === MEDIUM) ||
         (program.writeWeakPatterns && strength === WEAK)
       ) {
         writeOutPattern(fullPatternName, mainTemplate, testTemplate);
+      } else if (isNewPattern) {
+        potentialNew.push([fullPatternName, mainTemplate, testTemplate]);
       }
 
       if (!skipped) {
@@ -110,6 +118,14 @@ const run = async () => {
     } catch (err) {
       console.log(err);
       results.broken.push(url);
+    }
+  }
+
+  if (program.next > 0) {
+    const newPatterns = shuffle(potentialNew).slice(0, program.next);
+    for (const params of newPatterns) {
+      console.log(`NEW pattern: ${params[0]}`);
+      writeOutPattern.apply(this, params);
     }
   }
 
