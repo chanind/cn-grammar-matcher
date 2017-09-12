@@ -54,3 +54,5 @@ exports.hekuangPattern = require('./hekuangPattern');
 exports.expressingNotOnlyButAlsoWithBujinPattern = require('./expressingNotOnlyButAlsoWithBujinPattern');
 exports.buJinPattern = require('./buJinPattern');
 exports.zongsuanPattern = require('./zongsuanPattern');
+exports.theAlsoAdverbYePattern = require('./theAlsoAdverbYePattern');
+exports.expressingOnTheBasisOfWithPingPattern = require('./expressingOnTheBasisOfWithPingPattern');
