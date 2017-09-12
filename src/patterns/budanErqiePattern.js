@@ -20,11 +20,7 @@ module.exports = {
   sources: [allSetSrc],
   match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(不但)[^而且]+(而且)/),
-      regexMatchLocs(text, /(不但)[^而且]+(而且)/),
-      regexMatchLocs(text, /(不但)[^而且]+(而且)/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(不但)[^而且]+(而且)/)]);
   },
   examples: [
     {

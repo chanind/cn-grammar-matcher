@@ -20,10 +20,7 @@ module.exports = {
   sources: [allSetSrc],
   match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(越来越)[^了]+(了)/),
-      regexMatchLocs(text, /(越来越)[^了]+(了)/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(越来越)[^了]+(了)/)]);
   },
   examples: [
     {

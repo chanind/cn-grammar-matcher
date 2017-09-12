@@ -20,10 +20,7 @@ module.exports = {
   sources: [allSetSrc],
   match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /((?:跟|和))[^一样]+(一样)/),
-      regexMatchLocs(text, /((?:跟|和))[^一样]+(一样)/),
-    ]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /((?:跟|和))[^一样]+(一样)/)]);
   },
   examples: [
     {

@@ -1,5 +1,6 @@
 const cheerio = require('cheerio');
 const camelCase = require('lodash.camelcase');
+const uniqBy = require('lodash.uniqby');
 const removeDiacritics = require('diacritics').remove;
 const { requestWithCache } = require('../scriptUtils');
 const regexFromRule = require('./regexFromRule');
@@ -25,7 +26,7 @@ module.exports = async allsetUrl => {
 
   const pinyinTextMatch = $('#ibox+ p').text().match(/\(([^)]*)\)/i);
   const rules = $('.jiegou p').map((i, elm) => $(elm).text()).toArray().filter(x => x);
-  const regexes = rules.map(regexFromRule);
+  const regexes = uniqBy(rules.map(regexFromRule), regex => `${regex}`);
 
   if (pinyinTextMatch) {
     matcherId = camelCase(removeDiacritics(pinyinTextMatch[1]).replace(/\s+/, '_'));
