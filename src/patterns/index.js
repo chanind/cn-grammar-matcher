@@ -56,3 +56,4 @@ exports.buJinPattern = require('./buJinPattern');
 exports.zongsuanPattern = require('./zongsuanPattern');
 exports.theAlsoAdverbYePattern = require('./theAlsoAdverbYePattern');
 exports.expressingOnTheBasisOfWithPingPattern = require('./expressingOnTheBasisOfWithPingPattern');
+exports.expressingRatherWithBijiaoPattern = require('./expressingRatherWithBijiaoPattern');
