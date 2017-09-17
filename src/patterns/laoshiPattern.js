@@ -42,11 +42,6 @@ module.exports = {
       en: 'He always says bad words.',
       src: allSetSrc,
     },
-    // {
-    //   zh: '这个机器老出问题。',
-    //   en: 'There is always something wrong with this machine.',
-    //   src: allSetSrc,
-    // },
     {
       zh: '老板老是让我们加班。',
       en: 'The boss always asks us to work overtime.',
