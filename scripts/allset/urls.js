@@ -1293,6 +1293,7 @@ const b2 = [
   {
     label: 'Expressing "almost" using "chadian mei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGGOUJB',
+    regexes: [/(差点儿?没)/],
   },
   {
     label: 'Expressing "anyway" as "fanzheng"',
