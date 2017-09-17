@@ -680,6 +680,7 @@ const b1 = [
   {
     label: 'Expressing "had better" with "haishi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGWAR65',
+    matcherId: 'haishiBa',
   },
   {
     label: 'Expressing "had better" with "zuihao"',
