@@ -79,7 +79,7 @@ class Grammar extends React.Component {
       >
         <div className={classes.headerInfo}>
           <div>
-            <h4>
+            <h4 className={classes.title}>
               {name}
             </h4>
             <p>

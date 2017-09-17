@@ -19,7 +19,7 @@ const Header = props => {
     <nav className="navbar navbar-default navbar-fixed-top">
       <div className="container">
         <div className="navbar-header">
-          <Link className="navbar-brand" to="/">
+          <Link className={classNames('navbar-brand', classes.logoText)} to="/">
             Chinese Grammar Matcher
           </Link>
         </div>

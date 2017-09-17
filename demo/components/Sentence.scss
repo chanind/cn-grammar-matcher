@@ -7,6 +7,7 @@
     transition: bottom 100ms;
     position: relative;
     bottom: 0;
+    font-weight: bold;
     
     &.highlight {
         background: RGB(255,251,230);
