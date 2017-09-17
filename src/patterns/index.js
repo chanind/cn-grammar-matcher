@@ -60,3 +60,4 @@ exports.expressingRatherWithBijiaoPattern = require('./expressingRatherWithBijia
 exports.huxiangPattern = require('./huxiangPattern');
 exports.haishiBaPattern = require('./haishiBaPattern');
 exports.jiaruJiuPattern = require('./jiaruJiuPattern');
+exports.zongshiPattern = require('./zongshiPattern');
