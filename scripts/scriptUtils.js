@@ -21,6 +21,8 @@ const isOnlyHanzi = (string, exceptions = '') => {
 const trim = text => text.replace(/^\s+|\s+$/giu, '');
 const fixNewlines = text => `${trim(text)}\n`;
 
+const formatFullPatternName = text => `${text.replace(/matcher.*/giu, '')}Pattern`;
+
 const requestWithCache = async (url, cacheDir = path.resolve(__dirname, '../cache')) => {
   const md5 = crypto.createHash('md5').update(url).digest('hex');
   const cacheFile = path.join(cacheDir, md5);
@@ -35,7 +37,7 @@ const requestWithCache = async (url, cacheDir = path.resolve(__dirname, '../cach
 
 const getNumHanzi = str => str.split('').filter(hasHanzi).length;
 
-const isMatcherFileWriteable = (fileName) => {
+const isPatternFileWriteable = fileName => {
   if (fs.existsSync(fileName)) {
     const contents = fs.readFileSync(fileName, 'utf-8');
     return contents.indexOf(AUTOGEN_MARKER) >= 0;
@@ -44,34 +46,56 @@ const isMatcherFileWriteable = (fileName) => {
 };
 
 const writeOutTemplate = (fileName, template, force) => {
-  if (isMatcherFileWriteable(fileName) || force) {
+  if (isPatternFileWriteable(fileName) || force) {
     console.log(`Writing ${fileName}`);
     fs.writeFileSync(fileName, fixNewlines(template));
     return true;
   }
-  console.log(`${fileName} already exists. Skipping. Run with -- -f to overwrite this file.`);
+  console.log(
+    `${fileName} already exists. Skipping. Run with -- -f to overwrite this file.`
+  );
   return false;
 };
 
-const writeOutMatcher = (fullMatcherName, mainTemplate, testTemplate, force = false) => {
-  const mainFileName = path.resolve(__dirname, `../src/matchers/${fullMatcherName}.js`);
-  const testFileName = path.resolve(__dirname, `../src/matchers/${fullMatcherName}.test.js`);
-  const matchersIndexFile = path.resolve(__dirname, '../src/matchers/index.js');
+const getPatternIndexRequireLine = matcherName =>
+  `exports.${matcherName} = require('./${matcherName}');`;
+
+const getPatternFileName = fullPatternName =>
+  path.resolve(__dirname, `../src/patterns/${fullPatternName}.js`);
+
+const getPatternTestFileName = fullPatternName =>
+  path.resolve(__dirname, `../src/patterns/${fullPatternName}.test.js`);
+
+const rewriteFileContents = (fileName, rewriteFunc) => {
+  const contents = fs.readFileSync(fileName, 'utf-8');
+  fs.writeFileSync(fileName, rewriteFunc(contents));
+};
+
+const rewritePatternIndex = rewriteFunc => {
+  const matchersIndexFile = path.resolve(__dirname, '../src/patterns/index.js');
+  rewriteFileContents(matchersIndexFile, rewriteFunc);
+};
+
+const writeOutPattern = (fullPatternName, mainTemplate, testTemplate, force = false) => {
+  const mainFileName = getPatternFileName(fullPatternName);
+  const testFileName = getPatternTestFileName(fullPatternName);
 
   const mainWritten = writeOutTemplate(mainFileName, mainTemplate, force);
   const testWritten = writeOutTemplate(testFileName, testTemplate, force);
   let indexWritten = true;
 
-  const matchersIndex = fs.readFileSync(matchersIndexFile, 'utf-8');
-  if (matchersIndex.indexOf(fullMatcherName) >= 0) {
-    console.log('Matcher already exists in index. Skipping.');
-    indexWritten = false;
-  } else {
-    const requireStatement = `exports.${fullMatcherName} = require('./${fullMatcherName}');`;
-    const updatedIndex = `${matchersIndex.replace(/\s+$/, '')}\n${requireStatement}`;
-    console.log('Updating matchers/index.js');
-    fs.writeFileSync(matchersIndexFile, fixNewlines(updatedIndex));
-  }
+  rewritePatternIndex(indexContents => {
+    if (indexContents.indexOf(fullPatternName) >= 0) {
+      console.log('Pattern already exists in index. Skipping.');
+      indexWritten = false;
+      return indexContents;
+    }
+    const requireStatement = getPatternIndexRequireLine(fullPatternName);
+    const updatedIndex = `${indexContents.replace(/\s+$/, '')}\n${requireStatement}`;
+    console.log('Updating patterns/index.js');
+    return fixNewlines(updatedIndex);
+  });
+
   return {
     mainWritten,
     testWritten,
@@ -83,9 +107,15 @@ module.exports = {
   hasHanzi,
   getNumHanzi,
   isOnlyHanzi,
-  isMatcherFileWriteable,
+  getPatternFileName,
+  rewritePatternIndex,
+  rewriteFileContents,
+  isPatternFileWriteable,
+  getPatternIndexRequireLine,
+  formatFullPatternName,
+  getPatternTestFileName,
   trim,
   fixNewlines,
-  writeOutMatcher,
+  writeOutPattern,
   requestWithCache,
 };

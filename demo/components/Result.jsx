@@ -28,7 +28,7 @@ class Result extends React.Component {
   }
 
   render() {
-    const grammar = this.props.result.grammar.map(grammarMatch => (
+    const grammar = this.props.result.grammar.map(grammarMatch =>
       <div className={classes.grammar} key={grammarMatch.id}>
         <Grammar
           onMouseEnter={() => this.setState({ highlightGrammar: [grammarMatch] })}
@@ -37,24 +37,23 @@ class Result extends React.Component {
           {...grammarMatch}
         />
       </div>
-    ));
-
+    );
 
     return (
       <StickyContainer className={classes.result}>
         <Sticky topOffset={-60} bottomOffset={60}>
-          {
-            ({ style }) => (
-              <div style={{ ...style, top: style.top + 60 }} className={classes.headerPositioner}>
-                <div className={classNames('container', classes.header)}>
-                  <Sentence
-                    text={this.props.result.text}
-                    highlightLocations={this.getHighlightLocs()}
-                  />
-                </div>
+          {({ style }) =>
+            <div
+              style={{ ...style, top: style.top + 60 }}
+              className={classes.headerPositioner}
+            >
+              <div className={classNames('container', classes.header)}>
+                <Sentence
+                  text={this.props.result.text}
+                  highlightLocations={this.getHighlightLocs()}
+                />
               </div>
-            )
-          }
+            </div>}
         </Sticky>
         <div className={classNames('container', classes.grammarResults)}>
           {grammar.length > 0 ? grammar : <p>No grammar matches found</p>}
@@ -75,7 +74,7 @@ Result.propTypes = {
           PropTypes.shape({
             zh: PropTypes.string,
             en: PropTypes.string,
-          }),
+          })
         ),
         sources: PropTypes.arrayOf(
           PropTypes.oneOfType([
@@ -88,9 +87,9 @@ Result.propTypes = {
               author: PropTypes.string,
               pages: PropTypes.number,
             }),
-          ]),
+          ])
         ),
-      }),
+      })
     ).isRequired,
   }).isRequired,
 };

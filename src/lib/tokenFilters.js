@@ -3,7 +3,6 @@ Utility functions for more consise filtering of tokens.
 ex: sentence.tokens.filter(pos('AD'))
 */
 
-
 // return a function which filters tokens with a matching pos
 // posStr is treated as a regex
 const pos = posStr => token => token.pos.match(new RegExp(`^${posStr}$`, 'iu'));
@@ -16,7 +15,7 @@ const word = wordStr => token => token.word.match(new RegExp(`^${wordStr}$`, 'iu
 const not = filter => token => !filter(token);
 
 // return a new filter function that is the or of all the input filters
-const or = (...filters) => (token) => {
+const or = (...filters) => token => {
   for (const filter of filters) {
     if (filter(token)) {
       return true;
@@ -25,7 +24,7 @@ const or = (...filters) => (token) => {
   return false;
 };
 
-const and = (...filters) => (token) => {
+const and = (...filters) => token => {
   for (const filter of filters) {
     if (!filter(token)) {
       return false;
@@ -35,10 +34,10 @@ const and = (...filters) => (token) => {
 };
 
 const any = () => true;
-const notRoot = token => token.index !== 0;
+const isRoot = token => token.index === 0;
+const notRoot = not(isRoot);
 
 // helper filter to remove all punctuation tokens
 const noPunct = not(pos('PU'));
 
-module.exports = { pos, word, not, or, and, any, notRoot, noPunct };
-
+module.exports = { pos, word, not, or, and, any, isRoot, notRoot, noPunct };

@@ -1,23 +1,25 @@
+const fs = require('fs');
 const path = require('path');
 const program = require('commander');
+const shuffle = require('lodash.shuffle');
 const scrapeAllset = require('./allset/scrapeAllset');
-const extractMatcher = require('./allset/extractMatcher');
+const extractPattern = require('./allset/extractPattern');
 const urls = require('./allset/urls');
-const { writeOutMatcher, getNumHanzi, isMatcherFileWriteable } = require('./scriptUtils');
-const { mergeLocMatchGroups, regexMatchLocs } = require('../src/lib/regexMatchers');
+const { writeOutPattern, getNumHanzi, isPatternFileWriteable } = require('./scriptUtils');
+const { mergeLocMatchGroups, regexMatchLocs } = require('../src/lib/matching/regexMatch');
 
 const WEAK = 1;
 const MEDIUM = 2;
 const STRONG = 3;
 
-const strengthLabel = (strength) => {
+const strengthLabel = strength => {
   if (strength === WEAK) return 'WEAK';
   if (strength === MEDIUM) return 'MEDIUM';
   if (strength === STRONG) return 'STRONG';
   return 'UNDEFINED';
 };
 
-const getRegexStrength = (regex) => {
+const getRegexStrength = regex => {
   const regexStr = regex.toString();
   const numHanzi = getNumHanzi(regexStr);
   const hasMultiParts = regexStr.indexOf('[^') >= 0;
@@ -29,8 +31,9 @@ const getRegexStrength = (regex) => {
 const run = async () => {
   program
     .usage('yarn run allset-full-import')
-    .option('-w, --write-weak-matchers', 'Write out poor quality matchers')
-    .option('-m, --write-medium-matchers', 'Write out medium quality matchers')
+    .option('-w, --write-weak-patterns', 'Write out poor quality patterns')
+    .option('-m, --write-medium-patterns', 'Write out medium quality patterns')
+    .option('-n, --next <num>', 'Import the next [num] new patterns', parseInt)
     .parse(process.argv);
 
   const results = {
@@ -41,6 +44,8 @@ const run = async () => {
     empty: [],
     skipped: [],
   };
+
+  const potentialNew = [];
 
   for (const url of urls) {
     try {
@@ -66,12 +71,13 @@ const run = async () => {
 
       // filterExamples means exclude examples that this matcher does not match successfully
       if (url.filterExamples) {
-        scrapedFields.examples = scrapedFields.examples.filter((example) => {
-          const regexMatches = scrapedFields.regexes.map(regex => regexMatchLocs(example.zh, regex));
+        scrapedFields.examples = scrapedFields.examples.filter(example => {
+          const regexMatches = scrapedFields.regexes.map(regex =>
+            regexMatchLocs(example.zh, regex)
+          );
           return mergeLocMatchGroups(regexMatches);
         });
       }
-
 
       let strength = STRONG;
       for (const regex of scrapedFields.regexes) {
@@ -83,19 +89,24 @@ const run = async () => {
       }
 
       let skipped = false;
-      const { mainTemplate, testTemplate, fullMatcherName } = extractMatcher(scrapedFields);
-      const mainFile = path.resolve(__dirname, `../src/matchers/${fullMatcherName}.js`);
-      if (!isMatcherFileWriteable(mainFile)) {
+      const { mainTemplate, testTemplate, fullPatternName } = extractPattern(
+        scrapedFields
+      );
+      const mainFile = path.resolve(__dirname, `../src/patterns/${fullPatternName}.js`);
+      if (!isPatternFileWriteable(mainFile)) {
         skipped = true;
         results.skipped.push(url);
         console.log('SKIPPED');
       }
+      const isNewPattern = !fs.existsSync(mainFile);
       if (
         strength === STRONG ||
-        (program.writeMediumMatchers && strength === MEDIUM) ||
-        (program.writeWeakMatchers && strength === WEAK)
+        (program.writeMediumPatterns && strength === MEDIUM) ||
+        (program.writeWeakPatterns && strength === WEAK)
       ) {
-        writeOutMatcher(fullMatcherName, mainTemplate, testTemplate);
+        writeOutPattern(fullPatternName, mainTemplate, testTemplate);
+      } else if (isNewPattern) {
+        potentialNew.push([fullPatternName, mainTemplate, testTemplate]);
       }
 
       if (!skipped) {
@@ -110,6 +121,14 @@ const run = async () => {
     }
   }
 
+  if (program.next > 0) {
+    const newPatterns = shuffle(potentialNew).slice(0, program.next);
+    for (const params of newPatterns) {
+      console.log(`NEW pattern: ${params[0]}`);
+      writeOutPattern.apply(this, params);
+    }
+  }
+
   console.log('SUMMARY');
   console.log(`${results.strong.length} strong`);
   console.log(`${results.medium.length} medium`);
@@ -120,7 +139,7 @@ const run = async () => {
 
   console.log('Done! :D');
 };
-run().catch((err) => {
+run().catch(err => {
   console.log(err);
   process.exit(1);
 });

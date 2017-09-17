@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import classes from './Sentence.scss';
 
 const Sentence = ({ text, highlightLocations }) => {
-  const isCharHighlighted = (index) => {
+  const isCharHighlighted = index => {
     for (const location of highlightLocations) {
       if (location.start <= index && location.end > index) {
         return true;
@@ -14,15 +14,21 @@ const Sentence = ({ text, highlightLocations }) => {
     return false;
   };
 
-  const chars = text.split('').map((char, i) => (
+  const chars = text.split('').map((char, i) =>
     <span
       key={i}
-      className={classNames(classes.char, { [classes.highlight]: isCharHighlighted(i) })}
+      className={classNames(classes.char, {
+        [classes.highlight]: isCharHighlighted(i),
+      })}
     >
       {char}
     </span>
-  ));
-  return (<h2 className={classes.header}>{chars}</h2>);
+  );
+  return (
+    <h2 className={classes.header}>
+      {chars}
+    </h2>
+  );
 };
 
 Sentence.propTypes = {
@@ -31,7 +37,7 @@ Sentence.propTypes = {
     PropTypes.shape({
       start: PropTypes.number,
       end: PropTypes.number,
-    }),
+    })
   ).isRequired,
 };
 

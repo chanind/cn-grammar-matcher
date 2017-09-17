@@ -1,4 +1,4 @@
-const { matchAContainsMatchB } = require('./regexMatchers');
+const { matchAContainsMatchB } = require('./matching/utils');
 
 class MatchReducer {
   constructor(matchersMap) {
@@ -35,9 +35,12 @@ class MatchReducer {
 
   _filterMatches(matchesMap) {
     const filteredMatchesMap = {};
-    const allMatches = Object.values(matchesMap).reduce((acc, matches) => acc.concat(matches), []);
+    const allMatches = Object.values(matchesMap).reduce(
+      (acc, matches) => acc.concat(matches),
+      []
+    );
     for (const matcherName of Object.keys(matchesMap)) {
-      const filteredMatches = matchesMap[matcherName].filter((match) => {
+      const filteredMatches = matchesMap[matcherName].filter(match => {
         for (const otherMatch of allMatches) {
           if (matchAContainsMatchB(otherMatch, match)) return false;
         }

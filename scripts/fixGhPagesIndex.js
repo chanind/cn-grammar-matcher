@@ -8,4 +8,7 @@ const newIndexPath = path.resolve(__dirname, '../index.html');
 
 fs.renameSync(oldIndexPath, newIndexPath);
 const indexContents = fs.readFileSync(newIndexPath, 'utf-8');
-fs.writeFileSync(newIndexPath, indexContents.replace(/="\//ig, '="/cn-grammar-matcher/assets/'));
+fs.writeFileSync(
+  newIndexPath,
+  indexContents.replace(/="\//gi, '="/cn-grammar-matcher/assets/')
+);

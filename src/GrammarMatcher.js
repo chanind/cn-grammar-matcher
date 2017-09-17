@@ -1,4 +1,4 @@
-const matchers = require('./matchers');
+const patterns = require('./patterns');
 const CoreNLPClient = require('./lib/CoreNLPClient');
 const SentenceParser = require('./lib/SentenceParser');
 const MatchReducer = require('./lib/MatchReducer');
@@ -7,7 +7,7 @@ class GrammarMatcher {
   constructor(nlpHost = null) {
     const nlpClient = new CoreNLPClient(nlpHost || GrammarMatcher.defaultNlpHost);
     this.sentenceParser = new SentenceParser(nlpClient);
-    this.matchReducer = new MatchReducer(matchers);
+    this.matchReducer = new MatchReducer(patterns);
   }
 
   async matchGrammar(text) {

@@ -1,10 +1,9 @@
-var path    = require('path');
+var path = require('path');
 var webpack = require('webpack');
-var Clean   = require('clean-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var Clean = require('clean-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-
 
 const output = process.env.OUTPUT || '/dist';
 
@@ -15,7 +14,7 @@ var config = {
   output: {
     path: path.join(__dirname, output),
     publicPath: '/',
-    filename: 'js/[name].js'
+    filename: 'js/[name].js',
   },
   module: {
     loaders: [
@@ -23,23 +22,25 @@ var config = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         query: {
-          presets: ['stage-3', 'react']
-        }
+          presets: ['stage-3', 'react'],
+        },
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css-loader?sourceMap&modules&camelCase=dashes!sass-loader?sourceMap')
+        loader: ExtractTextPlugin.extract(
+          'css-loader?sourceMap&modules&camelCase=dashes!sass-loader?sourceMap'
+        ),
       },
       {
         test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=5120'
-      }
-    ]
+        loader: 'url-loader?limit=5120',
+      },
+    ],
   },
   node: {
-    net: "empty",
-    fs: "empty",
-    tls: "empty"
+    net: 'empty',
+    fs: 'empty',
+    tls: 'empty',
   },
   externals: {
     react: 'React',
@@ -50,7 +51,7 @@ var config = {
       mods: path.resolve(__dirname, 'js', 'mods'),
       css: path.resolve(__dirname, 'css'),
       pics: path.resolve(__dirname, 'pics'),
-    }
+    },
   },
   devtool: 'source-map',
   plugins: [
@@ -66,9 +67,7 @@ var config = {
       template: 'demo/index.ejs',
       chunks: ['demo'],
     }),
-    new CopyWebpackPlugin([
-      { from: path.resolve(__dirname, 'demo/assets') }
-    ]),
+    new CopyWebpackPlugin([{ from: path.resolve(__dirname, 'demo/assets') }]),
   ],
 };
 

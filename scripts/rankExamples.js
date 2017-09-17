@@ -1,12 +1,11 @@
 const program = require('commander');
-const matchers = require('../src/matchers');
+const patterns = require('../src/patterns');
 const GrammarMatcher = require('../src/GrammarMatcher');
 
-const grammarMatcher = new GrammarMatcher(process.env.NLP_HOST);
-const examples = Object.values(matchers)
-  .reduce((acc, matcher) => acc.concat(matcher.examples), [])
+const grammarPattern = new GrammarMatcher(process.env.NLP_HOST);
+const examples = Object.values(patterns)
+  .reduce((acc, pattern) => acc.concat(pattern.examples), [])
   .map(ex => ex.zh);
-
 
 program
   .usage('yarn run rank-examples')
@@ -18,7 +17,7 @@ const top = parseInt(program.top || 10, 10);
 const run = async () => {
   const exampleCounts = {};
   for (const example of examples) {
-    const matches = await grammarMatcher.matchGrammar(example);
+    const matches = await grammarPattern.matchGrammar(example);
     exampleCounts[example] = matches[0].grammar.length;
   }
   examples.sort((ex1, ex2) => exampleCounts[ex2] - exampleCounts[ex1]);
