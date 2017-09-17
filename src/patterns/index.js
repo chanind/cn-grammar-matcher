@@ -59,3 +59,4 @@ exports.expressingOnTheBasisOfWithPingPattern = require('./expressingOnTheBasisO
 exports.expressingRatherWithBijiaoPattern = require('./expressingRatherWithBijiaoPattern');
 exports.huxiangPattern = require('./huxiangPattern');
 exports.haishiBaPattern = require('./haishiBaPattern');
+exports.jiaruJiuPattern = require('./jiaruJiuPattern');
