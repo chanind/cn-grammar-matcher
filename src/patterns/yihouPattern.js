@@ -8,104 +8,91 @@ const { mergeLocMatchGroups } = require('../lib/matching/utils');
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLNKZR',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGC3SCN',
   name: 'AllSet Chinese Grammar Wiki',
 };
 
 module.exports = {
   id: 'yihou',
-  name: 'Subj. + Verb + 以后／的时候， Comment',
+  name: 'Subj. + Special Time + 以后／之后 + Action',
   description:
-    'When talking about when something happens, "以后" (yǐhòu) and "的时候" (de shíhou) are often used. They can both be translated as "when," but their meanings are different, so they can\'t be used in situations you might expect them to be used in. Take a look at this article if you want to figure it out!',
+    'If you are trying to explain what you did after a certain event, you might want to use "以后" (yǐhòu) or "之后" (zhīhòu). After all, they do both mean "after," right? Well, it turns out that there are a few rules that you need to be aware of before you use them.',
   sources: [allSetSrc],
   match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(以后|的时候)/)]);
+    return mergeLocMatchGroups([
+      regexMatchLocs(text, /((?:以后|之后))/),
+      regexMatchLocs(text, /(以后，)/),
+      regexMatchLocs(text, /(，之后)/),
+    ]);
   },
   examples: [
     {
-      zh: '下飞机以后给我打电话。',
-      en: 'Give me a call after you get off the plane.',
+      zh: '下过雨以后/之后空气会好很多。',
+      en: 'After it rains, the air will be a lot better.',
       src: allSetSrc,
     },
     {
-      zh: '有了孩子以后他更没时间出来玩了。',
-      en: 'After having a child, he has even less time to come out and have fun.',
+      zh: '结婚以后/之后他们有了两个宝宝。',
+      en: 'After getting married, they had two babies.',
       src: allSetSrc,
     },
     {
-      zh: '下班以后我们一起去吃饭。',
-      en: "After work, we're going to go eat together.",
+      zh: '等我涨工资以后/之后请你吃饭。',
+      en: 'After I get a raise, I will treat you to a meal.',
       src: allSetSrc,
     },
     {
-      zh: '来中国以后我才发现中国菜那么好吃。',
-      en: 'Only when I got to China did I realize how tasty Chinese food is.',
+      zh: '听到这个消息以后/之后，我高兴得一晚上没睡。',
+      en: "After I heard this news, I was so happy I couldn't sleep the whole night.",
       src: allSetSrc,
     },
     {
-      zh: '毕业以后我打算去上海工作。',
-      en: 'I plan to find a job in Shanghai after I graduate.',
+      zh: '以后再也不来这里吃饭了，又贵又难吃。',
+      en:
+        "In the future I will never come to this place to eat again. It's expensive and the food is not good.",
       src: allSetSrc,
     },
     {
-      zh: '结婚以后你还会工作吗？',
-      en: 'Are you still working after you get married?',
+      zh: '以后我可能会去国外上大学。',
+      en: 'In the future I might go to college abroad.',
       src: allSetSrc,
     },
     {
-      zh: '吃饭的时候看电视容易长胖。',
-      en: 'Watching TV while you eat can make you fat easily.',
+      zh: '以后的事情以后再说吧。',
+      en: "We'll talk about future things some time later.",
       src: allSetSrc,
     },
     {
-      zh: '公司规定工作的时候不能用QQ聊天。',
-      en: "Company rules say that you can't chat on QQ when you're at work.",
+      zh: '我要先回家把东西放下，之后去咖啡店找你。',
+      en:
+        "I'm going to go home and drop my stuff off first, then go to the cafe to look for you.",
       src: allSetSrc,
     },
     {
-      zh: '无聊的时候可以做些什么？',
-      en: "What can you do when you're bored?",
+      zh: '去年夏天他来过我家，之后再也没见到他。',
+      en: "Last summer, he came to my house. After that, I haven't seen him.",
       src: allSetSrc,
     },
     {
-      zh: '打篮球的时候会出很多汗。',
-      en: 'You sweat a lot when you play basketball.',
+      zh: '房子涨价之后，越来越多的人开始买房。',
+      en: 'After prices went up, more and more people started buying houses.',
       src: allSetSrc,
     },
     {
-      zh: '看电影的时候你喜欢吃东西吗？',
-      en: 'Do you like to eat while you watch a movie?',
+      zh: '我六点下班，之后，我去跟朋友吃饭。',
+      en:
+        "I will get off work at six o'clock, and after that I will meet with a friend to eat dinner.",
       src: allSetSrc,
     },
     {
-      zh: '下班的时候我给你打电话。',
-      en: 'When you get off work, call me.',
+      zh: '昨天我跟朋友吃完饭以后去了酒吧。',
+      en: 'Yesterday, when my friends and I were done eating, we went to the bar.',
       src: allSetSrc,
     },
     {
-      zh: '下班以后我给你打电话。',
-      en: 'When you get off work, call me.',
-      src: allSetSrc,
-    },
-    {
-      zh: '雨停了的时候，我们就去公园玩。',
-      en: "When it stops raining, we'll go play in the park.",
-      src: allSetSrc,
-    },
-    {
-      zh: '雨停了以后，我们就去公园玩。',
-      en: "When it stops raining, we'll go play in the park.",
-      src: allSetSrc,
-    },
-    {
-      zh: '商店关门的时候，你再来找我。',
-      en: 'Come to find me when the shop is closed.',
-      src: allSetSrc,
-    },
-    {
-      zh: '商店关门了以后，你再来找我。',
-      en: 'Come to find me when the shop is closed.',
+      zh: '昨天我跟朋友去吃饭了，之后，我们去了酒吧。',
+      en: 'Yesterday I ate dinner with a friend, and afterward we went to a bar.',
       src: allSetSrc,
     },
   ],

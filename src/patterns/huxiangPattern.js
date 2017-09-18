@@ -63,5 +63,10 @@ module.exports = {
       en: 'Take advantage of each other',
       src: allSetSrc,
     },
+    {
+      zh: '互相看了一眼',
+      en: 'glanced at each other',
+      src: allSetSrc,
+    },
   ],
 };

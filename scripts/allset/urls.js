@@ -1188,6 +1188,7 @@ const b1 = [
   {
     label: 'Comparing "haishi" and "huozhe"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQJ5IC',
+    matcherId: 'expressingOrWithHaishiAndHuozhe',
   },
   {
     label: 'Comparing "weile" and "yinwei"',

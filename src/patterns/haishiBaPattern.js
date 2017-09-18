@@ -100,5 +100,21 @@ module.exports = {
       en: "He will definitely disagree. We'd better not tell him.",
       src: allSetSrc,
     },
+    {
+      zh: '今天晚上我太忙了，不可以去酒吧。我还是做作业吧。',
+      en:
+        "I'm extremely busy tonight, so I can't go to the bar. I'd better do my homework.",
+      src: allSetSrc,
+    },
+    {
+      zh: '我听说这部电影不好看，我们还是看其他的吧。',
+      en: "I heard this movie wasn't good. We should watch another one.",
+      src: allSetSrc,
+    },
+    {
+      zh: '今天的作业特别难，我们还是问老师吧。',
+      en: "Today's homework is especially hard. We had better ask the teacher.",
+      src: allSetSrc,
+    },
   ],
 };

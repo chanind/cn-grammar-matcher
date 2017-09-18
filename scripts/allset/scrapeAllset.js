@@ -35,10 +35,10 @@ module.exports = async allsetUrl => {
     matcherId = camelCase($('h1').text().replace(/[^\sa-z]+/giu, '').replace(/\s+/, '_'));
   }
 
-  const noClasses = (i, li) => !$(li).attr('class');
+  const noBadClasses = (i, li) => !$(li).attr('class') || $(li).attr('class') === 'o';
   const mapExFields = (i, li) => getExampleFields($(li));
   const examples = $('.liju li')
-    .filter(noClasses)
+    .filter(noBadClasses)
     .map(mapExFields)
     .toArray()
     .filter(x => x);
