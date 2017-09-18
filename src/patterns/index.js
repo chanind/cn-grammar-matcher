@@ -66,3 +66,4 @@ exports.expressingAlmostUsingChadianMeiPattern = require('./expressingAlmostUsin
 exports.laoshiPattern = require('./laoshiPattern');
 exports.expressingOrWithHaishiAndHuozhePattern = require('./expressingOrWithHaishiAndHuozhePattern');
 exports.buguoPattern = require('./buguoPattern');
+exports.yinggaiPattern = require('./yinggaiPattern');
