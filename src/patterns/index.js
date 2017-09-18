@@ -68,3 +68,4 @@ exports.expressingOrWithHaishiAndHuozhePattern = require('./expressingOrWithHais
 exports.buguoPattern = require('./buguoPattern');
 exports.yinggaiPattern = require('./yinggaiPattern');
 exports.expressingDontNeedToWithBuyongPattern = require('./expressingDontNeedToWithBuyongPattern');
+exports.connectingNounsWithShiPattern = require('./connectingNounsWithShiPattern');
