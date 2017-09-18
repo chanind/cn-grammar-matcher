@@ -64,3 +64,4 @@ exports.zongshiPattern = require('./zongshiPattern');
 exports.comparingHuiNengKeyiPattern = require('./comparingHuiNengKeyiPattern');
 exports.expressingAlmostUsingChadianMeiPattern = require('./expressingAlmostUsingChadianMeiPattern');
 exports.laoshiPattern = require('./laoshiPattern');
+exports.expressingOrWithHaishiAndHuozhePattern = require('./expressingOrWithHaishiAndHuozhePattern');
