@@ -74,3 +74,4 @@ exports.jiranPattern = require('./jiranPattern');
 exports.expressingHaveToWithBudebuPattern = require('./expressingHaveToWithBudebuPattern');
 exports.expressingEverSinceWithZicongPattern = require('./expressingEverSinceWithZicongPattern');
 exports.auxiliaryVerbYaoAndItsMultipleMeaningsPattern = require('./auxiliaryVerbYaoAndItsMultipleMeaningsPattern');
+exports.expressingThatsAllWithEryiPattern = require('./expressingThatsAllWithEryiPattern');
