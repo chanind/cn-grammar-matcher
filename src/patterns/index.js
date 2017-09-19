@@ -72,3 +72,4 @@ exports.connectingNounsWithShiPattern = require('./connectingNounsWithShiPattern
 exports.questionsWithNePattern = require('./questionsWithNePattern');
 exports.jiranPattern = require('./jiranPattern');
 exports.expressingHaveToWithBudebuPattern = require('./expressingHaveToWithBudebuPattern');
+exports.expressingEverSinceWithZicongPattern = require('./expressingEverSinceWithZicongPattern');
