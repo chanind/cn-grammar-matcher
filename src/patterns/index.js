@@ -71,3 +71,4 @@ exports.expressingDontNeedToWithBuyongPattern = require('./expressingDontNeedToW
 exports.connectingNounsWithShiPattern = require('./connectingNounsWithShiPattern');
 exports.questionsWithNePattern = require('./questionsWithNePattern');
 exports.jiranPattern = require('./jiranPattern');
+exports.expressingHaveToWithBudebuPattern = require('./expressingHaveToWithBudebuPattern');

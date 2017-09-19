@@ -20,7 +20,7 @@ module.exports = {
   sources: [allSetSrc],
   match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(既然)/)]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(既然)[^那就]+(那|就|那就)?/)]);
   },
   examples: [
     {
