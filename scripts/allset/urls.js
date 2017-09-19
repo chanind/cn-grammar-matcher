@@ -1569,6 +1569,7 @@ const b2 = [
   {
     label: 'Expressing "since" with "jiran"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGG4BX9',
+    regexes: [/(既然)/],
   },
   {
     label: 'Expressing "therefore" with "yinci"',

@@ -70,3 +70,4 @@ exports.yinggaiPattern = require('./yinggaiPattern');
 exports.expressingDontNeedToWithBuyongPattern = require('./expressingDontNeedToWithBuyongPattern');
 exports.connectingNounsWithShiPattern = require('./connectingNounsWithShiPattern');
 exports.questionsWithNePattern = require('./questionsWithNePattern');
+exports.jiranPattern = require('./jiranPattern');
