@@ -69,3 +69,4 @@ exports.buguoPattern = require('./buguoPattern');
 exports.yinggaiPattern = require('./yinggaiPattern');
 exports.expressingDontNeedToWithBuyongPattern = require('./expressingDontNeedToWithBuyongPattern');
 exports.connectingNounsWithShiPattern = require('./connectingNounsWithShiPattern');
+exports.questionsWithNePattern = require('./questionsWithNePattern');
