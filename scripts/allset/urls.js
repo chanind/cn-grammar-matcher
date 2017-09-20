@@ -220,6 +220,7 @@ const a2 = [
   {
     label: 'Expressing "only" with "zhi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGN8C8R',
+    regexes: [/(只)/],
   },
   {
     label: 'Expressing actions in progress with "zai"',

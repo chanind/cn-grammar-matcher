@@ -78,3 +78,4 @@ exports.expressingThatsAllWithEryiPattern = require('./expressingThatsAllWithEry
 exports.benlaiPattern = require('./benlaiPattern');
 exports.buBiPattern = require('./buBiPattern');
 exports.meiDouPattern = require('./meiDouPattern');
+exports.expressingOnlyWithZhiPattern = require('./expressingOnlyWithZhiPattern');
