@@ -1690,6 +1690,8 @@ const b2 = [
   {
     label: 'Comparing "benlai" and "yuanlai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG56QKW',
+    matcherId: 'comparingBenlaiAndYuanLai',
+    skip: true, // already covered by benlai and yuanlai individually
   },
   {
     label: 'Comparing "buduan" and "buting"',

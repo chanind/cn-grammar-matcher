@@ -75,3 +75,4 @@ exports.expressingHaveToWithBudebuPattern = require('./expressingHaveToWithBudeb
 exports.expressingEverSinceWithZicongPattern = require('./expressingEverSinceWithZicongPattern');
 exports.auxiliaryVerbYaoAndItsMultipleMeaningsPattern = require('./auxiliaryVerbYaoAndItsMultipleMeaningsPattern');
 exports.expressingThatsAllWithEryiPattern = require('./expressingThatsAllWithEryiPattern');
+exports.benlaiPattern = require('./benlaiPattern');
