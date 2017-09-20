@@ -77,3 +77,4 @@ exports.auxiliaryVerbYaoAndItsMultipleMeaningsPattern = require('./auxiliaryVerb
 exports.expressingThatsAllWithEryiPattern = require('./expressingThatsAllWithEryiPattern');
 exports.benlaiPattern = require('./benlaiPattern');
 exports.buBiPattern = require('./buBiPattern');
+exports.meiDouPattern = require('./meiDouPattern');

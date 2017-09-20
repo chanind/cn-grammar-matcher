@@ -1730,6 +1730,7 @@ const b2 = [
   {
     label: 'Comparing "fan\'er" and “xiangfan"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGFNS52',
+    matcherId: 'comparingFanerAndXiangfan',
   },
   {
     label: 'Comparing "kending" "queding" and “yiding"',
