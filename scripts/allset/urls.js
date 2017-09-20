@@ -1172,6 +1172,7 @@ const b1 = [
   {
     label: 'Comparing "cai" and "jiu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLOS9C',
+    skip: true, // should be covered by cai and jiu individually
   },
   {
     label: 'Comparing "youdian" and "yidian"',

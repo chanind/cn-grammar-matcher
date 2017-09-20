@@ -76,3 +76,4 @@ exports.expressingEverSinceWithZicongPattern = require('./expressingEverSinceWit
 exports.auxiliaryVerbYaoAndItsMultipleMeaningsPattern = require('./auxiliaryVerbYaoAndItsMultipleMeaningsPattern');
 exports.expressingThatsAllWithEryiPattern = require('./expressingThatsAllWithEryiPattern');
 exports.benlaiPattern = require('./benlaiPattern');
+exports.buBiPattern = require('./buBiPattern');
