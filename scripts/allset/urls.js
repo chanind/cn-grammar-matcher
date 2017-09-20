@@ -111,6 +111,7 @@ const a1 = [
   {
     label: 'Expressing permission with "keyi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG6SPYK',
+    regexes: [/(可以)/],
   },
   {
     label: 'Wanting to do something with "yao"',

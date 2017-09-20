@@ -80,3 +80,4 @@ exports.buBiPattern = require('./buBiPattern');
 exports.meiDouPattern = require('./meiDouPattern');
 exports.expressingOnlyWithZhiPattern = require('./expressingOnlyWithZhiPattern');
 exports.basicComparisonsWithBiPattern = require('./basicComparisonsWithBiPattern');
+exports.keyiPattern = require('./keyiPattern');
