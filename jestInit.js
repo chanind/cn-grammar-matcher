@@ -7,12 +7,19 @@ global.CORE_NLP_HOST = process.env.CORE_NLP_HOST || 'http://localhost:9000';
 
 expect.extend({
   toMatchSentence(received, sentence, tokens = null) {
-    const pass = !!received.match(sentence);
+    const sentences = Array.isArray(sentence) ? sentence : [sentence];
+    let pass = false;
+    for (const sentence of sentences) {
+      if (received.match(sentence)) {
+        pass = true;
+      }
+    }
+    const original = sentences.map(sentence => sentence.original).join(' :: ');
     return {
       pass: pass,
       message: `expected ${received.name} ${this.isNot
         ? 'not '
-        : ''}to match: ${sentence.original}`,
+        : ''}to match: ${original}`,
     };
   },
 });

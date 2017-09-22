@@ -111,6 +111,7 @@ const a1 = [
   {
     label: 'Expressing permission with "keyi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG6SPYK',
+    regexes: [/(可以)/],
   },
   {
     label: 'Wanting to do something with "yao"',
@@ -220,6 +221,7 @@ const a2 = [
   {
     label: 'Expressing "only" with "zhi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGN8C8R',
+    regexes: [/(只)/],
   },
   {
     label: 'Expressing actions in progress with "zai"',
@@ -680,6 +682,7 @@ const b1 = [
   {
     label: 'Expressing "had better" with "haishi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGWAR65',
+    matcherId: 'haishiBa',
   },
   {
     label: 'Expressing "had better" with "zuihao"',
@@ -1171,6 +1174,7 @@ const b1 = [
   {
     label: 'Comparing "cai" and "jiu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLOS9C',
+    skip: true, // should be covered by cai and jiu individually
   },
   {
     label: 'Comparing "youdian" and "yidian"',
@@ -1187,6 +1191,7 @@ const b1 = [
   {
     label: 'Comparing "haishi" and "huozhe"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQJ5IC',
+    matcherId: 'expressingOrWithHaishiAndHuozhe',
   },
   {
     label: 'Comparing "weile" and "yinwei"',
@@ -1292,6 +1297,7 @@ const b2 = [
   {
     label: 'Expressing "almost" using "chadian mei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGGOUJB',
+    regexes: [/(差点儿?没)/],
   },
   {
     label: 'Expressing "anyway" as "fanzheng"',
@@ -1566,6 +1572,7 @@ const b2 = [
   {
     label: 'Expressing "since" with "jiran"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGG4BX9',
+    regexes: [/(既然)[^那就]+(那|就|那就)?/],
   },
   {
     label: 'Expressing "therefore" with "yinci"',
@@ -1686,6 +1693,8 @@ const b2 = [
   {
     label: 'Comparing "benlai" and "yuanlai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG56QKW',
+    matcherId: 'comparingBenlaiAndYuanLai',
+    skip: true, // already covered by benlai and yuanlai individually
   },
   {
     label: 'Comparing "buduan" and "buting"',
@@ -1723,6 +1732,7 @@ const b2 = [
   {
     label: 'Comparing "fan\'er" and “xiangfan"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGFNS52',
+    matcherId: 'comparingFanerAndXiangfan',
   },
   {
     label: 'Comparing "kending" "queding" and “yiding"',

@@ -102,7 +102,8 @@ const run = async () => {
       if (
         strength === STRONG ||
         (program.writeMediumPatterns && strength === MEDIUM) ||
-        (program.writeWeakPatterns && strength === WEAK)
+        (program.writeWeakPatterns && strength === WEAK) ||
+        !isNewPattern
       ) {
         writeOutPattern(fullPatternName, mainTemplate, testTemplate);
       } else if (isNewPattern) {

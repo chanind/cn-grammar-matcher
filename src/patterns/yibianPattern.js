@@ -8,69 +8,36 @@ const { mergeLocMatchGroups } = require('../lib/matching/utils');
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/ASG2ZC5S',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGXU2H4',
   name: 'AllSet Chinese Grammar Wiki',
 };
 
 module.exports = {
   id: 'yibian',
-  name: 'Subj. + 一边 + Verb（，）+ 一边 + Verb',
+  name: '[Action] +  以便 + [Outcome]',
   description:
-    'Multitasking is everywhere in the modern world (what else are you doing while you read this?), but you if can focus for just a minute, you can learn a way to express simultaneous tasks in Chinese! This can be done with 一边 (yībiān).',
+    '以便 (yǐbiàn)  is a formal way to say "in order to" or "to facilitate," and is generally used to show that an outcome is the result of a particular action.',
   sources: [allSetSrc],
   match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(一边)[^一边]+(一边)/)]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /(以便)/)]);
   },
   examples: [
     {
-      zh: '不要一边吃东西，一边说话。',
-      en: "Don't speak while eating.",
+      zh: '我国提倡垃圾分类，以便回收再利用。',
+      en:
+        'My country advocates a garbage classification to help with reusing and recycling.',
       src: allSetSrc,
     },
     {
-      zh: '我常常一边洗澡，一边唱歌。',
-      en: 'I often sing songs while I take a shower.',
+      zh: '老李买了一辆折叠式的自行车，以便携带。',
+      en: 'Old Li bought a folding bike to make it easier to carry around.',
       src: allSetSrc,
     },
     {
-      zh: '孩子喜欢一边吃饭，一边玩。',
-      en: 'Children like to play while eating.',
-      src: allSetSrc,
-    },
-    {
-      zh: '你喜欢一边听音乐，一边做作业吗？',
-      en: 'Do you like to listen to music while doing homework?',
-      src: allSetSrc,
-    },
-    {
-      zh: '我们一边走一边聊吧。',
-      en: "Let's walk while we talk.",
-      src: allSetSrc,
-    },
-    {
-      zh: '请你一边读一边写。',
-      en: 'Please write as you read.',
-      src: allSetSrc,
-    },
-    {
-      zh: '不要一边开车，一边打电话。',
-      en: "Don't talk on the phone while you drive.",
-      src: allSetSrc,
-    },
-    {
-      zh: '老板喜欢一边抽烟，一边工作。',
-      en: 'The boss likes to smoke while working.',
-      src: allSetSrc,
-    },
-    {
-      zh: '很多人都一边上班，一边玩手机。',
-      en: 'Many people play with their cell phones while working.',
-      src: allSetSrc,
-    },
-    {
-      zh: '她常常一边做饭，一边带孩子。',
-      en: 'She often looks after the baby while cooking food.',
+      zh: '老师减慢了语速，以便学生能听懂。',
+      en:
+        'The teacher slowed down her talking speed so that the students could understand her.',
       src: allSetSrc,
     },
   ],

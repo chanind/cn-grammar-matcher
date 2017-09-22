@@ -38,5 +38,15 @@ module.exports = {
       en: 'Not only did he finish, but he also did it extremely well.',
       src: allSetSrc,
     },
+    {
+      zh: '我不但会做饭，而且会洗衣服。',
+      en: 'Not only can I cook, but I can also do the laundry.',
+      src: allSetSrc,
+    },
+    {
+      zh: '不但我会做饭，而且我妹妹也会做饭。',
+      en: 'Not only can I cook, but my little sister can as well.',
+      src: allSetSrc,
+    },
   ],
 };
