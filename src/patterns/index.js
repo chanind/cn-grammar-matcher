@@ -84,3 +84,4 @@ exports.keyiPattern = require('./keyiPattern');
 exports.concedingWithBaPattern = require('./concedingWithBaPattern');
 exports.expressingAgainInTheFutureWithZaiPattern = require('./expressingAgainInTheFutureWithZaiPattern');
 exports.ganggangPattern = require('./ganggangPattern');
+exports.continuationWithHaiPattern = require('./continuationWithHaiPattern');
