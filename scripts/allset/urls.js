@@ -217,6 +217,8 @@ const a2 = [
   {
     label: 'Expressing "just" with "gang"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQJJYO',
+    matcherId: 'ganggang',
+    regexes: [/(刚刚?)/],
   },
   {
     label: 'Expressing "only" with "zhi"',
