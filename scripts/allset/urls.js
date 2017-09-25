@@ -637,6 +637,7 @@ const b1 = [
   {
     label: 'Expressing "again" in the future with "zai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGIZQJ2',
+    regexes: [/(再)[^见]/],
   },
   {
     label: 'Expressing "again" in the past with "you"',

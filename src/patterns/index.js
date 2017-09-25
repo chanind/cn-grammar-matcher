@@ -82,3 +82,4 @@ exports.expressingOnlyWithZhiPattern = require('./expressingOnlyWithZhiPattern')
 exports.basicComparisonsWithBiPattern = require('./basicComparisonsWithBiPattern');
 exports.keyiPattern = require('./keyiPattern');
 exports.concedingWithBaPattern = require('./concedingWithBaPattern');
+exports.expressingAgainInTheFutureWithZaiPattern = require('./expressingAgainInTheFutureWithZaiPattern');
