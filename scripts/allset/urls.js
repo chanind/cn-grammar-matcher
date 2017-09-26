@@ -1649,6 +1649,7 @@ const b2 = [
   {
     label: 'Expressing "the more... the more..." with "yue… yue…"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGB44F6',
+    regexes: [/(越)[^越]+(越)/],
   },
   {
     label: 'Expressing "would rather" with "ningke"',

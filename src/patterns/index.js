@@ -90,3 +90,4 @@ exports.houlaiPattern = require('./houlaiPattern');
 exports.expressingEveryWithMeiPattern = require('./expressingEveryWithMeiPattern');
 exports.expressingTheSelfevidentWithMaPattern = require('./expressingTheSelfevidentWithMaPattern');
 exports.specialCasesOfZaiFollowingVerbsPattern = require('./specialCasesOfZaiFollowingVerbsPattern');
+exports.expressingTheMoreTheMoreWithYueYuePattern = require('./expressingTheMoreTheMoreWithYueYuePattern');
