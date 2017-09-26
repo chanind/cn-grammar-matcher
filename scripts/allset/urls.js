@@ -842,6 +842,7 @@ const b1 = [
   {
     label: 'Expressing the self-evident with "ma"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGVMC4B',
+    regexes: [/(嘛)/],
   },
   {
     label: 'Reviewing options with "ba"',
