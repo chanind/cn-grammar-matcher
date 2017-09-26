@@ -217,6 +217,8 @@ const a2 = [
   {
     label: 'Expressing "just" with "gang"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQJJYO',
+    matcherId: 'ganggang',
+    regexes: [/(刚刚?)/],
   },
   {
     label: 'Expressing "only" with "zhi"',
@@ -637,6 +639,7 @@ const b1 = [
   {
     label: 'Expressing "again" in the future with "zai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGIZQJ2',
+    regexes: [/(再)[^见]/],
   },
   {
     label: 'Expressing "again" in the past with "you"',
@@ -839,6 +842,7 @@ const b1 = [
   {
     label: 'Expressing the self-evident with "ma"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGVMC4B',
+    regexes: [/(嘛)/],
   },
   {
     label: 'Reviewing options with "ba"',
@@ -890,6 +894,7 @@ const b1 = [
   {
     label: 'Verbs preceded by "gei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG3ORNN',
+    skip: 'combine with for with gei pattern',
   },
   {
     label: 'Expressing "double negation"',
@@ -958,6 +963,7 @@ const b1 = [
   {
     label: 'Verbs followed by "gei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGMMHTQ',
+    skip: 'combine with for with gei pattern',
   },
   {
     label: 'Doing something less with "shao"',
@@ -1174,7 +1180,7 @@ const b1 = [
   {
     label: 'Comparing "cai" and "jiu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLOS9C',
-    skip: true, // should be covered by cai and jiu individually
+    skip: 'should be covered by cai and jiu individually',
   },
   {
     label: 'Comparing "youdian" and "yidian"',
@@ -1220,6 +1226,7 @@ const b1 = [
   {
     label: 'Comparing "houlai" and "ranhou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGA3RJD',
+    skip: 'conflicting with houlaiPattern, revisit later',
   },
   {
     label: 'Comparing "yihou" and "de shihou"',
@@ -1642,6 +1649,7 @@ const b2 = [
   {
     label: 'Expressing "the more... the more..." with "yue… yue…"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGB44F6',
+    regexes: [/(越)[^越]+(越)/],
   },
   {
     label: 'Expressing "would rather" with "ningke"',
@@ -1694,7 +1702,7 @@ const b2 = [
     label: 'Comparing "benlai" and "yuanlai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG56QKW',
     matcherId: 'comparingBenlaiAndYuanLai',
-    skip: true, // already covered by benlai and yuanlai individually
+    skip: 'already covered by benlai and yuanlai individually',
   },
   {
     label: 'Comparing "buduan" and "buting"',
