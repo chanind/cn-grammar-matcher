@@ -86,3 +86,4 @@ exports.expressingAgainInTheFutureWithZaiPattern = require('./expressingAgainInT
 exports.ganggangPattern = require('./ganggangPattern');
 exports.continuationWithHaiPattern = require('./continuationWithHaiPattern');
 exports.kongpaPattern = require('./kongpaPattern');
+exports.houlaiPattern = require('./houlaiPattern');
