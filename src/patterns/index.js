@@ -87,3 +87,4 @@ exports.ganggangPattern = require('./ganggangPattern');
 exports.continuationWithHaiPattern = require('./continuationWithHaiPattern');
 exports.kongpaPattern = require('./kongpaPattern');
 exports.houlaiPattern = require('./houlaiPattern');
+exports.expressingEveryWithMeiPattern = require('./expressingEveryWithMeiPattern');
