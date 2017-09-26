@@ -893,6 +893,7 @@ const b1 = [
   {
     label: 'Verbs preceded by "gei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG3ORNN',
+    skip: 'combine with for with gei pattern'
   },
   {
     label: 'Expressing "double negation"',
@@ -961,6 +962,7 @@ const b1 = [
   {
     label: 'Verbs followed by "gei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGMMHTQ',
+    skip: 'combine with for with gei pattern'
   },
   {
     label: 'Doing something less with "shao"',
@@ -1177,7 +1179,7 @@ const b1 = [
   {
     label: 'Comparing "cai" and "jiu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLOS9C',
-    skip: true, // should be covered by cai and jiu individually
+    skip: 'should be covered by cai and jiu individually'
   },
   {
     label: 'Comparing "youdian" and "yidian"',
@@ -1223,6 +1225,7 @@ const b1 = [
   {
     label: 'Comparing "houlai" and "ranhou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGA3RJD',
+    skip: 'conflicting with houlaiPattern, revisit later'
   },
   {
     label: 'Comparing "yihou" and "de shihou"',
@@ -1697,7 +1700,7 @@ const b2 = [
     label: 'Comparing "benlai" and "yuanlai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG56QKW',
     matcherId: 'comparingBenlaiAndYuanLai',
-    skip: true, // already covered by benlai and yuanlai individually
+    skip: 'already covered by benlai and yuanlai individually'
   },
   {
     label: 'Comparing "buduan" and "buting"',
