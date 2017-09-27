@@ -95,3 +95,4 @@ exports.beizijuPattern = require('./beizijuPattern');
 exports.yinweiSuoyiPattern = require('./yinweiSuoyiPattern');
 exports.negativeCommandsWithBiePattern = require('./negativeCommandsWithBiePattern');
 exports.yiqiPattern = require('./yiqiPattern');
+exports.measureWordsInQuantityQuestionsPattern = require('./measureWordsInQuantityQuestionsPattern');
