@@ -353,6 +353,7 @@ const a2 = [
   {
     label: 'Using "ji" to mean "several"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGHC9CA',
+    skip: 'to hard to distinguish this from question usage, will figure out later',
   },
   {
     label: 'Change of state with "le"',
@@ -565,6 +566,7 @@ const a2 = [
   {
     label: 'Cause and effect with "yinwei" and "suoyi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGTDUJO',
+    regexes: [/(因为)[^所以]+(所以)/, /(因为|所以)/],
   },
   {
     label: 'Expressing "about to happen" with "le"',

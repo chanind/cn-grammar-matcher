@@ -92,3 +92,4 @@ exports.expressingTheSelfevidentWithMaPattern = require('./expressingTheSelfevid
 exports.specialCasesOfZaiFollowingVerbsPattern = require('./specialCasesOfZaiFollowingVerbsPattern');
 exports.expressingTheMoreTheMoreWithYueYuePattern = require('./expressingTheMoreTheMoreWithYueYuePattern');
 exports.beizijuPattern = require('./beizijuPattern');
+exports.yinweiSuoyiPattern = require('./yinweiSuoyiPattern');
