@@ -4,7 +4,7 @@ const program = require('commander');
 const shuffle = require('lodash.shuffle');
 const scrapeAllset = require('./allset/scrapeAllset');
 const extractPattern = require('./allset/extractPattern');
-const urls = require('./allset/urls');
+const urls = require('./allset/urls').all;
 const { writeOutPattern, getNumHanzi, isPatternFileWriteable } = require('./scriptUtils');
 const { mergeLocMatchGroups, regexMatchLocs } = require('../src/lib/matching/regexMatch');
 

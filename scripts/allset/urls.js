@@ -232,6 +232,7 @@ const a2 = [
   {
     label: 'Negative commands with "bie"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9W0UX',
+    matcherId: 'negativeCommandsWithBie',
   },
   {
     label: 'Simultaneous tasks with "yibian"',
@@ -353,6 +354,7 @@ const a2 = [
   {
     label: 'Using "ji" to mean "several"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGHC9CA',
+    skip: 'to hard to distinguish this from question usage, will figure out later',
   },
   {
     label: 'Change of state with "le"',
@@ -565,6 +567,7 @@ const a2 = [
   {
     label: 'Cause and effect with "yinwei" and "suoyi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGTDUJO',
+    regexes: [/(因为)[^所以]+(所以)/, /(因为|所以)/],
   },
   {
     label: 'Expressing "about to happen" with "le"',
@@ -1038,6 +1041,8 @@ const b1 = [
   {
     label: 'Expressing "one of" with "…zhi yi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGMT1M1',
+    description:
+      'In order to express "one of the..." in Chinese, "之一" (zhī yī) can be used at the end of the sentence.',
   },
   {
     label: 'Indicating a number in excess',
@@ -1214,6 +1219,7 @@ const b1 = [
   {
     label: 'Comparing "dui" and "duiyu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG3JELV',
+    skip: 'hold off on comparisons for now, revisit later',
   },
   {
     label: 'Comparing "li" and "cong"',
@@ -1764,4 +1770,10 @@ const b2 = [
   },
 ];
 
-module.exports = [...a1, ...a2, ...b1, ...b2];
+module.exports = {
+  a1,
+  a2,
+  b1,
+  b2,
+  all: [...a1, ...a2, ...b1, ...b2],
+};
