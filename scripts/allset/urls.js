@@ -1041,6 +1041,8 @@ const b1 = [
   {
     label: 'Expressing "one of" with "…zhi yi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGMT1M1',
+    description:
+      'In order to express "one of the..." in Chinese, "之一" (zhī yī) can be used at the end of the sentence.',
   },
   {
     label: 'Indicating a number in excess',
