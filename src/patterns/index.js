@@ -93,3 +93,4 @@ exports.specialCasesOfZaiFollowingVerbsPattern = require('./specialCasesOfZaiFol
 exports.expressingTheMoreTheMoreWithYueYuePattern = require('./expressingTheMoreTheMoreWithYueYuePattern');
 exports.beizijuPattern = require('./beizijuPattern');
 exports.yinweiSuoyiPattern = require('./yinweiSuoyiPattern');
+exports.negativeCommandsWithBiePattern = require('./negativeCommandsWithBiePattern');

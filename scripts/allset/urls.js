@@ -232,6 +232,7 @@ const a2 = [
   {
     label: 'Negative commands with "bie"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9W0UX',
+    matcherId: 'negativeCommandsWithBie',
   },
   {
     label: 'Simultaneous tasks with "yibian"',
@@ -1216,6 +1217,7 @@ const b1 = [
   {
     label: 'Comparing "dui" and "duiyu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG3JELV',
+    skip: 'hold off on comparisons for now, revisit later',
   },
   {
     label: 'Comparing "li" and "cong"',
