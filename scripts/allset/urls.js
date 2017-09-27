@@ -1770,4 +1770,10 @@ const b2 = [
   },
 ];
 
-module.exports = [...a1, ...a2, ...b1, ...b2];
+module.exports = {
+  a1,
+  a2,
+  b1,
+  b2,
+  all: [...a1, ...a2, ...b1, ...b2],
+};

@@ -1,0 +1,65 @@
+.subheader {
+    margin: 50px 0 20px;
+}
+
+
+.label {
+    display: inline-block;
+    width: 100px;
+}
+
+.count {
+    display: inline-block;
+    width: 30px;
+}
+
+.percent {
+    font-size: 12px;
+}
+
+.url-block {
+    width: 200px;
+    margin: 10px 20px 10px 0;
+    padding-left: 25px;
+    position: relative;
+
+    a {
+        width: 175px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+    }
+}
+
+.icon {
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.urls-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.status-imported, .status-skipped, .status-remaining {
+    display: none;
+    font-size: 10px;
+    width: 170px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.imported .status-imported,
+.skipped .status-skipped,
+.remaining .status-remaining {
+    display: block;
+}
+
+.clear {
+    clear: both;
+}
