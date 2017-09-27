@@ -94,3 +94,4 @@ exports.expressingTheMoreTheMoreWithYueYuePattern = require('./expressingTheMore
 exports.beizijuPattern = require('./beizijuPattern');
 exports.yinweiSuoyiPattern = require('./yinweiSuoyiPattern');
 exports.negativeCommandsWithBiePattern = require('./negativeCommandsWithBiePattern');
+exports.yiqiPattern = require('./yiqiPattern');
