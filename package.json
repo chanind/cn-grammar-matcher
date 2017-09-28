@@ -19,7 +19,8 @@
     "mv": "node scripts/mv.js",
     "rank-examples": "node scripts/rankExamples.js",
     "reimport": "yarn run allset-full-import && yarn prettier",
-    "import-next": "yarn run allset-full-import -- -n 1 && yarn prettier"
+    "import-next": "yarn run allset-full-import -- -n 1 && yarn prettier",
+    "test-last": "yarn test `git st | grep test | awk '{print $NF}'`"
   },
   "dependencies": {
     "request-promise-native": "^1.0.4"

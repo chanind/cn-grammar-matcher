@@ -242,6 +242,7 @@ const a2 = [
   {
     label: 'Asking about degree with "duo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9LLJU',
+    regexes: [/(多).[吗]?[?？]/],
   },
   {
     label: 'Basic comparisons with "yiyang"',
@@ -780,6 +781,7 @@ const b1 = [
   {
     label: 'Non-exhaustive lists with "dengdeng"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGF763H',
+    regexes: [/(等等)/, /.+，.+(等)/], // TODO: Improve this matcher
   },
   {
     label: 'A softer "but"',
@@ -928,6 +930,9 @@ const b1 = [
   {
     label: 'Expressing "including" with "baokuo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG50341',
+    regexes: [/(包括)/, /(包括)[^共括]+((?:在内)?一共)/],
+    description:
+      '"包括" can be used to mean "including" in English. It can be used with "在内一共" or just "一共" to express "all together" or "in total"',
   },
   {
     label: 'Expressing "it seems" with "haoxiang"',
@@ -1047,6 +1052,7 @@ const b1 = [
   {
     label: 'Indicating a number in excess',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG004ZK',
+    regexes: [/[零一二三四五六七八九十百千万亿两0-9](多)/],
   },
   {
     label: 'Measure words for verbs',
@@ -1224,6 +1230,7 @@ const b1 = [
   {
     label: 'Comparing "li" and "cong"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG59C66',
+    skip: 'hold off on comparison for now, revisit later',
   },
   {
     label: 'Comparing "gang" and "gangcai"',
@@ -1560,6 +1567,7 @@ const b2 = [
   {
     label: 'Expressing "if… then…" with "jiashi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGVRGW2',
+    regexes: [/(假使)[^就]+(就)?/],
   },
   {
     label: 'Expressing "if… then…" with "yaoshi"',
