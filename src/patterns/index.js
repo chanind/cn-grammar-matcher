@@ -102,3 +102,4 @@ exports.expressingIncludingWithBaokuoPattern = require('./expressingIncludingWit
 exports.jiashiJiuPattern = require('./jiashiJiuPattern');
 exports.doerOfActionYouPattern = require('./doerOfActionYouPattern');
 exports.zhongyuPattern = require('./zhongyuPattern');
+exports.meiBanfaPattern = require('./meiBanfaPattern');
