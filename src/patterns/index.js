@@ -104,3 +104,4 @@ exports.doerOfActionYouPattern = require('./doerOfActionYouPattern');
 exports.zhongyuPattern = require('./zhongyuPattern');
 exports.meiBanfaPattern = require('./meiBanfaPattern');
 exports.askingAboutDegreeWithDuoPattern = require('./askingAboutDegreeWithDuoPattern');
+exports.dengDengPattern = require('./dengDengPattern');
