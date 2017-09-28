@@ -242,6 +242,7 @@ const a2 = [
   {
     label: 'Asking about degree with "duo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9LLJU',
+    regexes: [/(多).[吗]?[?？]/],
   },
   {
     label: 'Basic comparisons with "yiyang"',
