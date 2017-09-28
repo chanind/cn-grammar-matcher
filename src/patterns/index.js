@@ -99,3 +99,4 @@ exports.measureWordsInQuantityQuestionsPattern = require('./measureWordsInQuanti
 exports.zhiyiPattern = require('./zhiyiPattern');
 exports.structureOfTimesAdvancedPattern = require('./structureOfTimesAdvancedPattern');
 exports.expressingIncludingWithBaokuoPattern = require('./expressingIncludingWithBaokuoPattern');
+exports.jiashiJiuPattern = require('./jiashiJiuPattern');

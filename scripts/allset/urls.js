@@ -1563,6 +1563,7 @@ const b2 = [
   {
     label: 'Expressing "if… then…" with "jiashi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGVRGW2',
+    regexes: [/(假使)[^就]+(就)?/],
   },
   {
     label: 'Expressing "if… then…" with "yaoshi"',
