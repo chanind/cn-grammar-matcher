@@ -105,3 +105,4 @@ exports.zhongyuPattern = require('./zhongyuPattern');
 exports.meiBanfaPattern = require('./meiBanfaPattern');
 exports.askingAboutDegreeWithDuoPattern = require('./askingAboutDegreeWithDuoPattern');
 exports.dengDengPattern = require('./dengDengPattern');
+exports.indicatingANumberInExcessPattern = require('./indicatingANumberInExcessPattern');

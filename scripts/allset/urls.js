@@ -1052,6 +1052,7 @@ const b1 = [
   {
     label: 'Indicating a number in excess',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG004ZK',
+    regexes: [/[零一二三四五六七八九十百千万亿两0-9](多)/],
   },
   {
     label: 'Measure words for verbs',
@@ -1229,6 +1230,7 @@ const b1 = [
   {
     label: 'Comparing "li" and "cong"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG59C66',
+    skip: 'hold off on comparison for now, revisit later',
   },
   {
     label: 'Comparing "gang" and "gangcai"',
