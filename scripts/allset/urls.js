@@ -928,6 +928,9 @@ const b1 = [
   {
     label: 'Expressing "including" with "baokuo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG50341',
+    regexes: [/(包括)/, /(包括)[^共括]+((?:在内)?一共)/],
+    description:
+      '"包括" can be used to mean "including" in English. It can be used with "在内一共" or just "一共" to express "all together" or "in total"',
   },
   {
     label: 'Expressing "it seems" with "haoxiang"',

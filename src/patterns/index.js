@@ -98,3 +98,4 @@ exports.yiqiPattern = require('./yiqiPattern');
 exports.measureWordsInQuantityQuestionsPattern = require('./measureWordsInQuantityQuestionsPattern');
 exports.zhiyiPattern = require('./zhiyiPattern');
 exports.structureOfTimesAdvancedPattern = require('./structureOfTimesAdvancedPattern');
+exports.expressingIncludingWithBaokuoPattern = require('./expressingIncludingWithBaokuoPattern');
