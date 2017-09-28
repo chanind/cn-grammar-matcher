@@ -781,7 +781,7 @@ const b1 = [
   {
     label: 'Non-exhaustive lists with "dengdeng"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGF763H',
-    regexes: [/(等等)/, /.+，.+(等)/], // TODO: Improve this matcher
+    regexes: [/(等等)/, /.+[,，、].+(等)/], // TODO: Improve this matcher
   },
   {
     label: 'A softer "but"',
