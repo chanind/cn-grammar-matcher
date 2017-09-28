@@ -101,3 +101,4 @@ exports.structureOfTimesAdvancedPattern = require('./structureOfTimesAdvancedPat
 exports.expressingIncludingWithBaokuoPattern = require('./expressingIncludingWithBaokuoPattern');
 exports.jiashiJiuPattern = require('./jiashiJiuPattern');
 exports.doerOfActionYouPattern = require('./doerOfActionYouPattern');
+exports.zhongyuPattern = require('./zhongyuPattern');
