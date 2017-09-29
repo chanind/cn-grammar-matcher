@@ -24,6 +24,7 @@ const a1 = [
   {
     label: 'Age with "sui"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQUKJF',
+    regexes: [/[零一二三四五六七八九十百千万亿两0-9]+(岁)/],
   },
   {
     label: 'Measure word "ge"',
@@ -173,6 +174,7 @@ const a1 = [
   {
     label: 'Yes-no questions with "ma"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQ2AZA',
+    skip: 'covered by ASGSJYZ2',
   },
   {
     label: 'Comparing "er" and "liang"',
