@@ -24,6 +24,7 @@ const a1 = [
   {
     label: 'Age with "sui"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQUKJF',
+    regexes: [/[零一二三四五六七八九十百千万亿两0-9]+(岁)/],
   },
   {
     label: 'Measure word "ge"',
@@ -103,10 +104,14 @@ const a1 = [
   {
     label: 'Expressing a learned skill with "hui"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGRHM0E',
+    skip:
+      'covered by ASGZL717, possibility delete ASGZL717 and use this and neng explicityly later',
   },
   {
     label: 'Expressing ability or possibility with "neng"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9PQ40',
+    skip:
+      'covered by ASGZL717, possibility delete ASGZL717 and use this and hui explicityly later',
   },
   {
     label: 'Expressing permission with "keyi"',
@@ -120,6 +125,7 @@ const a1 = [
   {
     label: 'How to do something with "zenme"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGH2MNO',
+    regexes: [/(怎么)(?:[^样]|$)/],
   },
   // {
   //   label: "Negation of past actions with \"meiyou\"",
@@ -173,10 +179,12 @@ const a1 = [
   {
     label: 'Yes-no questions with "ma"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQ2AZA',
+    skip: 'covered by ASGSJYZ2',
   },
   {
     label: 'Comparing "er" and "liang"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGJ46H1',
+    skip: 'skipping comparisons for now, revisit later',
   },
 ];
 
@@ -237,7 +245,8 @@ const a2 = [
   {
     label: 'Simultaneous tasks with "yibian"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG2ZC5S',
-    matcherId: 'yibian',
+    matcherId: 'yibianYibian',
+    regexes: [/(一边)[^边]+(一边)/],
   },
   {
     label: 'Asking about degree with "duo"',
@@ -313,6 +322,8 @@ const a2 = [
   {
     label: 'After a specific time with "yihou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGRLQGY',
+    matcherId: 'yihou',
+    skip: 'covered by ASGC3SCN currently, may want to switch that with this.',
   },
   {
     label: 'Before a specific time with "yiqian"',
@@ -329,6 +340,7 @@ const a2 = [
   {
     label: 'Expressing "when" with "de shihou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGWN185',
+    regexes: [/(的时候)/],
   },
   {
     label: 'In the future in general with "yihou"',
@@ -781,7 +793,7 @@ const b1 = [
   {
     label: 'Non-exhaustive lists with "dengdeng"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGF763H',
-    regexes: [/(等等)/, /.+，.+(等)/], // TODO: Improve this matcher
+    regexes: [/(等等)/, /.+[,，、].+(等)/], // TODO: Improve this matcher
   },
   {
     label: 'A softer "but"',

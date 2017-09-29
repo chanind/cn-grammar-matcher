@@ -20,7 +20,7 @@ module.exports = {
   sources: [allSetSrc],
   match: sentence => {
     const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(多)/)]);
+    return mergeLocMatchGroups([regexMatchLocs(text, /[零一二三四五六七八九十百千万亿两0-9](多)/)]);
   },
   examples: [
     {

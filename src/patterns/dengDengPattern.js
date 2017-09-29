@@ -22,7 +22,7 @@ module.exports = {
     const text = sentence.original;
     return mergeLocMatchGroups([
       regexMatchLocs(text, /(等等)/),
-      regexMatchLocs(text, /.+，.+(等)/),
+      regexMatchLocs(text, /.+[,，、].+(等)/),
     ]);
   },
   examples: [
