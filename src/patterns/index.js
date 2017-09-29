@@ -112,3 +112,4 @@ exports.yizhiPattern = require('./yizhiPattern');
 exports.chabuduoPattern = require('./chabuduoPattern');
 exports.youyidianPattern = require('./youyidianPattern');
 exports.yibianYibianPattern = require('./yibianYibianPattern');
+exports.yiqianPattern = require('./yiqianPattern');
