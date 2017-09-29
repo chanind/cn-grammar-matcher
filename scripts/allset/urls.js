@@ -245,7 +245,8 @@ const a2 = [
   {
     label: 'Simultaneous tasks with "yibian"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG2ZC5S',
-    matcherId: 'yibian',
+    matcherId: 'yibianYibian',
+    regexes: [/(一边)[^边]+(一边)/],
   },
   {
     label: 'Asking about degree with "duo"',
