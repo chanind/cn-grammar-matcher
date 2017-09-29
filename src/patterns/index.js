@@ -108,3 +108,4 @@ exports.dengDengPattern = require('./dengDengPattern');
 exports.indicatingANumberInExcessPattern = require('./indicatingANumberInExcessPattern');
 exports.ageWithSuiPattern = require('./ageWithSuiPattern');
 exports.zenmePattern = require('./zenmePattern');
+exports.yizhiPattern = require('./yizhiPattern');
