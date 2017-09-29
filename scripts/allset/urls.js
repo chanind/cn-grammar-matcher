@@ -322,6 +322,8 @@ const a2 = [
   {
     label: 'After a specific time with "yihou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGRLQGY',
+    matcherId: 'yihou',
+    skip: 'covered by ASGC3SCN currently, may want to switch that with this.',
   },
   {
     label: 'Before a specific time with "yiqian"',
@@ -338,6 +340,7 @@ const a2 = [
   {
     label: 'Expressing "when" with "de shihou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGWN185',
+    regexes: [/(的时候)/],
   },
   {
     label: 'In the future in general with "yihou"',
