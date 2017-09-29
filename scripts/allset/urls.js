@@ -104,10 +104,14 @@ const a1 = [
   {
     label: 'Expressing a learned skill with "hui"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGRHM0E',
+    skip:
+      'covered by ASGZL717, possibility delete ASGZL717 and use this and neng explicityly later',
   },
   {
     label: 'Expressing ability or possibility with "neng"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9PQ40',
+    skip:
+      'covered by ASGZL717, possibility delete ASGZL717 and use this and hui explicityly later',
   },
   {
     label: 'Expressing permission with "keyi"',
@@ -121,6 +125,7 @@ const a1 = [
   {
     label: 'How to do something with "zenme"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGH2MNO',
+    regexes: [/(怎么)(?:[^样]|$)/],
   },
   // {
   //   label: "Negation of past actions with \"meiyou\"",
@@ -179,6 +184,7 @@ const a1 = [
   {
     label: 'Comparing "er" and "liang"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGJ46H1',
+    skip: 'skipping comparisons for now, revisit later',
   },
 ];
 
