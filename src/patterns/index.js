@@ -109,3 +109,4 @@ exports.indicatingANumberInExcessPattern = require('./indicatingANumberInExcessP
 exports.ageWithSuiPattern = require('./ageWithSuiPattern');
 exports.zenmePattern = require('./zenmePattern');
 exports.yizhiPattern = require('./yizhiPattern');
+exports.chabuduoPattern = require('./chabuduoPattern');
