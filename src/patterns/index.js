@@ -121,3 +121,4 @@ exports.affirmativeNegativeQuestionPattern = require('./affirmativeNegativeQuest
 exports.expressingExcessivelyWithTaiPattern = require('./expressingExcessivelyWithTaiPattern');
 exports.buyaoPattern = require('./buyaoPattern');
 exports.gengPattern = require('./gengPattern');
+exports.measureWordGePattern = require('./measureWordGePattern');
