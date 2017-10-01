@@ -96,6 +96,7 @@ const a1 = [
   {
     label: 'Using the verb "xing"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPS9NY',
+    skip: 'could be considered vocab, low pri, skip for now',
   },
   {
     label: 'Expressing "be going to" with "yao"',
@@ -161,7 +162,7 @@ const a1 = [
   {
     label: 'Affirmative-negative question',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGZH7K3',
-    matcherId: 'affirmativeNegativeQuestion'
+    matcherId: 'affirmativeNegativeQuestion',
   },
   {
     label: 'Placement of question words',
