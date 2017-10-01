@@ -88,6 +88,7 @@ const a1 = [
   {
     label: 'Using the verb "jiao"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGUGWVZ',
+    skip: 'tricky without better segmentation, low pri, can be considered vocab',
   },
   {
     label: 'Using the verb "qu"',
