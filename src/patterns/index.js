@@ -120,3 +120,4 @@ exports.chahenduoPattern = require('./chahenduoPattern');
 exports.affirmativeNegativeQuestionPattern = require('./affirmativeNegativeQuestionPattern');
 exports.expressingExcessivelyWithTaiPattern = require('./expressingExcessivelyWithTaiPattern');
 exports.buyaoPattern = require('./buyaoPattern');
+exports.gengPattern = require('./gengPattern');
