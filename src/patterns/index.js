@@ -122,3 +122,4 @@ exports.expressingExcessivelyWithTaiPattern = require('./expressingExcessivelyWi
 exports.buyaoPattern = require('./buyaoPattern');
 exports.gengPattern = require('./gengPattern');
 exports.measureWordGePattern = require('./measureWordGePattern');
+exports.theAllAdverbDouPattern = require('./theAllAdverbDouPattern');
