@@ -88,6 +88,7 @@ const a1 = [
   {
     label: 'Using the verb "jiao"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGUGWVZ',
+    skip: 'tricky without better segmentation, low pri, can be considered vocab',
   },
   {
     label: 'Using the verb "qu"',
@@ -96,6 +97,7 @@ const a1 = [
   {
     label: 'Using the verb "xing"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPS9NY',
+    skip: 'could be considered vocab, low pri, skip for now',
   },
   {
     label: 'Expressing "be going to" with "yao"',
@@ -138,6 +140,7 @@ const a1 = [
   {
     label: 'Standard negation with "bu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGIPYFV',
+    filterExamples: true,
   },
   {
     label: 'Basic sentence order',
@@ -160,7 +163,7 @@ const a1 = [
   {
     label: 'Affirmative-negative question',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGZH7K3',
-    skip: 'too hard',
+    matcherId: 'affirmativeNegativeQuestion',
   },
   {
     label: 'Placement of question words',
@@ -571,6 +574,7 @@ const a2 = [
   {
     label: 'Asking why with "zenme"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGD7NS3',
+    skip: 'Roll this into the zenme pattern with ASGH2MNO',
   },
   {
     label: 'Questions with "le ma"',
@@ -756,6 +760,7 @@ const b1 = [
   {
     label: 'The opposite of "cha hen duo" is "chabuduo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQAN74',
+    matcherId: 'chahenduo',
   },
   {
     label: 'Using "always" as a complaint with "laoshi"',
@@ -835,6 +840,7 @@ const b1 = [
   {
     label: 'Expressing "when" with "shi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGGL59D',
+    matcherId: 'expressingWhenWithShi',
   },
   {
     label: 'Expressing fractions with "fenzhi"',

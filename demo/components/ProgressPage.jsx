@@ -93,7 +93,7 @@ const ProgressPage = () => {
       }
       return (
         <div className={blockClasses} key={urlData.url + urlData.label}>
-          <a href={urlData.url} target="_blank">
+          <a href={urlData.url} target="_blank" alt={urlData.label}>
             {urlData.label}
           </a>
           <div className={classNames('text-muted', classes.statusSkipped)}>

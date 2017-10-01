@@ -6,7 +6,8 @@ const scrapeAllset = require('./allset/scrapeAllset');
 const extractPattern = require('./allset/extractPattern');
 const urls = require('./allset/urls').all;
 const { writeOutPattern, getNumHanzi, isPatternFileWriteable } = require('./scriptUtils');
-const { mergeLocMatchGroups, regexMatchLocs } = require('../src/lib/matching/regexMatch');
+const { regexMatchLocs } = require('../src/lib/matching/regexMatch');
+const { mergeLocMatchGroups } = require('../src/lib/matching/utils');
 
 const WEAK = 1;
 const MEDIUM = 2;

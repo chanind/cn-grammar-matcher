@@ -189,7 +189,7 @@ exports.tokensFromMatch = (allTokens, match) =>
   });
 
 exports.stringsFromMatch = (originalSentence, match) =>
-  match.map(loc => originalSentence.slice(loc.start, loc.end - loc.start));
+  match.map(loc => originalSentence.slice(loc.start, loc.end));
 
 /**
 * Merge multiple groups of matches together
