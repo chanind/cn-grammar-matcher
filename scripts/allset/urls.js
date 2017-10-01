@@ -20,6 +20,7 @@ const a1 = [
   {
     label: 'Offering choices with "haishi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGA8NIB',
+    skip: 'covered by ASGQJ5IC currently, re-evaluate merging those later',
   },
   {
     label: 'Age with "sui"',
@@ -380,6 +381,7 @@ const a2 = [
   {
     label: 'Conceding with "ba"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGJIP2E',
+    regexes: [/^[行好](吧)/],
   },
   {
     label: 'Expressing "already" with just "le"',
