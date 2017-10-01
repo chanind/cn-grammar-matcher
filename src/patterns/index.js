@@ -115,3 +115,4 @@ exports.yibianYibianPattern = require('./yibianYibianPattern');
 exports.yiqianPattern = require('./yiqianPattern');
 exports.gangcaiPattern = require('./gangcaiPattern');
 exports.deShihouPattern = require('./deShihouPattern');
+exports.standardNegationWithBuPattern = require('./standardNegationWithBuPattern');

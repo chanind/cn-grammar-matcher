@@ -2,6 +2,8 @@ const program = require('commander');
 const scrapeAllset = require('./allset/scrapeAllset');
 const extractPattern = require('./allset/extractPattern');
 const { writeOutPattern } = require('./scriptUtils');
+const { regexMatchLocs } = require('../src/lib/matching/regexMatch');
+const { mergeLocMatchGroups } = require('../src/lib/matching/utils');
 const urls = require('./allset/urls').all;
 
 const run = async () => {
@@ -38,6 +40,16 @@ const run = async () => {
 
   const scrapedFields = await scrapeAllset(allsetUrl);
   Object.assign(scrapedFields, urlData);
+
+  // filterExamples means exclude examples that this matcher does not match successfully
+  if (urlData.filterExamples) {
+    scrapedFields.examples = scrapedFields.examples.filter(example => {
+      const regexMatches = scrapedFields.regexes.map(regex =>
+        regexMatchLocs(example.zh, regex)
+      );
+      return mergeLocMatchGroups(regexMatches);
+    });
+  }
 
   if (program.matcherId) {
     scrapedFields.matcherId = program.matcherId;

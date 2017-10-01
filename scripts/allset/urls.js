@@ -138,6 +138,7 @@ const a1 = [
   {
     label: 'Standard negation with "bu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGIPYFV',
+    filterExamples: true,
   },
   {
     label: 'Basic sentence order',
@@ -571,6 +572,7 @@ const a2 = [
   {
     label: 'Asking why with "zenme"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGD7NS3',
+    skip: 'Roll this into the zenme pattern with ASGH2MNO',
   },
   {
     label: 'Questions with "le ma"',
@@ -756,6 +758,7 @@ const b1 = [
   {
     label: 'The opposite of "cha hen duo" is "chabuduo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQAN74',
+    matcherId: 'chahenduo',
   },
   {
     label: 'Using "always" as a complaint with "laoshi"',
@@ -835,6 +838,7 @@ const b1 = [
   {
     label: 'Expressing "when" with "shi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGGL59D',
+    matcherId: 'expressingWhenWithShi',
   },
   {
     label: 'Expressing fractions with "fenzhi"',
