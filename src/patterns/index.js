@@ -117,3 +117,4 @@ exports.gangcaiPattern = require('./gangcaiPattern');
 exports.deShihouPattern = require('./deShihouPattern');
 exports.standardNegationWithBuPattern = require('./standardNegationWithBuPattern');
 exports.chahenduoPattern = require('./chahenduoPattern');
+exports.affirmativeNegativeQuestionPattern = require('./affirmativeNegativeQuestionPattern');
