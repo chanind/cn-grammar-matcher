@@ -127,3 +127,4 @@ exports.expressingAndWithHePattern = require('./expressingAndWithHePattern');
 exports.suggestionsWithBaPattern = require('./suggestionsWithBaPattern');
 exports.expressingBeGoingToWithYaoPattern = require('./expressingBeGoingToWithYaoPattern');
 exports.tagQuestionsWithBuPattern = require('./tagQuestionsWithBuPattern');
+exports.wantingToDoSomethingWithYaoPattern = require('./wantingToDoSomethingWithYaoPattern');
