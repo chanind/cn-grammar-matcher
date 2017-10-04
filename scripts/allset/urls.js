@@ -20,6 +20,7 @@ const a1 = [
   {
     label: 'Offering choices with "haishi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGA8NIB',
+    skip: 'covered by ASGQJ5IC currently, re-evaluate merging those later',
   },
   {
     label: 'Age with "sui"',
@@ -78,12 +79,12 @@ const a1 = [
   {
     label: 'Expressing existence with "you"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG04ZCI',
-    skip: 'too hard',
+    skip: 'too hard, figure out later',
   },
   {
     label: 'Expressing possession with "you"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGOOCVO',
-    skip: 'too hard',
+    skip: 'too hard, figure out later',
   },
   {
     label: 'Using the verb "jiao"',
@@ -93,6 +94,7 @@ const a1 = [
   {
     label: 'Using the verb "qu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGFYNCL',
+    skip: 'figure this out at the same time as complements to try to differentiate them',
   },
   {
     label: 'Using the verb "xing"',
@@ -203,6 +205,8 @@ const a2 = [
   {
     label: 'Emphasizing quantity with "dou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGWNEYM',
+    skip:
+      'basically the same as ASG9YK09, not sure how to differentiate programmatically',
   },
   {
     label: 'Expressing "all along" with "yizhi"',
@@ -380,6 +384,7 @@ const a2 = [
   {
     label: 'Conceding with "ba"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGJIP2E',
+    regexes: [/^[行好](吧)/],
   },
   {
     label: 'Expressing "already" with just "le"',

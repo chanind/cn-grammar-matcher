@@ -1,6 +1,4 @@
-const { and, pos, word } = require('../lib/tokenFilters');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
-const { Node, Edge, graphMatch } = require('../lib/matching/graphMatch');
 const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
@@ -15,19 +13,7 @@ module.exports = {
   description:
     'The particle 吧 (ba) can also be used to concede a point. That is, 吧 (ba) can be used to accept or agree with something that you\'re not particularly happy about, the way we might use "all right" or "fine then" in English.',
   sources: [allSetSrc],
-  match: sentence => {
-    const tokens = sentence.tokens;
-    return mergeLocMatchGroups([
-      graphMatch(
-        tokens,
-        new Edge(
-          { ahead: true },
-          new Node({ filter: and(pos('VA'), word('.吧')), capture: '吧' })
-        )
-      ),
-      regexMatchLocs(sentence.original, /^[行好](吧)/),
-    ]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.original, /^[行好](吧)/)]),
   examples: [
     {
       zh: 'A:太贵了！B:好吧，我们可以看看别的。',
