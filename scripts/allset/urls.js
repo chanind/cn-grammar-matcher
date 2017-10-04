@@ -205,6 +205,8 @@ const a2 = [
   {
     label: 'Emphasizing quantity with "dou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGWNEYM',
+    skip:
+      'basically the same as ASG9YK09, not sure how to differentiate programmatically',
   },
   {
     label: 'Expressing "all along" with "yizhi"',
