@@ -94,7 +94,7 @@ const a1 = [
   {
     label: 'Using the verb "qu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGFYNCL',
-    skip: 'figure this out at the same time as complements to try to differentiate them'
+    skip: 'figure this out at the same time as complements to try to differentiate them',
   },
   {
     label: 'Using the verb "xing"',

@@ -125,3 +125,4 @@ exports.measureWordGePattern = require('./measureWordGePattern');
 exports.theAllAdverbDouPattern = require('./theAllAdverbDouPattern');
 exports.expressingAndWithHePattern = require('./expressingAndWithHePattern');
 exports.suggestionsWithBaPattern = require('./suggestionsWithBaPattern');
+exports.expressingBeGoingToWithYaoPattern = require('./expressingBeGoingToWithYaoPattern');
