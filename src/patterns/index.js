@@ -129,3 +129,4 @@ exports.expressingBeGoingToWithYaoPattern = require('./expressingBeGoingToWithYa
 exports.tagQuestionsWithBuPattern = require('./tagQuestionsWithBuPattern');
 exports.wantingToDoSomethingWithYaoPattern = require('./wantingToDoSomethingWithYaoPattern');
 exports.expressingExistenceInAPlaceWithZaiPattern = require('./expressingExistenceInAPlaceWithZaiPattern');
+exports.expressingNotVeryWithBuTaiPattern = require('./expressingNotVeryWithBuTaiPattern');
