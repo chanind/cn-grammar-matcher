@@ -312,6 +312,7 @@ const a2 = [
     label: 'Expressing "or" in statements',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG6HYOU',
     matcherId: 'huozhe',
+    skip: 'basically the same as ASGYXI5X',
   },
   {
     label: 'The filler word "neige"',
@@ -335,6 +336,8 @@ const a2 = [
   {
     label: 'Before a specific time with "yiqian"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGJ2OJC',
+    skip:
+      'Too similar to ASGVCWLU and too hard to differentiate. possibility combine these together.',
   },
   {
     label: 'Expressing "before" in general with "yiqian"',
@@ -352,6 +355,8 @@ const a2 = [
   {
     label: 'In the future in general with "yihou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPVFU1',
+    skip:
+      'Too similar to ASGC3SCN and too hard to differentiate. possibility combine these together.',
   },
   {
     label: 'Time words and word order',
@@ -417,6 +422,7 @@ const a2 = [
   {
     label: 'Softening speech with "ba"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGDHC1H',
+    skip: 'too hard to differentiate from ASGMPZ6D, maybe combine these 2?',
   },
   {
     label: 'Structural particle "de"',
@@ -472,6 +478,8 @@ const a2 = [
   {
     label: 'Expressing "never" with "conglai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG8NM5E',
+    regexes: [/(从来?不)/, /(从来?没有?)[^过]+(过)/],
+    matcherId: 'expressingNeverWithConglai',
   },
   {
     label: 'Expressing "together" with "yiqi"',
@@ -493,6 +501,7 @@ const a2 = [
   {
     label: 'Indicating location with "zai" before verbs',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGX0Z0N',
+    skip: 'too similar to ASGLRWT8 for now, investigate again later',
   },
   {
     label: 'Reduplication of verbs',
@@ -506,6 +515,7 @@ const a2 = [
   {
     label: 'Special verbs with "hen"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGID0E8',
+    skip: 'investigate later, probably requires a lot of hard-coding cases',
   },
   {
     label: 'Using "dao" to mean "to go to"',
@@ -634,6 +644,7 @@ const b1 = [
   {
     label: 'Positive adjectives with "-ji le"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGVME5V',
+    matcherId: 'positiveAdjectivesWithJile',
   },
   {
     label: 'Reduplication of adjectives',
@@ -687,6 +698,7 @@ const b1 = [
   {
     label: 'Expressing "always" with "conglai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG8KUHG',
+    matcherId: 'expressingAlwaysWithConglai',
   },
   {
     label: 'Expressing "as a result" with "jieguo"',
