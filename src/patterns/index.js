@@ -136,3 +136,4 @@ exports.expressingActionsInProgressWithZaiPattern = require('./expressingActions
 exports.bothWithYouPattern = require('./bothWithYouPattern');
 exports.zhenPattern = require('./zhenPattern');
 exports.intensifyingWithDuoPattern = require('./intensifyingWithDuoPattern');
+exports.zuiPattern = require('./zuiPattern');
