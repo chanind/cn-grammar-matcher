@@ -336,6 +336,8 @@ const a2 = [
   {
     label: 'Before a specific time with "yiqian"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGJ2OJC',
+    skip:
+      'Too similar to ASGVCWLU and too hard to differentiate. possibility combine these together.',
   },
   {
     label: 'Expressing "before" in general with "yiqian"',
@@ -353,6 +355,8 @@ const a2 = [
   {
     label: 'In the future in general with "yihou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPVFU1',
+    skip:
+      'Too similar to ASGC3SCN and too hard to differentiate. possibility combine these together.',
   },
   {
     label: 'Time words and word order',
