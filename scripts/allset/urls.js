@@ -501,6 +501,7 @@ const a2 = [
   {
     label: 'Indicating location with "zai" before verbs',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGX0Z0N',
+    skip: 'too similar to ASGLRWT8 for now, investigate again later',
   },
   {
     label: 'Reduplication of verbs',
@@ -514,6 +515,7 @@ const a2 = [
   {
     label: 'Special verbs with "hen"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGID0E8',
+    skip: 'investigate later, probably requires a lot of hard-coding cases',
   },
   {
     label: 'Using "dao" to mean "to go to"',

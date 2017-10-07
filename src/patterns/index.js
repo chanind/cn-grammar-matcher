@@ -146,3 +146,4 @@ exports.xiangPattern = require('./xiangPattern');
 exports.expressingNeverWithConglaiPattern = require('./expressingNeverWithConglaiPattern');
 exports.expressingDifficultWithNanPattern = require('./expressingDifficultWithNanPattern');
 exports.expressingOngoingDurationWithDoubleLePattern = require('./expressingOngoingDurationWithDoubleLePattern');
+exports.usingHaoToMeanEasyPattern = require('./usingHaoToMeanEasyPattern');
