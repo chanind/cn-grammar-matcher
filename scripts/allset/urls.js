@@ -478,6 +478,8 @@ const a2 = [
   {
     label: 'Expressing "never" with "conglai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG8NM5E',
+    regexes: [/(从来?不)/, /(从来?没有?)[^过]+(过)/],
+    matcherId: 'expressingNeverWithConglai',
   },
   {
     label: 'Expressing "together" with "yiqi"',
@@ -694,6 +696,7 @@ const b1 = [
   {
     label: 'Expressing "always" with "conglai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG8KUHG',
+    matcherId: 'expressingAlwaysWithConglai',
   },
   {
     label: 'Expressing "as a result" with "jieguo"',

@@ -143,3 +143,4 @@ exports.congDaoPattern = require('./congDaoPattern');
 exports.directionalVerbsLaiAndQuPattern = require('./directionalVerbsLaiAndQuPattern');
 exports.expressingWillWithHuiPattern = require('./expressingWillWithHuiPattern');
 exports.xiangPattern = require('./xiangPattern');
+exports.expressingNeverWithConglaiPattern = require('./expressingNeverWithConglaiPattern');
