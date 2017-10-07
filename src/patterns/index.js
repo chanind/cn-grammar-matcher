@@ -130,3 +130,5 @@ exports.tagQuestionsWithBuPattern = require('./tagQuestionsWithBuPattern');
 exports.wantingToDoSomethingWithYaoPattern = require('./wantingToDoSomethingWithYaoPattern');
 exports.expressingExistenceInAPlaceWithZaiPattern = require('./expressingExistenceInAPlaceWithZaiPattern');
 exports.expressingNotVeryWithBuTaiPattern = require('./expressingNotVeryWithBuTaiPattern');
+exports.siLePattern = require('./siLePattern');
+exports.expressingAndAlsoWithHaiPattern = require('./expressingAndAlsoWithHaiPattern');
