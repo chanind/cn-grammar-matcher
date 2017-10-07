@@ -148,3 +148,4 @@ exports.expressingDifficultWithNanPattern = require('./expressingDifficultWithNa
 exports.expressingOngoingDurationWithDoubleLePattern = require('./expressingOngoingDurationWithDoubleLePattern');
 exports.usingHaoToMeanEasyPattern = require('./usingHaoToMeanEasyPattern');
 exports.yixiaPattern = require('./yixiaPattern');
+exports.buDongPattern = require('./buDongPattern');
