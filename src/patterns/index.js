@@ -152,3 +152,4 @@ exports.buDongPattern = require('./buDongPattern');
 exports.resultComplementWanForFinishingPattern = require('./resultComplementWanForFinishingPattern');
 exports.resultComplementsDaoAndJianPattern = require('./resultComplementsDaoAndJianPattern');
 exports.yixiePattern = require('./yixiePattern');
+exports.expressingHalfWithBanPattern = require('./expressingHalfWithBanPattern');
