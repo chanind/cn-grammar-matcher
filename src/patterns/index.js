@@ -137,3 +137,4 @@ exports.bothWithYouPattern = require('./bothWithYouPattern');
 exports.zhenPattern = require('./zhenPattern');
 exports.intensifyingWithDuoPattern = require('./intensifyingWithDuoPattern');
 exports.zuiPattern = require('./zuiPattern');
+exports.usingGenToMeanWithPattern = require('./usingGenToMeanWithPattern');

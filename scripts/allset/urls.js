@@ -312,6 +312,7 @@ const a2 = [
     label: 'Expressing "or" in statements',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG6HYOU',
     matcherId: 'huozhe',
+    skip: 'basically the same as ASGYXI5X',
   },
   {
     label: 'The filler word "neige"',
