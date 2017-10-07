@@ -141,3 +141,4 @@ exports.usingGenToMeanWithPattern = require('./usingGenToMeanWithPattern');
 exports.expressingExperiencesWithGuoPattern = require('./expressingExperiencesWithGuoPattern');
 exports.congDaoPattern = require('./congDaoPattern');
 exports.directionalVerbsLaiAndQuPattern = require('./directionalVerbsLaiAndQuPattern');
+exports.expressingWillWithHuiPattern = require('./expressingWillWithHuiPattern');
