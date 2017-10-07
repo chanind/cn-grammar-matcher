@@ -142,3 +142,4 @@ exports.expressingExperiencesWithGuoPattern = require('./expressingExperiencesWi
 exports.congDaoPattern = require('./congDaoPattern');
 exports.directionalVerbsLaiAndQuPattern = require('./directionalVerbsLaiAndQuPattern');
 exports.expressingWillWithHuiPattern = require('./expressingWillWithHuiPattern');
+exports.xiangPattern = require('./xiangPattern');
