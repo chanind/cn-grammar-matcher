@@ -132,3 +132,4 @@ exports.expressingExistenceInAPlaceWithZaiPattern = require('./expressingExisten
 exports.expressingNotVeryWithBuTaiPattern = require('./expressingNotVeryWithBuTaiPattern');
 exports.siLePattern = require('./siLePattern');
 exports.expressingAndAlsoWithHaiPattern = require('./expressingAndAlsoWithHaiPattern');
+exports.expressingActionsInProgressWithZaiPattern = require('./expressingActionsInProgressWithZaiPattern');
