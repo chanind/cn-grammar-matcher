@@ -422,6 +422,7 @@ const a2 = [
   {
     label: 'Softening speech with "ba"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGDHC1H',
+    skip: 'too hard to differentiate from ASGMPZ6D, maybe combine these 2?',
   },
   {
     label: 'Structural particle "de"',

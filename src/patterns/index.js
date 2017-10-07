@@ -139,3 +139,4 @@ exports.intensifyingWithDuoPattern = require('./intensifyingWithDuoPattern');
 exports.zuiPattern = require('./zuiPattern');
 exports.usingGenToMeanWithPattern = require('./usingGenToMeanWithPattern');
 exports.expressingExperiencesWithGuoPattern = require('./expressingExperiencesWithGuoPattern');
+exports.congDaoPattern = require('./congDaoPattern');
