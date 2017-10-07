@@ -135,3 +135,4 @@ exports.expressingAndAlsoWithHaiPattern = require('./expressingAndAlsoWithHaiPat
 exports.expressingActionsInProgressWithZaiPattern = require('./expressingActionsInProgressWithZaiPattern');
 exports.bothWithYouPattern = require('./bothWithYouPattern');
 exports.zhenPattern = require('./zhenPattern');
+exports.intensifyingWithDuoPattern = require('./intensifyingWithDuoPattern');

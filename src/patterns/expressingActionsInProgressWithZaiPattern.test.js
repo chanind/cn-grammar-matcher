@@ -9,13 +9,8 @@ test('matches all examples', async () => {
   await assertAllExamplesMatch(expressingActionsInProgressWithZaiPattern);
 });
 
-test('TODO: get these to match', async () => {
-  await assertAllMatch(
-    expressingActionsInProgressWithZaiPattern,
-    [
-      // '老板在开会，没有时间见你。',
-    ]
-  );
+test.skip('TODO: get these to match', async () => {
+  await assertAllMatch(expressingActionsInProgressWithZaiPattern, ['老板在开会，没有时间见你。']);
 });
 
 test("doesn't match negative examples", async () => {
