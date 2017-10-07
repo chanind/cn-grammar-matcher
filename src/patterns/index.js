@@ -150,3 +150,4 @@ exports.usingHaoToMeanEasyPattern = require('./usingHaoToMeanEasyPattern');
 exports.yixiaPattern = require('./yixiaPattern');
 exports.buDongPattern = require('./buDongPattern');
 exports.resultComplementWanForFinishingPattern = require('./resultComplementWanForFinishingPattern');
+exports.resultComplementsDaoAndJianPattern = require('./resultComplementsDaoAndJianPattern');
