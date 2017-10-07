@@ -133,3 +133,4 @@ exports.expressingNotVeryWithBuTaiPattern = require('./expressingNotVeryWithBuTa
 exports.siLePattern = require('./siLePattern');
 exports.expressingAndAlsoWithHaiPattern = require('./expressingAndAlsoWithHaiPattern');
 exports.expressingActionsInProgressWithZaiPattern = require('./expressingActionsInProgressWithZaiPattern');
+exports.bothWithYouPattern = require('./bothWithYouPattern');
