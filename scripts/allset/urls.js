@@ -1521,6 +1521,7 @@ const b2 = [
   {
     label: 'Using "nanguai" as a verb',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGYKH5G',
+    skip: 'Already covered in ASGFPV2C',
   },
   {
     label: 'Expressing future with "jiang"',
