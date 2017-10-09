@@ -371,6 +371,7 @@ const a2 = [
   {
     label: 'Big numbers in Chinese',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGIM3AX',
+    skip: 'too vague',
   },
   {
     label: 'Structure of times (advanced)',
@@ -560,6 +561,7 @@ const a2 = [
     label: 'Counting money',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGL6JOE',
     matcherId: 'duoshaoqian',
+    regexes: [/(多少钱)/, /[零一二三四五六七八九十百千万亿两0-9]+(块)[零一二三四五六七八九十百千万亿两0-9]*(毛)?/],
   },
   {
     label: 'Expressing "every" with "mei"',
@@ -585,6 +587,7 @@ const a2 = [
   {
     label: 'Ordinal numbers with "di"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGK904U',
+    regexes: [/(第)[零一二三四五六七八九十百千万亿两0-9]+/],
   },
   {
     label: 'Asking why with "zenme"',
@@ -608,6 +611,7 @@ const a2 = [
   {
     label: 'Expressing "everything" with "shenme dou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGAQV6C',
+    regexes: [/(什么)[^都也]*(都|也)/],
   },
   {
     label: 'Expressing "stop doing" with "bie… le"',
@@ -616,14 +620,17 @@ const a2 = [
   {
     label: 'Expressing location with "zai... shang / xia / li"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGFBWZL',
+    skip: 'slighlty tricky to differentiate from other 在 usage, investigate later',
   },
   {
     label: 'Comparing "bu" and "mei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGRJ1BI',
+    skip: 'comparisons - figure out how to merge with simpler rules later',
   },
   {
     label: 'Comparing "yao" and "xiang"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGD88UO',
+    skip: 'comparisons - figure out how to merge with simpler rules later',
   },
 ];
 
@@ -744,6 +751,8 @@ const b1 = [
   {
     label: 'Expressing "no wonder"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGFPV2C',
+    description:
+      '难怪 (nánguài) can be used to express that the speaker finds something unsurprising. It can be used alone or in a variety of different structures, as shown below.  怪不得 (guàibude) is another way to express exactly the same thing, in a slightly more informal way. 难怪 (nánguài) when used as a verb can be translated as "hard to blame." This is usually directed at a person, and it is similar to how in English we may say "He\'s always sleepy, but you can\'t blame him because he works a night shift."',
   },
   {
     label: 'Expressing "one by one" with "yi"',
@@ -1521,6 +1530,7 @@ const b2 = [
   {
     label: 'Using "nanguai" as a verb',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGYKH5G',
+    skip: 'Already covered in ASGFPV2C',
   },
   {
     label: 'Expressing future with "jiang"',
