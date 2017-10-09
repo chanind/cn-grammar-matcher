@@ -371,6 +371,7 @@ const a2 = [
   {
     label: 'Big numbers in Chinese',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGIM3AX',
+    skip: 'too vague',
   },
   {
     label: 'Structure of times (advanced)',
@@ -560,6 +561,7 @@ const a2 = [
     label: 'Counting money',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGL6JOE',
     matcherId: 'duoshaoqian',
+    regexes: [/(多少钱)/, /[零一二三四五六七八九十百千万亿两0-9]+(块)[零一二三四五六七八九十百千万亿两0-9]*(毛)?/],
   },
   {
     label: 'Expressing "every" with "mei"',

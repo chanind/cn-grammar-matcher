@@ -153,3 +153,4 @@ exports.resultComplementWanForFinishingPattern = require('./resultComplementWanF
 exports.resultComplementsDaoAndJianPattern = require('./resultComplementsDaoAndJianPattern');
 exports.yixiePattern = require('./yixiePattern');
 exports.expressingHalfWithBanPattern = require('./expressingHalfWithBanPattern');
+exports.duoshaoqianPattern = require('./duoshaoqianPattern');
