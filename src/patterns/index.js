@@ -157,3 +157,4 @@ exports.duoshaoqianPattern = require('./duoshaoqianPattern');
 exports.measureWordsWithThisAndThatPattern = require('./measureWordsWithThisAndThatPattern');
 exports.ordinalNumbersWithDiPattern = require('./ordinalNumbersWithDiPattern');
 exports.expressingAboutToHappenWithLePattern = require('./expressingAboutToHappenWithLePattern');
+exports.shenmeDouPattern = require('./shenmeDouPattern');

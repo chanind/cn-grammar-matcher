@@ -611,6 +611,7 @@ const a2 = [
   {
     label: 'Expressing "everything" with "shenme dou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGAQV6C',
+    regexes: [/(什么)[^都也]*(都|也)/],
   },
   {
     label: 'Expressing "stop doing" with "bie… le"',
