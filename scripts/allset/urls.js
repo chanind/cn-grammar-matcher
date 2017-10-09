@@ -587,6 +587,7 @@ const a2 = [
   {
     label: 'Ordinal numbers with "di"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGK904U',
+    regexes: [/(第)[零一二三四五六七八九十百千万亿两0-9]+/],
   },
   {
     label: 'Asking why with "zenme"',
