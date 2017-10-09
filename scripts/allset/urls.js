@@ -620,14 +620,17 @@ const a2 = [
   {
     label: 'Expressing location with "zai... shang / xia / li"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGFBWZL',
+    skip: 'slighlty tricky to differentiate from other 在 usage, investigate later',
   },
   {
     label: 'Comparing "bu" and "mei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGRJ1BI',
+    skip: 'comparisons - figure out how to merge with simpler rules later',
   },
   {
     label: 'Comparing "yao" and "xiang"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGD88UO',
+    skip: 'comparisons - figure out how to merge with simpler rules later',
   },
 ];
 
