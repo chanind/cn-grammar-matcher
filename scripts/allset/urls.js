@@ -744,6 +744,8 @@ const b1 = [
   {
     label: 'Expressing "no wonder"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGFPV2C',
+    description:
+      '难怪 (nánguài) can be used to express that the speaker finds something unsurprising. It can be used alone or in a variety of different structures, as shown below.  怪不得 (guàibude) is another way to express exactly the same thing, in a slightly more informal way. 难怪 (nánguài) when used as a verb can be translated as "hard to blame." This is usually directed at a person, and it is similar to how in English we may say "He\'s always sleepy, but you can\'t blame him because he works a night shift."',
   },
   {
     label: 'Expressing "one by one" with "yi"',
