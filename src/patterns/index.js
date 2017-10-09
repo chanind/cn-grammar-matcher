@@ -154,3 +154,4 @@ exports.resultComplementsDaoAndJianPattern = require('./resultComplementsDaoAndJ
 exports.yixiePattern = require('./yixiePattern');
 exports.expressingHalfWithBanPattern = require('./expressingHalfWithBanPattern');
 exports.duoshaoqianPattern = require('./duoshaoqianPattern');
+exports.measureWordsWithThisAndThatPattern = require('./measureWordsWithThisAndThatPattern');
