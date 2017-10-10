@@ -507,7 +507,7 @@ const a2 = [
   {
     label: 'Reduplication of verbs',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGYC77J',
-    skip: 'too hard',
+    regexes: [/.一./],
   },
   {
     label: 'Special cases of "zai" following verbs',

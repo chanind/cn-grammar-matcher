@@ -159,3 +159,4 @@ exports.ordinalNumbersWithDiPattern = require('./ordinalNumbersWithDiPattern');
 exports.expressingAboutToHappenWithLePattern = require('./expressingAboutToHappenWithLePattern');
 exports.shenmeDouPattern = require('./shenmeDouPattern');
 exports.bieLePattern = require('./bieLePattern');
+exports.reduplicationOfVerbsPattern = require('./reduplicationOfVerbsPattern');
