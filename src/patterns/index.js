@@ -160,3 +160,4 @@ exports.expressingAboutToHappenWithLePattern = require('./expressingAboutToHappe
 exports.shenmeDouPattern = require('./shenmeDouPattern');
 exports.bieLePattern = require('./bieLePattern');
 exports.reduplicationOfVerbsPattern = require('./reduplicationOfVerbsPattern');
+exports.indicatingTheWholeWithQuanPattern = require('./indicatingTheWholeWithQuanPattern');
