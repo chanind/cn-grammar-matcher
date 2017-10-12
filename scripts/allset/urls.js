@@ -507,7 +507,7 @@ const a2 = [
   {
     label: 'Reduplication of verbs',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGYC77J',
-    skip: 'too hard',
+    regexes: [/.一./],
   },
   {
     label: 'Special cases of "zai" following verbs',
@@ -647,6 +647,8 @@ const b1 = [
   {
     label: 'Indicating the whole with "quan"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGCPDSR',
+    matcherId: 'indicatingTheWholeWithQuan',
+    regexes: [/(全)[^都]*(都)/],
   },
   {
     label: 'Positive adjectives with "-ji le"',
