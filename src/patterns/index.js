@@ -165,3 +165,4 @@ exports.positiveAdjectivesWithJilePattern = require('./positiveAdjectivesWithJil
 exports.jiushiPattern = require('./jiushiPattern');
 exports.yuanlaiPattern = require('./yuanlaiPattern');
 exports.expressingAgainInThePastWithYouPattern = require('./expressingAgainInThePastWithYouPattern');
+exports.emphasizingNegationWithYouPattern = require('./emphasizingNegationWithYouPattern');
