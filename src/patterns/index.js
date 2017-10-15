@@ -164,3 +164,4 @@ exports.indicatingTheWholeWithQuanPattern = require('./indicatingTheWholeWithQua
 exports.positiveAdjectivesWithJilePattern = require('./positiveAdjectivesWithJilePattern');
 exports.jiushiPattern = require('./jiushiPattern');
 exports.yuanlaiPattern = require('./yuanlaiPattern');
+exports.expressingAgainInThePastWithYouPattern = require('./expressingAgainInThePastWithYouPattern');
