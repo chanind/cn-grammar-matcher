@@ -167,3 +167,4 @@ exports.yuanlaiPattern = require('./yuanlaiPattern');
 exports.expressingAgainInThePastWithYouPattern = require('./expressingAgainInThePastWithYouPattern');
 exports.emphasizingNegationWithYouPattern = require('./emphasizingNegationWithYouPattern');
 exports.zuihaoPattern = require('./zuihaoPattern');
+exports.expressingQuiteWithTingPattern = require('./expressingQuiteWithTingPattern');
