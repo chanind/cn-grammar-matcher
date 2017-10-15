@@ -168,3 +168,4 @@ exports.expressingAgainInThePastWithYouPattern = require('./expressingAgainInThe
 exports.emphasizingNegationWithYouPattern = require('./emphasizingNegationWithYouPattern');
 exports.zuihaoPattern = require('./zuihaoPattern');
 exports.expressingQuiteWithTingPattern = require('./expressingQuiteWithTingPattern');
+exports.expressingAlwaysWithConglaiPattern = require('./expressingAlwaysWithConglaiPattern');
