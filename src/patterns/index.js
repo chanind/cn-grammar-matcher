@@ -163,3 +163,4 @@ exports.reduplicationOfVerbsPattern = require('./reduplicationOfVerbsPattern');
 exports.indicatingTheWholeWithQuanPattern = require('./indicatingTheWholeWithQuanPattern');
 exports.positiveAdjectivesWithJilePattern = require('./positiveAdjectivesWithJilePattern');
 exports.jiushiPattern = require('./jiushiPattern');
+exports.yuanlaiPattern = require('./yuanlaiPattern');
