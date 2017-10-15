@@ -737,6 +737,7 @@ const b1 = [
     label: 'Expressing "had better" with "zuihao"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG35CD7',
     matcherId: 'zuihao',
+    description: '最好 can be used to express "had better"',
   },
   {
     label: 'Expressing "in this way" with "zheyang"',
