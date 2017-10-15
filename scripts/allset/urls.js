@@ -1234,6 +1234,7 @@ const b1 = [
   {
     label: 'Expressing "either... or..." with "yaome"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG30A60',
+    regexes: [/(要么)[^要么]+(要么)?/],
   },
   {
     label: 'Comparing "cai" and "jiu"',
@@ -1282,6 +1283,7 @@ const b1 = [
   {
     label: 'Comparing "gang" and "gangcai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGJFFWG',
+    skip: 'comparison',
   },
   {
     label: 'Comparing "houlai" and "ranhou"',
@@ -1304,6 +1306,7 @@ const b1 = [
   {
     label: 'Comparing "xiande" and "kanqilai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGKQEG9',
+    skip: 'comparison',
   },
 ];
 
