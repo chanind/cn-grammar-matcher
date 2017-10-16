@@ -934,6 +934,7 @@ const b1 = [
   {
     label: 'Expressing purpose with "weile"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQGJXT',
+    regexes: [/(为了)/],
   },
   {
     label: 'Using "dui" with verbs',
@@ -1117,6 +1118,9 @@ const b1 = [
   {
     label: 'Expressing "about to" with "jiuyao"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9B210',
+    description:
+      '就要 (jiùyào) is similar to 快要 (kuàiyào), meaning "about to." They are interchangeable in some cases. But there is a major difference that you need to take a good look at. 快要 (kuài yào) is generally "about to" [happen], but 就要 (jiù yào) could be used to mark a more specific time. 要 (yào) here can be omitted. For this one, you wouldn\'t normally use "about to" for this English translation, but the feeling is nevertheless that the impending event is coming up fast.',
+    filterExamples: true,
   },
   {
     label: 'Expressing "already" with "dou"',
@@ -1190,6 +1194,7 @@ const b1 = [
   {
     label: 'Indicating purpose or intent using "shi...de"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG0UFR4',
+    skip: 'similar to ASG8YTSF, skip for now',
   },
   {
     label: 'Referring to "all" using "suoyou"',
@@ -1199,10 +1204,12 @@ const b1 = [
   {
     label: 'Sequencing with "xian" and "zai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLJM55',
+    regexes: [/(先)[^再]+(再说?)/],
   },
   {
     label: 'The "if" sandwich pattern',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGN4VUU',
+    regexes: [/(如果)[^话]+(的话)?/, /(如果)?[^话]+(的话)/],
   },
   {
     label: 'The pattern "it\'s not…, it\'s…"',
@@ -1244,10 +1251,12 @@ const b1 = [
   {
     label: 'Comparing "youdian" and "yidian"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGV55Y4',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "zai" and "you"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGTBHBG',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "hui" "neng" "keyi"',
@@ -1261,14 +1270,17 @@ const b1 = [
   {
     label: 'Comparing "weile" and "yinwei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGMEC1P',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "renjia" and “bieren"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPINA4',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "zhijian" and “zhongjian"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGN6O6J',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "dui" and "duiyu"',
@@ -1294,10 +1306,12 @@ const b1 = [
     label: 'Comparing "yihou" and "de shihou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLNKZR',
     regexes: [/(以后|的时候)/],
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "yihou" and "houlai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGNPJ7T',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "yihou" and "zhihou"',
