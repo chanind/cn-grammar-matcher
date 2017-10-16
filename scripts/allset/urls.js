@@ -934,6 +934,7 @@ const b1 = [
   {
     label: 'Expressing purpose with "weile"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQGJXT',
+    regexes: [/(为了)/],
   },
   {
     label: 'Using "dui" with verbs',
