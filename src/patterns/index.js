@@ -174,3 +174,4 @@ exports.yaoWoShuoPattern = require('./yaoWoShuoPattern');
 exports.sequencingWithXianAndZaiPattern = require('./sequencingWithXianAndZaiPattern');
 exports.ruguoDeHuaPattern = require('./ruguoDeHuaPattern');
 exports.expressingAboutToWithJiuyaoPattern = require('./expressingAboutToWithJiuyaoPattern');
+exports.renhePattern = require('./renhePattern');
