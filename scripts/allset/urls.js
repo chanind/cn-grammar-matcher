@@ -1117,6 +1117,9 @@ const b1 = [
   {
     label: 'Expressing "about to" with "jiuyao"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9B210',
+    description:
+      '就要 (jiùyào) is similar to 快要 (kuàiyào), meaning "about to." They are interchangeable in some cases. But there is a major difference that you need to take a good look at. 快要 (kuài yào) is generally "about to" [happen], but 就要 (jiù yào) could be used to mark a more specific time. 要 (yào) here can be omitted. For this one, you wouldn\'t normally use "about to" for this English translation, but the feeling is nevertheless that the impending event is coming up fast.',
+    filterExamples: true,
   },
   {
     label: 'Expressing "already" with "dou"',
