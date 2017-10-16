@@ -8,10 +8,12 @@ const AUTOGEN_COMMENT = trim(`
 `);
 
 const formatStr = str =>
-  JSON.stringify(trim(str))
-    .replace(/\\"/g, '"')
-    .replace(/'/g, "\\'")
-    .replace(/^"|"$/g, '');
+  !str
+    ? str
+    : JSON.stringify(trim(str))
+        .replace(/\\"/g, '"')
+        .replace(/'/g, "\\'")
+        .replace(/^"|"$/g, '');
 
 const getExamplesString = exampleFields => {
   const strings = exampleFields.map(field =>
