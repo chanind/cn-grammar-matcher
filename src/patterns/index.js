@@ -171,3 +171,4 @@ exports.expressingQuiteWithTingPattern = require('./expressingQuiteWithTingPatte
 exports.expressingAlwaysWithConglaiPattern = require('./expressingAlwaysWithConglaiPattern');
 exports.yaomePattern = require('./yaomePattern');
 exports.yaoWoShuoPattern = require('./yaoWoShuoPattern');
+exports.sequencingWithXianAndZaiPattern = require('./sequencingWithXianAndZaiPattern');

@@ -1190,6 +1190,7 @@ const b1 = [
   {
     label: 'Indicating purpose or intent using "shi...de"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG0UFR4',
+    skip: 'similar to ASG8YTSF, skip for now',
   },
   {
     label: 'Referring to "all" using "suoyou"',
@@ -1199,6 +1200,7 @@ const b1 = [
   {
     label: 'Sequencing with "xian" and "zai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLJM55',
+    regexes: [/(先)[^再]+(再说?)/],
   },
   {
     label: 'The "if" sandwich pattern',
@@ -1244,10 +1246,12 @@ const b1 = [
   {
     label: 'Comparing "youdian" and "yidian"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGV55Y4',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "zai" and "you"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGTBHBG',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "hui" "neng" "keyi"',
@@ -1261,14 +1265,17 @@ const b1 = [
   {
     label: 'Comparing "weile" and "yinwei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGMEC1P',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "renjia" and “bieren"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPINA4',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "zhijian" and “zhongjian"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGN6O6J',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "dui" and "duiyu"',
@@ -1294,10 +1301,12 @@ const b1 = [
     label: 'Comparing "yihou" and "de shihou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLNKZR',
     regexes: [/(以后|的时候)/],
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "yihou" and "houlai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGNPJ7T',
+    skip: 'comparisons',
   },
   {
     label: 'Comparing "yihou" and "zhihou"',
