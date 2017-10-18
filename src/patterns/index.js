@@ -179,3 +179,4 @@ exports.weilePattern = require('./weilePattern');
 exports.expressingNotVeryWithBuZenmePattern = require('./expressingNotVeryWithBuZenmePattern');
 exports.expressingNotOftenWithBuZenmePattern = require('./expressingNotOftenWithBuZenmePattern');
 exports.jiushiPattern = require('./jiushiPattern');
+exports.zhenghaoPattern = require('./zhenghaoPattern');
