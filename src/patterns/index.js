@@ -177,3 +177,4 @@ exports.expressingAboutToWithJiuyaoPattern = require('./expressingAboutToWithJiu
 exports.renhePattern = require('./renhePattern');
 exports.weilePattern = require('./weilePattern');
 exports.expressingNotVeryWithBuZenmePattern = require('./expressingNotVeryWithBuZenmePattern');
+exports.expressingNotOftenWithBuZenmePattern = require('./expressingNotOftenWithBuZenmePattern');
