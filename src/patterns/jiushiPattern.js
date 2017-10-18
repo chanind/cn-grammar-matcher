@@ -8,32 +8,50 @@ const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGF1TQ2',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGK213C',
   name: 'AllSet Chinese Grammar Wiki',
 };
 
 module.exports = {
   id: 'jiushi',
-  name: '就是 + Hypothetical Statement + 也 + Action',
-  description:
-    '就是 (jiùshì) is one of the many "even ifs." Like 即使 , 就算 and 哪怕 it is used to introduce a hypothetical statement, which can then disregarded with 也.',
+  name: '就是 + Adj.',
+  description: '就是 (jiùshì) can be used to add many different types of emphasis.',
   sources: [allSetSrc],
-  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(就是)[^也]+(也)/)]),
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(就是)/),
+      regexMatchLocs(sentence.text, /(就)[不要]/),
+    ]),
   examples: [
     {
-      zh: '就是这台电脑价格上万，我也会买。',
-      en: "Even if this computer's price is over 10,000 yuan, I'm still going to buy it.",
+      zh: '他就是聪明，考试总是第一名。',
+      en: "He's just really smart. He's always gets the best grade on tests.",
       src: allSetSrc,
     },
     {
-      zh: '就是降温了，我也要穿热裤，时尚嘛!',
+      zh: '我真的什么都没做，他就是对我有偏见。',
+      en: "I really didn't do any of it. He's just prejudiced towards me.",
+      src: allSetSrc,
+    },
+    {
+      zh: '她就是漂亮，没什么别的优点。',
+      en: "She's just pretty; she doesn't have other talents.",
+      src: allSetSrc,
+    },
+    {
+      zh: '我老公就是爱抽烟，他根本戒不了!',
+      en: "My boss loves to smoke, he simply doesn't listen to the warnings.",
+      src: allSetSrc,
+    },
+    {
+      zh: '我就是不去，我一向都不爱去酒吧。',
+      en: "I'm just not going to go. I've never liked going to bars.",
+      src: allSetSrc,
+    },
+    {
+      zh: '他就是不相信星座，你怎么跟他解释也没用。',
       en:
-        "Even if it's starting to get cooler, I'm still going to wear short shorts. It's the fad!",
-      src: allSetSrc,
-    },
-    {
-      zh: '就是他变成一个穷光蛋，我也愿意跟他在一起。',
-      en: 'Even if he were penniless, I would still be willing to be with him.',
+        "He just doesn't believe in astrology. No matter how you try to explain it to him, it won't work.",
       src: allSetSrc,
     },
   ],

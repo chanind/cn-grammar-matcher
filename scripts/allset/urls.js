@@ -669,6 +669,7 @@ const b1 = [
   {
     label: 'Adding emphasis with "jiushi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGK213C',
+    regexes: [/(就是)/, /(就)[不要]/],
   },
   {
     label: 'Coincidence with "zhenghao"',
@@ -1618,6 +1619,7 @@ const b2 = [
   {
     label: 'Expressing "even if…" with "jiushi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGF1TQ2',
+    matcherId: 'jiushiYe',
   },
   {
     label: 'Expressing "even if…" with "jiusuan"',
