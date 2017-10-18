@@ -85,16 +85,15 @@ module.exports = (fields, options = {}) => {
   if (useRegexTokensMatch) {
     matchStrings.push(
       trim(`
-    locsFromTokens(
-      regexMatchTokens(
-        sentence.tokens,
-        '(:thing:)',
-        {
-          thing: and(pos('TBD'), word('TBD')),
-        }
+      locsFromTokens(
+        regexMatchTokens(
+          sentence.tokens,
+          '(:thing:)',
+          {
+            thing: and(pos('TBD'), word('TBD')),
+          }
+        ),
       ),
-      'TBD'
-    ),
     `)
     );
   }
