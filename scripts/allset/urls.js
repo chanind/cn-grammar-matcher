@@ -643,6 +643,7 @@ const b1 = [
   {
     label: 'Expressing "not very" with "bu zenme"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGVYIZT',
+    matcherId: 'expressingNotVeryWithBuZenme',
   },
   {
     label: 'Indicating the whole with "quan"',
@@ -668,6 +669,8 @@ const b1 = [
   {
     label: 'Adding emphasis with "jiushi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGK213C',
+    regexes: [/(就是)/, /(就)[不要]/],
+    skip: 'same as ASGY21RK',
   },
   {
     label: 'Coincidence with "zhenghao"',
@@ -676,6 +679,8 @@ const b1 = [
   {
     label: 'Emphasis with "jiu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGY21RK',
+    regexes: [/(就是)/, /(就)[不要想喜]/],
+    matcherId: 'jiushi',
   },
   {
     label: 'Emphasizing negation with "you"',
@@ -1036,6 +1041,7 @@ const b1 = [
   {
     label: 'Expressing "not often" with "bu zenme"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG5BOGP',
+    matcherId: 'expressingNotOftenWithBuZenme',
   },
   {
     label: 'Expressing actions in progress (full form)',
@@ -1616,6 +1622,7 @@ const b2 = [
   {
     label: 'Expressing "even if…" with "jiushi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGF1TQ2',
+    matcherId: 'jiushiYe',
   },
   {
     label: 'Expressing "even if…" with "jiusuan"',

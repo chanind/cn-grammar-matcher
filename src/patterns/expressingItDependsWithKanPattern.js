@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     'Although there are a number of ways to express "it depends" in Chinese, the most common ones in spoken Chinese involve the verb 看 (kàn). Some common expressions include:',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /((?:(?:这|那)?)(?:得看|要看))/),
-      regexMatchLocs(text, /((?:得看|要看))/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /((?:(?:这|那)?)(?:得看|要看))/),
+      regexMatchLocs(sentence.text, /((?:得看|要看))/),
+    ]),
   examples: [
     {
       zh: '这得看你的时间。',

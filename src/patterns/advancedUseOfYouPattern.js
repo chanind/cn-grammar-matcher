@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     "Here we repeat the verb used and place 又 in the middle. The repetition of the verb emphasizes how the action is being repeated again and again. This one is definitely the most advanced usage of 又 here, and you're not going to use it nearly as much as the others.",
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(了又)[^还就终]+((?:还是|就是|终于))/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(了又)[^还就终]+((?:还是|就是|终于))/)]),
   examples: [
     {
       zh: '这个人我看了又看，还是觉得我不认识他。',

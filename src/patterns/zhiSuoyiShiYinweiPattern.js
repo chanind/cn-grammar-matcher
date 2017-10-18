@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     "之所以⋯⋯是因为 (zhī suǒyǐ... shì yīnwèi) can be translated as “the reason why... is because” and can be used if the speaker wishes to state the effect before the cause.  It's normally used in somewhat formal speech.",
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(之所以)[^是因为]+(是因为)/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(之所以)[^是因为]+(是因为)/)]),
   examples: [
     {
       zh: '他之所以去希腊是因为想进一步了解西方文明。',

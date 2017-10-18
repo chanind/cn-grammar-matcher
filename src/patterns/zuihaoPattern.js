@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -17,13 +17,11 @@ module.exports = {
   name: 'Subj. + 最好 + [Verb Phrase]',
   description: '最好 can be used to express "had better"',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(最好)/),
-      regexMatchLocs(text, /(最好(?:别|不要))/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(最好)/),
+      regexMatchLocs(sentence.text, /(最好(?:别|不要))/),
+    ]),
   examples: [
     {
       zh: '你最好先休息一下。',

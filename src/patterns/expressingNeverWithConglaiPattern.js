@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     "Although it can also work in the positive, 从来 (cónglái) is usually used when you want to express that you never do something (as a habit, or as a rule), or that you have never done something (it's not a part of your life experience). In either usage, 从来 (cónglái) may be shortened to just 从 (cóng) in casual speech.",
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(从来?不)/),
-      regexMatchLocs(text, /(从来?没有?)[^过]+(过)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(从来?不)/),
+      regexMatchLocs(sentence.text, /(从来?没有?)[^过]+(过)/),
+    ]),
   examples: [
     {
       zh: '她从来不喝酒。',

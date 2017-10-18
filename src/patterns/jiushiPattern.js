@@ -3,40 +3,76 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGF1TQ2',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGY21RK',
   name: 'AllSet Chinese Grammar Wiki',
 };
 
 module.exports = {
   id: 'jiushi',
-  name: '就是 + Hypothetical Statement + 也 + Action',
+  name: '就 + 是 + Noun',
   description:
-    '就是 (jiùshì) is one of the many "even ifs." Like 即使 , 就算 and 哪怕 it is used to introduce a hypothetical statement, which can then disregarded with 也.',
+    'As an adverb, 就 (jiù) can be placed before the predicate to add emphasis. It often has an intense or provocative feel to it, like how we sometimes say in English "it\'s just not right!," or other similar phrases. It often appears as 就是.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(就是)[^也]+(也)/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(就是)/),
+      regexMatchLocs(sentence.text, /(就)[不要想喜]/),
+    ]),
   examples: [
     {
-      zh: '就是这台电脑价格上万，我也会买。',
-      en: "Even if this computer's price is over 10,000 yuan, I'm still going to buy it.",
+      zh: '你就是个笨蛋！',
+      en: "You're exactly a moron!",
       src: allSetSrc,
     },
     {
-      zh: '就是降温了，我也要穿热裤，时尚嘛!',
+      zh: '他就是个骗子！',
+      en: "He's exactly a liar!",
+      src: allSetSrc,
+    },
+    {
+      zh: '乔布斯就是我的偶像！',
+      en: 'Jobs is exactly my idol!',
+      src: allSetSrc,
+    },
+    {
+      zh: '我就要去！',
+      en: 'I just want to go!',
+      src: allSetSrc,
+    },
+    {
+      zh: '我就是喜欢他。',
+      en: 'I just like him.',
+      src: allSetSrc,
+    },
+    {
+      zh: '他就想出国。',
+      en: 'He just wants to go abroad.',
+      src: allSetSrc,
+    },
+    {
+      zh: '我问过很多次，他就是不说。',
+      en: "I asked him many times. He just wouldn't tell.",
+      src: allSetSrc,
+    },
+    {
+      zh: '很多年轻人就喜欢打游戏。',
+      en: 'A lot of young people just like to play video games.',
+      src: allSetSrc,
+    },
+    {
+      zh: '她就不听我的话。',
+      en: "She just wouldn't listen to me.",
+      src: allSetSrc,
+    },
+    {
+      zh: '谁都知道抽烟对身体不好，可很多人就是不戒烟。',
       en:
-        "Even if it's starting to get cooler, I'm still going to wear short shorts. It's the fad!",
-      src: allSetSrc,
-    },
-    {
-      zh: '就是他变成一个穷光蛋，我也愿意跟他在一起。',
-      en: 'Even if he were penniless, I would still be willing to be with him.',
+        "Everyone knows that smoking is bad for your body but a lot of people just don't quit smoking.",
       src: allSetSrc,
     },
   ],

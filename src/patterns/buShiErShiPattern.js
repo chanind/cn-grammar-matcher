@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     '不是⋯⋯而是⋯⋯ (bù shì... ér shì) means "not A, but rather B." This is a useful phrase to use in arguments to overturn a point of view and state the opposite.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(不是)[^而是]+(而是)/),
-      regexMatchLocs(text, /(是)[^而不是]+(而不是)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(不是)[^而是]+(而是)/),
+      regexMatchLocs(sentence.text, /(是)[^而不是]+(而不是)/),
+    ]),
   examples: [
     {
       zh: '我不是不想帮忙而是没有能力帮忙。',

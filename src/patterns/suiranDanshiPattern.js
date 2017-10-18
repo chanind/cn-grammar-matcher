@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     'The grammar pattern "虽然⋯⋯ 但是⋯⋯" (suīrán... dànshì...) is one of the most common used patterns in Chinese, especially in written Chinese. You can think of it as meaning "although," but unlike in English, you still need to follow it with a "but" word in Chinese.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(虽然)[^但可]+(但是|可是)/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(虽然)[^但可]+(但是|可是)/)]),
   examples: [
     {
       zh: '虽然他是美国人，但是他还没去过华盛顿。',

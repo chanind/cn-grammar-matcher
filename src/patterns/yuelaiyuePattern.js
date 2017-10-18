@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     '越来越 (yuèláiyuè) is used frequently in Chinese to express that some quality or state is increasing with time, or in tune with another factor.  There are two forms of this pattern, the "simple" one (using 来), and the more complex one (which uses two different adjectives/verbs).',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(越来越)[^了]+(了)/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(越来越)[^了]+(了)/)]),
   examples: [
     {
       zh: '天气越来越冷了。',

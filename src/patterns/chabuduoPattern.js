@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     '差不多 (chàbuduō), translated literally, means "the difference is not much." In practice it means something like "more or less," and is useful for expressing rough approximations.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(差不多)/),
-      regexMatchLocs(text, /((?:跟|和))[^差不多]+(差不多)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(差不多)/),
+      regexMatchLocs(sentence.text, /((?:跟|和))[^差不多]+(差不多)/),
+    ]),
   examples: [
     {
       zh: '这几个地方都差不多。',

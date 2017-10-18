@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     'Using 除了 (chúle)⋯⋯ 以外 (yǐwài) will help you spruce up your sentences when you want to express "except," "besides," and "in addition."  You may feel that "except" has a pretty different meaning form the other two. Well, read on!',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(除了)[^以外]+((?:以外)?)[^都]+(都)/),
-      regexMatchLocs(text, /(除了)[^以外]+((?:以外)?)[^也还]+((?:也|还))/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(除了)[^以外]+((?:以外)?)[^都]+(都)/),
+      regexMatchLocs(sentence.text, /(除了)[^以外]+((?:以外)?)[^也还]+((?:也|还))/),
+    ]),
   examples: [
     {
       zh: '除了妈妈以外，我们全家都去香港。',

@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     '幸亏 (xìngkuī), 幸好 (xìnghǎo), and 还好 (háihǎo) mean "fortunately" or "luckily." They can be used to express that something has happened by chance, and has thereby enabled you to avoid some difficulty or bad luck. It is often followed with 不然 (which precedes the bad thing that could have happened).',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /((?:幸亏|幸好|还好))[^然]+(不然)?/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:幸亏|幸好|还好))[^然]+(不然)?/)]),
   examples: [
     {
       zh: '幸亏我们走得早，不然就迟到了。',

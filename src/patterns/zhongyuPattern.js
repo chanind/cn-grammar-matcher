@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -17,10 +17,7 @@ module.exports = {
   name: 'Subj. + 终于 + Verb Phrase + 了',
   description: '终于(zhōngyú) 表示经过很长时间的等待最后实现了愿望，通常都是说话人期待发生的事情，含喜悦、满意的感情色彩。',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(终于)[^了]+(了)/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(终于)[^了]+(了)/)]),
   examples: [
     {
       zh: '你终于到了！',

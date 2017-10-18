@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     'We use ordinal numbers to express things like "number one" or "second," so mastering them in Chinese is important. Fortunately, they are also very easy to learn by just adding the prefix 第 (dì).',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(第)[零一二三四五六七八九十百千万亿两0-9]+/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(第)[零一二三四五六七八九十百千万亿两0-9]+/)]),
   examples: [
     {
       zh: '我是第一个到公司的人。',

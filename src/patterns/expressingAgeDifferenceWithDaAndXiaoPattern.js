@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -17,13 +17,11 @@ module.exports = {
   name: 'A + 比 + B + 大 / 小 + number + 岁',
   description: '如果你有兄弟姐妹，中国人常常会问你"他（她）比你小几岁" or "他（她）比你大几岁 "。注意，这里一定不能不用"年轻"或者"老"。',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(比)[^大小]+((?:大|小))[^岁]+(岁)/),
-      regexMatchLocs(text, /(跟)[^一样大]+(一样大)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(比)[^大小]+((?:大|小))[^岁]+(岁)/),
+      regexMatchLocs(sentence.text, /(跟)[^一样大]+(一样大)/),
+    ]),
   examples: [
     {
       zh: '我姐姐比我大两岁。',

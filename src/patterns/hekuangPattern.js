@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,12 +18,10 @@ module.exports = {
   description:
     '何况 (hékuàng) can mean "let alone" or "all the more." It can be used in the following structure:',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(连?)[^都]+(都(?:(?:不|没)?))?[^何况]+(何况)[^呢]+(呢)?/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(连?)[^都]+(都(?:(?:不|没)?))?[^何况]+(何况)[^呢]+(呢)?/),
+    ]),
   examples: [
     {
       zh: '我连一万块钱都有，何况一千呢？',

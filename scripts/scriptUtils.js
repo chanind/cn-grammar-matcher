@@ -85,7 +85,7 @@ const writeOutPattern = (fullPatternName, mainTemplate, testTemplate, force = fa
   let indexWritten = true;
 
   rewritePatternIndex(indexContents => {
-    if (indexContents.indexOf(fullPatternName) >= 0) {
+    if (indexContents.indexOf(`exports.${fullPatternName}`) >= 0) {
       console.log('Pattern already exists in index. Skipping.');
       indexWritten = false;
       return indexContents;

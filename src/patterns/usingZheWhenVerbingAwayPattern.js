@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     'A repeated verb followed by the particle 着 (zhe) is used to show that an action has be repeated for a period of time, and as a result a new situation has arisen which the speaker wishes to comment on.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(着)[^着就]+(着)[^就]*(就)[^了]+(了)/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(着)[^着就]+(着)[^就]*(就)[^了]+(了)/)]),
   examples: [
     {
       zh: '说着说着我就发现自己也糊涂了。',

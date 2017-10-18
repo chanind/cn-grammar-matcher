@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     '"如果⋯⋯的话，⋯⋯" (rúguǒ... de huà, ...) is a pattern commonly used in Chinese to express "if." An easy way to remember the pattern\'s format is that in the full form, the condition is "sandwiched" between 如果 and 的话.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(如果)[^话]+(的话)?/),
-      regexMatchLocs(text, /(如果)?[^话]+(的话)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(如果)[^话]+(的话)?/),
+      regexMatchLocs(sentence.text, /(如果)?[^话]+(的话)/),
+    ]),
   examples: [
     {
       zh: '如果你有空的话，我们可以明天晚上看电影。',

@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,14 +18,12 @@ module.exports = {
   description:
     'Remember that 了 (le) is not only for the past! When something is about to happen, you can also indicate this using 了 (le).  Normally it is paired with a 快 (kuài), 快要(kuàiyào) or a 要 (yào). This is a special form of using 了 to indicate a change of situation.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(快)[^了]+(了)/),
-      regexMatchLocs(text, /(快要)[^了]+(了)/),
-      regexMatchLocs(text, /(要)[^了]+(了)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(快)[^了]+(了)/),
+      regexMatchLocs(sentence.text, /(快要)[^了]+(了)/),
+      regexMatchLocs(sentence.text, /(要)[^了]+(了)/),
+    ]),
   examples: [
     {
       zh: '我们快到了。',

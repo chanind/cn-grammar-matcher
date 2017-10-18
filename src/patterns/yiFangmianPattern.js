@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     'When talking about various aspects of a situation, "一方面⋯⋯， (另)一方面⋯⋯" (yī fāngmiàn..., (lìng) yī fāngmiàn...) can be used in a similar way that "On one hand..., on the other hand..." is in English.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(一方面)[^面]+(另?一方面)/),
-      regexMatchLocs(text, /(一方面)[^方]+(另?一方面)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(一方面)[^面]+(另?一方面)/),
+      regexMatchLocs(sentence.text, /(一方面)[^方]+(另?一方面)/),
+    ]),
   examples: [
     {
       zh: '我们一方面要让客户满意，另一方面又不能让公司有损失。',
