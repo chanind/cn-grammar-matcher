@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,7 @@ module.exports = {
   description:
     'In order to say that something "just now" occurred, use the time noun 刚才 (gāngcái). It can be placed in front of the verb or the subject of a statement.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(刚才)/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(刚才)/)]),
   examples: [
     {
       zh: '你刚才说什么了？',

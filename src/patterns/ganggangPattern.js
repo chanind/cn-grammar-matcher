@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,7 @@ module.exports = {
   description:
     'For events that happened in the immediate past, in English we use the word "just." For example, if you pass a turn you were supposed to make, you might say, "I just passed it!" In Chinese, "just" can be expressed with 刚 (gāng) or 刚刚 (gānggāng).',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(刚刚?)/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(刚刚?)/)]),
   examples: [
     {
       zh: '我们刚知道。',

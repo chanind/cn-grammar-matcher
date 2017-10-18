@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,7 @@ module.exports = {
   description:
     'When you\'re getting descriptive, you may find yourself wanting to use multiple adjectives at a time. The character 又 (yòu) can be used to give two qualities to something. Using the double 又 (yòu) structure is like saying that something is "both… and…" in English.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(又)[^又]+(又)/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(又)[^又]+(又)/)]),
   examples: [
     {
       zh: '她男朋友又高又帅。',

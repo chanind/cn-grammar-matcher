@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -17,13 +17,11 @@ module.exports = {
   name: '级别 / 次序 / 数目 + 以上 / 以下',
   description: '',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(以上|以下)/),
-      regexMatchLocs(text, /(以内|以外)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(以上|以下)/),
+      regexMatchLocs(sentence.text, /(以内|以外)/),
+    ]),
   examples: [
     {
       zh: '我老家空气还不错，PM2.5一般在五十以下。',

@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,7 @@ module.exports = {
   description:
     'Using "but" in Chinese is really simple to learn. It involves the two words 可是 (kěshì) and 但是 (dànshì). Make no "buts" about it; you\'ll understand it in no time!',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /((?:可是|但是))/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:可是|但是))/)]),
   examples: [
     {
       zh: '我喜欢他，可是他不喜欢我。',

@@ -10,6 +10,9 @@ const run = async () => {
   program
     .usage('yarn run gen-allset-matcher <allset url>')
     .option('-f, --force', 'Overwrite existing files')
+    .option('-g, --graph', 'Use graph match')
+    .option('-t, --tokens', 'Use token regex match')
+    .option('-r, --regex', 'Use text regex match')
     .option('-i, --matcher-id [value]', 'filename to use for this matcher')
     .parse(process.argv);
 
@@ -54,7 +57,12 @@ const run = async () => {
   if (program.matcherId) {
     scrapedFields.matcherId = program.matcherId;
   }
-  const { mainTemplate, testTemplate, fullPatternName } = extractPattern(scrapedFields);
+  const { mainTemplate, testTemplate, fullPatternName } = extractPattern(scrapedFields, {
+    graphMatch: program.graph,
+    regexLocsMatch: program.regex,
+    regexTokensMatch: program.tokens,
+    skipComment: program.graph || program.tokens,
+  });
 
   writeOutPattern(fullPatternName, mainTemplate, testTemplate, program.force);
 

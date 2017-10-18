@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     'In this grammar structure, we learn about a way to say "all" that is, well, a bit more epic. Sort of like how we might say "all the king\'s men" or "all the money in the world."',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(所有的?)[^都]+(都)?/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(所有的?)[^都]+(都)?/)]),
   examples: [
     {
       zh: '我爱吃所有的中国菜。',

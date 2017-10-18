@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,14 @@ module.exports = {
   description:
     'Cash is king, even though China is now crazy for mobile payments. Either way, though, mastering how to say quantities of money is vital!',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(多少钱)/),
-      regexMatchLocs(text, /[零一二三四五六七八九十百千万亿两0-9]+(块)[零一二三四五六七八九十百千万亿两0-9]*(毛)?/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(多少钱)/),
+      regexMatchLocs(
+        sentence.text,
+        /[零一二三四五六七八九十百千万亿两0-9]+(块)[零一二三四五六七八九十百千万亿两0-9]*(毛)?/
+      ),
+    ]),
   examples: [
     {
       zh: '多少钱？',

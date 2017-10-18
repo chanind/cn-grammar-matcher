@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,7 @@ module.exports = {
   description:
     'One pair of confusing adverbs is 总算 (zǒngsuàn) and 终于 (zhōngyú). They both can be translated as "finally" or "in the end," but they subtly different in tone.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /((?:总算|终于))/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:总算|终于))/)]),
   examples: [
     {
       zh: '你总算来了！',

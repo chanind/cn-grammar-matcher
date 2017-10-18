@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     'You can give a series of alternatives by using 要么 (yàome). The structure is pretty versatile, as you can put a wide variety of things after each 要么:',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(要么)[^要么]+(要么)?/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(要么)[^要么]+(要么)?/)]),
   examples: [
     {
       zh: '老板今天不在，要么你们明天再来吧。',

@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,12 +18,10 @@ module.exports = {
   description:
     '别说 (bié shuō) means something like "leaving aside" or "don\'t think about," and is used in the following way:',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(别说)[^连就是]+((?:连|就是))[^也都]+((?:也|都))/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(别说)[^连就是]+((?:连|就是))[^也都]+((?:也|都))/),
+    ]),
   examples: [
     {
       zh: '别说一百，就是一块钱我也不给你。',

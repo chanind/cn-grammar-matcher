@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,14 +18,12 @@ module.exports = {
   description:
     'If you "still" need help on how to use 还 (hái), then this is the page for you.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(还在)/),
-      regexMatchLocs(text, /(还是)/),
-      regexMatchLocs(text, /(还(?:不|没))/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(还在)/),
+      regexMatchLocs(sentence.text, /(还是)/),
+      regexMatchLocs(sentence.text, /(还(?:不|没))/),
+    ]),
   examples: [
     {
       zh: '他还在看书。',

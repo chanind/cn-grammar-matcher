@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     '"假使⋯⋯，就⋯⋯" (jiáshǐ..., jiù...) is another way to phrase "If..., then..." in Chinese, with this pattern being one of the most formal.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(假使)[^就]+(就)?/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(假使)[^就]+(就)?/)]),
   examples: [
     {
       zh: '假使明天下雨，我就不去上班了。',

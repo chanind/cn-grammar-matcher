@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     'Sometimes you may do something or experience something that you never ever want to do again. How do we express that in Chinese? One of the ways is to use 再也不 (zàiyěbù)!',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(再也不)[^了]+(了)/),
-      regexMatchLocs(text, /(再也没)[^过]+(过)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(再也不)[^了]+(了)/),
+      regexMatchLocs(sentence.text, /(再也没)[^过]+(过)/),
+    ]),
   examples: [
     {
       zh: '我再也不想看到你了！',

@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     '怎么 (zěnme) means "how" in Chinese, and it\'s not hard to use at all: just put it before a verb.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(怎么)(?:[^样]|$)/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(怎么)(?:[^样]|$)/)]),
   examples: [
     {
       zh: '你们怎么学中文？',

@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,14 +18,12 @@ module.exports = {
   description:
     'Whenever you want to express something like "you did it again!" in Chinese, you generally want to use 又 (yòu).',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(又)[^了]+(了)/),
-      regexMatchLocs(text, /(又是)/),
-      regexMatchLocs(text, /(又(?:要|可以|能))[^了]+(了?)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(又)[^了]+(了)/),
+      regexMatchLocs(sentence.text, /(又是)/),
+      regexMatchLocs(sentence.text, /(又(?:要|可以|能))[^了]+(了?)/),
+    ]),
   examples: [
     {
       zh: '又下雨了！',

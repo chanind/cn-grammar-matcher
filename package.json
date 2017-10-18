@@ -60,6 +60,7 @@
     "lodash.escaperegexp": "^4.1.2",
     "lodash.shuffle": "^4.2.0",
     "lodash.uniqby": "^4.7.0",
+    "lodash.uniq": "^4.5.0",
     "node-debug": "^0.1.0",
     "node-sass": "^4.5.3",
     "pre-commit": "^1.2.2",

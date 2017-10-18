@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     'Quantity questions are phrases for asking questions like "how much?" or "how many?"  You\'ll need to use the question word 几 (jǐ) with measure words for this.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(几)[^？]+(？)/),
-      regexMatchLocs(text, /(多少)[^？]+(？)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(几)[^？]+(？)/),
+      regexMatchLocs(sentence.text, /(多少)[^？]+(？)/),
+    ]),
   examples: [
     {
       zh: '他有几个孩子？',

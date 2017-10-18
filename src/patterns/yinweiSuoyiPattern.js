@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     'You will often come across 因为……所以…… (yīnwèi... suǒyǐ...) in both written and spoken Chinese. This pattern will give your Chinese a clear logical structure, and can help make you more persuasive.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(因为)[^所以]+(所以)/),
-      regexMatchLocs(text, /(因为|所以)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(因为)[^所以]+(所以)/),
+      regexMatchLocs(sentence.text, /(因为|所以)/),
+    ]),
   examples: [
     {
       zh: '他学得很快，因为他很聪明。',

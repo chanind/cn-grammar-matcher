@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     'The word 再 (zài) actually has a lot of uses, beyond just "again."  "先⋯⋯， 再⋯⋯" (xiān..., zài...) is a pattern used for sequencing events, much like "First..., then..." in English. This pattern can also include "然后" (ránhòu) meaning "and after that."',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(先)[^再]+(再说?)/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(先)[^再]+(再说?)/)]),
   examples: [
     {
       zh: '先洗手再吃。',

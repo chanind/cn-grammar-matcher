@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,7 @@ module.exports = {
   description:
     '恐怕 (kǒngpà) can be used to express "I\'m afraid that," or "I\'m concerned that," or even "I\'m worried that," followed by some sort of reason. It doesn\'t need to be something you\'re literally afraid of; it may be that you\'re just trying to soften the blow of some bad news, as in, "I\'m afraid that I\'m too busy washing my hair tomorrow night to come over and see the 2000 pictures of your trip to ComicCon."',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(恐怕)/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(恐怕)/)]),
   examples: [
     {
       zh: '明天我很忙，恐怕没有时间。',

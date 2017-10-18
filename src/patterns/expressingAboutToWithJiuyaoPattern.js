@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     '就要 (jiùyào) is similar to 快要 (kuàiyào), meaning "about to." They are interchangeable in some cases. But there is a major difference that you need to take a good look at. 快要 (kuài yào) is generally "about to" [happen], but 就要 (jiù yào) could be used to mark a more specific time. 要 (yào) here can be omitted. For this one, you wouldn\'t normally use "about to" for this English translation, but the feeling is nevertheless that the impending event is coming up fast.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(就要)[^了]+(了)/),
-      regexMatchLocs(text, /(还有)[^就要]+(就要?)[^了]+(了)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(就要)[^了]+(了)/),
+      regexMatchLocs(sentence.text, /(还有)[^就要]+(就要?)[^了]+(了)/),
+    ]),
   examples: [
     {
       zh: '我就要饿死了。',

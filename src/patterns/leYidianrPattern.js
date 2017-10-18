@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,7 @@ module.exports = {
   description:
     '了一点儿 (le yīdiǎnr), can be added after an adjective to mean "a little bit too." It is softer in tone than using 太, and so is often used when the speaker doesn\'t want to insult the listener by speaking too directly.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(了一?点儿)/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(了一?点儿)/)]),
   examples: [
     {
       zh: '这把椅子稍微硬了点儿，我坐得有点难受。',

@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     '好不容易 (hǎo bù róngyì) means "very difficult" or "really not easy." It is often used where the speaker wants to comment on the result of their hard work, something like "It was really hard for me do to do x, but then I realized y."',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /((?:好容易|好不容易)才)/),
-      regexMatchLocs(text, /((?:好容易|好不容易))/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /((?:好容易|好不容易)才)/),
+      regexMatchLocs(sentence.text, /((?:好容易|好不容易))/),
+    ]),
   examples: [
     {
       zh: '我们好不容易才做完这个项目，结果合同取消了。',

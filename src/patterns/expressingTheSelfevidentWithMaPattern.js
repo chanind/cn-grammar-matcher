@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,7 @@ module.exports = {
   description:
     'The particle 嘛 (ma) is a sentence-final particle identical in pronunciation to the simple "yes/no question" particle 吗 (ma) you learned back in the day, but with a rather different function.  It can be used when the speaker feels what he is saying is obvious (from his point of view).',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(嘛)/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(嘛)/)]),
   examples: [
     {
       zh: '你的妹妹很漂亮嘛。',

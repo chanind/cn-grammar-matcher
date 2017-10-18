@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     '宁可 (nìngkě) is used where the speaker wants to compare two unfavorable options, and choose a "unfavorable option" over a "most unfavorable option."',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(宁可)[^也不]+(也不)/),
-      regexMatchLocs(text, /(宁可)[^也要]+(也要)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(宁可)[^也不]+(也不)/),
+      regexMatchLocs(sentence.text, /(宁可)[^也要]+(也要)/),
+    ]),
   examples: [
     {
       zh: '我宁可没有男朋友，也不要随便找一个男朋友。',

@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,14 +18,12 @@ module.exports = {
   description:
     '难怪 (nánguài) can be used to express that the speaker finds something unsurprising. It can be used alone or in a variety of different structures, as shown below.  怪不得 (guàibude) is another way to express exactly the same thing, in a slightly more informal way. 难怪 (nánguài) when used as a verb can be translated as "hard to blame." This is usually directed at a person, and it is similar to how in English we may say "He\'s always sleepy, but you can\'t blame him because he works a night shift."',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /((?:难怪|怪不得))/),
-      regexMatchLocs(text, /((?:难怪|怪不得))[^原来]+(原来)/),
-      regexMatchLocs(text, /((?:这也)?难怪)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /((?:难怪|怪不得))/),
+      regexMatchLocs(sentence.text, /((?:难怪|怪不得))[^原来]+(原来)/),
+      regexMatchLocs(sentence.text, /((?:这也)?难怪)/),
+    ]),
   examples: [
     {
       zh: '难怪！',

@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,14 +18,12 @@ module.exports = {
   description:
     'The Chinese word 半 (bàn) means "half." That\'s simple enough, but what can get slightly tricky is the rules for how it combines with measure words.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(半)/),
-      regexMatchLocs(text, /(半(?:天|年))/),
-      regexMatchLocs(text, /((?:天|年)半)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(半)/),
+      regexMatchLocs(sentence.text, /(半(?:天|年))/),
+      regexMatchLocs(sentence.text, /((?:天|年)半)/),
+    ]),
   examples: [
     {
       zh: '半个小时',

@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     'The most common way to form a superlative (best, worst, biggest, smallest, etc.) in Chinese is to use 最 (zuì) before an adjective (and a few select verbs).',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(最)/),
-      regexMatchLocs(text, /(最)[^了]+(了?)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(最)/),
+      regexMatchLocs(sentence.text, /(最)[^了]+(了?)/),
+    ]),
   examples: [
     {
       zh: '哪个老师最好？',

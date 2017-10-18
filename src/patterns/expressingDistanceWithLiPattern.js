@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,14 +18,12 @@ module.exports = {
   description:
     "Are we there yet? One of the ways to express distance is to use 离 (lí). The word order might seem a little tricky at first, but once you get it down, you'll be able to talk about distance with no problem.",
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(离)[^近远]+((?:近|远))/),
-      regexMatchLocs(text, /(离)[^近远吗？]+((?:近|远)吗？)/),
-      regexMatchLocs(text, /(离)[^有多远？]+(有?多远？)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(离)[^近远]+((?:近|远))/),
+      regexMatchLocs(sentence.text, /(离)[^近远吗？]+((?:近|远)吗？)/),
+      regexMatchLocs(sentence.text, /(离)[^有多远？]+(有?多远？)/),
+    ]),
   examples: [
     {
       zh: '我家离公司很近。',

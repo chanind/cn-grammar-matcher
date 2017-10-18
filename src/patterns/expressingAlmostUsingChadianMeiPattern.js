@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,7 @@ module.exports = {
   description:
     "Logically, 差点没 is not that different from 差点.  In fact, you shouldn't think of it as a single word; think of the 没 as belonging to what follows 差点 and it makes more sense.  Still, it can be a little confusing, and is worth a closer look.",
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(差点儿?没)/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(差点儿?没)/)]),
   examples: [
     {
       zh: '我差点儿没想起来。',

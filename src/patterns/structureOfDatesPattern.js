@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,19 +18,17 @@ module.exports = {
   description:
     'Dates in Chinese follow the order "year, month, day." This is in keeping with the "from big to small" trend which pervades many facets of Chinese culture.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
+  match: sentence =>
+    mergeLocMatchGroups([
       regexMatchLocs(
-        text,
+        sentence.text,
         /([零一二三四五六七八九十百千万亿0-9]+年)?([零一二三四五六七八九十百千万亿0-9]+月[零一二三四五六七八九十百千万亿0-9]+(?:号|日))/
       ),
       regexMatchLocs(
-        text,
+        sentence.text,
         /([零一二三四五六七八九十百千万亿0-9]+年[零一二三四五六七八九十百千万亿0-9]+月)([零一二三四五六七八九十百千万亿0-9]+(?:号|日))?/
       ),
-    ]);
-  },
+    ]),
   examples: [
     {
       zh: '1868年1月18号',

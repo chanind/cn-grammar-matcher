@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     '尽管 (jǐnguǎn)  means "although," and is a little stronger than 虽然, perhaps more like "even though."',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(尽管)[^还是仍然]+((?:还是|仍然))?/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(尽管)[^还是仍然]+((?:还是|仍然))?/)]),
   examples: [
     {
       zh: '尽管领导今天不来，可我们还是不能偷懒。',

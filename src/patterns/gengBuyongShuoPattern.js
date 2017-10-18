@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,12 +18,10 @@ module.exports = {
   description:
     '更不用说 (gèng bùyòng shuō) means "let alone," and is used in the same way as the English, where we might say: "he can\'t even boil an egg, let alone prepare a banquet"',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(连)?[^都也]+((?:都|也))?[^说]+(更不用说)[^了]+(了)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(连)?[^都也]+((?:都|也))?[^说]+(更不用说)[^了]+(了)/),
+    ]),
   examples: [
     {
       zh: '他都不会煮鸡蛋，更不用说做一大桌子的菜了。',

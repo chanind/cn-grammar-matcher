@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     '原来 (yuánlái) means "originally" (similar to 本来) or "former." It can also mean "all along," and can be used to indicate a sudden realization of something previously unknown, a bit like "so it\'s been like that all along, how could I not have realized?"',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(原来的)/),
-      regexMatchLocs(text, /(原来)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(原来的)/),
+      regexMatchLocs(sentence.text, /(原来)/),
+    ]),
   examples: [
     {
       zh: '你原来的发型很可爱。',

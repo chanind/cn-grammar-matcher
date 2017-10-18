@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,7 @@ module.exports = {
   description:
     '"假如⋯⋯，就⋯⋯" (jiǎrú..., jiù...) is yet another way to express "If..., then..." in Chinese, but it is much more formal than 要是 or 如果 are (in both written and spoken Chinese).',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(假如)[^就]+(就)/)]);
-  },
+  match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(假如)[^就]+(就)/)]),
   examples: [
     {
       zh: '假如你的成绩再好一点儿，你就能申请北大了。',

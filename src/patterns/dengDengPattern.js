@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     '等等 (děng děng), or simply 等 (děng), is just like saying “and so on” or “etc.” in English, but just a bit more formal.  Both are placed after listing a series of items (generally with a list that exceeds two items).',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(等等)/),
-      regexMatchLocs(text, /.+[,，、].+(等)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(等等)/),
+      regexMatchLocs(sentence.text, /.+[,，、].+(等)/),
+    ]),
   examples: [
     {
       zh: '西瓜、菠萝、苹果、葡萄等等都是我喜欢的水果。',

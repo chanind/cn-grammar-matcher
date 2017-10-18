@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     'Sometimes we may want to say something is "not even the least bit [adjective]." For example, we might say in English: "I am not at all hungry."  In Chinese, we can use 一点也不 (yīdiǎnr yě bù) or 一点都不 (yīdiǎnr dōu bù) to express "not at all [adjective]."',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(一点(?:也|都)(?:不|没))/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(一点(?:也|都)(?:不|没))/)]),
   examples: [
     {
       zh: '你一点也不性感。',

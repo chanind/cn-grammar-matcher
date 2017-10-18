@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,16 +18,14 @@ module.exports = {
   description:
     'If you already know the basics of how to tell time in Chinese, you may want to get a little more specific or sophisticated, using words like 分 (fēn) and 刻 (kè).',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /([零一二三四五六七八九十百千万亿两0-9]+点[零一二三四五六七八九十百千万亿两0-9]+分)/),
-      regexMatchLocs(text, /([零一二三四五六七八九十百千万亿两0-9]+点零[零一二三四五六七八九十百千万亿两0-9]+分)/),
-      regexMatchLocs(text, /([零一二三四五六七八九十百千万亿两0-9]+点[零一二三四五六七八九十百千万亿两0-9]+刻)/),
-      regexMatchLocs(text, /(差)[^分]+(分)[^点]+(点)/),
-      regexMatchLocs(text, /(点差)[^分]+(分)/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /([零一二三四五六七八九十百千万亿两0-9]+点[零一二三四五六七八九十百千万亿两0-9]+分)/),
+      regexMatchLocs(sentence.text, /([零一二三四五六七八九十百千万亿两0-9]+点零[零一二三四五六七八九十百千万亿两0-9]+分)/),
+      regexMatchLocs(sentence.text, /([零一二三四五六七八九十百千万亿两0-9]+点[零一二三四五六七八九十百千万亿两0-9]+刻)/),
+      regexMatchLocs(sentence.text, /(差)[^分]+(分)[^点]+(点)/),
+      regexMatchLocs(sentence.text, /(点差)[^分]+(分)/),
+    ]),
   examples: [
     {
       zh: '一点四十分',

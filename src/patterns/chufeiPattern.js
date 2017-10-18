@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     '除非 (chúfēi) can be used as a conjunction, and means "unless." 否则 (fǒuzé) or 不然 (bùrán) often appear in the following phrase, to form a construction meaning "unless x, otherwise y":',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(除非)[^否然]+(否则|不然)?[^才]+(才)?/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(除非)[^否然]+(否则|不然)?[^才]+(才)?/)]),
   examples: [
     {
       zh: '老板不给你加薪，除非你表现很好。',

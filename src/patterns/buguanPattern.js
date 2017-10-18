@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,10 +18,8 @@ module.exports = {
   description:
     '不管 (bùguǎn) is more informal than 无论, but it is used in more or less the same way. As with other constructions, 都 and 也 can be used in the second part of the sentence to emphasize the action or decision will not change.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([regexMatchLocs(text, /(不管)[^都也]+((?:(?:都|也)?))/)]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不管)[^都也]+((?:(?:都|也)?))/)]),
   examples: [
     {
       zh: '不管你信不信，反正我信！',

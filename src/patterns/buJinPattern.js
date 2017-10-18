@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,12 +18,10 @@ module.exports = {
   description:
     'We\'ve seen 不但⋯⋯而且 in B1, but other than that there are a number of other structures which can be used to express "not only...but also." 不但 can be substituted with 不仅(bù jǐn) and 不只  (bù zhǐ), all meaning "not only," and can be followed by 而且 (ér qiě) , 还 (hái), or 也 (yě) \nOther than 不但⋯⋯而且 being more common than the others, they are all pretty similar in usage and meaning.',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /((?:不仅|不但|不只))[^而且还也]+((?:而且|还|也))/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /((?:不仅|不但|不只))[^而且还也]+((?:而且|还|也))/),
+    ]),
   examples: [
     {
       zh: '这篇文章不仅结构清楚，而且思想先进。',

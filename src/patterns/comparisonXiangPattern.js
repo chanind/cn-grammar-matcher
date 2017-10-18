@@ -3,8 +3,8 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const { regexMatchLocs } = require('../lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../lib/matching/utils');
+const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
@@ -18,13 +18,11 @@ module.exports = {
   description:
     '像  (xiàng) is used to compare a specific characteristic of two things or people, and can be used in the following structure:',
   sources: [allSetSrc],
-  match: sentence => {
-    const text = sentence.original;
-    return mergeLocMatchGroups([
-      regexMatchLocs(text, /(不?像|没有?)[^一样]+(一样)/),
-      regexMatchLocs(text, /(不?像|没有?)[^么]*((?:这么|那么))/),
-    ]);
-  },
+  match: sentence =>
+    mergeLocMatchGroups([
+      regexMatchLocs(sentence.text, /(不?像|没有?)[^一样]+(一样)/),
+      regexMatchLocs(sentence.text, /(不?像|没有?)[^么]*((?:这么|那么))/),
+    ]),
   examples: [
     {
       zh: '你怎么像我妈一样啰嗦!',
