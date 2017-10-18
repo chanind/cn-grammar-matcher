@@ -180,3 +180,4 @@ exports.expressingNotVeryWithBuZenmePattern = require('./expressingNotVeryWithBu
 exports.expressingNotOftenWithBuZenmePattern = require('./expressingNotOftenWithBuZenmePattern');
 exports.jiushiPattern = require('./jiushiPattern');
 exports.zhenghaoPattern = require('./zhenghaoPattern');
+exports.jieguoPattern = require('./jieguoPattern');

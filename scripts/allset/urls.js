@@ -720,6 +720,7 @@ const b1 = [
     label: 'Expressing "as a result" with "jieguo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG6B21A',
     matcherId: 'jieguo',
+    regexes: [/，(结果)/],
   },
   {
     label: 'Expressing "each other" with "huxiang"',
