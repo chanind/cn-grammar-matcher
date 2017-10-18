@@ -90,7 +90,7 @@ const writeOutPattern = (fullPatternName, mainTemplate, testTemplate, force = fa
       indexWritten = false;
       return indexContents;
     }
-    const requireStatement = `getPatternIndexRequireLine`(fullPatternName);
+    const requireStatement = getPatternIndexRequireLine(fullPatternName);
     const updatedIndex = `${indexContents.replace(/\s+$/, '')}\n${requireStatement}`;
     console.log('Updating patterns/index.js');
     return fixNewlines(updatedIndex);

@@ -670,6 +670,7 @@ const b1 = [
     label: 'Adding emphasis with "jiushi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGK213C',
     regexes: [/(就是)/, /(就)[不要]/],
+    skip: 'same as ASGY21RK',
   },
   {
     label: 'Coincidence with "zhenghao"',
@@ -678,6 +679,8 @@ const b1 = [
   {
     label: 'Emphasis with "jiu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGY21RK',
+    regexes: [/(就是)/, /(就)[不要想喜]/],
+    matcherId: 'jiushi',
   },
   {
     label: 'Emphasizing negation with "you"',

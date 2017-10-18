@@ -8,50 +8,71 @@ const { regexMatchLocs } = require('../lib/matching/regexMatch');
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGK213C',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGY21RK',
   name: 'AllSet Chinese Grammar Wiki',
 };
 
 module.exports = {
   id: 'jiushi',
-  name: '就是 + Adj.',
-  description: '就是 (jiùshì) can be used to add many different types of emphasis.',
+  name: '就 + 是 + Noun',
+  description:
+    'As an adverb, 就 (jiù) can be placed before the predicate to add emphasis. It often has an intense or provocative feel to it, like how we sometimes say in English "it\'s just not right!," or other similar phrases. It often appears as 就是.',
   sources: [allSetSrc],
   match: sentence =>
     mergeLocMatchGroups([
       regexMatchLocs(sentence.text, /(就是)/),
-      regexMatchLocs(sentence.text, /(就)[不要]/),
+      regexMatchLocs(sentence.text, /(就)[不要想喜]/),
     ]),
   examples: [
     {
-      zh: '他就是聪明，考试总是第一名。',
-      en: "He's just really smart. He's always gets the best grade on tests.",
+      zh: '你就是个笨蛋！',
+      en: "You're exactly a moron!",
       src: allSetSrc,
     },
     {
-      zh: '我真的什么都没做，他就是对我有偏见。',
-      en: "I really didn't do any of it. He's just prejudiced towards me.",
+      zh: '他就是个骗子！',
+      en: "He's exactly a liar!",
       src: allSetSrc,
     },
     {
-      zh: '她就是漂亮，没什么别的优点。',
-      en: "She's just pretty; she doesn't have other talents.",
+      zh: '乔布斯就是我的偶像！',
+      en: 'Jobs is exactly my idol!',
       src: allSetSrc,
     },
     {
-      zh: '我老公就是爱抽烟，他根本戒不了!',
-      en: "My boss loves to smoke, he simply doesn't listen to the warnings.",
+      zh: '我就要去！',
+      en: 'I just want to go!',
       src: allSetSrc,
     },
     {
-      zh: '我就是不去，我一向都不爱去酒吧。',
-      en: "I'm just not going to go. I've never liked going to bars.",
+      zh: '我就是喜欢他。',
+      en: 'I just like him.',
       src: allSetSrc,
     },
     {
-      zh: '他就是不相信星座，你怎么跟他解释也没用。',
+      zh: '他就想出国。',
+      en: 'He just wants to go abroad.',
+      src: allSetSrc,
+    },
+    {
+      zh: '我问过很多次，他就是不说。',
+      en: "I asked him many times. He just wouldn't tell.",
+      src: allSetSrc,
+    },
+    {
+      zh: '很多年轻人就喜欢打游戏。',
+      en: 'A lot of young people just like to play video games.',
+      src: allSetSrc,
+    },
+    {
+      zh: '她就不听我的话。',
+      en: "She just wouldn't listen to me.",
+      src: allSetSrc,
+    },
+    {
+      zh: '谁都知道抽烟对身体不好，可很多人就是不戒烟。',
       en:
-        "He just doesn't believe in astrology. No matter how you try to explain it to him, it won't work.",
+        "Everyone knows that smoking is bad for your body but a lot of people just don't quit smoking.",
       src: allSetSrc,
     },
   ],
