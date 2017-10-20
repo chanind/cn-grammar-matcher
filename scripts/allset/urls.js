@@ -755,6 +755,7 @@ const b1 = [
   {
     label: 'Expressing "nearly" with "jihu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGVA70K',
+    regexes: [/(几乎)[^都]+(都)?/],
   },
   {
     label: 'Expressing "never again" with "zai ye bu"',
