@@ -750,6 +750,7 @@ const b1 = [
   {
     label: 'Expressing "in this way" with "zheyang"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG1F4D1',
+    regexes: [/(这样)/],
   },
   {
     label: 'Expressing "nearly" with "jihu"',
