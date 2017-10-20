@@ -190,3 +190,4 @@ exports.expressingLatenessWithCaiPattern = require('./expressingLatenessWithCaiP
 exports.usingCaiForSmallNumbersPattern = require('./usingCaiForSmallNumbersPattern');
 exports.usingYeAndDouTogetherPattern = require('./usingYeAndDouTogetherPattern');
 exports.expressingMuchMoreInComparisonsPattern = require('./expressingMuchMoreInComparisonsPattern');
+exports.shenmeDePattern = require('./shenmeDePattern');

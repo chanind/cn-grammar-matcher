@@ -835,6 +835,7 @@ const b1 = [
   {
     label: 'Ending a non-exhaustive list with "shenme de"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGDIDAC',
+    regexes: [/(什么的)/],
   },
   {
     label: 'Expressing "stuff like that" with "zhileide"',
