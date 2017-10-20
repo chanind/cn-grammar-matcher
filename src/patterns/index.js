@@ -184,3 +184,4 @@ exports.jieguoPattern = require('./jieguoPattern');
 exports.expressingEnoughWithGouPattern = require('./expressingEnoughWithGouPattern');
 exports.zheyangPattern = require('./zheyangPattern');
 exports.jihuPattern = require('./jihuPattern');
+exports.expressingEarlinessWithJiuPattern = require('./expressingEarlinessWithJiuPattern');
