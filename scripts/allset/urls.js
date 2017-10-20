@@ -817,6 +817,7 @@ const b1 = [
   {
     label: 'Using "ye" and "dou" together',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG8GSXY',
+    regexes: [/(也都)/],
   },
   {
     label: 'Continuation with "hai"',

@@ -188,3 +188,4 @@ exports.expressingEarlinessWithJiuPattern = require('./expressingEarlinessWithJi
 exports.expressingSmallQuantityWithJiuPattern = require('./expressingSmallQuantityWithJiuPattern');
 exports.expressingLatenessWithCaiPattern = require('./expressingLatenessWithCaiPattern');
 exports.usingCaiForSmallNumbersPattern = require('./usingCaiForSmallNumbersPattern');
+exports.usingYeAndDouTogetherPattern = require('./usingYeAndDouTogetherPattern');
