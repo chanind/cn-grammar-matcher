@@ -864,6 +864,7 @@ const b1 = [
   {
     label: 'Expressing "in addition" with "zaishuo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGATDLX',
+    regexes: [/(再说)/],
   },
   {
     label: 'Expressing "otherwise" with "yaobu"',

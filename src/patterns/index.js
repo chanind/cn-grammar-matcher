@@ -194,3 +194,4 @@ exports.shenmeDePattern = require('./shenmeDePattern');
 exports.zhileidePattern = require('./zhileidePattern');
 exports.haiyouPattern = require('./haiyouPattern');
 exports.lingWaiPattern = require('./lingWaiPattern');
+exports.zaishuoPattern = require('./zaishuoPattern');
