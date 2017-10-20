@@ -191,3 +191,4 @@ exports.usingCaiForSmallNumbersPattern = require('./usingCaiForSmallNumbersPatte
 exports.usingYeAndDouTogetherPattern = require('./usingYeAndDouTogetherPattern');
 exports.expressingMuchMoreInComparisonsPattern = require('./expressingMuchMoreInComparisonsPattern');
 exports.shenmeDePattern = require('./shenmeDePattern');
+exports.zhileidePattern = require('./zhileidePattern');

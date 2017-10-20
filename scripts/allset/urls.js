@@ -840,6 +840,7 @@ const b1 = [
   {
     label: 'Expressing "stuff like that" with "zhileide"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPY23Z',
+    regexes: [/(像)?[^类]+(之类的)/],
   },
   {
     label: 'Non-exhaustive lists with "dengdeng"',
