@@ -186,3 +186,5 @@ exports.zheyangPattern = require('./zheyangPattern');
 exports.jihuPattern = require('./jihuPattern');
 exports.expressingEarlinessWithJiuPattern = require('./expressingEarlinessWithJiuPattern');
 exports.expressingSmallQuantityWithJiuPattern = require('./expressingSmallQuantityWithJiuPattern');
+exports.expressingLatenessWithCaiPattern = require('./expressingLatenessWithCaiPattern');
+exports.usingCaiForSmallNumbersPattern = require('./usingCaiForSmallNumbersPattern');
