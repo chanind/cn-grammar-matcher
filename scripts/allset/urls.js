@@ -869,6 +869,7 @@ const b1 = [
   {
     label: 'Expressing "otherwise" with "yaobu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGDFQP7',
+    regexes: [/(要不然?)[^吧]+(吧)?/],
   },
   {
     label: 'Expressing "then…" with "name"',
