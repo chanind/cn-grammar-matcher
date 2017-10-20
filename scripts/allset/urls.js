@@ -817,6 +817,7 @@ const b1 = [
   {
     label: 'Using "ye" and "dou" together',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG8GSXY',
+    regexes: [/(也都)/],
   },
   {
     label: 'Continuation with "hai"',
@@ -825,7 +826,7 @@ const b1 = [
   {
     label: 'Expressing "much more" in comparisons',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG6KUS5',
-    matcherId: 'biDuole',
+    matcherId: 'expressingMuchMoreInComparisons',
   },
   {
     label: 'Expressing "rather" with "bijiao"',
@@ -834,10 +835,12 @@ const b1 = [
   {
     label: 'Ending a non-exhaustive list with "shenme de"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGDIDAC',
+    regexes: [/(什么的)/],
   },
   {
     label: 'Expressing "stuff like that" with "zhileide"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPY23Z',
+    regexes: [/(像)?[^类]+(之类的)/],
   },
   {
     label: 'Non-exhaustive lists with "dengdeng"',
@@ -851,18 +854,22 @@ const b1 = [
   {
     label: 'Expressing "in addition" with "haiyou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGHQRI1',
+    regexes: [/(还有)/],
   },
   {
     label: 'Expressing "in addition" with "lingwai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG2KQZI',
+    regexes: [/(另外)/],
   },
   {
     label: 'Expressing "in addition" with "zaishuo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGATDLX',
+    regexes: [/(再说)/],
   },
   {
     label: 'Expressing "otherwise" with "yaobu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGDFQP7',
+    regexes: [/(要不然?)[^吧]+(吧)?/],
   },
   {
     label: 'Expressing "then…" with "name"',

@@ -72,7 +72,7 @@ module.exports = (fields, options = {}) => {
         sentence.tokens,
         new Node({ filter: pos('TBD') }, [
           new Edge({ type: 'TDB' },
-            new Node({ filter: and(pos('TBD'), word('TBD')), filter: true })
+            new Node({ filter: and(pos('TBD'), word('TBD')), capture: true })
           ),
         ])
       ),
