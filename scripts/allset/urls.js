@@ -675,6 +675,8 @@ const b1 = [
   {
     label: 'Coincidence with "zhenghao"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGUD25J',
+    description:
+      '正好 (zhènghǎo) can be used as an adjective or adverb to help express a coincidence, and it could be related to size, volume, quantity, degree, time, etc. This is similar to how we say in English “Oh, this shirt I grabbed was just the right size." or something like that. When used with a noun, use 正好 right after it. When used with a verb, the 正好 goes right before it. You can also use 正好 along with 得. This is usually a clause of its own.',
   },
   {
     label: 'Emphasis with "jiu"',
@@ -718,6 +720,7 @@ const b1 = [
     label: 'Expressing "as a result" with "jieguo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG6B21A',
     matcherId: 'jieguo',
+    regexes: [/，(结果)/],
   },
   {
     label: 'Expressing "each other" with "huxiang"',
@@ -747,10 +750,12 @@ const b1 = [
   {
     label: 'Expressing "in this way" with "zheyang"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG1F4D1',
+    regexes: [/(这样)/],
   },
   {
     label: 'Expressing "nearly" with "jihu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGVA70K',
+    regexes: [/(几乎)[^都]+(都)?/],
   },
   {
     label: 'Expressing "never again" with "zai ye bu"',
@@ -765,6 +770,7 @@ const b1 = [
   {
     label: 'Expressing "one by one" with "yi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGBC7A0',
+    skip: 'stub',
   },
   {
     label: 'Expressing "quite" with "ting"',
@@ -781,6 +787,10 @@ const b1 = [
   {
     label: 'Expressing earliness with "jiu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGKITRZ',
+    description:
+      'Just as 才 (cái) can express lateness, 就 (jiù) can be used to indicate that something happened earlier or sooner than expected.  It can also be used in the near future to indicate something will happen very soon. 早就 means "long ago," and is usually used to express a kind of impatience or surprise on the part of the speaker. It comes before the verb.',
+    // overfitting with time words - almost certainly missing a lot
+    regexes: [/(早就)/, /(?:[晚早马]上|[零一二三四五六七八九十百千万亿两0-9]点.?|[年月日号岁分钟快天午]|会儿)(就)/],
   },
   {
     label: 'Expressing good luck',
