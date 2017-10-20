@@ -826,7 +826,7 @@ const b1 = [
   {
     label: 'Expressing "much more" in comparisons',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG6KUS5',
-    matcherId: 'biDuole',
+    matcherId: 'expressingMuchMoreInComparisons',
   },
   {
     label: 'Expressing "rather" with "bijiao"',
