@@ -859,6 +859,7 @@ const b1 = [
   {
     label: 'Expressing "in addition" with "lingwai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG2KQZI',
+    regexes: [/(另外)/],
   },
   {
     label: 'Expressing "in addition" with "zaishuo"',

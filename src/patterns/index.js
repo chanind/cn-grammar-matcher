@@ -193,3 +193,4 @@ exports.expressingMuchMoreInComparisonsPattern = require('./expressingMuchMoreIn
 exports.shenmeDePattern = require('./shenmeDePattern');
 exports.zhileidePattern = require('./zhileidePattern');
 exports.haiyouPattern = require('./haiyouPattern');
+exports.lingWaiPattern = require('./lingWaiPattern');
