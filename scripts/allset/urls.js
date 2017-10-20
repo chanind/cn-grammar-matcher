@@ -854,6 +854,7 @@ const b1 = [
   {
     label: 'Expressing "in addition" with "haiyou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGHQRI1',
+    regexes: [/(还有)/],
   },
   {
     label: 'Expressing "in addition" with "lingwai"',
