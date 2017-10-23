@@ -196,3 +196,4 @@ exports.haiyouPattern = require('./haiyouPattern');
 exports.lingWaiPattern = require('./lingWaiPattern');
 exports.zaishuoPattern = require('./zaishuoPattern');
 exports.yaobuPattern = require('./yaobuPattern');
+exports.fenzhiPattern = require('./fenzhiPattern');

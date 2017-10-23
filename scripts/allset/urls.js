@@ -896,6 +896,7 @@ const b1 = [
   {
     label: 'Expressing fractions with "fenzhi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG84RE9',
+    regexes: [/[零一二三四五六七八九十百千万亿两0-9](分之)[零一二三四五六七八九十百千万亿两0-9]/],
   },
   {
     label: 'Saying "ever since" with "yilai"',
