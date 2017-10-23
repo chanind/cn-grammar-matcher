@@ -198,3 +198,4 @@ exports.zaishuoPattern = require('./zaishuoPattern');
 exports.yaobuPattern = require('./yaobuPattern');
 exports.fenzhiPattern = require('./fenzhiPattern');
 exports.expressingWhenWithShiPattern = require('./expressingWhenWithShiPattern');
+exports.yilaiPattern = require('./yilaiPattern');

@@ -901,6 +901,7 @@ const b1 = [
   {
     label: 'Saying "ever since" with "yilai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGNEMXP',
+    regexes: [/((?:自|从|自从))[^以来]+(以来)/, /(以来)/, /[年月日号岁分钟秒天午](来)/],
   },
   {
     label: 'Sequencing past events with "houlai"',
