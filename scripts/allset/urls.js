@@ -933,6 +933,8 @@ const b1 = [
   {
     label: 'Expressing "about" with "guanyu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG49889',
+    filterExamples: true,
+    regexes: [/(关于)/],
   },
   {
     label: 'Expressing "age difference" with "da and xiao"',

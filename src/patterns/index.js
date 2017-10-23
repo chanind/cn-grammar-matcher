@@ -199,3 +199,4 @@ exports.yaobuPattern = require('./yaobuPattern');
 exports.fenzhiPattern = require('./fenzhiPattern');
 exports.expressingWhenWithShiPattern = require('./expressingWhenWithShiPattern');
 exports.yilaiPattern = require('./yilaiPattern');
+exports.guanyuPattern = require('./guanyuPattern');
