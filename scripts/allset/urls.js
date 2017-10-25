@@ -1045,7 +1045,6 @@ const b1 = [
   {
     label: 'Verbs followed by "gei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGMMHTQ',
-    skip: 'combine with for with gei pattern',
   },
   {
     label: 'Doing something less with "shao"',

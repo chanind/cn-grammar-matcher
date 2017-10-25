@@ -201,3 +201,4 @@ exports.expressingWhenWithShiPattern = require('./expressingWhenWithShiPattern')
 exports.yilaiPattern = require('./yilaiPattern');
 exports.guanyuPattern = require('./guanyuPattern');
 exports.usingDuiWithVerbsPattern = require('./usingDuiWithVerbsPattern');
+exports.verbsFollowedByGeiPattern = require('./verbsFollowedByGeiPattern');
