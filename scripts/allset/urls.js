@@ -896,10 +896,12 @@ const b1 = [
   {
     label: 'Expressing fractions with "fenzhi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG84RE9',
+    regexes: [/[零一二三四五六七八九十百千万亿两0-9](分之)[零一二三四五六七八九十百千万亿两0-9]/],
   },
   {
     label: 'Saying "ever since" with "yilai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGNEMXP',
+    regexes: [/((?:自|从|自从))[^以来]+(以来)/, /(以来)/, /[年月日号岁分钟秒天午](来)/],
   },
   {
     label: 'Sequencing past events with "houlai"',
@@ -931,6 +933,8 @@ const b1 = [
   {
     label: 'Expressing "about" with "guanyu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG49889',
+    filterExamples: true,
+    regexes: [/(关于)/],
   },
   {
     label: 'Expressing "age difference" with "da and xiao"',
@@ -1041,7 +1045,6 @@ const b1 = [
   {
     label: 'Verbs followed by "gei"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGMMHTQ',
-    skip: 'combine with for with gei pattern',
   },
   {
     label: 'Doing something less with "shao"',
