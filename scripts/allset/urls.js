@@ -874,6 +874,8 @@ const b1 = [
   {
     label: 'Expressing "then…" with "name"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGX298Z',
+    description:
+      'When expressing "Then...," you can use "那么" (nàme) or "那" (nà) in order to begin a judgment or result from previous context. An example of this in English would be "Then, what should we do?"',
   },
   {
     label: 'Expressing "when" with "dengdao"',
