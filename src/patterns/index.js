@@ -205,3 +205,6 @@ exports.verbsFollowedByGeiPattern = require('./verbsFollowedByGeiPattern');
 exports.expressingThenWithNamePattern = require('./expressingThenWithNamePattern');
 exports.advancedYesnoQuestionsWithMaPattern = require('./advancedYesnoQuestionsWithMaPattern');
 exports.reviewOptionsBaPattern = require('./reviewOptionsBaPattern');
+exports.expressingForWithWeiPattern = require('./expressingForWithWeiPattern');
+exports.kanqilaiPattern = require('./kanqilaiPattern');
+exports.expressingTowardsWithXiangPattern = require('./expressingTowardsWithXiangPattern');
