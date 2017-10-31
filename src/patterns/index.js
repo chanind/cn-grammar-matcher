@@ -202,3 +202,6 @@ exports.yilaiPattern = require('./yilaiPattern');
 exports.guanyuPattern = require('./guanyuPattern');
 exports.usingDuiWithVerbsPattern = require('./usingDuiWithVerbsPattern');
 exports.verbsFollowedByGeiPattern = require('./verbsFollowedByGeiPattern');
+exports.expressingThenWithNamePattern = require('./expressingThenWithNamePattern');
+exports.advancedYesnoQuestionsWithMaPattern = require('./advancedYesnoQuestionsWithMaPattern');
+exports.reviewOptionsBaPattern = require('./reviewOptionsBaPattern');
