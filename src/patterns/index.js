@@ -207,3 +207,4 @@ exports.advancedYesnoQuestionsWithMaPattern = require('./advancedYesnoQuestionsW
 exports.reviewOptionsBaPattern = require('./reviewOptionsBaPattern');
 exports.expressingForWithWeiPattern = require('./expressingForWithWeiPattern');
 exports.kanqilaiPattern = require('./kanqilaiPattern');
+exports.expressingTowardsWithXiangPattern = require('./expressingTowardsWithXiangPattern');
