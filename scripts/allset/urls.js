@@ -958,6 +958,7 @@ const b1 = [
   {
     label: 'Expressing "less than" with "budao"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG10CAE',
+    skip: 'stub',
   },
   {
     label: 'Expressing "toward" with "wang"',
@@ -976,6 +977,7 @@ const b1 = [
   {
     label: 'Using "xiang"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGQXARS',
+    matcherId: 'expressingTowardsWithXiang',
   },
   {
     label: 'Verbs preceded by "gei"',
@@ -990,6 +992,7 @@ const b1 = [
   {
     label: 'Appearance with "kanqilai"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9K0F8',
+    regexes: [/(看起来)不?(像)?/],
   },
   {
     label: 'Causative verbs',
