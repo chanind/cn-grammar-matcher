@@ -1002,6 +1002,9 @@ const b1 = [
   {
     label: 'Expressing "after" with "jingguo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG11DA8',
+    description:
+      'The first way that 经过 is used as a verb is that it means "to pass by" or "to pass through." It is like saying "I went through downtown" or "I passed by the shop." As a preposition, 经过 means "to experience something" or "going through a time." It emphasizes the process of that experience. If it is talking about "going through a time," it is usually talking about the past. As a noun, 经过 refers to the process of something.',
+    regexes: [/(经过)/],
   },
   {
     label: 'Expressing "compared with" with "gen"',
