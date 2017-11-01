@@ -1054,6 +1054,9 @@ const b1 = [
   {
     label: 'Mistakenly think that',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGRBC43',
+    matcherId: 'yiwei',
+    description:
+      'In English, the verb "to think" can imply that the belief is incorrect, e.g. in "I thought it was legal here." Chinese has a specific verb for this kind of mistaken belief: 以为 (yǐwéi). Literally these two characters mean "take to be," i.e. someone takes one thing to be something else.',
   },
   {
     label: 'Using "lai" as a dummy verb',

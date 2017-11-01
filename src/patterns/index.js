@@ -211,3 +211,4 @@ exports.expressingTowardsWithXiangPattern = require('./expressingTowardsWithXian
 exports.expressingAfterWithJingguoPattern = require('./expressingAfterWithJingguoPattern');
 exports.duokuiPattern = require('./duokuiPattern');
 exports.haoxiangPattern = require('./haoxiangPattern');
+exports.yiweiPattern = require('./yiweiPattern');
