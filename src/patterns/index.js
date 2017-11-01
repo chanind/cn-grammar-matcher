@@ -209,3 +209,4 @@ exports.expressingForWithWeiPattern = require('./expressingForWithWeiPattern');
 exports.kanqilaiPattern = require('./kanqilaiPattern');
 exports.expressingTowardsWithXiangPattern = require('./expressingTowardsWithXiangPattern');
 exports.expressingAfterWithJingguoPattern = require('./expressingAfterWithJingguoPattern');
+exports.duokuiPattern = require('./duokuiPattern');

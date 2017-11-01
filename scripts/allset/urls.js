@@ -1009,6 +1009,7 @@ const b1 = [
   {
     label: 'Expressing "compared with" with "gen"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG920B7',
+    skip: 'stub',
   },
   {
     label: 'Expressing "don\'t need to" with "buyong"',
@@ -1033,6 +1034,9 @@ const b1 = [
   {
     label: 'Expressing "thanks to" somebody with "duokui"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG44TBS',
+    regexes: [/(多亏了?)[^然才]*(不然|才)?/],
+    description:
+      '多亏(duōkuī) can be translated as "thanks to" and is used to express that, due to somebody\'s help, a negative result has been averted. 了 is often placed after it as it\'s about something in the past. Note that 多亏(duōkuī) can be placed in the beginning or the middle. You can add in 不然 for an "otherwise... (this really bad thing would have happened)" explanation. When the good outcome comes before 多亏, there is no need to add in 才. But if the good outcome comes after 多亏, you need to add in 才 to indicate "as a result...(the good outcome happened)."',
   },
   {
     label: 'Expressing "through" with "tongguo"',
