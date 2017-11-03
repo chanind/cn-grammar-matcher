@@ -1041,6 +1041,7 @@ const b1 = [
   {
     label: 'Expressing "through" with "tongguo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9B1E3',
+    regexes: [/(通过)/],
   },
   {
     label: 'Expressing comparable degree with "you"',

@@ -212,3 +212,4 @@ exports.expressingAfterWithJingguoPattern = require('./expressingAfterWithJinggu
 exports.duokuiPattern = require('./duokuiPattern');
 exports.haoxiangPattern = require('./haoxiangPattern');
 exports.yiweiPattern = require('./yiweiPattern');
+exports.expressingThroughWithTongguoPattern = require('./expressingThroughWithTongguoPattern');
