@@ -1063,6 +1063,7 @@ const b1 = [
   {
     label: 'Using "lai" as a dummy verb',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG98FZK',
+    skip: 'too hard for now',
   },
   {
     label: 'Verbs followed by "gei"',
@@ -1076,6 +1077,7 @@ const b1 = [
   {
     label: 'Doing something more with "duo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLKGZP',
+    matcherId: 'doingSomethingMoreWithDuo',
   },
   {
     label: 'Expressing "must" with "dei"',

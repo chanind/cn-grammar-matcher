@@ -214,3 +214,4 @@ exports.haoxiangPattern = require('./haoxiangPattern');
 exports.yiweiPattern = require('./yiweiPattern');
 exports.expressingThroughWithTongguoPattern = require('./expressingThroughWithTongguoPattern');
 exports.doingSomethingLessWithShaoPattern = require('./doingSomethingLessWithShaoPattern');
+exports.doingSomethingMoreWithDuoPattern = require('./doingSomethingMoreWithDuoPattern');
