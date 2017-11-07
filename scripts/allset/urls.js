@@ -1648,6 +1648,7 @@ const b2 = [
   {
     label: 'Expressing "not… but rather…" with "er shi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGAJGJD',
+    skip: 'identical to ASGT9WYR',
   },
   {
     label: 'Expressing "on the contrary" with "fan\'er"',
