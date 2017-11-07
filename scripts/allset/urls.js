@@ -1041,10 +1041,12 @@ const b1 = [
   {
     label: 'Expressing "through" with "tongguo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9B1E3',
+    regexes: [/(通过)/],
   },
   {
     label: 'Expressing comparable degree with "you"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG5DG95',
+    skip: 'maybe combine with ASGEAH5M, work on at same time',
   },
   {
     label: 'Making judgments with "suan"',
@@ -1061,6 +1063,7 @@ const b1 = [
   {
     label: 'Using "lai" as a dummy verb',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG98FZK',
+    skip: 'too hard for now',
   },
   {
     label: 'Verbs followed by "gei"',
@@ -1069,10 +1072,12 @@ const b1 = [
   {
     label: 'Doing something less with "shao"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9B0M8',
+    matcherId: 'doingSomethingLessWithShao',
   },
   {
     label: 'Doing something more with "duo"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGLKGZP',
+    matcherId: 'doingSomethingMoreWithDuo',
   },
   {
     label: 'Expressing "must" with "dei"',
