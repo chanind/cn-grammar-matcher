@@ -1204,6 +1204,7 @@ const b1 = [
     label: 'Expressing "every" with question words',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG13ALM',
     matcherId: 'everyDou',
+    regexes: [/((?:谁|哪儿|哪里)都)/, /(什么|多少|怎么)[^都]{0,4}(都)/],
   },
   {
     label: 'Expressing "except" and "in addition" with "chule… yiwai"',

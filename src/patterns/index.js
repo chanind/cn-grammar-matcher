@@ -217,3 +217,4 @@ exports.doingSomethingLessWithShaoPattern = require('./doingSomethingLessWithSha
 exports.doingSomethingMoreWithDuoPattern = require('./doingSomethingMoreWithDuoPattern');
 exports.expressingMustWithDeiPattern = require('./expressingMustWithDeiPattern');
 exports.expressingAsOneLikesWithJiuPattern = require('./expressingAsOneLikesWithJiuPattern');
+exports.everyDouPattern = require('./everyDouPattern');
