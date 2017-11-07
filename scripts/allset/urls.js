@@ -1189,6 +1189,7 @@ const b1 = [
   {
     label: 'Expressing "as one likes" with "jiu"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGDUZ55',
+    regexes: [/(想)[^就]{1,3}(就)/],
   },
   {
     label: 'Expressing "even" with "lian" and "dou"',
