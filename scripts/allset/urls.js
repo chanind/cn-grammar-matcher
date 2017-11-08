@@ -1267,6 +1267,9 @@ const b1 = [
   {
     label: 'The pattern "it\'s not…, it\'s…"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGT9WYR',
+    matcherId: 'bushiErshi',
+    regexes: [/(不是)[^是]+[，,](是)/, /(不是)[^是]+(而是)/],
+    skip: 'Identical to ASGAJGJD',
   },
   {
     label: 'Topic-comment sentences',
@@ -1290,6 +1293,7 @@ const b1 = [
   {
     label: 'Using the "shi... de" construction',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG8YTSF',
+    skip: "Look at when there's more time to focus on this",
   },
   {
     label: 'Expressing "either... or..." with "yaome"',
