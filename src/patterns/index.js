@@ -219,3 +219,4 @@ exports.expressingMustWithDeiPattern = require('./expressingMustWithDeiPattern')
 exports.expressingAsOneLikesWithJiuPattern = require('./expressingAsOneLikesWithJiuPattern');
 exports.everyDouPattern = require('./everyDouPattern');
 exports.xiaquPattern = require('./xiaquPattern');
+exports.qilaiPattern = require('./qilaiPattern');
