@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buZenme',
-  name: 'Subj. + 不怎么 + Adj.',
+  structures: ['Subj. + 不怎么 + Adj.'],
   description:
     'When you use 不怎么 (bù zěnme) before an adjective, it means "not very." This structure is similar to how English speakers may say something is "not very good."',
   sources: [allSetSrc],

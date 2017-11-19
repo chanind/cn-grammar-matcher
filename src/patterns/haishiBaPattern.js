@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'haishiBa',
-  name: 'Subj. + 还是 + [Verb Phrase] + 吧',
+  structures: ['Subj. + 还是 + [Verb Phrase] + 吧'],
   description:
     'One of the ways to use 还是 (háishì) is to have it mean "you had better," similar to ' +
     'how in English we may say "I think you had better start on your homework." ' +

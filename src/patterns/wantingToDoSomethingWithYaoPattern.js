@@ -15,7 +15,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'wantingToDoSomethingWithYao',
-  name: 'Subj. + 要 + Verb + Obj.',
+  structures: ['Subj. + 要 + Verb + Obj.'],
   description:
     'The auxiliary verb 要 (yào) has several different meanings, and here we\'ll tackle the "want to" meaning. To express "wanting to do" something, use 要 (yào) before the verb.',
   sources: [allSetSrc],

@@ -14,7 +14,8 @@ const allSetSrc = {
 
 module.exports = {
   id: 'ruguoDeHua',
-  name: 'undefined',
+
+  structures: [],
   description:
     '"如果⋯⋯的话，⋯⋯" (rúguǒ... de huà, ...) is a pattern commonly used in Chinese to express "if." An easy way to remember the pattern\'s format is that in the full form, the condition is "sandwiched" between 如果 and 的话.',
   sources: [allSetSrc],

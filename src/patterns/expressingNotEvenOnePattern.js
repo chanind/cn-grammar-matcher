@@ -13,7 +13,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingNotEvenOne',
-  name: '一 + Measure Word + (Noun) + 也 / 都 + 不 / 没 + Verb',
+  structures: [
+    '一 + Measure Word + (Noun) + 也 / 都 + 不 / 没 + Verb',
+    'Topic + Subj. + 一 + Measure Word + (Noun) + 也 / 都 + Verb',
+  ],
   description:
     'In English we might want to say something like "I have absolutely no money, not even one penny." That "not even one" is the focus of this article.',
   sources: [allSetSrc],

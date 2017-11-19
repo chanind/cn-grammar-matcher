@@ -10,7 +10,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'benlai',
-  name: 'Subj. + 本来',
+  structures: [
+    'Subj. + 本来 + 是 +（不）要 / 会 / 应该 + Verb + 的，但是 / 可是 ...',
+    'Subj. + 本来 + 就...',
+    'Subj. + 本来 + 就 + 很 / 不 + Adj.',
+    'Subj. + 本来 + 就 + 会 / 要 / 得 / 应该 + Verb',
+  ],
   description:
     'If something was originally a certain way, or "should be" a certain way, the Chinese words used are often 本来 (běnlái) and 原来 (yuánlái). 本来 (běnlái) is usually an adverb while 原来 (yuánlái) could be either and adjective or an adverb. However, they are used in different ways and different circumstances, so this article will help you distinguish when and where to use them.',
   sources: [allSetSrc],

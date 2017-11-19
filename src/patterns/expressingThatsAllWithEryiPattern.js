@@ -9,7 +9,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingThatsAllWithEryi',
-  name: 'Subj. + Verb + Obj. + 而已',
+  structures: ['Subj. + Verb + Obj. + 而已'],
   description:
     '而已 expresses that something is merely what it is. It is like saying "it\'s only a test, that\'s all." 而已 is put at the end of the sentence to emphasis that something is just what it is.',
   sources: [allSetSrc],

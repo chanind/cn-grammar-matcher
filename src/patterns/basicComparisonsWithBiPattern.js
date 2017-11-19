@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'basicComparisonsWithBi',
-  name: 'Noun 1 + 比 + Noun 2 + Adj.',
+  structures: ['Noun 1 + 比 + Noun 2 + Adj.', 'Noun 1 + 比 + Noun 2 + 更 + Adj.'],
   description:
     'One of the most common words when comparing things in Chinese is to use 比 (bǐ). 比 (bǐ) has similarities to the English word "than," but it requires a word order that\'s not so intuitive, so you\'ll want to practice it quite a bit.',
   sources: [allSetSrc],

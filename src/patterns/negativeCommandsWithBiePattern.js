@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buyao',
-  name: '别 + Verb (+ Obj.)',
+  structures: ['别 + Verb (+ Obj.)'],
   description:
     'Instead of saying "do not" with 不要 (bùyào), we can say "don\'t" a little more quickly and forcefully by using 别 (bié).',
   sources: [allSetSrc],

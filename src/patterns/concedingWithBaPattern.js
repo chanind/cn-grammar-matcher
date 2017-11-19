@@ -9,7 +9,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'concedingWithBa',
-  name: 'Statement + 吧',
+  structures: ['Statement + 吧'],
   description:
     'The particle 吧 (ba) can also be used to concede a point. That is, 吧 (ba) can be used to accept or agree with something that you\'re not particularly happy about, the way we might use "all right" or "fine then" in English.',
   sources: [allSetSrc],

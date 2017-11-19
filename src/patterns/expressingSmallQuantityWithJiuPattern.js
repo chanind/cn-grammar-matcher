@@ -11,7 +11,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingSmallQuantityWithJiu',
-  name: '就 + [Single Subject] + Verb',
+  structures: [
+    '就 + [Single Subject] + Verb',
+    'Subj. + 就 + Verb-Obj.',
+    'Subj. + 就 + Number + Measure Word + Noun',
+  ],
   description:
     '就 (jiù) is often translated simply as "just" or "only," but there are some nuances to how it is used.',
   sources: [allSetSrc],

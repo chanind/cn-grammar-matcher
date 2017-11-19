@@ -76,6 +76,20 @@ const rewritePatternIndex = rewriteFunc => {
   rewriteFileContents(matchersIndexFile, rewriteFunc);
 };
 
+const overwriteStructures = (fullPatternName, structuresStr) => {
+  const mainFileName = getPatternFileName(fullPatternName);
+  let contents = fs.readFileSync(mainFileName, 'utf-8');
+  contents = contents
+    .replace(/name:.*\n.*description:/im, 'description:')
+    .replace(/structures: \[[\s\S]*?\],/gim, '');
+  const descriptionStart = contents.indexOf('description:');
+  contents =
+    contents.substr(0, descriptionStart) +
+    structuresStr +
+    contents.substr(descriptionStart);
+  writeOutTemplate(mainFileName, contents, true);
+};
+
 const writeOutPattern = (fullPatternName, mainTemplate, testTemplate, force = false) => {
   const mainFileName = getPatternFileName(fullPatternName);
   const testFileName = getPatternTestFileName(fullPatternName);
@@ -114,6 +128,7 @@ module.exports = {
   getPatternIndexRequireLine,
   formatFullPatternName,
   getPatternTestFileName,
+  overwriteStructures,
   trim,
   fixNewlines,
   writeOutPattern,

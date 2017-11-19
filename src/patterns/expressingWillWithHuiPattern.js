@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingWillWithHui',
-  name: 'Subj. + 会 + Verb + Obj.',
+  structures: ['Subj. + 会 + Verb + Obj.', 'Subj. + 不 + 会 + Verb + Obj.'],
   description:
     '会 (huì) has multiple uses, but in this context, it is being used to express the possibility of an action happening in the future.',
   sources: [allSetSrc],

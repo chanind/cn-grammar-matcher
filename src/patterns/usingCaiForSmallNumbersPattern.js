@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingCaiForSmallNumbers',
-  name: '才 + (Verb) + Number + Measure Word + Noun',
+  structures: ['才 + (Verb) + Number + Measure Word + Noun'],
   description:
     'The character 才 (cái) can be used to emphasize that a number is small, or less than expected.',
   sources: [allSetSrc],

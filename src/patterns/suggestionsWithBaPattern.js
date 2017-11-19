@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'suggestionsWithBa',
-  name: 'Command + 吧',
+  structures: ['Command + 吧'],
   description:
     "The particle 吧 (ba) has a number of different uses. Here we'll talk about the simplest way to use 吧 (ba): making suggestions.",
   sources: [allSetSrc],

@@ -11,7 +11,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'biDuole',
-  name: 'Noun 1 + 比 + Noun 2 + Adj. + 得多 / 多了 / 很多',
+  structures: [
+    'Noun 1 + 比 + Noun 2 + Adj. + 得多 / 多了 / 很多',
+    'Noun 1 + 比 + Noun 2 + 还 + Adj.',
+  ],
   description:
     'If you want to up the intensity of your comparisons, you might want to express "much more." You can do this using 多 (duō), but did you know there are actually three different ways to do it?',
   sources: [allSetSrc],

@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingDuiWithVerbs',
-  name: '对 + Obj. + Verb',
+  structures: ['对 + Obj. + Verb', '对 + Person + 来说'],
   description:
     'When using 对 (duì) as a preposition, it is used to indicate "to" or "towards" an object or target. As with all prepositions, some care should be taken when using this particle, as usage of 对 doesn\'t always totally "make sense" or correspond to English at all.',
   sources: [allSetSrc],

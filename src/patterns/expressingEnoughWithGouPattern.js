@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingEnoughWithGou',
-  name: 'Subj. + 够 + Verb (+ 了)',
+  structures: ['Subj. + 够 + Verb (+ 了)', 'Subj. + 不够 + Verb', 'Subj. + Verb + 够 (+ 了)'],
   description: '',
   sources: [allSetSrc],
   match: sentence =>

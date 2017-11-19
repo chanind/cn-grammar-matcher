@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'oClock',
-  name: '(Date and/or time of day +) x 点',
+  structures: ['(Date and/or time of day +) x 点', 'x 点 + 半'],
   description:
     'Time in Chinese, just like in English, is expressed by stating the hour first, and then the minute (big to small).',
   sources: [allSetSrc],

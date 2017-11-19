@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'specialCasesOfZaiFollowingVerbs',
-  name: 'Subj. + [Special Verb] + 在 + Location',
+  structures: ['Subj. + [Special Verb] + 在 + Location'],
   description:
     'When used to indicate locations of actions, 在 (zài) is usually placed after the subject and before the verb. There are certain cases, however, when 在 (zài) goes after the verb.',
   sources: [allSetSrc],

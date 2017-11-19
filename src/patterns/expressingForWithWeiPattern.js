@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingForWithWei',
-  name: '为 + [Some Part] + Verb',
+  structures: ['为 + [Some Part] + Verb'],
   description:
     'When you work for a company, or do other sorts of physical (and even mental) activities for another party, you\'re likely to use the Chinese preposition 为 (wèi), which is often translated into English as "for," a translation which is often unnatural or unnecessary, depending on the particular phrase.  The super common Mao-era phrase, 为人民服务 ("serve the people"), doesn\'t need the word "for" in English, for example.',
   sources: [allSetSrc],

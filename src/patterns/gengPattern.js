@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'geng',
-  name: '更 + Adj.',
+  structures: ['更 + Adj.', 'A 比 B + 更 + Adj.'],
   description:
     'To express "even more," (as in "even more expensive," "even more ridiculous," "even more badass"), you can use 更 (gèng). 更 (gèng) generally comes before adjectives.',
   sources: [allSetSrc],

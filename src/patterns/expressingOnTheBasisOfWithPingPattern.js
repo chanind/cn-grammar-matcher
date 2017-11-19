@@ -11,7 +11,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingOnTheBasisOfWithPing',
-  name: '凭 + Noun / Noun Phrase',
+  structures: [
+    '凭 + Noun / Noun Phrase',
+    '凭 + Verb Phrase / Subj.-Predicate',
+    'Subj. + 凭什么 + Verb Phrase',
+    '凭着 + Noun / Noun Phrase',
+  ],
   description:
     '凭 is a  preposition that means "on the basis of" or "by virtue of." Usually the subject of a sentence with 凭 is a person.',
   sources: [allSetSrc],

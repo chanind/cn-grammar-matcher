@@ -11,7 +11,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'verbsFollowedByGei',
-  name: 'Subj. + Verb + 给 + [Recipient] + Obj.',
+  structures: [
+    'Subj. + Verb + 给 + [Recipient] + Obj.',
+    'Subj. + 把 + Obj. + Verb + 给 + Somebody',
+  ],
   description:
     "Although it's standard practice to put a word or phrase that modifies a verb before the verb, there are, of course, exceptions. 给 (gěi) is one of those exceptions; it sometimes comes before the verb, and sometimes after. This article is about when it comes after.",
   sources: [allSetSrc],

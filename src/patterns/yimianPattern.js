@@ -9,7 +9,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yimian',
-  name: '一面 + Verb +  一面 + Verb',
+  structures: ['一面 + Verb +  一面 + Verb'],
   description:
     '一面 (yìmiàn)  is a more formal than 一边, but is used in the same way to express two simultaneous actions. It is used in the following way:',
   sources: [allSetSrc],

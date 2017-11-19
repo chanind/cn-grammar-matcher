@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingBeGoingToWithYao',
-  name: 'Subj. + Time + 要 + Verb',
+  structures: ['Subj. + Time + 要 + Verb', 'Time + Subj. + 要 + Verb'],
   description:
     'The auxiliary verb 要 (yào) has several different meanings, and here we\'ll tackle the "be going to" meaning. You\'ll use this when you are discussing your plans with someone.',
   sources: [allSetSrc],

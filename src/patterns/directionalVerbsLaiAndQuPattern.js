@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'directionalVerbsLaiAndQu',
-  name: '来 / 去 + Place',
+  structures: ['来 / 去 + Place'],
   description:
     '来 (lái) and 去 (qù) are both words that help to express direction from the perspective of the speaker. 来 (lái) means "come" (towards the speaker), while 去 (qù) means "go" (away from the speaker). For example, if you are in China, a local person might ask you: "When did you come to China?" using 来 (lái). Another example is if you want to go from China to Japan, your friends might ask you:  “When are you going to Japan?" using 去 (qù).',
   sources: [allSetSrc],

@@ -5,7 +5,12 @@ const shuffle = require('lodash.shuffle');
 const scrapeAllset = require('./allset/scrapeAllset');
 const extractPattern = require('./allset/extractPattern');
 const urls = require('./allset/urls').all;
-const { writeOutPattern, getNumHanzi, isPatternFileWriteable } = require('./scriptUtils');
+const {
+  writeOutPattern,
+  getNumHanzi,
+  isPatternFileWriteable,
+  overwriteStructures,
+} = require('./scriptUtils');
 const { regexMatchLocs } = require('../src/lib/matching/regexMatch');
 const { mergeLocMatchGroups } = require('../src/lib/matching/utils');
 
@@ -35,6 +40,10 @@ const run = async () => {
     .option('-w, --write-weak-patterns', 'Write out poor quality patterns')
     .option('-m, --write-medium-patterns', 'Write out medium quality patterns')
     .option('-n, --next <num>', 'Import the next [num] new patterns', parseInt)
+    .option(
+      '--overwrite-structures',
+      'overwrite structures even if not overwriting the whole file'
+    )
     .parse(process.argv);
 
   const results = {
@@ -90,9 +99,12 @@ const run = async () => {
       }
 
       let skipped = false;
-      const { mainTemplate, testTemplate, fullPatternName } = extractPattern(
-        scrapedFields
-      );
+      const {
+        mainTemplate,
+        testTemplate,
+        fullPatternName,
+        structuresStr,
+      } = extractPattern(scrapedFields);
       const mainFile = path.resolve(__dirname, `../src/patterns/${fullPatternName}.js`);
       if (!isPatternFileWriteable(mainFile)) {
         skipped = true;
@@ -116,6 +128,9 @@ const run = async () => {
         if (strength === STRONG) results.strong.push(url);
         if (strength === MEDIUM) results.medium.push(url);
         if (strength === WEAK) results.weak.push(url);
+      }
+      if (program.overwriteStructures) {
+        overwriteStructures(fullPatternName, structuresStr);
       }
     } catch (err) {
       console.log(err);

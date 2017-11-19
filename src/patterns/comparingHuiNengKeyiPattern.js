@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'comparingHuiNengKeyi',
-  name: '会／能 + Verb',
+  structures: ['会／能 + Verb', '可以／能 + Verb', '会 + Verb', '很会／很能 + Verb'],
   description:
     '会 (huì), 能 (néng), and 可以 (kěyǐ) are often translated as "can." Sometimes they are explained as: 会 means "know how to," 能 means "to be able to," and 可以 means "to have permission to." Actually, they overlap somewhat.',
   sources: [allSetSrc],

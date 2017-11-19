@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingWhenWithShi',
-  name: '(Subj. +) Verb / Adj. + 时⋯⋯',
+  structures: ['(Subj. +) Verb / Adj. + 时⋯⋯'],
   description:
     'By now you should now how to express "when" using "的时候" (de shíhou). But there\'s also a slightly shorter, more formal way to do it: simply use 时 (shí) all by itself. (No 的!)',
   sources: [allSetSrc],

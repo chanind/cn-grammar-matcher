@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingActionsInProgressWithZai',
-  name: 'Subj. + 在 + Verb + Obj.',
+  structures: ['Subj. + 在 + Verb + Obj.', 'Subj. + 正在 + Verb + Obj.'],
   description:
     '在 (zài) and 正在 (zhèngzài) can be used as auxiliary verbs to express that an action is ongoing or in progress. This is often the equivalent of present continuous in English, which is how we express that an activity is happening now.',
   sources: [allSetSrc],

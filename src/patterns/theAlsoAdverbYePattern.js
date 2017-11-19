@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'theAlsoAdverbYe',
-  name: 'Subj. + 也 + Verb / [Verb Phrase]',
+  structures: ['Subj. + 也 + Verb / [Verb Phrase]', 'Subj. + 也 (+ Adv.) + Adj.'],
   description:
     'The English adverb "too" or "also" is expressed in Chinese as 也 (yě). In Chinese, it always needs to come before the verb (or adjective).',
   sources: [allSetSrc],

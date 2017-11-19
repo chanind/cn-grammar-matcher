@@ -11,7 +11,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingGenToMeanWith',
-  name: 'Subj. + 跟 + Person + Verb + Obj.',
+  structures: [
+    'Subj. + 跟 + Person + Verb + Obj.',
+    'Subj. + 跟 + Person + 一起 + Verb + Obj.',
+  ],
   description:
     'Using 跟 (gēn) to express "with" is so simple and helpful, after studying it briefly, it will always be with you! 跟 (gēn) is a very common word that will help complete many other sentence structures.',
   sources: [allSetSrc],

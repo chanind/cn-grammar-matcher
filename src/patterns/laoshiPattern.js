@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'laoshi',
-  name: '老是 + Verb',
+  structures: ['老是 + Verb', '老是 ( + Adv.) + Adj.'],
   description:
     'We have a few ways to say "always" in Chinese, and one of them is to use the word 老是 (lǎoshi).',
   sources: [allSetSrc],
