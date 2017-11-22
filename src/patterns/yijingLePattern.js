@@ -4,14 +4,13 @@ const { Node, Edge, graphMatch } = require('../lib/matching/graphMatch');
 
 const allSetSrc = {
   type: 'website',
-  url:
-    'https://resources.allsetlearning.com/chinese/grammar/Expressing_%22already%22_with_%22yijing%22',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGNXI27',
   name: 'AllSet Chinese Grammar Wiki',
 };
 
 module.exports = {
-  id: 'yijing_le',
-  name: '已经 ... 了 pattern',
+  id: 'yijingLe',
+  structures: ['已经 + Verb / [Verb Phrase] + 了', '已经 + (很 +) Adj. + 了', '已经 + Time + 了'],
   description: 'Pattern used to express something has already happened.',
   sources: [allSetSrc],
   match: sentence =>

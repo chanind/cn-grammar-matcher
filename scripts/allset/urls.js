@@ -213,10 +213,11 @@ const a2 = [
     label: 'Expressing "all along" with "yizhi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGP000J',
   },
-  // {
-  //   label: "Expressing \"already\" with \"yijing\"",
-  //   url: "https://resources.allsetlearning.com/chinese/grammar/ASGNXI27",
-  // },
+  {
+    label: 'Expressing "already" with "yijing"',
+    url: 'https://resources.allsetlearning.com/chinese/grammar/ASGNXI27',
+    matcherId: 'yijingLe',
+  },
   {
     label: 'Expressing "always" with "zongshi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGXJPJS',
@@ -1803,8 +1804,8 @@ const b2 = [
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG1QB4K',
   },
   {
-    label: "Expressing the only two possibilities",
-    url: "https://resources.allsetlearning.com/chinese/grammar/ASGEXR6R",
+    label: 'Expressing the only two possibilities',
+    url: 'https://resources.allsetlearning.com/chinese/grammar/ASGEXR6R',
     matcherId: 'bushijiushi',
   },
   {
