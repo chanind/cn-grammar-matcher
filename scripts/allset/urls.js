@@ -1266,6 +1266,7 @@ const b1 = [
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGN4VUU',
     regexes: [/(如果)[^话]+(的话)?/, /(如果)?[^话]+(的话)/],
     filterExamples: true,
+    matcherId: 'ruguoDehua',
   },
   {
     label: 'The pattern "it\'s not…, it\'s…"',
