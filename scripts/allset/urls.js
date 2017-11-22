@@ -1802,10 +1802,11 @@ const b2 = [
     label: 'Expressing simultaneous actions with "yimian"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG1QB4K',
   },
-  // {
-  //   label: "Expressing the only two possibilities",
-  //   url: "https://resources.allsetlearning.com/chinese/grammar/ASGEXR6R",
-  // },
+  {
+    label: "Expressing the only two possibilities",
+    url: "https://resources.allsetlearning.com/chinese/grammar/ASGEXR6R",
+    matcherId: 'bushijiushi',
+  },
   {
     label: 'Occurring together with "shaobuliao"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG3IR71',

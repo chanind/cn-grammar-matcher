@@ -13,14 +13,13 @@ const shortTermChineseSrc = {
 
 const allSetSrc = {
   type: 'website',
-  url:
-    'https://resources.allsetlearning.com/chinese/grammar/Expressing_the_only_two_possibilities',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGEXR6R',
   name: 'AllSet Chinese Grammar Wiki',
 };
 
 module.exports = {
   id: 'bushi_jiushi',
-  name: '不是 ... 就是 ...',
+  structures: ['不是 + A，就是 + B'],
   description:
     'Pattern indicating there are only 2 possiblities, similar to "If it\'s not X then it must be Y".',
   sources: [shortTermChineseSrc, allSetSrc],
