@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhiyi',
-
   structures: ['[Noun Phrase] + 之一'],
   description:
     'In order to express "one of the..." in Chinese, "之一" (zhī yī) can be used at the end of the sentence.',

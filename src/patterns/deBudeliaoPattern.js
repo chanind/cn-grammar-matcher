@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'deBudeliao',
-
   structures: ['Adj. +  得不得了'],
   description:
     '得不得了 (de bùdéliǎo) can be used as a complement to suggest a situation is serious, or is likely to result in perhaps terrible consequences. It can be used in a positive sense, such as in English when we say "I\'m terribly happy."',

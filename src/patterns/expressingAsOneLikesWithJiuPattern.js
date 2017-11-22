@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAsOneLikesWithJiu',
-
   structures: [
     '想 + Verb (+ Obj.) + 就 + Verb (+ Obj.)',
     '想 + Verb + Question Word + 就 + Verb + Question Word',

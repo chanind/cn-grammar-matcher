@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'structureOfTimesAdvanced',
-
   structures: [
     'x 点 y 分',
     'x 点 零 y 分',

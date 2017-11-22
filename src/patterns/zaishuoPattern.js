@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zaishuo',
-
   structures: ['Clause 1，再说 + Clause 2'],
   description:
     '"再说⋯⋯" (zàishuō...) is used in a similar way as "In addition" or "Moreover," in that it is adding on additional information or reasons to the topic at hand.',

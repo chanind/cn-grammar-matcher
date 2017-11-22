@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingTheMoreTheMoreWithYueYue',
-
   structures: [
     'Subj. + 越 + Verb + 越 + Adj.',
     'Subj. +  越 + Verb 1 + 越 + Verb 2',

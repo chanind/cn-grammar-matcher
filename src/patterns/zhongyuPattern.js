@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhongyu',
-
   structures: ['Subj. + 终于 + Verb Phrase + 了'],
   description: '终于(zhōngyú) 表示经过很长时间的等待最后实现了愿望，通常都是说话人期待发生的事情，含喜悦、满意的感情色彩。',
   sources: [allSetSrc],

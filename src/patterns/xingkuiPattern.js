@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'xingkui',
-
   structures: [
     '幸亏 / 幸好 + [Lucky Incident]',
     '幸亏 / 幸好 + [Lucky Incident]， 不然 ……',

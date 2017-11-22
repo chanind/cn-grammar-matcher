@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingThroughWithTongguo',
-
   structures: ['通过 + Agent ，Subj. + ~', '通过 + [Verb Phrase] ，Subj. + ~'],
   description: '',
   sources: [allSetSrc],

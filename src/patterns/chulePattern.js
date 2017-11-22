@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'chule',
-
   structures: [
     '除了 + Noun Phrase + (以外) + Noun Phrase + 都 + Verb',
     '除了 + Noun Phrase + (以外) + Noun Phrase + 也 / 还 + Verb',

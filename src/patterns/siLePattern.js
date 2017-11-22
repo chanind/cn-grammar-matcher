@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'siLe',
-
   structures: ['(Subj. +) Negative Adj. + 死了'],
   description:
     'In English, you might use the expression "you scared me to death!" In Chinese,  死了 (sǐ le) is used similarly to intensify an adjective with an unpleasant connotation.',

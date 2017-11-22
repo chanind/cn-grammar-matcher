@@ -4,15 +4,15 @@ const { locsFromTokens } = require('../lib/matching/utils');
 
 const allSetSrc = {
   type: 'website',
-  url:
-    'https://resources.allsetlearning.com/chinese/grammar/Negation_of_%22you%22_with_%22mei%22',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPNV3Q',
   name: 'AllSet Chinese Grammar Wiki',
 };
 
 module.exports = {
   id: 'meiyou',
-  name: '没有 pattern',
-  description: 'negation of 有, meaning to not have',
+  structures: ['没 + 有 (+ Obj.)'],
+  description:
+    'The verb 有 (yǒu) is negated differently from ordinary verbs. Rather than placing 不 (bù) before it as with other verbs, you must use 没 (méi) to negate the verb 有 (yǒu). 没有 (méiyǒu) can be shortened to 没 (méi) without altering its meaning.',
   sources: [allSetSrc],
   match: sentence => {
     const meiyou = and(pos('AD|VE'), word('没有?'));

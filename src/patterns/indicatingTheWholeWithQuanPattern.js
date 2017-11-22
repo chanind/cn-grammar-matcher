@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'indicatingTheWholeWithQuan',
-
   structures: [
     '全 + Noun + 都  + Verb',
     'Subj. + 全 + 都 + Verb  / Adj.',

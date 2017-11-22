@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'lingWai',
-
   structures: [
     '⋯⋯， 另外，⋯⋯',
     '另外 ＋ [Verb Phrase]',

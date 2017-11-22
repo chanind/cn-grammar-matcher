@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'haoBuRongyi',
-
   structures: [
     'Subj. + 好容易 / 好不容易 + 才 + Verb，[Result Sentence]',
     'Verb / [Verb Phrase] + 好容易 / 好不容易',

@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yaobu',
-
   structures: [
     '要不 + Option A，要不 + Option B',
     'Reason / Situation，要不 + Option B',

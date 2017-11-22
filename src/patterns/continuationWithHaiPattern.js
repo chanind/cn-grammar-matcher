@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'continuationWithHai',
-
   structures: [
     'Subj. + 还在 + Verb',
     'Subj. + 还是 + Verb',

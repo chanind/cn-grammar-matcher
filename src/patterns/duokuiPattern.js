@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'duokui',
-
   structures: [
     '多亏（了）……',
     'Good Outcome, 多亏（了）……',

@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jieguo',
-
   structures: ['Situation，结果 + Result / Ending'],
   description:
     '结果 (jiéguǒ) can be used as a conjunction or adverb, meaning "as a result" or "consequently." It comes at the beginning of the sentence and is typically used to introduce a negative or undesirable result.',

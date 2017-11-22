@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'indicatingANumberInExcess',
-
   structures: ['Number + 多 + Measure word + (Noun)'],
   description:
     'A number in excess of a certain amount is expressed by adding "多" (duō) to the end of a number. This is usually translated as "more than..." in English.',

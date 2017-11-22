@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'standardNegationWithBu',
-
   structures: ['Subj. + 不 + Verb + Obj.', 'Subj. + 不 + Adj.'],
   description:
     '不 (bù) is generally used to negate a verb in the present or future, or to talk about what you do not do, as a habit. So expressing things like "I don\'t want to go" or "I\'m not going" or "I don\'t eat meat" would be typical uses of 不 (bù).',

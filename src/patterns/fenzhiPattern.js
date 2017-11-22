@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'fenzhi',
-
   structures: [
     'Denominator + 分之 + Numerator',
     'A + 是 / 占 (+ B) + 的 + Denominator + 分之 + Numerator',

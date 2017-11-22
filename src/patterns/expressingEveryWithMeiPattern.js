@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingEveryWithMei',
-
   structures: ['每 + Measure Word + Noun + 都'],
   description:
     'In this article we will look at the structure for saying "every" in Chinese, which is slightly more involved than just throwing in the word 每 (měi).',

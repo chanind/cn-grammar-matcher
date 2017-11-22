@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAgainInTheFutureWithZai',
-
   structures: ['Subj. + 再 + Verb Phrase'],
   description:
     'While 又 (yòu) is used for "again" in the past, 再 (zài) is used for "again" in the future. That is, 再 is used when something has happened once and it will happen again.',

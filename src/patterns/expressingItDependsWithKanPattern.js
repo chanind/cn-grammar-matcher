@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingItDependsWithKan',
-
   structures: [
     '(这 / 那) + 得看 / 要看 + [What "It" Depends On]',
     '[Unknown Outcome] + 得看 / 要看 + [What "It" Depends On]',

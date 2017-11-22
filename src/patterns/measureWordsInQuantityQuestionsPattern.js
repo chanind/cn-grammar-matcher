@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'measureWordsInQuantityQuestions',
-
   structures: [
     'Subj. + Verb + 几 + Measure Word + Noun？',
     'Subj. + Verb + 多少 + Measure Word + Noun ？',

@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'ningke',
-
   structures: ['宁可……，也不……', '宁可 ……，也要 ……'],
   description:
     '宁可 (nìngkě) is used where the speaker wants to compare two unfavorable options, and choose a "unfavorable option" over a "most unfavorable option."',

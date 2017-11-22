@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAboutToHappenWithLe',
-
   structures: [
     '快+ Verb / Verb Phrase + 了',
     '快要 + Verb / Verb Phrase + 了',

@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'nanguai',
-
   structures: [
     '难怪 / 怪不得 + ([Observation])',
     '难怪 / 怪不得 + [Observation]，原来 + [Reason]',

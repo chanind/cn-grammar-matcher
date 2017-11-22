@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yiqi',
-
   structures: ['Subj. + 一起 + Verb + Obj.'],
   description:
     'If you want to express that you are doing something together with someone else, 一起 (yīqǐ) is your word!',

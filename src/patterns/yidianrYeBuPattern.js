@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yidianrYeBu',
-
   structures: [
     'Subj. + 一点也 / 都 + 不 + Adj.',
     'Subj. + 一点也 / 都 + 不 + Verb',

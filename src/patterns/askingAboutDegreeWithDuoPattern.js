@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'askingAboutDegreeWithDuo',
-
   structures: ['Subj. + 多 + Adj. ?'],
   description:
     'How big? How busy? How cold? Ask questions like these regarding the degree of an adjective with 多 (duō). This is just one of the many uses of this word.',

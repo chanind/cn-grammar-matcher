@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'haoxiang',
-
   structures: ['Subj. + 好像 + [Observation]'],
   description: 'To express "seems," the word 好像 (hǎoxiàng) can be used.',
   sources: [allSetSrc],

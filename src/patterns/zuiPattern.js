@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zui',
-
   structures: ['最 + Adj.', '最 + Adj. (+ 了)', '最 + [Psychological Verb] + Obj. (+ 了)'],
   description:
     'The most common way to form a superlative (best, worst, biggest, smallest, etc.) in Chinese is to use 最 (zuì) before an adjective (and a few select verbs).',

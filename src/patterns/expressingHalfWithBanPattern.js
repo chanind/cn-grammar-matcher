@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingHalfWithBan',
-
   structures: [
     '半 + Measure Word + Noun',
     'Number + Measure Word + 半 + Noun',

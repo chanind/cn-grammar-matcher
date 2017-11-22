@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'bieLe',
-
   structures: ['别 + Verb / Verb Phrase + 了'],
   description:
     'You may know how to make negative commands with "bie," but what if someone is already doing it? The pattern 别⋯⋯了 (bié... le) is all you need to tell someone to STOP DOING THAT (which they\'re already doing).',

@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zuihao',
-
   structures: ['Subj. + 最好 + [Verb Phrase]', 'Subj. + 最好 + 别 / 不要 + [Verb Phrase]'],
   description: '最好 can be used to express "had better"',
   sources: [allSetSrc],

@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingIncludingWithBaokuo',
-
   structures: ['Subj. + 包括 + Obj.1 ( , + Obj.2, Obj.3 ... )', '包括 + Obj. (+ 在内)，一共 ⋯⋯'],
   description:
     '"包括" can be used to mean "including" in English. It can be used with "在内一共" or just "一共" to express "all together" or "in total"',

@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAlwaysWithConglai',
-
   structures: ['Subj. + 从来 + 都 + Predicate'],
   description:
     'Although perhaps more often used in the negative to mean "never," 从来 (cónglái) can be used with 都 (dōu) to mean "always" or "have always (done)."',

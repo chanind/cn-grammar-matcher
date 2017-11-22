@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'budanErqie',
-
   structures: [
     'Subj. + 不但 + Adj. / Verb， 而且 + Adj. / Verb',
     'Subj. + 不但 +  Adj. / Verb， 而且 + Adj. / Verb',

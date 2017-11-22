@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'definingScope',
-
   structures: ['级别 / 次序 / 数目 + 以上 / 以下', '时间 / 处所 / 数量 / 范围 + 以内 / 以外'],
   description: '',
   sources: [allSetSrc],

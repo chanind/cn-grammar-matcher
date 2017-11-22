@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yuanlai',
-
   structures: ['原来 + 的 + Noun', 'Subj. + 原来 + [Verb Phrase]', '原来 + [New Information]'],
   description:
     '原来 (yuánlái) means "originally" (similar to 本来) or "former." It can also mean "all along," and can be used to indicate a sudden realization of something previously unknown, a bit like "so it\'s been like that all along, how could I not have realized?"',

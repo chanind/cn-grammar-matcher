@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiaruJiu',
-
   structures: ['假如 + Statement + 就 + Result'],
   description:
     '"假如⋯⋯，就⋯⋯" (jiǎrú..., jiù...) is yet another way to express "If..., then..." in Chinese, but it is much more formal than 要是 or 如果 are (in both written and spoken Chinese).',

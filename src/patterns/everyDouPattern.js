@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'everyDou',
-
   structures: [
     '谁 + 都 + Verb Phrase',
     '哪儿 / 哪里 + 都 + Verb Phrase',

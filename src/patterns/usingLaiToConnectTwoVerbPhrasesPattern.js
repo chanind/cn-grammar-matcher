@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingLaiToConnectTwoVerbPhrases',
-
   structures: ['通过 / 用 + Agent + 来 + Verb Phrase'],
   description:
     'The word 来 (lái) can be used to connect two verb phrases, relating the actions to each other. It can be translated as "in order to" or "so that" and it can help in explaining reasoning.',

@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'meiDou',
-
   structures: ['每 + Verb + Number + Measure Word + Noun + 都 + Verb'],
   description:
     '每⋯⋯都⋯⋯ (měi... dōu...) is a pattern used to express "every time," even though the phrase 每次 (měi cì) may not be explicitly used.',

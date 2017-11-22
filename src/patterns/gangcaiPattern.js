@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'gangcai',
-
   structures: ['刚才 + Verb'],
   description:
     'In order to say that something "just now" occurred, use the time noun 刚才 (gāngcái). It can be placed in front of the verb or the subject of a statement.',

@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingEarlinessWithJiu',
-
   structures: [
     'Subj. + Time Word + 就 + Verb',
     'Subj. + Time  Word + 就 + Verb + Obj. + 了',

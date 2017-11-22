@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yihou',
-
   structures: [
     'Subj. + Special Time + 以后／之后 + Action',
     '以后，Comment',

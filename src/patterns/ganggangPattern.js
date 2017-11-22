@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'ganggang',
-
   structures: [
     'Subj. + 刚 + Verb',
     'Subj. + 刚刚 + Verb',

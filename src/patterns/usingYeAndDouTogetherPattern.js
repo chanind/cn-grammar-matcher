@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingYeAndDouTogether',
-
   structures: ['Subj. + 也 + 都 + Verb / Adj.'],
   description:
     'If you are trying to draw similarities amongst a group, you will want to pair two key words together. You will want to use 也 (yě) first followed by 都 (dōu) to express that a group of people have something in common.',

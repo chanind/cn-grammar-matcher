@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'shenmeDou',
-
   structures: [
     'Topic (+ Subj.) + 什么 + 都 / 也 + Verb / Adj.',
     '什么 + Noun + 都 + Verb',

@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiran',
-
   structures: [
     '既然＋Fact, 那 / 就 / 那就＋Suggestion / Inference',
     '既然 + Fact,   （那 +）rhetorical question',

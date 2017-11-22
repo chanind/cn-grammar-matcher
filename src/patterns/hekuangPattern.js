@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'hekuang',
-
   structures: [
     'Subj. + 连 + A + 都 + (不 / 没) + Verb， 何况 + B + 呢？',
     'Subj. + (都) + A， 何况 + B！',

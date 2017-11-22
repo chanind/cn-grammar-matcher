@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'comparisonXiang',
-
   structures: [
     'Noun 1 + 像 + Noun 2 + 一样 + Adj. / Verb',
     'Noun 1 + 像 + Noun 2 + 这么 / 那么 + Adj. / Verb',

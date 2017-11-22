@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'advancedUseOfYou',
-
   structures: ['Subj. ＋Verb + 了 + 又 + Verb，还是 / 就是 ……'],
   description:
     "Here we repeat the verb used and place 又 in the middle. The repetition of the verb emphasizes how the action is being repeated again and again. This one is definitely the most advanced usage of 又 here, and you're not going to use it nearly as much as the others.",

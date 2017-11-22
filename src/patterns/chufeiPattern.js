@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'chufei',
-
   structures: ['y，除非 x', '除非 x ，否则 / 不然 y', '除非 x，才 y'],
   description:
     '除非 (chúfēi) can be used as a conjunction, and means "unless." 否则 (fǒuzé) or 不然 (bùrán) often appear in the following phrase, to form a construction meaning "unless x, otherwise y":',

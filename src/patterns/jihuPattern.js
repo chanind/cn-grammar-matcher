@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jihu',
-
   structures: [
     '几乎 + Subj. + 都 + Verb / Adj.',
     'Subj. + 几乎 + Predicate',

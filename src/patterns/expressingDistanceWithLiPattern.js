@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingDistanceWithLi',
-
   structures: [
     'Place 1 + 离 + Place 2 + Adv. + 近 / 远',
     'Place 1 + 离 + Place 2 (+ Adv.) + 近 / 远 + 吗？',

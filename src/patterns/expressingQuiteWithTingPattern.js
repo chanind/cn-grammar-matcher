@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingQuiteWithTing',
-
   structures: ['挺 + Adj. + 的', '挺 + Verb + Obj. + 的'],
   description:
     '挺 can be used before an adjective to mean "quite," or "rather," or "pretty," as in "pretty good."',

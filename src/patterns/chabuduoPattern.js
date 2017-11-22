@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'chabuduo',
-
   structures: [
     'Subj. + 差不多',
     'A + 跟 / 和 +  B + 差不多',

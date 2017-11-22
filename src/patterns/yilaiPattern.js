@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yilai',
-
   structures: [
     'Time or Event + 以来',
     '自 / 从 / 自从 + Time or Event + 以来',

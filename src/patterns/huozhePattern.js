@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'huozhe',
-
   structures: ['或者 A，或者 B'],
   description:
     'One easy way to give two options is to precede each one with 或者 (huòzhě).',

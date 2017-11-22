@@ -14,7 +14,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingNotOnlyButAlsoWithBujin',
-
   structures: ['Noun + 不仅 + A，而且 + B'],
   description:
     'There are a few ways to express "not only ... but also" in Chinese. One of them is:',
