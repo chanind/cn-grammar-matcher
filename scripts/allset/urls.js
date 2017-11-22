@@ -1265,6 +1265,7 @@ const b1 = [
     label: 'The "if" sandwich pattern',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGN4VUU',
     regexes: [/(如果)[^话]+(的话)?/, /(如果)?[^话]+(的话)/],
+    filterExamples: true,
   },
   {
     label: 'The pattern "it\'s not…, it\'s…"',

@@ -220,3 +220,4 @@ exports.expressingAsOneLikesWithJiuPattern = require('./expressingAsOneLikesWith
 exports.everyDouPattern = require('./everyDouPattern');
 exports.xiaquPattern = require('./xiaquPattern');
 exports.qilaiPattern = require('./qilaiPattern');
+exports.ruguoDehuaPattern = require('./ruguoDehuaPattern');

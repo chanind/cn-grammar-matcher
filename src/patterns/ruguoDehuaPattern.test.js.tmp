@@ -3,18 +3,18 @@
 * Otherwise the file may be overwritten in the future.
 * --------------------------------------------------- */
 
-const ruguoDeHuaPattern = require('./ruguoDeHuaPattern');
+const ruguoDehuaPattern = require('./ruguoDehuaPattern');
 const { assertAllExamplesMatch, assertNoneMatch } = require('../lib/testUtils');
 
 test('matches all examples', async () => {
-  await assertAllExamplesMatch(ruguoDeHuaPattern);
+  await assertAllExamplesMatch(ruguoDehuaPattern);
 });
 
 // TODO: Add more tests
 
 test("doesn't match negative examples", async () => {
   await assertNoneMatch(
-    ruguoDeHuaPattern,
+    ruguoDehuaPattern,
     [
       // TODO: add negative examples here
     ]
