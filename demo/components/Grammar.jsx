@@ -44,7 +44,7 @@ class Grammar extends React.Component {
       isHighlighted,
       onMouseEnter,
       onMouseLeave,
-      name,
+      structures,
       description,
       examples,
       sources,
@@ -79,9 +79,13 @@ class Grammar extends React.Component {
       >
         <div className={classes.headerInfo}>
           <div>
-            <h4 className={classes.title}>
-              {name}
-            </h4>
+            <div className={classes.structures}>
+              {structures.map(struct =>
+                <span className={classNames(classes.structure, 'badge')} key={struct}>
+                  {struct}
+                </span>
+              )}
+            </div>
             <p>
               {description}
             </p>
@@ -125,7 +129,7 @@ Grammar.propTypes = {
   isHighlighted: PropTypes.bool.isRequired,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
-  name: PropTypes.string.isRequired,
+  structures: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   examples: PropTypes.arrayOf(
     PropTypes.shape({
       zh: PropTypes.string,
