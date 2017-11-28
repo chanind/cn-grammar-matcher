@@ -419,8 +419,8 @@ exports.regexMatchLocs = (text, regex) => {
 
 
 
-var base64 = __webpack_require__(484);
-var ieee754 = __webpack_require__(485);
+var base64 = __webpack_require__(486);
+var ieee754 = __webpack_require__(487);
 var isArray = __webpack_require__(123);
 
 exports.Buffer = Buffer;
@@ -2825,7 +2825,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(479);
+exports.isBuffer = __webpack_require__(481);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -2862,7 +2862,7 @@ exports.log = function () {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(480);
+exports.inherits = __webpack_require__(482);
 
 exports._extend = function (origin, add) {
   // Don't do anything if add isn't an object
@@ -6518,7 +6518,7 @@ exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = _
 exports.createHash = exports.Hash = __webpack_require__(43);
 exports.createHmac = exports.Hmac = __webpack_require__(131);
 
-var algos = __webpack_require__(500);
+var algos = __webpack_require__(502);
 var algoKeys = Object.keys(algos);
 var hashes = ['sha1', 'sha224', 'sha256', 'sha384', 'sha512', 'md5', 'rmd160'].concat(algoKeys);
 exports.getHashes = function () {
@@ -6529,7 +6529,7 @@ var p = __webpack_require__(133);
 exports.pbkdf2 = p.pbkdf2;
 exports.pbkdf2Sync = p.pbkdf2Sync;
 
-var aes = __webpack_require__(502);
+var aes = __webpack_require__(504);
 
 exports.Cipher = aes.Cipher;
 exports.createCipher = aes.createCipher;
@@ -6542,7 +6542,7 @@ exports.createDecipheriv = aes.createDecipheriv;
 exports.getCiphers = aes.getCiphers;
 exports.listCiphers = aes.listCiphers;
 
-var dh = __webpack_require__(513);
+var dh = __webpack_require__(515);
 
 exports.DiffieHellmanGroup = dh.DiffieHellmanGroup;
 exports.createDiffieHellmanGroup = dh.createDiffieHellmanGroup;
@@ -6550,16 +6550,16 @@ exports.getDiffieHellman = dh.getDiffieHellman;
 exports.createDiffieHellman = dh.createDiffieHellman;
 exports.DiffieHellman = dh.DiffieHellman;
 
-var sign = __webpack_require__(517);
+var sign = __webpack_require__(519);
 
 exports.createSign = sign.createSign;
 exports.Sign = sign.Sign;
 exports.createVerify = sign.createVerify;
 exports.Verify = sign.Verify;
 
-exports.createECDH = __webpack_require__(555);
+exports.createECDH = __webpack_require__(557);
 
-var publicEncrypt = __webpack_require__(556);
+var publicEncrypt = __webpack_require__(558);
 
 exports.publicEncrypt = publicEncrypt.publicEncrypt;
 exports.privateEncrypt = publicEncrypt.privateEncrypt;
@@ -7711,15 +7711,15 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 var elliptic = exports;
 
-elliptic.version = __webpack_require__(519).version;
-elliptic.utils = __webpack_require__(520);
+elliptic.version = __webpack_require__(521).version;
+elliptic.utils = __webpack_require__(522);
 elliptic.rand = __webpack_require__(147);
 elliptic.curve = __webpack_require__(64);
-elliptic.curves = __webpack_require__(525);
+elliptic.curves = __webpack_require__(527);
 
 // Protocols
-elliptic.ec = __webpack_require__(533);
-elliptic.eddsa = __webpack_require__(537);
+elliptic.ec = __webpack_require__(535);
+elliptic.eddsa = __webpack_require__(539);
 
 /***/ }),
 /* 20 */
@@ -7809,10 +7809,10 @@ var inherits = __webpack_require__(4);
 
 inherits(Stream, EE);
 Stream.Readable = __webpack_require__(44);
-Stream.Writable = __webpack_require__(492);
-Stream.Duplex = __webpack_require__(493);
+Stream.Writable = __webpack_require__(494);
+Stream.Duplex = __webpack_require__(495);
 Stream.Transform = __webpack_require__(128);
-Stream.PassThrough = __webpack_require__(494);
+Stream.PassThrough = __webpack_require__(496);
 
 // Backwards-compat with node 0.4.x
 Stream.Stream = Stream;
@@ -8160,7 +8160,7 @@ exports.shr64_lo = shr64_lo;
 
 
 var punycode = __webpack_require__(83);
-var util = __webpack_require__(475);
+var util = __webpack_require__(477);
 
 exports.parse = urlParse;
 exports.resolve = urlResolve;
@@ -9978,7 +9978,7 @@ function write(key, options, type) {
 // If you have no idea what ASN.1 or BER is, see this:
 // ftp://ftp.rsa.com/pub/pkcs/ascii/layman.asc
 
-var Ber = __webpack_require__(582);
+var Ber = __webpack_require__(584);
 
 ///--- Exported API
 
@@ -14124,7 +14124,7 @@ function forEach(xs, f) {
       });
     } else if (true) {
       // Node.js.
-      crypto = __webpack_require__(581);
+      crypto = __webpack_require__(583);
       if (crypto && crypto.randomBytes) {
         nacl.setPRNG(function (x, n) {
           var i,
@@ -14272,7 +14272,7 @@ module.exports = {
   toHash: toHash,
   getProperty: getProperty,
   escapeQuotes: escapeQuotes,
-  ucs2length: __webpack_require__(627),
+  ucs2length: __webpack_require__(629),
   varOccurences: varOccurences,
   varReplace: varReplace,
   cleanUpCode: cleanUpCode,
@@ -14689,8 +14689,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(476);
-exports.encode = exports.stringify = __webpack_require__(477);
+exports.decode = exports.parse = __webpack_require__(478);
+exports.encode = exports.stringify = __webpack_require__(479);
 
 /***/ }),
 /* 42 */
@@ -14808,7 +14808,7 @@ exports.Readable = exports;
 exports.Writable = __webpack_require__(86);
 exports.Duplex = __webpack_require__(32);
 exports.Transform = __webpack_require__(127);
-exports.PassThrough = __webpack_require__(491);
+exports.PassThrough = __webpack_require__(493);
 
 /***/ }),
 /* 45 */
@@ -15033,11 +15033,11 @@ var asn1 = exports;
 
 asn1.bignum = __webpack_require__(10);
 
-asn1.define = __webpack_require__(541).define;
+asn1.define = __webpack_require__(543).define;
 asn1.base = __webpack_require__(49);
 asn1.constants = __webpack_require__(153);
-asn1.decoders = __webpack_require__(547);
-asn1.encoders = __webpack_require__(549);
+asn1.decoders = __webpack_require__(549);
+asn1.encoders = __webpack_require__(551);
 
 /***/ }),
 /* 49 */
@@ -15045,18 +15045,18 @@ asn1.encoders = __webpack_require__(549);
 
 var base = exports;
 
-base.Reporter = __webpack_require__(544).Reporter;
+base.Reporter = __webpack_require__(546).Reporter;
 base.DecoderBuffer = __webpack_require__(152).DecoderBuffer;
 base.EncoderBuffer = __webpack_require__(152).EncoderBuffer;
-base.Node = __webpack_require__(545);
+base.Node = __webpack_require__(547);
 
 /***/ }),
 /* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var ClientRequest = __webpack_require__(560);
-var extend = __webpack_require__(563);
-var statusCodes = __webpack_require__(564);
+/* WEBPACK VAR INJECTION */(function(global) {var ClientRequest = __webpack_require__(562);
+var extend = __webpack_require__(565);
+var statusCodes = __webpack_require__(566);
 var url = __webpack_require__(24);
 
 var http = exports;
@@ -15276,9 +15276,9 @@ var PrivateKey = __webpack_require__(17);
 var Identity = __webpack_require__(54);
 
 var formats = {};
-formats['openssh'] = __webpack_require__(585);
+formats['openssh'] = __webpack_require__(587);
 formats['x509'] = __webpack_require__(170);
-formats['pem'] = __webpack_require__(586);
+formats['pem'] = __webpack_require__(588);
 
 var CertificateParseError = errs.CertificateParseError;
 var InvalidAlgorithmError = errs.InvalidAlgorithmError;
@@ -16342,7 +16342,7 @@ module.exports = invariant;
  * See http://pajhome.org.uk/crypt/md5 for more info.
  */
 
-var makeHash = __webpack_require__(486);
+var makeHash = __webpack_require__(488);
 
 /*
  * Calculate the MD5 of an array of little-endian words, and a bit length
@@ -17498,18 +17498,18 @@ exports.encrypt = function (self, chunk) {
 
 var curve = exports;
 
-curve.base = __webpack_require__(521);
-curve.short = __webpack_require__(522);
-curve.mont = __webpack_require__(523);
-curve.edwards = __webpack_require__(524);
+curve.base = __webpack_require__(523);
+curve.short = __webpack_require__(524);
+curve.mont = __webpack_require__(525);
+curve.edwards = __webpack_require__(526);
 
 /***/ }),
 /* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(540);
-var aesid = __webpack_require__(552);
-var fixProc = __webpack_require__(553);
+/* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(542);
+var aesid = __webpack_require__(554);
+var fixProc = __webpack_require__(555);
 var ciphers = __webpack_require__(88);
 var compat = __webpack_require__(133);
 module.exports = parseKeys;
@@ -20244,7 +20244,7 @@ module.exports = function extend() {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(setImmediate, process) {
 
-var jsonSafeStringify = __webpack_require__(483),
+var jsonSafeStringify = __webpack_require__(485),
     crypto = __webpack_require__(11),
     Buffer = __webpack_require__(18).Buffer;
 
@@ -20311,7 +20311,7 @@ exports.defer = defer;
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 var inherits = __webpack_require__(4);
-var HashBase = __webpack_require__(487);
+var HashBase = __webpack_require__(489);
 
 function RIPEMD160() {
   HashBase.call(this, 64);
@@ -20679,7 +20679,7 @@ util.inherits = __webpack_require__(4);
 
 /*<replacement>*/
 var internalUtil = {
-  deprecate: __webpack_require__(490)
+  deprecate: __webpack_require__(492)
 };
 /*</replacement>*/
 
@@ -21286,21 +21286,21 @@ var exports = module.exports = function SHA(algorithm) {
   return new Algorithm();
 };
 
-exports.sha = __webpack_require__(495);
-exports.sha1 = __webpack_require__(496);
-exports.sha224 = __webpack_require__(497);
+exports.sha = __webpack_require__(497);
+exports.sha1 = __webpack_require__(498);
+exports.sha224 = __webpack_require__(499);
 exports.sha256 = __webpack_require__(129);
-exports.sha384 = __webpack_require__(498);
+exports.sha384 = __webpack_require__(500);
 exports.sha512 = __webpack_require__(130);
 
 /***/ }),
 /* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ciphers = __webpack_require__(503);
+var ciphers = __webpack_require__(505);
 exports.createCipher = exports.Cipher = ciphers.createCipher;
 exports.createCipheriv = exports.Cipheriv = ciphers.createCipheriv;
-var deciphers = __webpack_require__(505);
+var deciphers = __webpack_require__(507);
 exports.createDecipher = exports.Decipher = deciphers.createDecipher;
 exports.createDecipheriv = exports.Decipheriv = deciphers.createDecipheriv;
 var modes = __webpack_require__(62);
@@ -21316,11 +21316,11 @@ exports.listCiphers = exports.getCiphers = getCiphers;
 "use strict";
 
 
-exports.utils = __webpack_require__(507);
-exports.Cipher = __webpack_require__(508);
-exports.DES = __webpack_require__(509);
-exports.CBC = __webpack_require__(510);
-exports.EDE = __webpack_require__(511);
+exports.utils = __webpack_require__(509);
+exports.Cipher = __webpack_require__(510);
+exports.DES = __webpack_require__(511);
+exports.CBC = __webpack_require__(512);
+exports.EDE = __webpack_require__(513);
 
 /***/ }),
 /* 90 */
@@ -21375,9 +21375,9 @@ var hash = exports;
 
 hash.utils = __webpack_require__(23);
 hash.common = __webpack_require__(47);
-hash.sha = __webpack_require__(526);
-hash.ripemd = __webpack_require__(530);
-hash.hmac = __webpack_require__(531);
+hash.sha = __webpack_require__(528);
+hash.ripemd = __webpack_require__(532);
+hash.hmac = __webpack_require__(533);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -21861,7 +21861,7 @@ module.exports.httpify = function (resp, headers) {
 /* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var json = typeof JSON !== 'undefined' ? JSON : __webpack_require__(628);
+var json = typeof JSON !== 'undefined' ? JSON : __webpack_require__(630);
 
 module.exports = function (obj, opts) {
     if (!opts) opts = {};
@@ -21950,8 +21950,8 @@ var objectKeys = Object.keys || function (obj) {
 /* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var v1 = __webpack_require__(661);
-var v4 = __webpack_require__(662);
+var v1 = __webpack_require__(663);
+var v4 = __webpack_require__(664);
 
 var uuid = v4;
 uuid.v1 = v1;
@@ -22392,9 +22392,9 @@ Link.contextTypes = {
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 const patterns = __webpack_require__(106);
-const CoreNLPClient = __webpack_require__(461);
-const SentenceParser = __webpack_require__(672);
-const MatchReducer = __webpack_require__(675);
+const CoreNLPClient = __webpack_require__(463);
+const SentenceParser = __webpack_require__(674);
+const MatchReducer = __webpack_require__(677);
 
 class GrammarMatcher {
   constructor(nlpHost = null) {
@@ -22614,7 +22614,7 @@ exports.expressingAlwaysWithConglaiPattern = __webpack_require__(412);
 exports.yaomePattern = __webpack_require__(413);
 exports.yaoWoShuoPattern = __webpack_require__(414);
 exports.sequencingWithXianAndZaiPattern = __webpack_require__(415);
-exports.ruguoDeHuaPattern = __webpack_require__(416);
+exports.ruguoDehuaPattern = __webpack_require__(416);
 exports.expressingAboutToWithJiuyaoPattern = __webpack_require__(417);
 exports.renhePattern = __webpack_require__(418);
 exports.weilePattern = __webpack_require__(419);
@@ -22660,6 +22660,8 @@ exports.doingSomethingMoreWithDuoPattern = __webpack_require__(457);
 exports.expressingMustWithDeiPattern = __webpack_require__(458);
 exports.expressingAsOneLikesWithJiuPattern = __webpack_require__(459);
 exports.everyDouPattern = __webpack_require__(460);
+exports.xiaquPattern = __webpack_require__(461);
+exports.qilaiPattern = __webpack_require__(462);
 
 /***/ }),
 /* 107 */
@@ -22681,7 +22683,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yidianrYeBu',
-  name: 'Subj. + 一点也 / 都 + 不 + Adj.',
+  structures: ['Subj. + 一点也 / 都 + 不 + Adj.', 'Subj. + 一点也 / 都 + 不 + Verb', 'Subj. + 一点都 / 也 + 没 + Verb'],
   description: 'Sometimes we may want to say something is "not even the least bit [adjective]." For example, we might say in English: "I am not at all hungry."  In Chinese, we can use 一点也不 (yīdiǎnr yě bù) or 一点都不 (yīdiǎnr dōu bù) to express "not at all [adjective]."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(一点(?:也|都)(?:不|没))/)]),
@@ -22749,7 +22751,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'haishiBa',
-  name: 'Subj. + 还是 + [Verb Phrase] + 吧',
+  structures: ['Subj. + 还是 + [Verb Phrase] + 吧'],
   description: 'One of the ways to use 还是 (háishì) is to have it mean "you had better," similar to ' + 'how in English we may say "I think you had better start on your homework." ' + "吧 is often placed after this structure, as it's a suggestion. " + "When the part after 还是 is a negative verb phrase, it's OK to drop the 吧 at the end.",
   sources: [allSetSrc],
   match: sentence => {
@@ -22842,7 +22844,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'concedingWithBa',
-  name: 'Statement + 吧',
+  structures: ['Statement + 吧'],
   description: 'The particle 吧 (ba) can also be used to concede a point. That is, 吧 (ba) can be used to accept or agree with something that you\'re not particularly happy about, the way we might use "all right" or "fine then" in English.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.original, /^[行好](吧)/)]),
@@ -22885,7 +22887,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingBeGoingToWithYao',
-  name: 'Subj. + Time + 要 + Verb',
+  structures: ['Subj. + Time + 要 + Verb', 'Time + Subj. + 要 + Verb'],
   description: 'The auxiliary verb 要 (yào) has several different meanings, and here we\'ll tackle the "be going to" meaning. You\'ll use this when you are discussing your plans with someone.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('VV'), word('要.?')), capture: '要' }, [new Edge({ type: 'nmod.*', ahead: true }, new Node({ filter: pos('NT') }))])), graphMatch(sentence.tokens, new Node({ filter: pos('VV') }, [new Edge({ type: 'nmod.*', ahead: true }, new Node({ filter: pos('NT') })), new Edge({ type: 'xcomp', ahead: true }, new Node({ filter: and(pos('VV'), word('要')), capture: '要' }))])),
@@ -22951,7 +22953,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buZenme',
-  name: 'Subj. + 不怎么 + Adj.',
+  structures: ['Subj. + 不怎么 + Adj.'],
   description: 'When you use 不怎么 (bù zěnme) before an adjective, it means "not very." This structure is similar to how English speakers may say something is "not very good."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, '(:buZenme:):adj:', {
@@ -23006,7 +23008,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(113),
-    isObject = __webpack_require__(470);
+    isObject = __webpack_require__(472);
 
 /** `Object#toString` result references. */
 var asyncTag = '[object AsyncFunction]',
@@ -23048,8 +23050,8 @@ module.exports = isFunction;
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(114),
-    getRawTag = __webpack_require__(468),
-    objectToString = __webpack_require__(469);
+    getRawTag = __webpack_require__(470),
+    objectToString = __webpack_require__(471);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -23078,7 +23080,7 @@ module.exports = baseGetTag;
 /* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(466);
+var root = __webpack_require__(468);
 
 /** Built-in value references. */
 var Symbol = root.Symbol;
@@ -23201,9 +23203,9 @@ var net = __webpack_require__(37);
 var urlParse = __webpack_require__(24).parse;
 var pubsuffix = __webpack_require__(118);
 var Store = __webpack_require__(119).Store;
-var MemoryCookieStore = __webpack_require__(478).MemoryCookieStore;
+var MemoryCookieStore = __webpack_require__(480).MemoryCookieStore;
 var pathMatch = __webpack_require__(121).pathMatch;
-var VERSION = __webpack_require__(481).version;
+var VERSION = __webpack_require__(483).version;
 
 var punycode;
 try {
@@ -24839,7 +24841,7 @@ exports._unrefActive = exports.active = function (item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(482);
+__webpack_require__(484);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
@@ -24929,7 +24931,7 @@ util.inherits = __webpack_require__(4);
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(488);
+var debugUtil = __webpack_require__(490);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -24938,7 +24940,7 @@ if (debugUtil && debugUtil.debuglog) {
 }
 /*</replacement>*/
 
-var BufferList = __webpack_require__(489);
+var BufferList = __webpack_require__(491);
 var destroyImpl = __webpack_require__(126);
 var StringDecoder;
 
@@ -26532,7 +26534,7 @@ module.exports = Sha512;
 
 
 var inherits = __webpack_require__(4);
-var Legacy = __webpack_require__(499);
+var Legacy = __webpack_require__(501);
 var Base = __webpack_require__(27);
 var Buffer = __webpack_require__(18).Buffer;
 var md5 = __webpack_require__(56);
@@ -26755,7 +26757,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-exports.pbkdf2 = __webpack_require__(501);
+exports.pbkdf2 = __webpack_require__(503);
 
 exports.pbkdf2Sync = __webpack_require__(136);
 
@@ -26944,7 +26946,7 @@ StreamCipher.prototype._final = function () {
 /* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(61);
 var Transform = __webpack_require__(27);
 var inherits = __webpack_require__(4);
-var GHASH = __webpack_require__(504);
+var GHASH = __webpack_require__(506);
 var xor = __webpack_require__(46);
 inherits(StreamCipher, Transform);
 module.exports = StreamCipher;
@@ -27457,7 +27459,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(514);
+    var crypto = __webpack_require__(516);
     if (typeof crypto.randomBytes !== 'function') throw new Error('Not supported');
 
     Rand.prototype._rand = function _rand(n) {
@@ -28032,7 +28034,7 @@ constants._reverse = function reverse(map) {
   return res;
 };
 
-constants.der = __webpack_require__(546);
+constants.der = __webpack_require__(548);
 
 /***/ }),
 /* 154 */
@@ -29172,7 +29174,7 @@ function generateECDSA(curve) {
 /* WEBPACK VAR INJECTION */(function(Buffer) {var crypto = __webpack_require__(11);
 var BigInteger = __webpack_require__(33).BigInteger;
 var ECPointFp = __webpack_require__(69).ECPointFp;
-exports.ECCurves = __webpack_require__(580);
+exports.ECCurves = __webpack_require__(582);
 
 // zero prepad
 function unstupid(hex, len) {
@@ -30615,8 +30617,8 @@ module.exports.isDuplex = isDuplex;
 "use strict";
 
 
-var stringify = __webpack_require__(602);
-var parse = __webpack_require__(603);
+var stringify = __webpack_require__(604);
+var parse = __webpack_require__(605);
 var formats = __webpack_require__(175);
 
 module.exports = {
@@ -32489,7 +32491,7 @@ __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_IntroPage_jsx__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ResultsPage_jsx__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_ProgressPage_jsx__ = __webpack_require__(676);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_ProgressPage_jsx__ = __webpack_require__(678);
 
 
 
@@ -37005,7 +37007,7 @@ class Grammar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       isHighlighted,
       onMouseEnter,
       onMouseLeave,
-      name,
+      structures,
       description,
       examples,
       sources
@@ -37039,9 +37041,13 @@ class Grammar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           'div',
           null,
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h4',
-            { className: __WEBPACK_IMPORTED_MODULE_3__Grammar_scss___default.a.title },
-            name
+            'div',
+            { className: __WEBPACK_IMPORTED_MODULE_3__Grammar_scss___default.a.structures },
+            structures.map(struct => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'span',
+              { className: __WEBPACK_IMPORTED_MODULE_1_classnames___default()(__WEBPACK_IMPORTED_MODULE_3__Grammar_scss___default.a.structure, 'badge'), key: struct },
+              struct
+            ))
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'p',
@@ -37101,7 +37107,7 @@ Grammar.propTypes = {
   isHighlighted: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.bool.isRequired,
   onMouseEnter: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.func,
   onMouseLeave: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.func,
-  name: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired,
+  structures: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.arrayOf(__WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string.isRequired).isRequired,
   examples: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.arrayOf(__WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.shape({
     zh: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string,
     en: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string
@@ -37127,7 +37133,7 @@ Grammar.propTypes = {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"grammar":"_27q8723v6wTFMMNsSLqiXm","highlight":"_1u6zosUYI82DmxSnWenO9N","title":"_2NTVKqFeR29aQIzn7rqmHT","header-info":"_1DQ0esPBOMg-TWDiiYAv-E","headerInfo":"_1DQ0esPBOMg-TWDiiYAv-E","examples":"DA8sLmBpOngStBzroOqww","more-examples":"_280VcEqg-9DSwnc4-1Qy_-","moreExamples":"_280VcEqg-9DSwnc4-1Qy_-","more-examples-icon":"_39BkVNL3-Shm1IwLyfhzhQ","moreExamplesIcon":"_39BkVNL3-Shm1IwLyfhzhQ","expanded":"_1-_2hmU4mU5xRFbZ4xLIjL","sources":"_3EzjEfgsqCnBpsRhC38OXF","learn-more-label":"_1qCQ-gW8mHH78qoSn061gi","learnMoreLabel":"_1qCQ-gW8mHH78qoSn061gi","source":"hG8QEJsdp5Tke74JxBVWV"};
+module.exports = {"grammar":"_27q8723v6wTFMMNsSLqiXm","highlight":"_1u6zosUYI82DmxSnWenO9N","title":"_2NTVKqFeR29aQIzn7rqmHT","structures":"_1DD2nqrAFMc6Ks3FMfp6A3","structure":"_3N996T9y0d49SkLa7EMbkN","header-info":"_1DQ0esPBOMg-TWDiiYAv-E","headerInfo":"_1DQ0esPBOMg-TWDiiYAv-E","examples":"DA8sLmBpOngStBzroOqww","more-examples":"_280VcEqg-9DSwnc4-1Qy_-","moreExamples":"_280VcEqg-9DSwnc4-1Qy_-","more-examples-icon":"_39BkVNL3-Shm1IwLyfhzhQ","moreExamplesIcon":"_39BkVNL3-Shm1IwLyfhzhQ","expanded":"_1-_2hmU4mU5xRFbZ4xLIjL","sources":"_3EzjEfgsqCnBpsRhC38OXF","learn-more-label":"_1qCQ-gW8mHH78qoSn061gi","learnMoreLabel":"_1qCQ-gW8mHH78qoSn061gi","source":"hG8QEJsdp5Tke74JxBVWV"};
 
 /***/ }),
 /* 240 */
@@ -37257,13 +37263,13 @@ const shortTermChineseSrc = {
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/Expressing_the_only_two_possibilities',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGEXR6R',
   name: 'AllSet Chinese Grammar Wiki'
 };
 
 module.exports = {
   id: 'bushi_jiushi',
-  name: '不是 ... 就是 ...',
+  structures: ['不是 + A，就是 + B'],
   description: 'Pattern indicating there are only 2 possiblities, similar to "If it\'s not X then it must be Y".',
   sources: [shortTermChineseSrc, allSetSrc],
   match: sentence => locsFromTokens(regexMatchTokens(sentence.tokens, '(:bushi:|:bu::shi:):notBushi:+(:jiushi:|:jiu::shi:)', {
@@ -37584,7 +37590,7 @@ const eChineseLearningSrc = {
 
 module.exports = {
   id: 'gen_guobuqu',
-  name: '跟 ... 过不去',
+  structures: ['跟 ... 过不去'],
   description: `Pattern indicating that a person is made to intentionally feel uncomfortable.
     It is used in spoken language, and requires a person-word (ex 我) between 跟 and 过不去.
     和 can also be used instead of 跟.`,
@@ -37635,14 +37641,14 @@ const { locsFromTokens } = __webpack_require__(0);
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/Negation_of_%22you%22_with_%22mei%22',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPNV3Q',
   name: 'AllSet Chinese Grammar Wiki'
 };
 
 module.exports = {
   id: 'meiyou',
-  name: '没有 pattern',
-  description: 'negation of 有, meaning to not have',
+  structures: ['没 + 有 (+ Obj.)'],
+  description: 'The verb 有 (yǒu) is negated differently from ordinary verbs. Rather than placing 不 (bù) before it as with other verbs, you must use 没 (méi) to negate the verb 有 (yǒu). 没有 (méiyǒu) can be shortened to 没 (méi) without altering its meaning.',
   sources: [allSetSrc],
   match: sentence => {
     const meiyou = and(pos('AD|VE'), word('没有?'));
@@ -37725,13 +37731,13 @@ const { Node, Edge, graphMatch } = __webpack_require__(5);
 
 const allSetSrc = {
   type: 'website',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/Expressing_%22already%22_with_%22yijing%22',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGNXI27',
   name: 'AllSet Chinese Grammar Wiki'
 };
 
 module.exports = {
-  id: 'yijing_le',
-  name: '已经 ... 了 pattern',
+  id: 'yijingLe',
+  structures: ['已经 + Verb / [Verb Phrase] + 了', '已经 + (很 +) Adj. + 了', '已经 + Time + 了'],
   description: 'Pattern used to express something has already happened.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: pos('V.|CD') }, [new Edge({ type: 'advmod', ahead: true }, new Node({ filter: and(pos('AD'), word('已经?')), capture: '已经' })), new Edge({ behind: true }, new Node({ filter: word('了'), capture: '了' }))])), graphMatch(sentence.tokens, new Node({ filter: and(pos('V.|P'), word('.*了')), capture: '了' }, [new Edge({ type: 'advmod', ahead: true }, new Node({ filter: and(pos('AD'), word('已经?')), capture: '已经' }))]))]),
@@ -37790,7 +37796,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'structureOfDates',
-  name: 'x 年 + y 月 + z 日',
+  structures: ['x 年 + y 月 + z 日', 'x 年 + y 月 + z 号'],
   description: 'Dates in Chinese follow the order "year, month, day." This is in keeping with the "from big to small" trend which pervades many facets of Chinese culture.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /([零一二三四五六七八九十百千万亿0-9]+年)?([零一二三四五六七八九十百千万亿0-9]+月[零一二三四五六七八九十百千万亿0-9]+(?:号|日))/), regexMatchLocs(sentence.text, /([零一二三四五六七八九十百千万亿0-9]+年[零一二三四五六七八九十百千万亿0-9]+月)([零一二三四五六七八九十百千万亿0-9]+(?:号|日))?/)]),
@@ -37857,7 +37863,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'oClock',
-  name: '(Date and/or time of day +) x 点',
+  structures: ['(Date and/or time of day +) x 点', 'x 点 + 半'],
   description: 'Time in Chinese, just like in English, is expressed by stating the hour first, and then the minute (big to small).',
   sources: [allSetSrc],
   match: sentence => {
@@ -37944,7 +37950,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'duima',
-  name: '⋯⋯， 好 / 对 / 是 / 可以 +  吗？',
+  structures: ['⋯⋯， 好 / 对 / 是 / 可以 +  吗？'],
   description: 'As well as yes/no questions, you can also form tag questions with 吗 (ma). Tag questions are quick questions that are tagged on the end of a sentence to ask for confirmation. In English, this is often done with "right?" or negatively with "isn\'t it?"',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:好|对|是|可以)吗？)/)]),
@@ -38011,7 +38017,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yibian',
-  name: '[Action] +  以便 + [Outcome]',
+  structures: ['[Action] +  以便 + [Outcome]'],
   description: '以便 (yǐbiàn)  is a formal way to say "in order to" or "to facilitate," and is generally used to show that an outcome is the result of a particular action.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(以便)/)]),
@@ -38050,7 +38056,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'basicComparisonsWithYiyang',
-  name: 'Noun 1 + 跟 / 和 + Noun 2 + 一样',
+  structures: ['Noun 1 + 跟 / 和 + Noun 2 + 一样', 'Noun 1 + 跟 / 和 + Noun 2 + 一样 + Adj.'],
   description: 'Along with 比 (bǐ) and 没有 (méiyǒu), 一样 (yīyàng) is another way to make basic comparisons. However, 一样 (yīyàng) is used to express that two things are the same in some way.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:跟|和))[^一样]+(一样)/)]),
@@ -38121,7 +38127,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingDistanceWithLi',
-  name: 'Place 1 + 离 + Place 2 + Adv. + 近 / 远',
+  structures: ['Place 1 + 离 + Place 2 + Adv. + 近 / 远', 'Place 1 + 离 + Place 2 (+ Adv.) + 近 / 远 + 吗？', 'Place 1 + 离 + Place 2 (+ 有) + 多远？'],
   description: "Are we there yet? One of the ways to express distance is to use 离 (lí). The word order might seem a little tricky at first, but once you get it down, you'll be able to talk about distance with no problem.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(离)[^近远]+((?:近|远))/), regexMatchLocs(sentence.text, /(离)[^近远吗？]+((?:近|远)吗？)/), regexMatchLocs(sentence.text, /(离)[^有多远？]+(有?多远？)/)]),
@@ -38192,7 +38198,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'moderatingPositiveAdjectivesWithHai',
-  name: 'Subj. + 还 + 好 / 可以 / 行 / 不错',
+  structures: ['Subj. + 还 + 好 / 可以 / 行 / 不错'],
   description: 'Whenever you want to imply that something is "good," but also kind of "meh," you can use 还 (hái) in front of the "good" adjective.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(还(?:好|可以|行|不错))/)]),
@@ -38255,7 +38261,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'keshi',
-  name: 'Statement， 可是 / 但是 + [Contrary Statement]',
+  structures: ['Statement， 可是 / 但是 + [Contrary Statement]'],
   description: 'Using "but" in Chinese is really simple to learn. It involves the two words 可是 (kěshì) and 但是 (dànshì). Make no "buts" about it; you\'ll understand it in no time!',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:可是|但是))/)]),
@@ -38322,7 +38328,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'youde',
-  name: '有的 + (Subj.) + Predicate， 有的 + (Subj.) + Predicate',
+  structures: ['有的 + (Subj.) + Predicate， 有的 + (Subj.) + Predicate'],
   description: 'To refer to just certain members of group, you can use 有的 (yǒude). This usage is normally translated as "some" in English. It is often used multiple times in one sentence to refer to different groups.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(有的)[^的]+(有的)/), regexMatchLocs(sentence.text, /(有的)[^有]+(有的)/)]),
@@ -38389,7 +38395,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'nameZheme',
-  name: 'Subj. + 那么 / 这么 + Adj.',
+  structures: ['Subj. + 那么 / 这么 + Adj.'],
   description: 'In  English, the words "that" and "so" are often used to increase the extent of an adjective (ex. "he is so tall" or "this food is so good"). In Chinese, 那么 (nàme) and 这么 (zhème) serve the same function.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:那么|这么))/)]),
@@ -38456,7 +38462,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'butDidnt',
-  name: 'Subj. + 差点(儿) + [Verb Phrase] + 了',
+  structures: ['Subj. + 差点(儿) + [Verb Phrase] + 了'],
   description: "To say that something bad almost happened (but didn't), you can add the word 差点 (chàdiǎn) before the verb.  You will also hear 差点儿 (chàdiǎnr) in northern China.  There is no difference in meaning between 差点 and 差点儿.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(差点儿?)[^了]+(了)?/)]),
@@ -38523,7 +38529,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zaiyebu',
-  name: 'Subj. + 再也不 + Verb + Obj. + 了',
+  structures: ['Subj. + 再也不 + Verb + Obj. + 了', 'Subj. + 再也没 + Verb + 过＋Obj.'],
   description: 'Sometimes you may do something or experience something that you never ever want to do again. How do we express that in Chinese? One of the ways is to use 再也不 (zàiyěbù)!',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(再也不)[^了]+(了)/), regexMatchLocs(sentence.text, /(再也没)[^过]+(过)/)]),
@@ -38590,7 +38596,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'nanguai',
-  name: '难怪 / 怪不得 + ([Observation])',
+  structures: ['难怪 / 怪不得 + ([Observation])', '难怪 / 怪不得 + [Observation]，原来 + [Reason]', '(这也 +) 难怪 + [Specific Person/People]'],
   description: '难怪 (nánguài) can be used to express that the speaker finds something unsurprising. It can be used alone or in a variety of different structures, as shown below.  怪不得 (guàibude) is another way to express exactly the same thing, in a slightly more informal way. 难怪 (nánguài) when used as a verb can be translated as "hard to blame." This is usually directed at a person, and it is similar to how in English we may say "He\'s always sleepy, but you can\'t blame him because he works a night shift."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:难怪|怪不得))/), regexMatchLocs(sentence.text, /((?:难怪|怪不得))[^原来]+(原来)/), regexMatchLocs(sentence.text, /((?:这也)?难怪)/)]),
@@ -38677,7 +38683,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'xingkui',
-  name: '幸亏 / 幸好 + [Lucky Incident]',
+  structures: ['幸亏 / 幸好 + [Lucky Incident]', '幸亏 / 幸好 + [Lucky Incident]， 不然 ……', '还好 + [Lucky Incident]， 不然……'],
   description: '幸亏 (xìngkuī), 幸好 (xìnghǎo), and 还好 (háihǎo) mean "fortunately" or "luckily." They can be used to express that something has happened by chance, and has thereby enabled you to avoid some difficulty or bad luck. It is often followed with 不然 (which precedes the bad thing that could have happened).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:幸亏|幸好|还好))[^然]+(不然)?/)]),
@@ -38744,7 +38750,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingLaiToConnectTwoVerbPhrases',
-  name: '通过 / 用 + Agent + 来 + Verb Phrase',
+  structures: ['通过 / 用 + Agent + 来 + Verb Phrase'],
   description: 'The word 来 (lái) can be used to connect two verb phrases, relating the actions to each other. It can be translated as "in order to" or "so that" and it can help in explaining reasoning.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:通过|用))[^来]+(来)/)]),
@@ -38791,7 +38797,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhiqian',
-  name: 'Event + 之前 / 之后',
+  structures: ['Event + 之前 / 之后'],
   description: "Before and after can be expressed using 之前 (zhīqián) and 之后 (zhīhòu). They are in relatively the same vein as 以前/以后, except that these two are adverbs, while 之前/之后 are prepositions. Don't forget that these two are talking about before and after in terms of time.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:之前|之后))/)]),
@@ -38834,7 +38840,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'definingScope',
-  name: '级别 / 次序 / 数目 + 以上 / 以下',
+  structures: ['级别 / 次序 / 数目 + 以上 / 以下', '时间 / 处所 / 数量 / 范围 + 以内 / 以外'],
   description: '',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(以上|以下)/), regexMatchLocs(sentence.text, /(以内|以外)/)]),
@@ -38913,7 +38919,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAgeDifferenceWithDaAndXiao',
-  name: 'A + 比 + B + 大 / 小 + number + 岁',
+  structures: ['A + 比 + B + 大 / 小 + number + 岁', 'A + 跟 + B + 一样 + 大'],
   description: '如果你有兄弟姐妹，中国人常常会问你"他（她）比你小几岁" or "他（她）比你大几岁 "。注意，这里一定不能不用"年轻"或者"老"。',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(比)[^大小]+((?:大|小))[^岁]+(岁)/), regexMatchLocs(sentence.text, /(跟)[^一样大]+(一样大)/)]),
@@ -38960,7 +38966,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'concedingAPointWithShi',
-  name: 'Adj. + 是 + Adj. ， 但是 / 就是 ⋯⋯',
+  structures: ['Adj. + 是 + Adj. ， 但是 / 就是 ⋯⋯'],
   description: 'When conceding a point, we often put emphasis on the point we are conceding, and in Chinese there is a way to do that with 是 (shì).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(是)[^但是就是]+((?:但是|就是))/)]),
@@ -39027,7 +39033,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'suiranDanshi',
-  name: '虽然 + Subj. + 但是 + Contrary Reaction',
+  structures: ['虽然 + Subj. + 但是 + Contrary Reaction'],
   description: 'The grammar pattern "虽然⋯⋯ 但是⋯⋯" (suīrán... dànshì...) is one of the most common used patterns in Chinese, especially in written Chinese. You can think of it as meaning "although," but unlike in English, you still need to follow it with a "but" word in Chinese.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(虽然)[^但可]+(但是|可是)/)]),
@@ -39066,7 +39072,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'chule',
-  name: '除了 + Noun Phrase + (以外) + Noun Phrase + 都 + Verb',
+  structures: ['除了 + Noun Phrase + (以外) + Noun Phrase + 都 + Verb', '除了 + Noun Phrase + (以外) + Noun Phrase + 也 / 还 + Verb'],
   description: 'Using 除了 (chúle)⋯⋯ 以外 (yǐwài) will help you spruce up your sentences when you want to express "except," "besides," and "in addition."  You may feel that "except" has a pretty different meaning form the other two. Well, read on!',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(除了)[^以外]+((?:以外)?)[^都]+(都)/), regexMatchLocs(sentence.text, /(除了)[^以外]+((?:以外)?)[^也还]+((?:也|还))/)]),
@@ -39117,7 +39123,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingItDependsWithKan',
-  name: '(这 / 那) + 得看 / 要看 + [What "It" Depends On]',
+  structures: ['(这 / 那) + 得看 / 要看 + [What "It" Depends On]', '[Unknown Outcome] + 得看 / 要看 + [What "It" Depends On]'],
   description: 'Although there are a number of ways to express "it depends" in Chinese, the most common ones in spoken Chinese involve the verb 看 (kàn). Some common expressions include:',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:(?:这|那)?)(?:得看|要看))/), regexMatchLocs(sentence.text, /((?:得看|要看))/)]),
@@ -39184,7 +39190,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yuelaiyue',
-  name: 'Subj. + 越来越 + Adj. + 了',
+  structures: ['Subj. + 越来越 + Adj. + 了', 'Subj. + 越来越 + Verb + 了'],
   description: '越来越 (yuèláiyuè) is used frequently in Chinese to express that some quality or state is increasing with time, or in tune with another factor.  There are two forms of this pattern, the "simple" one (using 来), and the more complex one (which uses two different adjectives/verbs).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(越来越)[^了]+(了)/)]),
@@ -39250,7 +39256,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingNotEvenOne',
-  name: '一 + Measure Word + (Noun) + 也 / 都 + 不 / 没 + Verb',
+  structures: ['一 + Measure Word + (Noun) + 也 / 都 + 不 / 没 + Verb', 'Topic + Subj. + 一 + Measure Word + (Noun) + 也 / 都 + Verb'],
   description: 'In English we might want to say something like "I have absolutely no money, not even one penny." That "not even one" is the focus of this article.',
   sources: [allSetSrc],
   match: sentence => {
@@ -39313,7 +39319,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'budanErqie',
-  name: 'Subj. + 不但 + Adj. / Verb， 而且 + Adj. / Verb',
+  structures: ['Subj. + 不但 + Adj. / Verb， 而且 + Adj. / Verb', 'Subj. + 不但 +  Adj. / Verb， 而且 + Adj. / Verb', '不但 + Subj. 1 + Adj. / Verb， 而且 + Subj. 2 + Adj. / Verb'],
   description: '"不但⋯⋯，而且⋯⋯" (bùdàn..., érqiě...) is a very commonly used pattern that indicates "not only, ... but also...."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不但)[^而且]+(而且)/)]),
@@ -39360,7 +39366,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buZhidaoHao',
-  name: 'Subj. + 不知道 + Verb Phrase + 好',
+  structures: ['Subj. + 不知道 + Verb Phrase + 好'],
   description: '"不知道⋯⋯好" (bù zhīdào...hǎo) is an expression used to indicate and emphasize that the speaker does not know how to do something, or at least does not know how to do something well.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不知道)[^好]+(好)/)]),
@@ -39407,7 +39413,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yiFangmian',
-  name: '一 方面 + Aspect 1， (另) 一 方面 + Aspect 2',
+  structures: ['一 方面 + Aspect 1， (另) 一 方面 + Aspect 2'],
   description: 'When talking about various aspects of a situation, "一方面⋯⋯， (另)一方面⋯⋯" (yī fāngmiàn..., (lìng) yī fāngmiàn...) can be used in a similar way that "On one hand..., on the other hand..." is in English.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(一方面)[^面]+(另?一方面)/), regexMatchLocs(sentence.text, /(一方面)[^方]+(另?一方面)/)]),
@@ -39454,7 +39460,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'referringToAllUsingSuoyou',
-  name: '所有的 + Noun + 都 + Verb / Adj.',
+  structures: ['所有的 + Noun + 都 + Verb / Adj.'],
   description: 'In this grammar structure, we learn about a way to say "all" that is, well, a bit more epic. Sort of like how we might say "all the king\'s men" or "all the money in the world."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(所有的?)[^都]+(都)?/)]),
@@ -39521,7 +39527,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yihou',
-  name: 'Subj. + Special Time + 以后／之后 + Action',
+  structures: ['Subj. + Special Time + 以后／之后 + Action', '以后，Comment', 'Subj. + Event， 之后 + Action'],
   description: 'If you are trying to explain what you did after a certain event, you might want to use "以后" (yǐhòu) or "之后" (zhīhòu). After all, they do both mean "after," right? Well, it turns out that there are a few rules that you need to be aware of before you use them.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:以后|之后))/), regexMatchLocs(sentence.text, /(以后，)/), regexMatchLocs(sentence.text, /(，之后)/)]),
@@ -39600,7 +39606,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'deBudeliao',
-  name: 'Adj. +  得不得了',
+  structures: ['Adj. +  得不得了'],
   description: '得不得了 (de bùdéliǎo) can be used as a complement to suggest a situation is serious, or is likely to result in perhaps terrible consequences. It can be used in a positive sense, such as in English when we say "I\'m terribly happy."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(得不得了)/)]),
@@ -39643,7 +39649,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'leYidianr',
-  name: 'Adj. + 了（一）点儿',
+  structures: ['Adj. + 了（一）点儿'],
   description: '了一点儿 (le yīdiǎnr), can be added after an adjective to mean "a little bit too." It is softer in tone than using 太, and so is often used when the speaker doesn\'t want to insult the listener by speaking too directly.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(了一?点儿)/)]),
@@ -39682,7 +39688,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'advancedUseOfYou',
-  name: 'Subj. ＋Verb + 了 + 又 + Verb，还是 / 就是 ……',
+  structures: ['Subj. ＋Verb + 了 + 又 + Verb，还是 / 就是 ……'],
   description: "Here we repeat the verb used and place 又 in the middle. The repetition of the verb emphasizes how the action is being repeated again and again. This one is definitely the most advanced usage of 又 here, and you're not going to use it nearly as much as the others.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(了又)[^还就终]+((?:还是|就是|终于))/)]),
@@ -39749,7 +39755,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'haoBuRongyi',
-  name: 'Subj. + 好容易 / 好不容易 + 才 + Verb，[Result Sentence]',
+  structures: ['Subj. + 好容易 / 好不容易 + 才 + Verb，[Result Sentence]', 'Verb / [Verb Phrase] + 好容易 / 好不容易'],
   description: '好不容易 (hǎo bù róngyì) means "very difficult" or "really not easy." It is often used where the speaker wants to comment on the result of their hard work, something like "It was really hard for me do to do x, but then I realized y."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:好容易|好不容易)才)/), regexMatchLocs(sentence.text, /((?:好容易|好不容易))/)]),
@@ -39808,7 +39814,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingIfItWereNotForWithYaobushi',
-  name: '要不是 ⋯⋯（的话），⋯⋯',
+  structures: ['要不是 ⋯⋯（的话），⋯⋯'],
   description: '要不是 (yàobushì) is almost the same as "如果不是⋯⋯ "， and it may followed by "的话," meaning "if it were not for" or "without."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(要不是(?:的话)?)/)]),
@@ -39855,7 +39861,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'comparisonXiang',
-  name: 'Noun 1 + 像 + Noun 2 + 一样 + Adj. / Verb',
+  structures: ['Noun 1 + 像 + Noun 2 + 一样 + Adj. / Verb', 'Noun 1 + 像 + Noun 2 + 这么 / 那么 + Adj. / Verb', 'Noun 1 + 不像 + Noun 2 + 这么 / 那么 + Adj. / Verb', 'Noun 1 + 没有 + Noun 2 + 这么 / 那么 + Adj. / Verb'],
   description: '像  (xiàng) is used to compare a specific characteristic of two things or people, and can be used in the following structure:',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不?像|没有?)[^一样]+(一样)/), regexMatchLocs(sentence.text, /(不?像|没有?)[^么]*((?:这么|那么))/)]),
@@ -39898,7 +39904,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingZheWhenVerbingAway',
-  name: 'Verb + 着 + Verb + 着 + 就 + Comment + 了',
+  structures: ['Verb + 着 + Verb + 着 + 就 + Comment + 了'],
   description: 'A repeated verb followed by the particle 着 (zhe) is used to show that an action has be repeated for a period of time, and as a result a new situation has arisen which the speaker wishes to comment on.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(着)[^着就]+(着)[^就]*(就)[^了]+(了)/)]),
@@ -39937,7 +39943,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jinguan',
-  name: '尽管 A，还是 / 仍然 B',
+  structures: ['尽管 A，还是 / 仍然 B'],
   description: '尽管 (jǐnguǎn)  means "although," and is a little stronger than 虽然, perhaps more like "even though."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(尽管)[^还是仍然]+((?:还是|仍然))?/)]),
@@ -39984,7 +39990,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buShiErShi',
-  name: '不是 + A + 而是 + B',
+  structures: ['不是 + A + 而是 + B'],
   description: '不是⋯⋯而是⋯⋯ (bù shì... ér shì) means "not A, but rather B." This is a useful phrase to use in arguments to overturn a point of view and state the opposite.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不是)[^而是]+(而是)/), regexMatchLocs(sentence.text, /(是)[^而不是]+(而不是)/)]),
@@ -40019,7 +40025,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buguan',
-  name: '不管 + Situation + Subj. + (都 / 也) + Result',
+  structures: ['不管 + Situation + Subj. + (都 / 也) + Result'],
   description: '不管 (bùguǎn) is more informal than 无论, but it is used in more or less the same way. As with other constructions, 都 and 也 can be used in the second part of the sentence to emphasize the action or decision will not change.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不管)[^都也]+((?:(?:都|也)?))/)]),
@@ -40058,7 +40064,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'wulun',
-  name: '无论 + Circumstances + 都 / 也 + Inevitable Result',
+  structures: ['无论 + Circumstances + 都 / 也 + Inevitable Result'],
   description: '无论 (wúlùn)  means "no matter," and is generally used in the first part of the sentence. As with many other constructions, 都 and 也 can be used in the second part of the sentence to emphasize the action or decision will not change. It is more formal than 不管.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(无论)[^都也，]+((?:都|也|，))/)]),
@@ -40101,7 +40107,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhiSuoyiShiYinwei',
-  name: 'Subj.+ 之所以 + Effect + 是因为 + Cause',
+  structures: ['Subj.+ 之所以 + Effect + 是因为 + Cause'],
   description: "之所以⋯⋯是因为 (zhī suǒyǐ... shì yīnwèi) can be translated as “the reason why... is because” and can be used if the speaker wishes to state the effect before the cause.  It's normally used in somewhat formal speech.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(之所以)[^是因为]+(是因为)/)]),
@@ -40140,7 +40146,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'chufei',
-  name: 'y，除非 x',
+  structures: ['y，除非 x', '除非 x ，否则 / 不然 y', '除非 x，才 y'],
   description: '除非 (chúfēi) can be used as a conjunction, and means "unless." 否则 (fǒuzé) or 不然 (bùrán) often appear in the following phrase, to form a construction meaning "unless x, otherwise y":',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(除非)[^否然]+(否则|不然)?[^才]+(才)?/)]),
@@ -40215,7 +40221,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'ningke',
-  name: '宁可……，也不……',
+  structures: ['宁可……，也不……', '宁可 ……，也要 ……'],
   description: '宁可 (nìngkě) is used where the speaker wants to compare two unfavorable options, and choose a "unfavorable option" over a "most unfavorable option."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(宁可)[^也不]+(也不)/), regexMatchLocs(sentence.text, /(宁可)[^也要]+(也要)/)]),
@@ -40269,7 +40275,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yimian',
-  name: '一面 + Verb +  一面 + Verb',
+  structures: ['一面 + Verb +  一面 + Verb'],
   description: '一面 (yìmiàn)  is a more formal than 一边, but is used in the same way to express two simultaneous actions. It is used in the following way:',
   sources: [allSetSrc],
   match: sentence => {
@@ -40319,7 +40325,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'huozhe',
-  name: '或者 A，或者 B',
+  structures: ['或者 A，或者 B'],
   description: 'One easy way to give two options is to precede each one with 或者 (huòzhě).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(或者)[^或者]+(或者)/)]),
@@ -40358,7 +40364,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'bieShuo',
-  name: '别说 + A ， 连  / 就是+ B + 也 / 都 + Verb',
+  structures: ['别说 + A ， 连  / 就是+ B + 也 / 都 + Verb'],
   description: '别说 (bié shuō) means something like "leaving aside" or "don\'t think about," and is used in the following way:',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(别说)[^连就是]+((?:连|就是))[^也都]+((?:也|都))/)]),
@@ -40401,7 +40407,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'gengBuyongShuo',
-  name: '连 + A + 都 / 也 + Verb， 更不用说 + B + 了',
+  structures: ['连 + A + 都 / 也 + Verb， 更不用说 + B + 了'],
   description: '更不用说 (gèng bùyòng shuō) means "let alone," and is used in the same way as the English, where we might say: "he can\'t even boil an egg, let alone prepare a banquet"',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(连)?[^都也]+((?:都|也))?[^说]+(更不用说)[^了]+(了)/)]),
@@ -40440,7 +40446,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'hekuang',
-  name: 'Subj. + 连 + A + 都 + (不 / 没) + Verb， 何况 + B + 呢？',
+  structures: ['Subj. + 连 + A + 都 + (不 / 没) + Verb， 何况 + B + 呢？', 'Subj. + (都) + A， 何况 + B！'],
   description: '何况 (hékuàng) can mean "let alone" or "all the more." It can be used in the following structure:',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(连?)[^都]+(都(?:(?:不|没)?))?[^何况]+(何况)[^呢]+(呢)?/)]),
@@ -40499,7 +40505,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingNotOnlyButAlsoWithBujin',
-  name: 'Noun + 不仅 + A，而且 + B',
+  structures: ['Noun + 不仅 + A，而且 + B'],
   description: 'There are a few ways to express "not only ... but also" in Chinese. One of them is:',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不仅)[^而且]+(而且)/)]),
@@ -40538,7 +40544,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buJin',
-  name: 'Subj. + 不仅 / 不但 / 不只 + ⋯⋯，而且 / 还 / 也 + ⋯⋯',
+  structures: ['Subj. + 不仅 / 不但 / 不只 + ⋯⋯，而且 / 还 / 也 + ⋯⋯'],
   description: 'We\'ve seen 不但⋯⋯而且 in B1, but other than that there are a number of other structures which can be used to express "not only...but also." 不但 can be substituted with 不仅(bù jǐn) and 不只  (bù zhǐ), all meaning "not only," and can be followed by 而且 (ér qiě) , 还 (hái), or 也 (yě) \nOther than 不但⋯⋯而且 being more common than the others, they are all pretty similar in usage and meaning.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:不仅|不但|不只))[^而且还也]+((?:而且|还|也))/)]),
@@ -40581,7 +40587,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zongsuan',
-  name: 'Subj. + 总算 / 终于 + Verb',
+  structures: ['Subj. + 总算 / 终于 + Verb'],
   description: 'One pair of confusing adverbs is 总算 (zǒngsuàn) and 终于 (zhōngyú). They both can be translated as "finally" or "in the end," but they subtly different in tone.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:总算|终于))/)]),
@@ -40648,7 +40654,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'theAlsoAdverbYe',
-  name: 'Subj. + 也 + Verb / [Verb Phrase]',
+  structures: ['Subj. + 也 + Verb / [Verb Phrase]', 'Subj. + 也 (+ Adv.) + Adj.'],
   description: 'The English adverb "too" or "also" is expressed in Chinese as 也 (yě). In Chinese, it always needs to come before the verb (or adjective).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Edge({ type: 'advmod', ahead: true }, new Node({ filter: and(pos('AD'), word('也是?')), capture: '也' })))]),
@@ -40772,7 +40778,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingOnTheBasisOfWithPing',
-  name: '凭 + Noun / Noun Phrase',
+  structures: ['凭 + Noun / Noun Phrase', '凭 + Verb Phrase / Subj.-Predicate', 'Subj. + 凭什么 + Verb Phrase', '凭着 + Noun / Noun Phrase'],
   description: '凭 is a  preposition that means "on the basis of" or "by virtue of." Usually the subject of a sentence with 凭 is a person.',
   sources: [allSetSrc],
   match: sentence => {
@@ -40850,7 +40856,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingRatherWithBijiao',
-  name: 'Subj. + 比较 + Adj.',
+  structures: ['Subj. + 比较 + Adj.'],
   description: 'It\'s rather nice to be able to read an article on how to use 比较 to mean "rather." And here it is!',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(比较)/)]),
@@ -40889,7 +40895,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'huxiang',
-  name: '互相 + Verb',
+  structures: ['互相 + Verb'],
   description: 'When some action is mutual, you can use the word 互相 (hùxiāng). The word "mutual" feels formal in English, but in Chinese even everyday phrases such as "learn from each other" use the word 互相, which expresses this "each other" aspect.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(互相)/)]),
@@ -40952,7 +40958,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiaruJiu',
-  name: '假如 + Statement + 就 + Result',
+  structures: ['假如 + Statement + 就 + Result'],
   description: '"假如⋯⋯，就⋯⋯" (jiǎrú..., jiù...) is yet another way to express "If..., then..." in Chinese, but it is much more formal than 要是 or 如果 are (in both written and spoken Chinese).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(假如)[^就]+(就)/)]),
@@ -40991,7 +40997,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zongshi',
-  name: 'Subj. + 总是 + Verb',
+  structures: ['Subj. + 总是 + Verb', '总是 + Adv. + Adj.'],
   description: 'If you are trying to describe a daily routine, a habit, or just something that consistently happens, you can use the word 总是 (zǒngshì). 总是 (zǒngshì) means "always," and like other adverbs, comes before the verb in a sentence.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(总是)/)]),
@@ -41054,7 +41060,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'comparingHuiNengKeyi',
-  name: '会／能 + Verb',
+  structures: ['会／能 + Verb', '可以／能 + Verb', '会 + Verb', '很会／很能 + Verb'],
   description: '会 (huì), 能 (néng), and 可以 (kěyǐ) are often translated as "can." Sometimes they are explained as: 会 means "know how to," 能 means "to be able to," and 可以 means "to have permission to." Actually, they overlap somewhat.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: pos('V.') }, [new Edge({ type: 'aux:modal|advmod', ahead: true }, new Node({ filter: and(pos('V.|AD'), word('不?(会|能|可以)')), capture: '会能可以' }))])), graphMatch(sentence.tokens, new Node({ filter: and(pos('V.'), word('(会|能).')), capture: '会能' }))]),
@@ -41233,7 +41239,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAlmostUsingChadianMei',
-  name: 'Subj. + 差点 + 没 + Verb Phrase',
+  structures: ['Subj. + 差点 + 没 + Verb Phrase'],
   description: "Logically, 差点没 is not that different from 差点.  In fact, you shouldn't think of it as a single word; think of the 没 as belonging to what follows 差点 and it makes more sense.  Still, it can be a little confusing, and is worth a closer look.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(差点儿?没)/)]),
@@ -41272,7 +41278,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'laoshi',
-  name: '老是 + Verb',
+  structures: ['老是 + Verb', '老是 ( + Adv.) + Adj.'],
   description: 'We have a few ways to say "always" in Chinese, and one of them is to use the word 老是 (lǎoshi).',
   sources: [allSetSrc],
   match: sentence => {
@@ -41345,7 +41351,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingOrWithHaishiAndHuozhe',
-  name: 'Subj. + Verb + Option A + 还是 + Option B',
+  structures: ['Subj. + Verb + Option A + 还是 + Option B', 'Option 1 + 或者 + Option 2', '或者 A，或者 B'],
   description: 'Both 还是 (háishì) and  或者 (huòzhě) mean “or” and are used to present a choice.  However, 还是 is normally used when asking a question, and 或者 is mostly for declarative sentences.',
   sources: [allSetSrc],
   match: sentence => {
@@ -41416,7 +41422,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buguo',
-  name: 'Clause 1， 不过 + Clause 2',
+  structures: ['Clause 1， 不过 + Clause 2'],
   description: 'Instead of just using 可是 or 但是, you can also use the softer and more informal 不过 (búguò).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(，不过)/)]),
@@ -41458,7 +41464,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yinggai',
-  name: 'Subj. + 应该 + Verb + Obj.',
+  structures: ['Subj. + 应该 + Verb + Obj.', 'Subj. + 不 + 应该 + Verb + Obj.'],
   description: '应该 (yīnggāi) translates to the English word "should," and is an essential word to know for your conversaitonal Chinese. You should definitely get comfortable using 应该 (yīnggāi) right away!',
   sources: [allSetSrc],
   match: sentence => {
@@ -41528,7 +41534,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingDontNeedToWithBuyong',
-  name: 'Subj. + 不用 + [Verb Phrase]',
+  structures: ['Subj. + 不用 + [Verb Phrase]'],
   description: 'In Chinese, "要" has many meanings, one of which is "need to". However, when you want to express  "don\'t need to", you actually use "不用", not "不要".',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不用)/)]),
@@ -41592,7 +41598,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'connectingNounsWithShi',
-  name: 'Noun 1 + 是 + Noun 2',
+  structures: ['Noun 1 + 是 + Noun 2'],
   description: 'The verb to be is not used in Chinese the same way as it is in English. In Chinese, 是 (shì) is for connecting nouns, and is generally not used with adjectives.',
   sources: [allSetSrc],
   match: sentence => {
@@ -41682,7 +41688,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'questionsWithNe',
-  name: 'Topic + 呢 ？',
+  structures: ['Topic + 呢 ？', '[Missing Person / Thing] + 呢 ？'],
   description: 'The particle 呢 (ne) can be used to ask reciprocal questions, also known as "bounce back" questions. 呢 (ne) can also be used to form simple questions asking "what about...?" or "how about...?"',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(呢？)/)]),
@@ -41761,7 +41767,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiran',
-  name: '既然＋Fact, 那 / 就 / 那就＋Suggestion / Inference',
+  structures: ['既然＋Fact, 那 / 就 / 那就＋Suggestion / Inference', '既然 + Fact,   （那 +）rhetorical question'],
   description: '既然 (jìrán) means "since," and is often followed by 就 to mean "since...then...." It is used like this:',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(既然)[^那就]+(那|就|那就)?/)]),
@@ -41828,7 +41834,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingHaveToWithBudebu',
-  name: 'Subj. + 不得不 + Verb',
+  structures: ['Subj. + 不得不 + Verb'],
   description: '不得不 (bùdébù) has a stronger tone than "必须 (bìxū)" meaning "someone cannot help but do something."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不得不)/)]),
@@ -41870,7 +41876,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingEverSinceWithZicong',
-  name: '自从 + [Starting Point]',
+  structures: ['自从 + [Starting Point]'],
   description: '自从 means "ever since" in English, and is used to express the starting point of an action in the past. It can be followed by phrases using the markers 起 and 以后',
   sources: [allSetSrc],
   match: sentence => {
@@ -41908,7 +41914,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'auxiliaryVerbYaoAndItsMultipleMeanings',
-  name: 'Subj. + 要 + Noun',
+  structures: ['Subj. + 要 + Noun', 'Subj. + 要 + Verb'],
   description: 'You probably already know the basic meaning of 要 (yào) as "to want."  It is actually a quite versatile word, though, and can also take on the meanings of "to need" as well as "will (do something)."  In every case, context is crucial for figuring out which meaning someone is trying to express.',
   sources: [allSetSrc],
   match: sentence => locsFromTokens(regexMatchTokens(sentence.tokens, '(:yao:)', {
@@ -42012,7 +42018,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingThatsAllWithEryi',
-  name: 'Subj. + Verb + Obj. + 而已',
+  structures: ['Subj. + Verb + Obj. + 而已'],
   description: '而已 expresses that something is merely what it is. It is like saying "it\'s only a test, that\'s all." 而已 is put at the end of the sentence to emphasis that something is just what it is.',
   sources: [allSetSrc],
   match: sentence => {
@@ -42046,7 +42052,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'benlai',
-  name: 'Subj. + 本来',
+  structures: ['Subj. + 本来 + 是 +（不）要 / 会 / 应该 + Verb + 的，但是 / 可是 ...', 'Subj. + 本来 + 就...', 'Subj. + 本来 + 就 + 很 / 不 + Adj.', 'Subj. + 本来 + 就 + 会 / 要 / 得 / 应该 + Verb'],
   description: 'If something was originally a certain way, or "should be" a certain way, the Chinese words used are often 本来 (běnlái) and 原来 (yuánlái). 本来 (běnlái) is usually an adverb while 原来 (yuánlái) could be either and adjective or an adverb. However, they are used in different ways and different circumstances, so this article will help you distinguish when and where to use them.',
   sources: [allSetSrc],
   match: sentence => {
@@ -42133,7 +42139,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buBi',
-  name: 'Subj. + 不比 + Noun + Adj. / Verb',
+  structures: ['Subj. + 不比 + Noun + Adj. / Verb'],
   description: 'You might wonder why you have 不比 (bù bǐ) for negative comparisons when you already have 没有 (méiyǒu) for comparisons. The answer is that they\'re not exactly the same thing! 没有 should be your "go to word" for expressing "not as... as...," but there are cases where 不比 (in all of its subtle glory) is a better choice.',
   sources: [allSetSrc],
   match: sentence => {
@@ -42182,7 +42188,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'meiDou',
-  name: '每 + Verb + Number + Measure Word + Noun + 都 + Verb',
+  structures: ['每 + Verb + Number + Measure Word + Noun + 都 + Verb'],
   description: '每⋯⋯都⋯⋯ (měi... dōu...) is a pattern used to express "every time," even though the phrase 每次 (měi cì) may not be explicitly used.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(每)[^都]+(都)/)]),
@@ -42233,7 +42239,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingOnlyWithZhi',
-  name: '只 + Verb',
+  structures: ['只 + Verb', '只 + 会 / 能 + Verb'],
   description: 'There are a number of different ways to express "only" in Chinese, but 只 (zhǐ) is the most basic one you need to learn first. It\'s an adverb, so it normally comes before verbs.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(只)/)]),
@@ -42297,7 +42303,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'basicComparisonsWithBi',
-  name: 'Noun 1 + 比 + Noun 2 + Adj.',
+  structures: ['Noun 1 + 比 + Noun 2 + Adj.', 'Noun 1 + 比 + Noun 2 + 更 + Adj.'],
   description: 'One of the most common words when comparing things in Chinese is to use 比 (bǐ). 比 (bǐ) has similarities to the English word "than," but it requires a word order that\'s not so intuitive, so you\'ll want to practice it quite a bit.',
   sources: [allSetSrc],
   match: sentence => {
@@ -42383,7 +42389,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'keyi',
-  name: 'Subj. + 可以 + Verb + Obj.',
+  structures: ['Subj. + 可以 + Verb + Obj.', 'Subj. + 不 + 可以 + Verb + Obj.'],
   description: '可以 (kěyǐ) is an auxiliary verb primarily used for expressing permission. It\'s often translated as "can," but in order to not get it confused with other words, it\'s best to think of it as "may" to emphasize the permission aspect.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(可以)/)]),
@@ -42450,7 +42456,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAgainInTheFutureWithZai',
-  name: 'Subj. + 再 + Verb Phrase',
+  structures: ['Subj. + 再 + Verb Phrase'],
   description: 'While 又 (yòu) is used for "again" in the past, 再 (zài) is used for "again" in the future. That is, 再 is used when something has happened once and it will happen again.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(再)[^见]/)]),
@@ -42537,7 +42543,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'ganggang',
-  name: 'Subj. + 刚 + Verb',
+  structures: ['Subj. + 刚 + Verb', 'Subj. + 刚刚 + Verb', 'Subj. + 刚 + Verb (+ Obj.)  + Duration'],
   description: 'For events that happened in the immediate past, in English we use the word "just." For example, if you pass a turn you were supposed to make, you might say, "I just passed it!" In Chinese, "just" can be expressed with 刚 (gāng) or 刚刚 (gānggāng).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(刚刚?)/)]),
@@ -42604,7 +42610,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'continuationWithHai',
-  name: 'Subj. + 还在 + Verb',
+  structures: ['Subj. + 还在 + Verb', 'Subj. + 还是 + Verb', 'Subj. + 还 + 不 / 没 + Verb + Obj.'],
   description: 'If you "still" need help on how to use 还 (hái), then this is the page for you.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(还在)/), regexMatchLocs(sentence.text, /(还是)/), regexMatchLocs(sentence.text, /(还(?:不|没))/)]),
@@ -42691,7 +42697,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'kongpa',
-  name: '(Reason,) 恐怕 + Fact / Conclusion',
+  structures: ['(Reason,) 恐怕 + Fact / Conclusion'],
   description: '恐怕 (kǒngpà) can be used to express "I\'m afraid that," or "I\'m concerned that," or even "I\'m worried that," followed by some sort of reason. It doesn\'t need to be something you\'re literally afraid of; it may be that you\'re just trying to soften the blow of some bad news, as in, "I\'m afraid that I\'m too busy washing my hair tomorrow night to come over and see the 2000 pictures of your trip to ComicCon."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(恐怕)/)]),
@@ -42742,7 +42748,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'houlai',
-  name: 'Past Event 1 + 后来 + Past Event 2',
+  structures: ['Past Event 1 + 后来 + Past Event 2'],
   description: '"⋯⋯, 后来⋯⋯" (..., hòulái...) is used to sequence past events in the same way that "Afterward..." is in English. Something very important to note is that 后来 can only be used with two events that have already occurred.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(后来)/)]),
@@ -42789,7 +42795,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingEveryWithMei',
-  name: '每 + Measure Word + Noun + 都',
+  structures: ['每 + Measure Word + Noun + 都'],
   description: 'In this article we will look at the structure for saying "every" in Chinese, which is slightly more involved than just throwing in the word 每 (měi).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(每)[^都]+(都)/)]),
@@ -42856,7 +42862,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingTheSelfevidentWithMa',
-  name: 'Statement + 嘛',
+  structures: ['Statement + 嘛', 'Topic + 嘛， + Statement'],
   description: 'The particle 嘛 (ma) is a sentence-final particle identical in pronunciation to the simple "yes/no question" particle 吗 (ma) you learned back in the day, but with a rather different function.  It can be used when the speaker feels what he is saying is obvious (from his point of view).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(嘛)/)]),
@@ -42900,7 +42906,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'specialCasesOfZaiFollowingVerbs',
-  name: 'Subj. + [Special Verb] + 在 + Location',
+  structures: ['Subj. + [Special Verb] + 在 + Location'],
   description: 'When used to indicate locations of actions, 在 (zài) is usually placed after the subject and before the verb. There are certain cases, however, when 在 (zài) goes after the verb.',
   sources: [allSetSrc],
   match: sentence => {
@@ -42975,7 +42981,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingTheMoreTheMoreWithYueYue',
-  name: 'Subj. + 越 + Verb + 越 + Adj.',
+  structures: ['Subj. + 越 + Verb + 越 + Adj.', 'Subj. +  越 + Verb 1 + 越 + Verb 2', 'Subj. 1 + 越 + Verb，Subj. 2 + 越 + Adj.', 'Subj. 1 + 越 + Verb 1，Subj. 2 + 越 + Verb 2', 'Subj. + 越 + Verb + 越 + 想 + Verb'],
   description: 'More than just throwing anything you want after two 越s, there are a number of specific patterns you will notice if you want to go beyond using the simpler 越来越.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(越)[^越]+(越)/)]),
@@ -43058,7 +43064,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'beiziju',
-  name: 'Subj. + 被 + Doer + Verb Phrase',
+  structures: ['Subj. + 被 + Doer + Verb Phrase', 'Subj. + 被 + Verb Phrase', 'Subj. + 没有 + 被 + Doer + Verb Phrase', 'Subj. + Adv. + 被 + Doer + Verb Phrase'],
   description: 'Bei Sentences, which are called 被字句 (bèizìjù) in Chinese, are a key way to express the passive in modern Mandarin Chinese.  In passive sentences, the object of an action becomes the subject of the sentence, and what would have been the subject of the normal (active voice) sentence, the "doer" of the action, becomes secondary, and may or may not be included in the passive sentence.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('LB|SB'), word('被')), capture: true }))]),
@@ -43109,7 +43115,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yinweiSuoyi',
-  name: 'Result, 因为 + Reason',
+  structures: ['Result, 因为 + Reason', 'Reason, 所以 + Result', '因为 + Cause, 所以 + Effect'],
   description: 'You will often come across 因为……所以…… (yīnwèi... suǒyǐ...) in both written and spoken Chinese. This pattern will give your Chinese a clear logical structure, and can help make you more persuasive.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(因为)[^所以]+(所以)/), regexMatchLocs(sentence.text, /(因为|所以)/)]),
@@ -43192,7 +43198,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buyao',
-  name: '别 + Verb (+ Obj.)',
+  structures: ['别 + Verb (+ Obj.)'],
   description: 'Instead of saying "do not" with 不要 (bùyào), we can say "don\'t" a little more quickly and forcefully by using 别 (bié).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('VV'), word('别.+')), capture: true })), graphMatch(sentence.tokens, new Edge({ ahead: true, type: 'advmod' }, new Node({ filter: and(pos('AD'), word('别')), capture: true })))]),
@@ -43259,7 +43265,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yiqi',
-  name: 'Subj. + 一起 + Verb + Obj.',
+  structures: ['Subj. + 一起 + Verb + Obj.'],
   description: 'If you want to express that you are doing something together with someone else, 一起 (yīqǐ) is your word!',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(一起)/)]),
@@ -43326,7 +43332,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'measureWordsInQuantityQuestions',
-  name: 'Subj. + Verb + 几 + Measure Word + Noun？',
+  structures: ['Subj. + Verb + 几 + Measure Word + Noun？', 'Subj. + Verb + 多少 + Measure Word + Noun ？'],
   description: 'Quantity questions are phrases for asking questions like "how much?" or "how many?"  You\'ll need to use the question word 几 (jǐ) with measure words for this.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(几)[^？]+(？)/), regexMatchLocs(sentence.text, /(多少)[^？]+(？)/)]),
@@ -43393,7 +43399,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhiyi',
-  name: '[Noun Phrase] + 之一',
+  structures: ['[Noun Phrase] + 之一'],
   description: 'In order to express "one of the..." in Chinese, "之一" (zhī yī) can be used at the end of the sentence.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(之一)/)]),
@@ -43460,7 +43466,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'structureOfTimesAdvanced',
-  name: 'x 点 y 分',
+  structures: ['x 点 y 分', 'x 点 零 y 分', 'x 点 y 刻', '差 + Minutes + 分 + Hour + 点', 'Hour + 点 + 差 + Minutes + 分'],
   description: 'If you already know the basics of how to tell time in Chinese, you may want to get a little more specific or sophisticated, using words like 分 (fēn) and 刻 (kè).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /([零一二三四五六七八九十百千万亿两0-9]+点[零一二三四五六七八九十百千万亿两0-9]+分)/), regexMatchLocs(sentence.text, /([零一二三四五六七八九十百千万亿两0-9]+点零[零一二三四五六七八九十百千万亿两0-9]+分)/), regexMatchLocs(sentence.text, /([零一二三四五六七八九十百千万亿两0-9]+点[零一二三四五六七八九十百千万亿两0-9]+刻)/), regexMatchLocs(sentence.text, /(差)[^分]+(分)[^点]+(点)/), regexMatchLocs(sentence.text, /(点差)[^分]+(分)/)]),
@@ -43555,7 +43561,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingIncludingWithBaokuo',
-  name: 'Subj. + 包括 + Obj.1 ( , + Obj.2, Obj.3 ... )',
+  structures: ['Subj. + 包括 + Obj.1 ( , + Obj.2, Obj.3 ... )', '包括 + Obj. (+ 在内)，一共 ⋯⋯'],
   description: '"包括" can be used to mean "including" in English. It can be used with "在内一共" or just "一共" to express "all together" or "in total"',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(包括)/), regexMatchLocs(sentence.text, /(包括)[^共括]+((?:在内)?一共)/)]),
@@ -43622,7 +43628,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiashiJiu',
-  name: '假使 + Statement + 就 + Result',
+  structures: ['假使 + Statement + 就 + Result'],
   description: '"假使⋯⋯，就⋯⋯" (jiáshǐ..., jiù...) is another way to phrase "If..., then..." in Chinese, with this pattern being one of the most formal.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(假使)[^就]+(就)?/)]),
@@ -43658,7 +43664,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'doerOfActionYou',
-  name: 'Topic + 由 + Person + Verb',
+  structures: ['Topic + 由 + Person + Verb'],
   description: '由 (yóu)  is used to emphasize who is the doer or initiator of an action, a bit like in English where we might say: "Andy is the one who...."',
   sources: [allSetSrc],
   match: sentence => {
@@ -43700,7 +43706,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhongyu',
-  name: 'Subj. + 终于 + Verb Phrase + 了',
+  structures: ['Subj. + 终于 + Verb Phrase + 了'],
   description: '终于(zhōngyú) 表示经过很长时间的等待最后实现了愿望，通常都是说话人期待发生的事情，含喜悦、满意的感情色彩。',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(终于)[^了]+(了)/)]),
@@ -43747,7 +43753,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'meiBanfa',
-  name: 'Subj. + 没办法 + Verb + Obj.',
+  structures: ['Subj. + 没办法 + Verb + Obj.'],
   description: 'If you are trying to express that something is impossible, you can use the phrase 没办法 (méi bànfǎ). 没办法 (méi bànfǎ) essentially means "there is no way," and whule it works just fine by itself, it can also come before verbs.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(没办法)/)]),
@@ -43814,7 +43820,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'askingAboutDegreeWithDuo',
-  name: 'Subj. + 多 + Adj. ?',
+  structures: ['Subj. + 多 + Adj. ?'],
   description: 'How big? How busy? How cold? Ask questions like these regarding the degree of an adjective with 多 (duō). This is just one of the many uses of this word.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(多).[吗]?[?？]/)]),
@@ -43881,7 +43887,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'dengDeng',
-  name: 'A1，A2⋯⋯等 / 等等',
+  structures: ['A1，A2⋯⋯等 / 等等', 'A1，A2⋯⋯等 + [Category]'],
   description: '等等 (děng děng), or simply 等 (děng), is just like saying “and so on” or “etc.” in English, but just a bit more formal.  Both are placed after listing a series of items (generally with a list that exceeds two items).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(等等)/), regexMatchLocs(sentence.text, /.+[,，、].+(等)/)]),
@@ -43948,7 +43954,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'indicatingANumberInExcess',
-  name: 'Number + 多 + Measure word + (Noun)',
+  structures: ['Number + 多 + Measure word + (Noun)'],
   description: 'A number in excess of a certain amount is expressed by adding "多" (duō) to the end of a number. This is usually translated as "more than..." in English.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /[零一二三四五六七八九十百千万亿两0-9](多)/)]),
@@ -43991,7 +43997,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'ageWithSui',
-  name: 'Subj. + Number + 岁',
+  structures: ['Subj. + Number + 岁', 'Subj. + Number + 岁 + 半'],
   description: 'Use 岁 (suì) to give a person\'s age, similar to how we say "years old" in English. There are a details that work differently from English, however.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /[零一二三四五六七八九十百千万亿两0-9]+(岁)/)]),
@@ -44050,7 +44056,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zenme',
-  name: 'Subj. + 怎么 + Verb + Obj.',
+  structures: ['Subj. + 怎么 + Verb + Obj.', 'Topic + 怎么 + Verb'],
   description: '怎么 (zěnme) means "how" in Chinese, and it\'s not hard to use at all: just put it before a verb.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(怎么)(?:[^样]|$)/)]),
@@ -44117,7 +44123,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yizhi',
-  name: 'Subj. + 一直 + Predicate',
+  structures: ['Subj. + 一直 + Predicate'],
   description: '一直 (yīzhí) literally means "straight."  Used as an adverb, 一直 (yīzhí) can also be used to express that you have been doing something all along, have been continuously doing something since a certain time, or that something will continuously happen in the future.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(一直)/)]),
@@ -44184,7 +44190,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'chabuduo',
-  name: 'Subj. + 差不多',
+  structures: ['Subj. + 差不多', 'A + 跟 / 和 +  B + 差不多', '差不多 + Adj. / Verb', '差不多 ＋ [Quantity Phrase] / [Time Phrase]'],
   description: '差不多 (chàbuduō), translated literally, means "the difference is not much." In practice it means something like "more or less," and is useful for expressing rough approximations.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(差不多)/), regexMatchLocs(sentence.text, /((?:跟|和))[^差不多]+(差不多)/)]),
@@ -44291,7 +44297,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'youyidian',
-  name: 'Subj. + 有一点(儿) + Adj.',
+  structures: ['Subj. + 有一点(儿) + Adj.', 'Subj. + 有点(儿) + Adj.'],
   description: 'At times you may want to politely diss something using the phrase "a little too."  For example, if you are getting lunch with a friend who wants to be seated outside, you might say, "It is a little too hot" to suggest you sit inside. In a case like this, you can use 有一点 (yǒuyīdiǎn) or 有点 (yǒudiǎn). The two are interchangeable.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(有一点儿?)/), regexMatchLocs(sentence.text, /(有点儿?)/)]),
@@ -44358,7 +44364,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yibianYibian',
-  name: 'Subj. + 一边 + Verb（，）+ 一边 + Verb',
+  structures: ['Subj. + 一边 + Verb（，）+ 一边 + Verb'],
   description: 'Multitasking is everywhere in the modern world (what else are you doing while you read this?), but you if can focus for just a minute, you can learn a way to express simultaneous tasks in Chinese! This can be done with 一边 (yībiān).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(一边)[^边]+(一边)/)]),
@@ -44425,7 +44431,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yiqian',
-  name: '以前 + Subj. + Verb + Obj.',
+  structures: ['以前 + Subj. + Verb + Obj.', 'Subj. + 以前 + Verb + Obj.'],
   description: 'To talk about things that previously occurred, you can use the word 以前 (yǐqián). You can use this structure to talk about actions that happened at some unspecified time in the past.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(以前)/)]),
@@ -44492,7 +44498,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'gangcai',
-  name: '刚才 + Verb',
+  structures: ['刚才 + Verb'],
   description: 'In order to say that something "just now" occurred, use the time noun 刚才 (gāngcái). It can be placed in front of the verb or the subject of a statement.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(刚才)/)]),
@@ -44559,7 +44565,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'deShihou',
-  name: '(Subj.) + Verb / Adj. + 的 时候, ....',
+  structures: ['(Subj.) + Verb / Adj. + 的 时候, ....', 'Time Word + 的 时候, ....'],
   description: 'In English, if we are reflecting on a past time, we often say, "when I was a child" or "when I was in school." In Chinese, this can also be expressed by using 的时候 (de shíhou).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(的时候)/)]),
@@ -44626,7 +44632,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'standardNegationWithBu',
-  name: 'Subj. + 不 + Verb + Obj.',
+  structures: ['Subj. + 不 + Verb + Obj.', 'Subj. + 不 + Adj.'],
   description: '不 (bù) is generally used to negate a verb in the present or future, or to talk about what you do not do, as a habit. So expressing things like "I don\'t want to go" or "I\'m not going" or "I don\'t eat meat" would be typical uses of 不 (bù).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不)/)]),
@@ -44693,7 +44699,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'chahenduo',
-  name: 'Subj. + 差 很 多',
+  structures: ['Subj. + 差 很 多', 'A + 跟 / 和 +  B + 差很多'],
   description: "You might be used to thinking of 差不多 (chàbùduō) as a single word, and that's totally OK. But if you want to negate the whole idea of rough equivalency, then you need to think of it as a phrase and use 差很多 (chà hěn duō). Not surprisingly, it's a little less versatile than 差不多 (chàbùduō).",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(差很多)/), regexMatchLocs(sentence.text, /((?:跟|和))[^差很多]+(差很多)/)]),
@@ -44739,7 +44745,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'affirmativenegativeQuestion',
-  name: 'Verb + 不 + Verb',
+  structures: ['Verb + 不 + Verb', 'Subj. + Verb + 不 + Verb + Obj.', 'Adj. + 不 + Adj.', '[First Character of Verb] + 不 + Verb', '[First Character of Adj.] + 不 + Adj.', 'Subj. + 有 没有 + Obj.'],
   description: '',
   sources: [allSetSrc],
   match: sentence => {
@@ -44898,7 +44904,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingExcessivelyWithTai',
-  name: '太 + Adj. + 了',
+  structures: ['太 + Adj. + 了'],
   description: 'In Chinese, the simplest structure for expressing "too" in the sense of "excessively" is by using the word 太 (tài). Don\'t forget to also add 了 (le) after the adjective to keep your Chinese sounding natural.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(太)[^了]+(了)/)]),
@@ -44965,7 +44971,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buyao',
-  name: '不要 + Verb',
+  structures: ['不要 + Verb'],
   description: 'You can use 不要 (bùyào) to command someone: "don\'t" (do something). This is similar to the other negative command "别 (bié)."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不要)/)]),
@@ -45028,7 +45034,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'geng',
-  name: '更 + Adj.',
+  structures: ['更 + Adj.', 'A 比 B + 更 + Adj.'],
   description: 'To express "even more," (as in "even more expensive," "even more ridiculous," "even more badass"), you can use 更 (gèng). 更 (gèng) generally comes before adjectives.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('AD'), word('更')), capture: true }))]),
@@ -45092,7 +45098,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'measureWordGe',
-  name: 'Number + 个 + Noun',
+  structures: ['Number + 个 + Noun', 'Verb + 个 + Noun'],
   description: "个 (gè) is the most commonly used measure word. It can be used in a pinch for any noun if you can't think of a more precise measure word. (Although you might not sound quite as smart, you'll still get your point across). Also, for many nouns, 个 (gè) is the only correct measure word.",
   sources: [allSetSrc],
   match: sentence => {
@@ -45166,7 +45172,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'theAllAdverbDou',
-  name: 'Subj. + 都 + [Verb Phrase]',
+  structures: ['Subj. + 都 + [Verb Phrase]'],
   description: 'The adverb 都 (dōu) is used to express "all" in Chinese. It\'s common to use 都 (dōu) in a variety of sentences where it would seem unnecessary in English.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('AD'), word('都')), capture: true }))]),
@@ -45230,7 +45236,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAndWithHe',
-  name: 'Noun 1 + 和 + Noun 2',
+  structures: ['Noun 1 + 和 + Noun 2'],
   description: 'When listing out multiple nouns, 和 (hé) is there to help you out. Just remember that 和 (hé) isn\'t a word you can use to translate just any usage of the English word "and."',
   sources: [allSetSrc],
   match: sentence => {
@@ -45292,7 +45298,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'suggestionsWithBa',
-  name: 'Command + 吧',
+  structures: ['Command + 吧'],
   description: "The particle 吧 (ba) has a number of different uses. Here we'll talk about the simplest way to use 吧 (ba): making suggestions.",
   sources: [allSetSrc],
   match: sentence => {
@@ -45361,7 +45367,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'tagQuestionsWithBu',
-  name: 'Verb + 不 + Verb',
+  structures: ['Verb + 不 + Verb'],
   description: 'In the same way you can tag questions with 吗 (ma), tag questions can also be formed using 不 (bù). This is done by putting an affirmative-negative question at the end of a sentence.',
   sources: [allSetSrc],
   match: sentence => {
@@ -45445,7 +45451,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'wantingToDoSomethingWithYao',
-  name: 'Subj. + 要 + Verb + Obj.',
+  structures: ['Subj. + 要 + Verb + Obj.'],
   description: 'The auxiliary verb 要 (yào) has several different meanings, and here we\'ll tackle the "want to" meaning. To express "wanting to do" something, use 要 (yào) before the verb.',
   sources: [allSetSrc],
   match: sentence => {
@@ -45498,7 +45504,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingExistenceInAPlaceWithZai',
-  name: 'Subj. + 在 + Place',
+  structures: ['Subj. + 在 + Place'],
   description: 'The verb 在 (zài) expresses existence in a location, similar to how we say in English, "to be at" or "to be in."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, '(:zai:):place:', {
@@ -45570,7 +45576,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingNotVeryWithBuTai',
-  name: 'Subj. + 不太 + Adj.',
+  structures: ['Subj. + 不太 + Adj.', 'Subj. + 不太 + Verb'],
   description: 'You may be familiar with using 太 (tài) to express "too," such as when something is "too expensive" or "too hot." 不太 (bù tài) is a similar pattern for the negative, which just means "not very" or "not so" (literally "not too").  Note that this pattern does not normally use 了 (le).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不太)/)]),
@@ -45633,7 +45639,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'siLe',
-  name: '(Subj. +) Negative Adj. + 死了',
+  structures: ['(Subj. +) Negative Adj. + 死了'],
   description: 'In English, you might use the expression "you scared me to death!" In Chinese,  死了 (sǐ le) is used similarly to intensify an adjective with an unpleasant connotation.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(死了)/)]),
@@ -45708,7 +45714,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAndAlsoWithHai',
-  name: 'Subj. + Verb + Obj. 1， 还 + Verb + Obj. 2',
+  structures: ['Subj. + Verb + Obj. 1， 还 + Verb + Obj. 2'],
   description: 'In English we use "and also" when we want to connect separate and different thoughts. We can do the same thing in Chinese by using 还 (hái).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([
@@ -45784,7 +45790,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingActionsInProgressWithZai',
-  name: 'Subj. + 在 + Verb + Obj.',
+  structures: ['Subj. + 在 + Verb + Obj.', 'Subj. + 正在 + Verb + Obj.'],
   description: '在 (zài) and 正在 (zhèngzài) can be used as auxiliary verbs to express that an action is ongoing or in progress. This is often the equivalent of present continuous in English, which is how we express that an activity is happening now.',
   sources: [allSetSrc],
   match: sentence => {
@@ -45846,7 +45852,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'bothWithYou',
-  name: 'Subj. + 又 + Adj. 1 + 又 + Adj. 2',
+  structures: ['Subj. + 又 + Adj. 1 + 又 + Adj. 2'],
   description: 'When you\'re getting descriptive, you may find yourself wanting to use multiple adjectives at a time. The character 又 (yòu) can be used to give two qualities to something. Using the double 又 (yòu) structure is like saying that something is "both… and…" in English.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(又)[^又]+(又)/)]),
@@ -45909,7 +45915,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhen',
-  name: '真 + Adj.',
+  structures: ['真 + Adj.', '真 + Verb'],
   description: 'As an adverb, the word 真 (zhēn) means "really" or "truly."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Edge({ type: 'advmod', ahead: true }, new Node({ filter: and(pos('AD'), word('真')), capture: true })))]),
@@ -45964,7 +45970,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'intensifyingWithDuo',
-  name: 'Subj. + 多 + Adj.',
+  structures: ['Subj. + 多 + Adj.'],
   description: 'One way to intensify a sentence is to make it an exclamation. To do this, you can use 多 (duō).',
   sources: [allSetSrc],
   match: sentence =>
@@ -46041,7 +46047,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zui',
-  name: '最 + Adj.',
+  structures: ['最 + Adj.', '最 + Adj. (+ 了)', '最 + [Psychological Verb] + Obj. (+ 了)'],
   description: 'The most common way to form a superlative (best, worst, biggest, smallest, etc.) in Chinese is to use 最 (zuì) before an adjective (and a few select verbs).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(最)/), regexMatchLocs(sentence.text, /(最)[^了]+(了?)/)]),
@@ -46133,7 +46139,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingGenToMeanWith',
-  name: 'Subj. + 跟 + Person + Verb + Obj.',
+  structures: ['Subj. + 跟 + Person + Verb + Obj.', 'Subj. + 跟 + Person + 一起 + Verb + Obj.'],
   description: 'Using 跟 (gēn) to express "with" is so simple and helpful, after studying it briefly, it will always be with you! 跟 (gēn) is a very common word that will help complete many other sentence structures.',
   sources: [allSetSrc],
   match: sentence => {
@@ -46229,7 +46235,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingExperiencesWithGuo',
-  name: 'Subj. + Verb + 过 + Obj.',
+  structures: ['Subj. + Verb + 过 + Obj.', 'Subj. + 没 + Verb + 过 + Obj.'],
   description: 'The aspect particle 过 (guo) is used to indicate that an action has been experienced in the past.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('VV'), word('.+过')), capture: '过' })), graphMatch(sentence.tokens, new Node({ filter: pos('V.') }, [new Edge({ type: 'aux:asp', behind: true }, new Node({ filter: and(pos('AS'), word('过')), capture: true }))]))]),
@@ -46296,7 +46302,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'congDao',
-  name: '从 + Time 1 + 到 + Time 2',
+  structures: ['从 + Time 1 + 到 + Time 2', '从 + Place 1 + 到 + Place 2'],
   description: '从⋯⋯ 到⋯⋯(cóng... dào...) is used in the same way as "from... to..." is used in English, and can be used both for times and places.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(从)[^到]+(到)/)]),
@@ -46359,7 +46365,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'directionalVerbsLaiAndQu',
-  name: '来 / 去 + Place',
+  structures: ['来 / 去 + Place'],
   description: '来 (lái) and 去 (qù) are both words that help to express direction from the perspective of the speaker. 来 (lái) means "come" (towards the speaker), while 去 (qù) means "go" (away from the speaker). For example, if you are in China, a local person might ask you: "When did you come to China?" using 来 (lái). Another example is if you want to go from China to Japan, your friends might ask you:  “When are you going to Japan?" using 去 (qù).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('VV'), word('.*[来去]')), capture: '来去' }, [new Edge({ type: 'dobj' }, new Node({ filter: pos('NR|NN') }))]))]),
@@ -46418,7 +46424,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingWillWithHui',
-  name: 'Subj. + 会 + Verb + Obj.',
+  structures: ['Subj. + 会 + Verb + Obj.', 'Subj. + 不 + 会 + Verb + Obj.'],
   description: '会 (huì) has multiple uses, but in this context, it is being used to express the possibility of an action happening in the future.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('VV'), word('会')), capture: true }))]),
@@ -46482,7 +46488,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'xiang',
-  name: 'Subj. + 想 + Verb (+ Obj.)',
+  structures: ['Subj. + 想 + Verb (+ Obj.)', 'Subj. + 不 + 想 + Verb + Obj.'],
   description: 'If you want to express something that you "would like to do," 想 (xiǎng) will be a very helpful auxiliary verb to know. Although similar to 要 (yào), 想 (xiǎng) will give you another more tactful option when you want to articulate a desire.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('VV'), word('想.+')), capture: '想' })), graphMatch(sentence.tokens, new Node({ filter: and(pos('VV'), word('想')), capture: '想' }, [new Edge({ type: 'ccomp', behind: true }, new Node({ filter: pos('VV') }))])),
@@ -46555,7 +46561,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingNeverWithConglai',
-  name: 'Subj. + 从来 + 不 + [Verb Phrase]',
+  structures: ['Subj. + 从来 + 不 + [Verb Phrase]', 'Subj. + 从来 + 没(有) + Verb + 过'],
   description: "Although it can also work in the positive, 从来 (cónglái) is usually used when you want to express that you never do something (as a habit, or as a rule), or that you have never done something (it's not a part of your life experience). In either usage, 从来 (cónglái) may be shortened to just 从 (cóng) in casual speech.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(从来?不)/), regexMatchLocs(sentence.text, /(从来?没有?)[^过]+(过)/)]),
@@ -46618,7 +46624,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingDifficultWithNan',
-  name: 'Subj. + (很) 难 + Verb',
+  structures: ['Subj. + (很) 难 + Verb', 'Subj. + (很) 难 + [Sense Verb]'],
   description: '难 (nán) is an adjective that means "difficult." When something is "hard to do" (as in difficult), the word 难 (nán) can be used before the verb.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('V.'), word('难.+')), capture: '难' })), graphMatch(sentence.tokens, new Node({ filter: pos('VV') }, [new Edge({ type: 'advmod' }, new Node({ filter: and(pos('AD'), word('难')), capture: true }))]))]),
@@ -46681,7 +46687,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingOngoingDurationWithDoubleLe',
-  name: 'Subj. + Verb + 了 + Duration + 了',
+  structures: ['Subj. + Verb + 了 + Duration + 了', 'Subj. + Verb + Obj. + Verb + 了 + Duration + 了'],
   description: 'The 了 (le) particle is used in many different ways. In this article, we will explore how to use the double 了 (le) to express the duration of an activity that is ongoing.',
   sources: [allSetSrc],
   match: sentence => {
@@ -46757,7 +46763,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingHaoToMeanEasy',
-  name: '好 + Verb',
+  structures: ['好 + Verb', 'Subj. + (很) 好 + Verb'],
   description: 'Of course 好 (hǎo) means "good." But it can also be used to express that something is "easy to do" or "good to do." And it is quite... easy to do! All you need to do is place a 好 (hǎo) before a verb.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('V.'), word('好.+')), capture: '好' })), graphMatch(sentence.tokens, new Node({ filter: and(pos('VA|JJ'), word('好')), capture: true }, [new Edge({ type: 'compound:vc|conj' }, new Node({ filter: pos('VV') }))]))]),
@@ -46840,8 +46846,8 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yixia',
-  name: 'Subj. + Verb + 一下 + Obj.',
   // TODO: improve description
+  structures: ['Subj. + Verb + 一下 + Obj.'],
   description: 'After briefly reading this article, you will know how to use 一下 (yīxià) to express a brief action!',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: pos('V.') }, [new Edge({ type: 'advmod' }, new Node({ filter: and(pos('AD'), word('一下')), capture: true }))]))]),
@@ -46908,7 +46914,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buDong',
-  name: 'Subj. +  Verb + 不懂',
+  structures: ['Subj. +  Verb + 不懂'],
   description: "Chinese learners often have to express that they don't understand something, especially in the beginning when they start learning. One of the ways to express that is to use the 不懂 (bù dǒng) verb complement.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(不懂)/)]),
@@ -46971,8 +46977,8 @@ const allSetSrc = {
 
 module.exports = {
   id: 'resultComplementWanForFinishing',
-  name: 'Subj. + Verb + 完 (+ 了) + Obj.',
   // TODO: improve description
+  structures: ['Subj. + Verb + 完 (+ 了) + Obj.'],
   description: 'On its own, 完 (wán) means "to finish" or "to complete." Using it in this grammar structure, it expresses the idea of doing some action to completion.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('V.'), word('.+完')), capture: '完' })), graphMatch(sentence.tokens, new Node({ filter: pos('VV') }, [new Edge({ type: 'dobj' }, new Node({ filter: word('完了'), capture: true }))])), graphMatch(sentence.tokens, new Node({ filter: pos('VV') }, [new Edge({ type: 'advmod:rcomp' }, new Node({ filter: and(pos('VV'), word('完')), capture: true })),
@@ -47041,8 +47047,8 @@ const allSetSrc = {
 
 module.exports = {
   id: 'resultComplementsDaoAndJian',
-  name: 'Subj. + Verb + 到 + Obj.',
   // TODO: improve description
+  structures: ['Subj. + Verb + 到 + Obj.', 'Subj. + Verb + 见 + Obj.', 'Subj. + 没 + Verb + 到 / 见 + Obj.'],
   description: 'Two of the most common result complements in Chinese are 到 (dào) and 见 (jiàn). On this page we\'re only going to be talking about verbs related to the senses ("see," "hear," etc.), and for this usage, the two are interchangeable.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('V.'), word('.+[到见]')), capture: '到见' }))]),
@@ -47093,7 +47099,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yixie',
-  name: '一些 + Noun',
+  structures: ['一些 + Noun'],
   description: 'In order to express "some" or "a few," you can use 一些 (yīxiē). To use it in this way, 一些 (yīxiē) is placed before the noun it modifies. 一些 (yīxiē) can modify the subject or the object.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(一些)/)]),
@@ -47160,7 +47166,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingHalfWithBan',
-  name: '半 + Measure Word + Noun',
+  structures: ['半 + Measure Word + Noun', 'Number + Measure Word + 半 + Noun', '半 + 天 / 年', 'Number + 天 / 年 + 半'],
   description: 'The Chinese word 半 (bàn) means "half." That\'s simple enough, but what can get slightly tricky is the rules for how it combines with measure words.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(半)/), regexMatchLocs(sentence.text, /(半(?:天|年))/), regexMatchLocs(sentence.text, /((?:天|年)半)/)]),
@@ -47259,7 +47265,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'duoshaoqian',
-  name: 'Subj. + 多少钱 ?',
+  structures: ['Subj. + 多少钱 ?', 'Number + 块 + Number + 毛'],
   description: 'Cash is king, even though China is now crazy for mobile payments. Either way, though, mastering how to say quantities of money is vital!',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(多少钱)/), regexMatchLocs(sentence.text, /[零一二三四五六七八九十百千万亿两0-9]+(块)[零一二三四五六七八九十百千万亿两0-9]*(毛)?/)]),
@@ -47343,7 +47349,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'measureWordsWithThisAndThat',
-  name: '这 / 那 + Measure Word + Noun',
+  structures: ['这 / 那 + Measure Word + Noun'],
   description: 'In English, when you refer to "this table" or "that girl" you only need two words: "this" or "that" plus the noun you\'re referring to.  In Chinese, though, you also need a measure word in the middle between the two.  In the very beginning you can get away with using 个 (gè) for everything, but pretty soon you\'re going to have to start using other measure words in these simple phrases.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: and(pos('DT'), word('这|那')), capture: '这那' }, [new Edge({ type: 'mark:clf' }, new Node({ filter: pos('M') }))])),
@@ -47408,7 +47414,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'ordinalNumbersWithDi',
-  name: '第 + Number',
+  structures: ['第 + Number', '第 + Number + Measure Word + Noun'],
   description: 'We use ordinal numbers to express things like "number one" or "second," so mastering them in Chinese is important. Fortunately, they are also very easy to learn by just adding the prefix 第 (dì).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(第)[零一二三四五六七八九十百千万亿两0-9]+/)]),
@@ -47491,7 +47497,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAboutToHappenWithLe',
-  name: '快+ Verb / Verb Phrase + 了',
+  structures: ['快+ Verb / Verb Phrase + 了', '快要 + Verb / Verb Phrase + 了', '快 + Adj. + 了', 'Subj. + 要 + Verb / Verb Phrase / Adj. + 了'],
   description: 'Remember that 了 (le) is not only for the past! When something is about to happen, you can also indicate this using 了 (le).  Normally it is paired with a 快 (kuài), 快要(kuàiyào) or a 要 (yào). This is a special form of using 了 to indicate a change of situation.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(快)[^了]+(了)/), regexMatchLocs(sentence.text, /(快要)[^了]+(了)/), regexMatchLocs(sentence.text, /(要)[^了]+(了)/)]),
@@ -47578,7 +47584,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'shenmeDou',
-  name: 'Topic (+ Subj.) + 什么 + 都 / 也 + Verb / Adj.',
+  structures: ['Topic (+ Subj.) + 什么 + 都 / 也 + Verb / Adj.', '什么 + Noun + 都 + Verb', '什么 + Noun + 都 / 也 + 不 + Verb', '什么 + Noun + 都 / 也 + 没 (有) + Verb'],
   description: '什么……都 (shénme... dōu) is a pattern often used to express "all" or "everything." Because it\'s not just one word, though, it can be a little tricky to get the hang of at first.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(什么)[^都也]*(都|也)/)]),
@@ -47665,7 +47671,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'bieLe',
-  name: '别 + Verb / Verb Phrase + 了',
+  structures: ['别 + Verb / Verb Phrase + 了'],
   description: 'You may know how to make negative commands with "bie," but what if someone is already doing it? The pattern 别⋯⋯了 (bié... le) is all you need to tell someone to STOP DOING THAT (which they\'re already doing).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(别)[^了]+(了)/)]),
@@ -47733,7 +47739,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'reduplicationOfVerbs',
-  name: 'Subj. + Verb + Verb',
+  structures: ['Subj. + Verb + Verb'],
   description: 'One of the fun things about Chinese is that when speaking, you can repeat a verb to express "a little bit" or "briefly." This is called reduplication. It creates a casual tone, and a sense that whatever the action is, it\'s not going to take long.',
   sources: [allSetSrc],
   match: sentence => {
@@ -47840,7 +47846,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'indicatingTheWholeWithQuan',
-  name: '全 + Noun + 都  + Verb',
+  structures: ['全 + Noun + 都  + Verb', 'Subj. + 全 + 都 + Verb  / Adj.', 'Subj. + 全都 + 不 / 没 + Verb / Adj.', 'Subj.＋不 / 没＋全都＋Verb / Adj.'],
   description: 'One of the uses of 全 (quán) is to indicate the entirety of something. It could be used for something like a whole household, an entire country, the whole world, etc.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(全)[^都]*(都)/)]),
@@ -47947,7 +47953,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'positiveAdjectivesWithJile',
-  name: 'Subj. + Positive Adj. + 极了',
+  structures: ['Subj. + Positive Adj. + 极了'],
   description: 'Just as 死了 (sǐle) can be used to intensify negative adjectives, 极了 (jíle) can be used to intensify positive adjectives. This is used in spoken, colloquial Chinese. 极 means "extreme" or "utmost," so using this grammar pattern takes your positive adjectives to the extreme!',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(极了)/)]),
@@ -47986,7 +47992,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiushiYe',
-  name: '就是 + Hypothetical Statement + 也 + Action',
+  structures: ['就是 + Hypothetical Statement + 也 + Action'],
   description: '就是 (jiùshì) is one of the many "even ifs." Like 即使 , 就算 and 哪怕 it is used to introduce a hypothetical statement, which can then disregarded with 也.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(就是)[^也]+(也)/)]),
@@ -48025,7 +48031,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yuanlai',
-  name: '原来 + 的 + Noun',
+  structures: ['原来 + 的 + Noun', 'Subj. + 原来 + [Verb Phrase]', '原来 + [New Information]'],
   description: '原来 (yuánlái) means "originally" (similar to 本来) or "former." It can also mean "all along," and can be used to indicate a sudden realization of something previously unknown, a bit like "so it\'s been like that all along, how could I not have realized?"',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(原来的)/), regexMatchLocs(sentence.text, /(原来)/)]),
@@ -48092,7 +48098,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAgainInThePastWithYou',
-  name: '又 + Verb + 了',
+  structures: ['又 + Verb + 了', '又 + 是 + Noun', '又 + 要 / 可以 / 能 + Verb Phrase ( + 了)'],
   description: 'Whenever you want to express something like "you did it again!" in Chinese, you generally want to use 又 (yòu).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(又)[^了]+(了)/), regexMatchLocs(sentence.text, /(又是)/), regexMatchLocs(sentence.text, /(又(?:要|可以|能))[^了]+(了?)/)]),
@@ -48159,7 +48165,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'emphasizingNegationWithYou',
-  name: '又 + 不 / 没 + Verb / Adj.',
+  structures: ['又 + 不 / 没 + Verb / Adj.'],
   description: 'One of the many versatile uses of 又 is to emphasize negation, giving your negative sentence a little kick!',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(又(?:不|没))/)]),
@@ -48214,7 +48220,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zuihao',
-  name: 'Subj. + 最好 + [Verb Phrase]',
+  structures: ['Subj. + 最好 + [Verb Phrase]', 'Subj. + 最好 + 别 / 不要 + [Verb Phrase]'],
   description: '最好 can be used to express "had better"',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(最好)/), regexMatchLocs(sentence.text, /(最好(?:别|不要))/)]),
@@ -48281,7 +48287,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingQuiteWithTing',
-  name: '挺 + Adj. + 的',
+  structures: ['挺 + Adj. + 的', '挺 + Verb + Obj. + 的'],
   description: '挺 can be used before an adjective to mean "quite," or "rather," or "pretty," as in "pretty good."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(挺)[^的]+(的)/)]),
@@ -48348,7 +48354,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAlwaysWithConglai',
-  name: 'Subj. + 从来 + 都 + Predicate',
+  structures: ['Subj. + 从来 + 都 + Predicate'],
   description: 'Although perhaps more often used in the negative to mean "never," 从来 (cónglái) can be used with 都 (dōu) to mean "always" or "have always (done)."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(从来都)/)]),
@@ -48411,7 +48417,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yaome',
-  name: 'Situation，要么 + Option B',
+  structures: ['Situation，要么 + Option B', '要么 + Option A，要么 + Option B'],
   description: 'You can give a series of alternatives by using 要么 (yàome). The structure is pretty versatile, as you can put a wide variety of things after each 要么:',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(要么)[^要么]+(要么)?/)]),
@@ -48478,7 +48484,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yaoWoShuo',
-  name: '要我说， Opinion',
+  structures: ['要我说， Opinion'],
   description: '“要我说” (yào wǒ shuō) is another, more colloquial way to say "in my opinion" or "the way I see it." It is generally used to express a person\'s perspective or opinion about a matter.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(要我说，)/)]),
@@ -48525,7 +48531,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'sequencingWithXianAndZai',
-  name: '先 + [Verb Phrase 1] + 再 + [Verb Phrase 2]',
+  structures: ['先 + [Verb Phrase 1] + 再 + [Verb Phrase 2]', '先 + [Verb Phrase] + 再说'],
   description: 'The word 再 (zài) actually has a lot of uses, beyond just "again."  "先⋯⋯， 再⋯⋯" (xiān..., zài...) is a pattern used for sequencing events, much like "First..., then..." in English. This pattern can also include "然后" (ránhòu) meaning "and after that."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(先)[^再]+(再说?)/)]),
@@ -48595,22 +48601,42 @@ const allSetSrc = {
 };
 
 module.exports = {
-  id: 'ruguoDeHua',
-  name: 'undefined',
-  description: '"如果⋯⋯的话，⋯⋯" (rúguǒ... de huà, ...) is a pattern commonly used in Chinese to express "if." An easy way to remember the pattern\'s format is that in the full form, the condition is "sandwiched" between 如果 and 的话.',
+  id: 'ruguoDehua',
+  structures: ['如果 ⋯⋯ 的话 ，(就) ⋯⋯', '⋯⋯ (的话) ，(就) ⋯⋯'],
+  description: '"如果⋯⋯的话，⋯⋯" (rúguǒ... dehuà, ...) is a pattern commonly used in Chinese to express "if." An easy way to remember the pattern\'s format is that in the full form, the condition is "sandwiched" between 如果 and 的话. "就" is often optional.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(如果)[^话]+(的话)?/), regexMatchLocs(sentence.text, /(如果)?[^话]+(的话)/)]),
   examples: [{
-    zh: '如果你有空的话，我们可以明天晚上看电影。',
-    en: 'If you have time, we can go see a movie tomorrow night.',
+    zh: '如果明天下雨的话，我们就不去了。',
+    en: "If it rains tomorrow, we won't go.",
     src: allSetSrc
   }, {
-    zh: '如果没有你的帮助的话，他是不会得到这份工作的。',
-    en: "If you didn't help him, he wouldn't get the job offer.",
+    zh: '别点那么多菜。如果吃不完的话，就太浪费了。',
+    en: "Don't order so much. It will be a big waste of food if we can't finish all.",
     src: allSetSrc
   }, {
-    zh: '如果你不来的话，老师会很失望。',
-    en: "If you don't come, the teacher will be disappointed.",
+    zh: '如果有人帮他的话，他就不会出事了。',
+    en: "If someone had helped him, he would't have had this accident.",
+    src: allSetSrc
+  }, {
+    zh: '如果你们不来的话，一定会后悔的。',
+    en: "If you don't come, you'll definitely regret it.",
+    src: allSetSrc
+  }, {
+    zh: '如果他还是不同意的话，你怎么办？',
+    en: 'What will you do if he still disagree?',
+    src: allSetSrc
+  }, {
+    zh: '你喜欢的话，就拿走吧。',
+    en: 'Take it if you like it.',
+    src: allSetSrc
+  }, {
+    zh: '见到他们的话，帮我问好。',
+    en: 'If you meet them, tell them I say hello.',
+    src: allSetSrc
+  }, {
+    zh: '不想去的话就别去了。',
+    en: "Don't go if you don't feel like going.",
     src: allSetSrc
   }]
 };
@@ -48635,7 +48661,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAboutToWithJiuyao',
-  name: '就要 + Verb Phrase + 了',
+  structures: ['就要 + Verb Phrase + 了', '还有 + Time Period + 就（要） + Verb Phrase + 了'],
   description: '就要 (jiùyào) is similar to 快要 (kuàiyào), meaning "about to." They are interchangeable in some cases. But there is a major difference that you need to take a good look at. 快要 (kuài yào) is generally "about to" [happen], but 就要 (jiù yào) could be used to mark a more specific time. 要 (yào) here can be omitted. For this one, you wouldn\'t normally use "about to" for this English translation, but the feeling is nevertheless that the impending event is coming up fast.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(就要)[^了]+(了)/), regexMatchLocs(sentence.text, /(还有)[^就要]+(就要?)[^了]+(了)/)]),
@@ -48694,7 +48720,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'renhe',
-  name: '任何 + Noun',
+  structures: ['任何 + Noun'],
   description: '任何 (rènhé) is a modifier that means means "any," "whichever," or "whatsoever." It is also like the English phrases "any and all" or "no matter what."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(任何)/)]),
@@ -48745,7 +48771,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'weile',
-  name: '为了+ [Purpose]，Subject + Predicate',
+  structures: ['为了+ [Purpose]，Subject + Predicate', '⋯⋯是 + 为了 + Purpose / Reason'],
   description: '为了 (wèile) is most often used to indicate the purpose of an action, or the person that will benefit from some act of kindness.  In the "purpose" sense, it corresponds pretty well to "in order to" or "for the purpose of" in English.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(为了)/)]),
@@ -48803,7 +48829,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingNotOftenWithBuZenme',
-  name: 'Subj. + 不怎么 + Verb',
+  structures: ['Subj. + 不怎么 + Verb'],
   description: 'You might be tempted to conclude that 不怎么 (bù zěnme) seems to mean "not how," but it actually means "not often" when used together with a verb.',
   sources: [allSetSrc],
   match: sentence => {
@@ -48873,7 +48899,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiushi',
-  name: '就 + 是 + Noun',
+  structures: ['就 + 是 + Noun', '就（是）+ Verb'],
   description: 'As an adverb, 就 (jiù) can be placed before the predicate to add emphasis. It often has an intense or provocative feel to it, like how we sometimes say in English "it\'s just not right!," or other similar phrases. It often appears as 就是.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(就是)/), regexMatchLocs(sentence.text, /(就)[不要想喜]/)]),
@@ -48940,7 +48966,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhenghao',
-  name: 'Subj. + 正好',
+  structures: ['Subj. + 正好', '正好 + Verb', 'Verb + 得 + 正好'],
   description: '正好 (zhènghǎo) can be used as an adjective or adverb to help express a coincidence, and it could be related to size, volume, quantity, degree, time, etc. This is similar to how we say in English “Oh, this shirt I grabbed was just the right size." or something like that. When used with a noun, use 正好 right after it. When used with a verb, the 正好 goes right before it. You can also use 正好 along with 得. This is usually a clause of its own.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(正好)/), regexMatchLocs(sentence.text, /(得正好)/)]),
@@ -49027,7 +49053,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jieguo',
-  name: 'Situation，结果 + Result / Ending',
+  structures: ['Situation，结果 + Result / Ending'],
   description: '结果 (jiéguǒ) can be used as a conjunction or adverb, meaning "as a result" or "consequently." It comes at the beginning of the sentence and is typically used to introduce a negative or undesirable result.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /，(结果)/)]),
@@ -49066,7 +49092,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingEnoughWithGou',
-  name: 'Subj. + 够 + Verb (+ 了)',
+  structures: ['Subj. + 够 + Verb (+ 了)', 'Subj. + 不够 + Verb', 'Subj. + Verb + 够 (+ 了)'],
   description: '',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, '(:gou:):verb:(:le:)?', {
@@ -49153,7 +49179,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zheyang',
-  name: 'Condition, 这样 + Result / Purpose',
+  structures: ['Condition, 这样 + Result / Purpose', '（如果是 + ）这样的话，……'],
   description: '这样 (zhèyàng) is used at the beginning of a phrase to express "this way" or "in this way."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(这样)/)]),
@@ -49212,7 +49238,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jihu',
-  name: '几乎 + Subj. + 都 + Verb / Adj.',
+  structures: ['几乎 + Subj. + 都 + Verb / Adj.', 'Subj. + 几乎 + Predicate', 'Subj. + 几乎 + 不 / 没 + Predicate'],
   description: "几乎 (jīhū) means 'nearly', 'almost' or 'practically', and is used to emphasize that someone or something 'almost' meets a certain standard or is close to doing something.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(几乎)[^都]+(都)?/)]),
@@ -49279,7 +49305,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingEarlinessWithJiu',
-  name: 'Subj. + Time Word + 就 + Verb',
+  structures: ['Subj. + Time Word + 就 + Verb', 'Subj. + Time  Word + 就 + Verb + Obj. + 了'],
   description: 'Just as 才 (cái) can express lateness, 就 (jiù) can be used to indicate that something happened earlier or sooner than expected.  It can also be used in the near future to indicate something will happen very soon. 早就 means "long ago," and is usually used to express a kind of impatience or surprise on the part of the speaker. It comes before the verb.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(早就)/), regexMatchLocs(sentence.text, /(?:[晚早马]上|[零一二三四五六七八九十百千万亿两0-9]点.?|[年月日号岁分钟快天午]|会儿)(就)/)]),
@@ -49351,7 +49377,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingSmallQuantityWithJiu',
-  name: '就 + [Single Subject] + Verb',
+  structures: ['就 + [Single Subject] + Verb', 'Subj. + 就 + Verb-Obj.', 'Subj. + 就 + Number + Measure Word + Noun'],
   description: '就 (jiù) is often translated simply as "just" or "only," but there are some nuances to how it is used.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: pos('VV') }, [new Edge({ type: 'advmod' }, new Node({ filter: word('就'), capture: true })), new Edge({ type: 'dobj' }, new Node({ filter: pos('NN') }, [new Edge({ type: 'nummod|det' }, new Node({ filter: pos('CD|DT') }))]))])), graphMatch(sentence.tokens, new Node({ filter: pos('VV') }, [new Edge({ type: 'advmod' }, new Node({ filter: word('就'), capture: true })), new Edge({ type: 'dep' }, new Node({ filter: pos('CD') }))])), locsFromTokens(regexMatchTokens(sentence.tokens, '(:jiu:):nounOrCounter:', {
@@ -49437,7 +49463,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingLatenessWithCai',
-  name: 'Subj. + Time + 才 + Verb + Obj.',
+  structures: ['Subj. + Time + 才 + Verb + Obj.'],
   description: 'One of the ways to express lateness in Chinese is with 才 (cái).',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, ':time:.*(:cai:):verb:', {
@@ -49484,7 +49510,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingCaiForSmallNumbers',
-  name: '才 + (Verb) + Number + Measure Word + Noun',
+  structures: ['才 + (Verb) + Number + Measure Word + Noun'],
   description: 'The character 才 (cái) can be used to emphasize that a number is small, or less than expected.',
   sources: [allSetSrc],
   match: sentence => {
@@ -49550,7 +49576,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingYeAndDouTogether',
-  name: 'Subj. + 也 + 都 + Verb / Adj.',
+  structures: ['Subj. + 也 + 都 + Verb / Adj.'],
   description: 'If you are trying to draw similarities amongst a group, you will want to pair two key words together. You will want to use 也 (yě) first followed by 都 (dōu) to express that a group of people have something in common.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(也都)/)]),
@@ -49626,7 +49652,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'biDuole',
-  name: 'Noun 1 + 比 + Noun 2 + Adj. + 得多 / 多了 / 很多',
+  structures: ['Noun 1 + 比 + Noun 2 + Adj. + 得多 / 多了 / 很多', 'Noun 1 + 比 + Noun 2 + 还 + Adj.'],
   description: 'If you want to up the intensity of your comparisons, you might want to express "much more." You can do this using 多 (duō), but did you know there are actually three different ways to do it?',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(比)[^多]+(得多|多了|很多)/), locsFromTokens(regexMatchTokens(sentence.tokens, '(:bi:).*(:hai:):adv:', {
@@ -49697,7 +49723,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'shenmeDe',
-  name: 'Noun 1, Noun 2 (+ Noun 3) + 什么的',
+  structures: ['Noun 1, Noun 2 (+ Noun 3) + 什么的'],
   description: '什么的(shénme de) is an informal way to express "etc.," and is used to end a list of items when it is obvious to the listener what class of things the speaker is talking about. 什么的 can also be used after a single item if it is obvious enough what might follow.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(什么的)/)]),
@@ -49764,7 +49790,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhileide',
-  name: '像 + [Items] + 之类的',
+  structures: ['像 + [Items] + 之类的', '[Items] + 之类的 + Noun'],
   description: '之类的 (zhīlèide) can be translated as "and so on" or "and stuff like that." As in English, this grammar point is used to continue a list without explicitly mentioning further items within it.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(像)?[^类]+(之类的)/)]),
@@ -49811,7 +49837,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'haiyou',
-  name: '[Clause ]，+  还有 ，+ [Clause 2]',
+  structures: ['[Clause ]，+  还有 ，+ [Clause 2]'],
   description: '"还有" (háiyǒu) is used to express "in addition..." or "and also..." in a conversation. It is introducing new information to the topic the speaker is talking about, as an afterthought. While it\'s not the most challenging grammar structure, an important thing to keep in mind is that 还有 normally starts a completely new sentence or clause.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(还有)/)]),
@@ -49850,7 +49876,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'lingWai',
-  name: '⋯⋯， 另外，⋯⋯',
+  structures: ['⋯⋯， 另外，⋯⋯', '另外 ＋ [Verb Phrase]', '另外 ＋ 一 + Measure Word + Noun', '另外 + [Plural Noun]'],
   description: '另外 (lìng wài) can be used to express "in addition," often with 还 used in the following phrase.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(另外)/)]),
@@ -49909,7 +49935,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zaishuo',
-  name: 'Clause 1，再说 + Clause 2',
+  structures: ['Clause 1，再说 + Clause 2'],
   description: '"再说⋯⋯" (zàishuō...) is used in a similar way as "In addition" or "Moreover," in that it is adding on additional information or reasons to the topic at hand.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(再说)/)]),
@@ -49948,7 +49974,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yaobu',
-  name: '要不 + Option A，要不 + Option B',
+  structures: ['要不 + Option A，要不 + Option B', 'Reason / Situation，要不 + Option B', 'Statement， 要不 + Result'],
   description: '要不 (yàobù) can have a number of meanings, ranging from "either/or" to "how about."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(要不然?)[^吧]+(吧)?/)]),
@@ -50023,7 +50049,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'fenzhi',
-  name: 'Denominator + 分之 + Numerator',
+  structures: ['Denominator + 分之 + Numerator', 'A + 是 / 占 (+ B) + 的 + Denominator + 分之 + Numerator'],
   description: '分之 (fēnzhī) is used to form a fraction in Chinese. When expressing a fraction, the denominator is always said before the numerator. This pattern is also the way percentages are expressed in Chinese.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /[零一二三四五六七八九十百千万亿两0-9](分之)[零一二三四五六七八九十百千万亿两0-9]/)]),
@@ -50091,7 +50117,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingWhenWithShi',
-  name: '(Subj. +) Verb / Adj. + 时⋯⋯',
+  structures: ['(Subj. +) Verb / Adj. + 时⋯⋯'],
   description: 'By now you should now how to express "when" using "的时候" (de shíhou). But there\'s also a slightly shorter, more formal way to do it: simply use 时 (shí) all by itself. (No 的!)',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Edge({ type: 'case' }, new Node({ filter: and(pos('LC'), word('时')), capture: true }))),
@@ -50162,7 +50188,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yilai',
-  name: 'Time or Event + 以来',
+  structures: ['Time or Event + 以来', '自 / 从 / 自从 + Time or Event + 以来', 'Time Interval + 来'],
   description: 'There are a few ways to express "ever since" in Chinese. In English, we would say something like "ever since I came to Shanghai, my Chinese has improved a lot." In this article, we will first take a look at using 以来 (yǐlái) to mean "ever since." We will also take a quick look at using "ever since" with 来 (lái), which is similar but used in a somewhat different way.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:自|从|自从))[^以来]+(以来)/), regexMatchLocs(sentence.text, /(以来)/), regexMatchLocs(sentence.text, /[年月日号岁分钟秒天午](来)/)]),
@@ -50229,7 +50255,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'guanyu',
-  name: '关于 + Obj.，Subj.  ⋯⋯',
+  structures: ['关于 + Obj.，Subj.  ⋯⋯', '关于 + Modifier + 的 + Noun'],
   description: '关于 (guānyú) usually points to a range or scope, acting like the English word "about." It can be used in a few ways, often marking a topic of a statement, or modifying a noun.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(关于)/)]),
@@ -50288,7 +50314,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingDuiWithVerbs',
-  name: '对 + Obj. + Verb',
+  structures: ['对 + Obj. + Verb', '对 + Person + 来说'],
   description: 'When using 对 (duì) as a preposition, it is used to indicate "to" or "towards" an object or target. As with all prepositions, some care should be taken when using this particle, as usage of 对 doesn\'t always totally "make sense" or correspond to English at all.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([graphMatch(sentence.tokens, new Node({ filter: pos('PN|NN') }, [new Edge({ type: 'case' }, new Node({ filter: and(pos('P'), word('对')), capture: true }))]))]),
@@ -50372,7 +50398,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'verbsFollowedByGei',
-  name: 'Subj. + Verb + 给 + [Recipient] + Obj.',
+  structures: ['Subj. + Verb + 给 + [Recipient] + Obj.', 'Subj. + 把 + Obj. + Verb + 给 + Somebody'],
   description: "Although it's standard practice to put a word or phrase that modifies a verb before the verb, there are, of course, exceptions. 给 (gěi) is one of those exceptions; it sometimes comes before the verb, and sometimes after. This article is about when it comes after.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, '(:verbWithGei:)', {
@@ -50491,7 +50517,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingThenWithName',
-  name: 'Context ，那么 + Result / Decision',
+  structures: ['Context ，那么 + Result / Decision'],
   description: 'When expressing "Then...," you can use "那么" (nàme) or "那" (nà) in order to begin a judgment or result from previous context. An example of this in English would be "Then, what should we do?"',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, '(:name:):punct:?:result:', {
@@ -50570,7 +50596,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'advancedYesnoQuestionsWithMa',
-  name: 'Statement + 吗 ？',
+  structures: ['Statement + 吗 ？', '[Question-word Question] + 吗 ？'],
   description: 'The question particle 吗 (ma) is a very simple way to convert it into a "yes/no question," and beginners will learn not to use 吗 with other question words, because it\'s redundant. More advanced students, however, will note that 吗 has some more complicated structures that do involve combining it with question words in order to ask very specific types of confirming questions. Note that the following examples typically contains some kind of "verb of understanding" such as 知道 (zhīdào),了解 (liǎojiě), 明白 (míngbai), 认识 (rènshi), etc. Then "吗" (ma) can still be added at the end of the question, turning it into a kind of confirmation.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(?:什么|谁|哪|多大).*(吗？)/)]),
@@ -50621,7 +50647,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'reviewOptionsBa',
-  name: '[Option 1] + 吧，[Evaluation]； [Option 2] + 吧， [Evaluation]',
+  structures: ['[Option 1] + 吧，[Evaluation]； [Option 2] + 吧， [Evaluation]'],
   description: "When 吧 (ba) is used twice in a sentence, it is used to list two options that the speaker is debating. It gives the sentence an indecisive feel, as though the speaker doesn't know which one to choose. This construction often has a negative connotation, since the options usually are not ideal.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(吧，)[^吧，]+(吧，)/)]),
@@ -50684,7 +50710,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingForWithWei',
-  name: '为 + [Some Part] + Verb',
+  structures: ['为 + [Some Part] + Verb'],
   description: 'When you work for a company, or do other sorts of physical (and even mental) activities for another party, you\'re likely to use the Chinese preposition 为 (wèi), which is often translated into English as "for," a translation which is often unnatural or unnecessary, depending on the particular phrase.  The super common Mao-era phrase, 为人民服务 ("serve the people"), doesn\'t need the word "for" in English, for example.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, '(:wei:):noun:', {
@@ -50738,7 +50764,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'kanqilai',
-  name: 'Subj. + 看起来 + Adj.',
+  structures: ['Subj. + 看起来 + Adj.'],
   description: 'One of the most common ways to express "it looks like" is to use 看起来 (kànqǐlái). This is what we would use if we wanted to express something like, "she looks tired."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(看起来)不?(像)?/)]),
@@ -50782,7 +50808,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingTowardsWithXiang',
-  name: '向 + Direction / Person + Verb',
+  structures: ['向 + Direction / Person + Verb'],
   description: '向 (xiàng) is a preposition that means "towards," and is used often when expressing or referring to a certain point.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(向)[东北南西前后上下左右]/), locsFromTokens(regexMatchTokens(sentence.tokens, '(:xiang:):noun:', {
@@ -50856,7 +50882,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAfterWithJingguo',
-  name: '经过 + Event / Time，Subj. + Predicate',
+  structures: ['经过 + Event / Time，Subj. + Predicate'],
   description: 'The first way that 经过 is used as a verb is that it means "to pass by" or "to pass through." It is like saying "I went through downtown" or "I passed by the shop." As a preposition, 经过 means "to experience something" or "going through a time." It emphasizes the process of that experience. If it is talking about "going through a time," it is usually talking about the past. As a noun, 经过 refers to the process of something.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(经过)/)]),
@@ -50923,7 +50949,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'duokui',
-  name: '多亏（了）……',
+  structures: ['多亏（了）……', 'Good Outcome, 多亏（了）……', '多亏（了）……，不然 Subj. ……', '多亏（了）……，Subj. 才 ……'],
   description: '多亏(duōkuī) can be translated as "thanks to" and is used to express that, due to somebody\'s help, a negative result has been averted. 了 is often placed after it as it\'s about something in the past. Note that 多亏(duōkuī) can be placed in the beginning or the middle. You can add in 不然 for an "otherwise... (this really bad thing would have happened)" explanation. When the good outcome comes before 多亏, there is no need to add in 才. But if the good outcome comes after 多亏, you need to add in 才 to indicate "as a result...(the good outcome happened)."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(多亏了?)[^然才]*(不然|才)?/)]),
@@ -50986,7 +51012,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'haoxiang',
-  name: 'Subj. + 好像 + [Observation]',
+  structures: ['Subj. + 好像 + [Observation]'],
   description: 'To express "seems," the word 好像 (hǎoxiàng) can be used.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(好像)/)]),
@@ -51029,7 +51055,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yiwei',
-  name: 'Subj. + 以为 ⋯⋯',
+  structures: ['Subj. + 以为 ⋯⋯'],
   description: 'In English, the verb "to think" can imply that the belief is incorrect, e.g. in "I thought it was legal here." Chinese has a specific verb for this kind of mistaken belief: 以为 (yǐwéi). Literally these two characters mean "take to be," i.e. someone takes one thing to be something else.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(以为)/)]),
@@ -51096,7 +51122,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingThroughWithTongguo',
-  name: '通过 + Agent ，Subj. + ~',
+  structures: ['通过 + Agent ，Subj. + ~', '通过 + [Verb Phrase] ，Subj. + ~'],
   description: '',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(通过)/)]),
@@ -51151,7 +51177,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'doingSomethingLessWithShao',
-  name: 'Subj. + 少 + Verb + Obj.',
+  structures: ['Subj. + 少 + Verb + Obj.'],
   description: 'Often heard when scolding or giving advice (like when parents talk to children) is 少 (shǎo), which can mean "to do less of something."',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, '(:shao:):verb:', {
@@ -51191,7 +51217,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'doingSomethingMoreWithDuo',
-  name: '多 + Verb + Obj.',
+  structures: ['多 + Verb + Obj.'],
   description: "In China, you often hear you should do this or that more (eat more, drink more water, wear more warm clothing etc.), and they often use the word 多 (duō). What's not intuitive to learners is that the word 多 should come before the verb.",
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, '(:duo:):verb:', {
@@ -51239,7 +51265,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingMustWithDei',
-  name: 'Subj. + 得 + Verb + Obj.',
+  structures: ['Subj. + 得 + Verb + Obj.'],
   description: 'Learning how to use 得 to mean "must" must be done by those wishing to master Chinese!',
   sources: [allSetSrc],
   match: sentence => {
@@ -51304,7 +51330,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAsOneLikesWithJiu',
-  name: '想 + Verb (+ Obj.) + 就 + Verb (+ Obj.)',
+  structures: ['想 + Verb (+ Obj.) + 就 + Verb (+ Obj.)', '想 + Verb + Question Word + 就 + Verb + Question Word'],
   description: 'When we want to express "to do something as one pleases," we can use the "想 + verb +就 + verb" form.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(想)[^就]{1,3}(就)/)]),
@@ -51355,7 +51381,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'everyDou',
-  name: '谁 + 都 + Verb Phrase',
+  structures: ['谁 + 都 + Verb Phrase', '哪儿 / 哪里 + 都 + Verb Phrase', '什么 时候 + 都 + Verb Phrase', '多少 (+ Noun) + 都 + Verb Phrase', '怎么 + 都 + Verb Phrase'],
   description: 'This grammar point is not about how to use 每 (měi) to mean "every," but rather how to combine question words with 都 (dōu) to make words and phrases like "everywhere" or "everyone." You may have learned this same pattern for expressing "everything," but now it\'s time to extend it.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /((?:谁|哪儿|哪里)都)/), regexMatchLocs(sentence.text, /(什么|多少|怎么)[^都]{0,4}(都)/)]),
@@ -51434,9 +51460,133 @@ module.exports = {
 /* 461 */
 /***/ (function(module, exports, __webpack_require__) {
 
+const { and, pos, word } = __webpack_require__(3);
+const { regexMatchTokens } = __webpack_require__(1);
+const { mergeLocMatchGroups, locsFromTokens } = __webpack_require__(0);
+
+const allSetSrc = {
+  type: 'website',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASG1PTJX',
+  name: 'AllSet Chinese Grammar Wiki'
+};
+
+// TODO: Add more to this matcher, specifically "going down"
+
+module.exports = {
+  id: 'xiaqu',
+  structures: ['Subj. + Verb + 下去', 'Subj. + Verb + 不 + 下去'],
+  description: '下去 (xiàqù) is one of the most often heard result complements. 下去 can be used as a result complement to talk about things continuing or carrying on. Think of it as a figurative way of "keeping the ball rolling" (downhill).',
+  sources: [allSetSrc],
+  match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, ':verb::bu:?(:xiaqu:)', {
+    verb: pos('VV'),
+    bu: and(pos('AD'), word('不')),
+    xiaqu: and(pos('VV'), word('下去'))
+  }))]),
+  examples: [{
+    zh: '这个故事太无聊了，我听不下去了。',
+    en: "This story is too boring, I can't keep listening to it.",
+    src: allSetSrc
+  }, {
+    zh: '这个菜很难吃,我吃不下去。',
+    en: "This food is disgusting, I can't keep eating it.",
+    src: allSetSrc
+  }, {
+    zh: '这个电影画面太残忍了，我看不下去了！',
+    en: "This scene in the movie is too cruel, I can't keep watching it.",
+    src: allSetSrc
+  }]
+};
+
+/***/ }),
+/* 462 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const { pos, word } = __webpack_require__(3);
+const { regexMatchTokens } = __webpack_require__(1);
+const { mergeLocMatchGroups, locsFromTokens } = __webpack_require__(0);
+
+const allSetSrc = {
+  type: 'website',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGBPXOB',
+  name: 'AllSet Chinese Grammar Wiki'
+};
+
+module.exports = {
+  id: 'qilai',
+  structures: ['Verb + 起来', 'Verb / Adj. + 起来 +了', 'Subj. + Verb + 起来 + Adj.'],
+  description: '起来 (qǐlái) comes up very frequently in Chinese and can be used both literally and figuratively. This is a little like the usage of "up" in English which can be used literally, as in "stand up," or figuratively, as in "add up."',
+  sources: [allSetSrc],
+  match: sentence => mergeLocMatchGroups([locsFromTokens(regexMatchTokens(sentence.tokens, '(:prefixQilai:)', {
+    prefixQilai: word('.起来')
+  }), '起来'), locsFromTokens(regexMatchTokens(sentence.tokens, ':verb:(:qilai:)', {
+    verb: pos('VV|VA'),
+    qilai: word('起来')
+  }), '起来')]),
+  examples: [{
+    zh: '请大家站起来。',
+    en: 'Everyone, please stand up.',
+    src: allSetSrc
+  }, {
+    zh: '快把地上的书捡起来。',
+    en: 'Quickly pick up the books on the floor.',
+    src: allSetSrc
+  }, {
+    zh: '你怎么不把老人扶起来？',
+    en: "Why didn't you keep the old man upright?",
+    src: allSetSrc
+  }, {
+    zh: '别动！把手举起来。',
+    en: "Don't move! Put your hands up.",
+    src: allSetSrc
+  }, {
+    zh: '大家笑起来了。',
+    en: 'Everyone started laughing.',
+    src: allSetSrc
+  }, {
+    zh: '宝宝哭起来了。',
+    en: 'The baby started crying.',
+    src: allSetSrc
+  }, {
+    zh: '两个大妈吵起来了。',
+    en: 'Two middle-aged ladies started arguing.',
+    src: allSetSrc
+  },
+  // TODO: this is parsing incorrectly
+  // {
+  //   zh: '天气热起来了。',
+  //   en: 'It\'s starting to get hot.',
+  //   src: allSetSrc,
+  // },
+  {
+    zh: '他的病好起来了。',
+    en: 'His illness is starting to get better.',
+    src: allSetSrc
+  }, {
+    zh: '他看起来很友好。',
+    en: 'He looks very friendly.',
+    src: allSetSrc
+  }, {
+    zh: '这件事情听起来有点复杂。',
+    en: 'This matter sounds a little bit complex.',
+    src: allSetSrc
+  }, {
+    zh: '你点的菜尝起来不错。',
+    en: 'The dishes that you ordered taste good .',
+    src: allSetSrc
+  }, {
+    zh: '这件衣服摸起来很舒服。',
+    en: 'These clothes feel very comfortable.',
+    src: allSetSrc
+  }]
+};
+
+/***/ }),
+/* 463 */
+/***/ (function(module, exports, __webpack_require__) {
+
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-const request = __webpack_require__(462);
+const request = __webpack_require__(464);
 
 module.exports = class CoreNLPClient {
   constructor(host, annotators = ['tokenize', 'ssplit', 'pos', 'ner', 'depparse']) {
@@ -51461,18 +51611,18 @@ module.exports = class CoreNLPClient {
 };
 
 /***/ }),
-/* 462 */
+/* 464 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {
 
-var configure = __webpack_require__(463),
-    stealthyRequire = __webpack_require__(473);
+var configure = __webpack_require__(465),
+    stealthyRequire = __webpack_require__(475);
 
 // Load Request freshly - so that users can require an unaltered request instance!
 var request = stealthyRequire(__webpack_require__.c, function () {
-    return __webpack_require__(474);
+    return __webpack_require__(476);
 }, function () {
     __webpack_require__(117);
 }, module);
@@ -51487,13 +51637,13 @@ module.exports = request;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(80)(module)))
 
 /***/ }),
-/* 463 */
+/* 465 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var core = __webpack_require__(464),
+var core = __webpack_require__(466),
     isArray = __webpack_require__(115),
     isFunction = __webpack_require__(112),
     isObjectLike = __webpack_require__(81);
@@ -51554,17 +51704,17 @@ module.exports = function (options) {
 };
 
 /***/ }),
-/* 464 */
+/* 466 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var errors = __webpack_require__(465),
+var errors = __webpack_require__(467),
     isFunction = __webpack_require__(112),
     isObjectLike = __webpack_require__(81),
-    isString = __webpack_require__(471),
-    isUndefined = __webpack_require__(472);
+    isString = __webpack_require__(473),
+    isUndefined = __webpack_require__(474);
 
 module.exports = function (options) {
 
@@ -51712,7 +51862,7 @@ module.exports = function (options) {
 };
 
 /***/ }),
-/* 465 */
+/* 467 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51776,10 +51926,10 @@ module.exports = {
 };
 
 /***/ }),
-/* 466 */
+/* 468 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(467);
+var freeGlobal = __webpack_require__(469);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -51790,7 +51940,7 @@ var root = freeGlobal || freeSelf || Function('return this')();
 module.exports = root;
 
 /***/ }),
-/* 467 */
+/* 469 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -51800,7 +51950,7 @@ module.exports = freeGlobal;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
 
 /***/ }),
-/* 468 */
+/* 470 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(114);
@@ -51851,7 +52001,7 @@ function getRawTag(value) {
 module.exports = getRawTag;
 
 /***/ }),
-/* 469 */
+/* 471 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -51878,7 +52028,7 @@ function objectToString(value) {
 module.exports = objectToString;
 
 /***/ }),
-/* 470 */
+/* 472 */
 /***/ (function(module, exports) {
 
 /**
@@ -51914,7 +52064,7 @@ function isObject(value) {
 module.exports = isObject;
 
 /***/ }),
-/* 471 */
+/* 473 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(113),
@@ -51948,7 +52098,7 @@ function isString(value) {
 module.exports = isString;
 
 /***/ }),
-/* 472 */
+/* 474 */
 /***/ (function(module, exports) {
 
 /**
@@ -51975,7 +52125,7 @@ function isUndefined(value) {
 module.exports = isUndefined;
 
 /***/ }),
-/* 473 */
+/* 475 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52061,7 +52211,7 @@ module.exports = function (requireCache, callback, callbackForModulesToKeep, mod
 };
 
 /***/ }),
-/* 474 */
+/* 476 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52207,7 +52357,7 @@ request.forever = function (agentOptions, optionsArg) {
 // Exports
 
 module.exports = request;
-request.Request = __webpack_require__(559);
+request.Request = __webpack_require__(561);
 request.initParams = initParams;
 
 // Backwards compatibility for request.debug
@@ -52222,7 +52372,7 @@ Object.defineProperty(request, 'debug', {
 });
 
 /***/ }),
-/* 475 */
+/* 477 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52244,7 +52394,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 476 */
+/* 478 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52338,7 +52488,7 @@ var isArray = Array.isArray || function (xs) {
 };
 
 /***/ }),
-/* 477 */
+/* 479 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52427,7 +52577,7 @@ var objectKeys = Object.keys || function (obj) {
 };
 
 /***/ }),
-/* 478 */
+/* 480 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52603,7 +52753,7 @@ MemoryCookieStore.prototype.getAllCookies = function (cb) {
 };
 
 /***/ }),
-/* 479 */
+/* 481 */
 /***/ (function(module, exports) {
 
 module.exports = function isBuffer(arg) {
@@ -52611,7 +52761,7 @@ module.exports = function isBuffer(arg) {
 };
 
 /***/ }),
-/* 480 */
+/* 482 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -52639,7 +52789,7 @@ if (typeof Object.create === 'function') {
 }
 
 /***/ }),
-/* 481 */
+/* 483 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -52718,7 +52868,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 482 */
+/* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -52906,7 +53056,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12), __webpack_require__(13)))
 
 /***/ }),
-/* 483 */
+/* 485 */
 /***/ (function(module, exports) {
 
 exports = module.exports = stringify;
@@ -52938,7 +53088,7 @@ function serializer(replacer, cycleReplacer) {
 }
 
 /***/ }),
-/* 484 */
+/* 486 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53058,7 +53208,7 @@ function fromByteArray(uint8) {
 }
 
 /***/ }),
-/* 485 */
+/* 487 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -53147,7 +53297,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 };
 
 /***/ }),
-/* 486 */
+/* 488 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53185,7 +53335,7 @@ module.exports = function hash(buf, fn) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 487 */
+/* 489 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53276,13 +53426,13 @@ module.exports = HashBase;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 488 */
+/* 490 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 489 */
+/* 491 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53366,7 +53516,7 @@ module.exports = function () {
 }();
 
 /***/ }),
-/* 490 */
+/* 492 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -53439,7 +53589,7 @@ function config(name) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
 
 /***/ }),
-/* 491 */
+/* 493 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53492,25 +53642,25 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 };
 
 /***/ }),
-/* 492 */
+/* 494 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(86);
 
 /***/ }),
-/* 493 */
+/* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(32);
 
 /***/ }),
-/* 494 */
+/* 496 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(44).PassThrough;
 
 /***/ }),
-/* 495 */
+/* 497 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -53607,7 +53757,7 @@ module.exports = Sha;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 496 */
+/* 498 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -53709,7 +53859,7 @@ module.exports = Sha1;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 497 */
+/* 499 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/**
@@ -53767,7 +53917,7 @@ module.exports = Sha224;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 498 */
+/* 500 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var inherits = __webpack_require__(4);
@@ -53829,7 +53979,7 @@ module.exports = Sha384;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 499 */
+/* 501 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53882,13 +54032,13 @@ Hmac.prototype._final = function () {
 module.exports = Hmac;
 
 /***/ }),
-/* 500 */
+/* 502 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(132);
 
 /***/ }),
-/* 501 */
+/* 503 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {var checkParameters = __webpack_require__(134);
@@ -53989,13 +54139,13 @@ module.exports = function (password, salt, iterations, keylen, digest, callback)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12), __webpack_require__(13)))
 
 /***/ }),
-/* 502 */
+/* 504 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ebtk = __webpack_require__(60);
 var aes = __webpack_require__(88);
-var DES = __webpack_require__(506);
-var desModes = __webpack_require__(512);
+var DES = __webpack_require__(508);
+var desModes = __webpack_require__(514);
 var aesModes = __webpack_require__(62);
 function createCipher(suite, password) {
   var keyLen, ivLen;
@@ -54067,7 +54217,7 @@ function getCiphers() {
 exports.listCiphers = exports.getCiphers = getCiphers;
 
 /***/ }),
-/* 503 */
+/* 505 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(61);
@@ -54195,7 +54345,7 @@ exports.createCipher = createCipher;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 504 */
+/* 506 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var zeros = new Buffer(16);
@@ -54286,7 +54436,7 @@ function xor(a, b) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 505 */
+/* 507 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(61);
@@ -54429,7 +54579,7 @@ exports.createDecipheriv = createDecipheriv;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 506 */
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var CipherBase = __webpack_require__(27);
@@ -54478,7 +54628,7 @@ DES.prototype._final = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 507 */
+/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54687,7 +54837,7 @@ exports.padSplit = function padSplit(num, size, group) {
 };
 
 /***/ }),
-/* 508 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54817,7 +54967,7 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
 };
 
 /***/ }),
-/* 509 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54958,7 +55108,7 @@ DES.prototype._decrypt = function _decrypt(state, lStart, rStart, out, off) {
 };
 
 /***/ }),
-/* 510 */
+/* 512 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55024,7 +55174,7 @@ proto._update = function _update(inp, inOff, out, outOff) {
 };
 
 /***/ }),
-/* 511 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55077,7 +55227,7 @@ EDE.prototype._pad = DES.prototype._pad;
 EDE.prototype._unpad = DES.prototype._unpad;
 
 /***/ }),
-/* 512 */
+/* 514 */
 /***/ (function(module, exports) {
 
 exports['des-ecb'] = {
@@ -55106,13 +55256,13 @@ exports['des-ede'] = {
 };
 
 /***/ }),
-/* 513 */
+/* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var generatePrime = __webpack_require__(145);
-var primes = __webpack_require__(515);
+var primes = __webpack_require__(517);
 
-var DH = __webpack_require__(516);
+var DH = __webpack_require__(518);
 
 function getDiffieHellman(mod) {
   var prime = new Buffer(primes[mod].prime, 'hex');
@@ -55154,13 +55304,13 @@ exports.createDiffieHellman = exports.DiffieHellman = createDiffieHellman;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 514 */
+/* 516 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 515 */
+/* 517 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -55199,7 +55349,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 516 */
+/* 518 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var BN = __webpack_require__(10);
@@ -55366,14 +55516,14 @@ function formatReturnValue(bn, enc) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 517 */
+/* 519 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var createHash = __webpack_require__(43);
 var stream = __webpack_require__(22);
 var inherits = __webpack_require__(4);
-var sign = __webpack_require__(518);
-var verify = __webpack_require__(554);
+var sign = __webpack_require__(520);
+var verify = __webpack_require__(556);
 
 var algorithms = __webpack_require__(132);
 Object.keys(algorithms).forEach(function (key) {
@@ -55463,7 +55613,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 518 */
+/* 520 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
@@ -55614,7 +55764,7 @@ module.exports.makeKey = makeKey;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 519 */
+/* 521 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -55677,7 +55827,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 520 */
+/* 522 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55783,7 +55933,7 @@ function intFromLE(bytes) {
 utils.intFromLE = intFromLE;
 
 /***/ }),
-/* 521 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56114,7 +56264,7 @@ BasePoint.prototype.dblp = function dblp(k) {
 };
 
 /***/ }),
-/* 522 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56982,7 +57132,7 @@ JPoint.prototype.isInfinity = function isInfinity() {
 };
 
 /***/ }),
-/* 523 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57163,7 +57313,7 @@ Point.prototype.getX = function getX() {
 };
 
 /***/ }),
-/* 524 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57555,7 +57705,7 @@ Point.prototype.toP = Point.prototype.normalize;
 Point.prototype.mixedAdd = Point.prototype.add;
 
 /***/ }),
-/* 525 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57686,7 +57836,7 @@ defineCurve('ed25519', {
 
 var pre;
 try {
-  pre = __webpack_require__(532);
+  pre = __webpack_require__(534);
 } catch (e) {
   pre = undefined;
 }
@@ -57717,20 +57867,20 @@ defineCurve('secp256k1', {
 });
 
 /***/ }),
-/* 526 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.sha1 = __webpack_require__(527);
-exports.sha224 = __webpack_require__(528);
+exports.sha1 = __webpack_require__(529);
+exports.sha224 = __webpack_require__(530);
 exports.sha256 = __webpack_require__(150);
-exports.sha384 = __webpack_require__(529);
+exports.sha384 = __webpack_require__(531);
 exports.sha512 = __webpack_require__(151);
 
 /***/ }),
-/* 527 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57799,7 +57949,7 @@ SHA1.prototype._digest = function digest(enc) {
 };
 
 /***/ }),
-/* 528 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57828,7 +57978,7 @@ SHA224.prototype._digest = function digest(enc) {
 };
 
 /***/ }),
-/* 529 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57857,7 +58007,7 @@ SHA384.prototype._digest = function digest(enc) {
 };
 
 /***/ }),
-/* 530 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57946,7 +58096,7 @@ var s = [11, 14, 15, 12, 5, 8, 7, 9, 11, 13, 14, 15, 6, 7, 9, 8, 7, 6, 8, 13, 11
 var sh = [8, 9, 9, 11, 13, 15, 15, 5, 7, 7, 8, 11, 14, 14, 12, 6, 9, 13, 15, 7, 12, 8, 9, 11, 7, 7, 12, 7, 6, 15, 13, 11, 9, 7, 15, 11, 8, 6, 6, 14, 12, 13, 5, 14, 13, 13, 7, 5, 15, 5, 8, 11, 14, 14, 6, 14, 6, 9, 12, 9, 12, 5, 15, 8, 8, 5, 12, 9, 12, 5, 14, 6, 8, 13, 6, 5, 15, 13, 11, 11];
 
 /***/ }),
-/* 531 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57994,7 +58144,7 @@ Hmac.prototype.digest = function digest(enc) {
 };
 
 /***/ }),
-/* 532 */
+/* 534 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -58009,20 +58159,20 @@ module.exports = {
 };
 
 /***/ }),
-/* 533 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var BN = __webpack_require__(10);
-var HmacDRBG = __webpack_require__(534);
+var HmacDRBG = __webpack_require__(536);
 var elliptic = __webpack_require__(19);
 var utils = elliptic.utils;
 var assert = utils.assert;
 
-var KeyPair = __webpack_require__(535);
-var Signature = __webpack_require__(536);
+var KeyPair = __webpack_require__(537);
+var Signature = __webpack_require__(538);
 
 function EC(options) {
   if (!(this instanceof EC)) return new EC(options);
@@ -58229,7 +58379,7 @@ EC.prototype.getKeyRecoveryParam = function (e, signature, Q, enc) {
 };
 
 /***/ }),
-/* 534 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58336,7 +58486,7 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
 };
 
 /***/ }),
-/* 535 */
+/* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58447,7 +58597,7 @@ KeyPair.prototype.inspect = function inspect() {
 };
 
 /***/ }),
-/* 536 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58581,7 +58731,7 @@ Signature.prototype.toDER = function toDER(enc) {
 };
 
 /***/ }),
-/* 537 */
+/* 539 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58592,8 +58742,8 @@ var elliptic = __webpack_require__(19);
 var utils = elliptic.utils;
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
-var KeyPair = __webpack_require__(538);
-var Signature = __webpack_require__(539);
+var KeyPair = __webpack_require__(540);
+var Signature = __webpack_require__(541);
 
 function EDDSA(curve) {
   assert(curve === 'ed25519', 'only tested with ed25519 so far');
@@ -58701,7 +58851,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 };
 
 /***/ }),
-/* 538 */
+/* 540 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58797,7 +58947,7 @@ KeyPair.prototype.getPublic = function getPublic(enc) {
 module.exports = KeyPair;
 
 /***/ }),
-/* 539 */
+/* 541 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58866,7 +59016,7 @@ Signature.prototype.toHex = function toHex() {
 module.exports = Signature;
 
 /***/ }),
-/* 540 */
+/* 542 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58876,7 +59026,7 @@ module.exports = Signature;
 
 var asn1 = __webpack_require__(48);
 
-exports.certificate = __webpack_require__(551);
+exports.certificate = __webpack_require__(553);
 
 var RSAPrivateKey = asn1.define('RSAPrivateKey', function () {
   this.seq().obj(this.key('version').int(), this.key('modulus').int(), this.key('publicExponent').int(), this.key('privateExponent').int(), this.key('prime1').int(), this.key('prime2').int(), this.key('exponent1').int(), this.key('exponent2').int(), this.key('coefficient').int());
@@ -58932,7 +59082,7 @@ exports.signature = asn1.define('signature', function () {
 });
 
 /***/ }),
-/* 541 */
+/* 543 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var asn1 = __webpack_require__(48);
@@ -58955,7 +59105,7 @@ function Entity(name, body) {
 Entity.prototype._createNamed = function createNamed(base) {
   var named;
   try {
-    named = __webpack_require__(542).runInThisContext('(function ' + this.name + '(entity) {\n' + '  this._initNamed(entity);\n' + '})');
+    named = __webpack_require__(544).runInThisContext('(function ' + this.name + '(entity) {\n' + '  this._initNamed(entity);\n' + '})');
   } catch (e) {
     named = function (entity) {
       this._initNamed(entity);
@@ -58992,10 +59142,10 @@ Entity.prototype.encode = function encode(data, enc, /* internal */reporter) {
 };
 
 /***/ }),
-/* 542 */
+/* 544 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var indexOf = __webpack_require__(543);
+var indexOf = __webpack_require__(545);
 
 var Object_keys = function (obj) {
     if (Object.keys) return Object.keys(obj);else {
@@ -59130,7 +59280,7 @@ exports.createContext = Script.createContext = function (context) {
 };
 
 /***/ }),
-/* 543 */
+/* 545 */
 /***/ (function(module, exports) {
 
 
@@ -59145,7 +59295,7 @@ module.exports = function (arr, obj) {
 };
 
 /***/ }),
-/* 544 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(4);
@@ -59266,7 +59416,7 @@ ReporterError.prototype.rethrow = function rethrow(msg) {
 };
 
 /***/ }),
-/* 545 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Reporter = __webpack_require__(49).Reporter;
@@ -59794,7 +59944,7 @@ Node.prototype._isPrintstr = function isPrintstr(str) {
 };
 
 /***/ }),
-/* 546 */
+/* 548 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var constants = __webpack_require__(153);
@@ -59841,16 +59991,16 @@ exports.tag = {
 exports.tagByName = constants._reverse(exports.tag);
 
 /***/ }),
-/* 547 */
+/* 549 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var decoders = exports;
 
 decoders.der = __webpack_require__(154);
-decoders.pem = __webpack_require__(548);
+decoders.pem = __webpack_require__(550);
 
 /***/ }),
-/* 548 */
+/* 550 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(4);
@@ -59899,16 +60049,16 @@ PEMDecoder.prototype.decode = function decode(data, options) {
 };
 
 /***/ }),
-/* 549 */
+/* 551 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var encoders = exports;
 
 encoders.der = __webpack_require__(155);
-encoders.pem = __webpack_require__(550);
+encoders.pem = __webpack_require__(552);
 
 /***/ }),
-/* 550 */
+/* 552 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(4);
@@ -59933,7 +60083,7 @@ PEMEncoder.prototype.encode = function encode(data, options) {
 };
 
 /***/ }),
-/* 551 */
+/* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59996,7 +60146,7 @@ var X509Certificate = asn.define('X509Certificate', function () {
 module.exports = X509Certificate;
 
 /***/ }),
-/* 552 */
+/* 554 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60015,7 +60165,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 553 */
+/* 555 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// adapted from https://github.com/apatil/pemstrip
@@ -60051,7 +60201,7 @@ module.exports = function (okey, password) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 554 */
+/* 556 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
@@ -60135,7 +60285,7 @@ module.exports = verify;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 555 */
+/* 557 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var elliptic = __webpack_require__(19);
@@ -60263,11 +60413,11 @@ function formatReturnValue(bn, enc, len) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 556 */
+/* 558 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.publicEncrypt = __webpack_require__(557);
-exports.privateDecrypt = __webpack_require__(558);
+exports.publicEncrypt = __webpack_require__(559);
+exports.privateDecrypt = __webpack_require__(560);
 
 exports.privateEncrypt = function privateEncrypt(key, buf) {
   return exports.publicEncrypt(key, buf, true);
@@ -60278,7 +60428,7 @@ exports.publicDecrypt = function publicDecrypt(key, buf) {
 };
 
 /***/ }),
-/* 557 */
+/* 559 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(65);
@@ -60379,7 +60529,7 @@ function nonZero(len, crypto) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 558 */
+/* 560 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(65);
@@ -60493,7 +60643,7 @@ function compare(a, b) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 559 */
+/* 561 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60504,30 +60654,30 @@ var http = __webpack_require__(50),
     url = __webpack_require__(24),
     util = __webpack_require__(7),
     stream = __webpack_require__(22),
-    zlib = __webpack_require__(565),
-    hawk = __webpack_require__(574),
-    aws2 = __webpack_require__(575),
-    aws4 = __webpack_require__(576),
-    httpSignature = __webpack_require__(578),
-    mime = __webpack_require__(592),
-    stringstream = __webpack_require__(596),
+    zlib = __webpack_require__(567),
+    hawk = __webpack_require__(576),
+    aws2 = __webpack_require__(577),
+    aws4 = __webpack_require__(578),
+    httpSignature = __webpack_require__(580),
+    mime = __webpack_require__(594),
+    stringstream = __webpack_require__(598),
     caseless = __webpack_require__(97),
-    ForeverAgent = __webpack_require__(597),
-    FormData = __webpack_require__(598),
+    ForeverAgent = __webpack_require__(599),
+    FormData = __webpack_require__(600),
     extend = __webpack_require__(82),
     isstream = __webpack_require__(172),
-    isTypedArray = __webpack_require__(599).strict,
+    isTypedArray = __webpack_require__(601).strict,
     helpers = __webpack_require__(84),
     cookies = __webpack_require__(116),
-    getProxyFromURI = __webpack_require__(600),
-    Querystring = __webpack_require__(601).Querystring,
-    Har = __webpack_require__(604).Har,
-    Auth = __webpack_require__(660).Auth,
-    OAuth = __webpack_require__(663).OAuth,
-    Multipart = __webpack_require__(665).Multipart,
-    Redirect = __webpack_require__(668).Redirect,
-    Tunnel = __webpack_require__(669).Tunnel,
-    now = __webpack_require__(671),
+    getProxyFromURI = __webpack_require__(602),
+    Querystring = __webpack_require__(603).Querystring,
+    Har = __webpack_require__(606).Har,
+    Auth = __webpack_require__(662).Auth,
+    OAuth = __webpack_require__(665).OAuth,
+    Multipart = __webpack_require__(667).Multipart,
+    Redirect = __webpack_require__(670).Redirect,
+    Tunnel = __webpack_require__(671).Tunnel,
+    now = __webpack_require__(673),
     Buffer = __webpack_require__(18).Buffer;
 
 var safeStringify = helpers.safeStringify,
@@ -62055,14 +62205,14 @@ Request.prototype.toJSON = requestToJSON;
 module.exports = Request;
 
 /***/ }),
-/* 560 */
+/* 562 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer, global, process) {var capability = __webpack_require__(160);
 var inherits = __webpack_require__(4);
-var response = __webpack_require__(561);
+var response = __webpack_require__(563);
 var stream = __webpack_require__(44);
-var toArrayBuffer = __webpack_require__(562);
+var toArrayBuffer = __webpack_require__(564);
 
 var IncomingMessage = response.IncomingMessage;
 var rStates = response.readyStates;
@@ -62332,7 +62482,7 @@ var unsafeHeaders = ['accept-charset', 'accept-encoding', 'access-control-reques
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer, __webpack_require__(12), __webpack_require__(13)))
 
 /***/ }),
-/* 561 */
+/* 563 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, Buffer, global) {var capability = __webpack_require__(160);
@@ -62514,7 +62664,7 @@ IncomingMessage.prototype._onXHRProgress = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13), __webpack_require__(2).Buffer, __webpack_require__(12)))
 
 /***/ }),
-/* 562 */
+/* 564 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(2).Buffer;
@@ -62546,7 +62696,7 @@ module.exports = function (buf) {
 };
 
 /***/ }),
-/* 563 */
+/* 565 */
 /***/ (function(module, exports) {
 
 module.exports = extend;
@@ -62570,7 +62720,7 @@ function extend() {
 }
 
 /***/ }),
-/* 564 */
+/* 566 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -62639,7 +62789,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 565 */
+/* 567 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -62665,7 +62815,7 @@ module.exports = {
 
 var Transform = __webpack_require__(128);
 
-var binding = __webpack_require__(566);
+var binding = __webpack_require__(568);
 var util = __webpack_require__(7);
 var assert = __webpack_require__(28).ok;
 
@@ -63206,14 +63356,14 @@ util.inherits(Unzip, Zlib);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer, __webpack_require__(13)))
 
 /***/ }),
-/* 566 */
+/* 568 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, Buffer) {var msg = __webpack_require__(161);
-var zstream = __webpack_require__(567);
-var zlib_deflate = __webpack_require__(568);
-var zlib_inflate = __webpack_require__(570);
-var constants = __webpack_require__(573);
+var zstream = __webpack_require__(569);
+var zlib_deflate = __webpack_require__(570);
+var zlib_inflate = __webpack_require__(572);
+var constants = __webpack_require__(575);
 
 for (var key in constants) {
   exports[key] = constants[key];
@@ -63420,7 +63570,7 @@ exports.Zlib = Zlib;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13), __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 567 */
+/* 569 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63454,14 +63604,14 @@ function ZStream() {
 module.exports = ZStream;
 
 /***/ }),
-/* 568 */
+/* 570 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(66);
-var trees = __webpack_require__(569);
+var trees = __webpack_require__(571);
 var adler32 = __webpack_require__(162);
 var crc32 = __webpack_require__(163);
 var msg = __webpack_require__(161);
@@ -65265,7 +65415,7 @@ exports.deflateTune = deflateTune;
 */
 
 /***/ }),
-/* 569 */
+/* 571 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66448,7 +66598,7 @@ exports._tr_tally = _tr_tally;
 exports._tr_align = _tr_align;
 
 /***/ }),
-/* 570 */
+/* 572 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66457,8 +66607,8 @@ exports._tr_align = _tr_align;
 var utils = __webpack_require__(66);
 var adler32 = __webpack_require__(162);
 var crc32 = __webpack_require__(163);
-var inflate_fast = __webpack_require__(571);
-var inflate_table = __webpack_require__(572);
+var inflate_fast = __webpack_require__(573);
+var inflate_table = __webpack_require__(574);
 
 var CODES = 0;
 var LENS = 1;
@@ -68078,7 +68228,7 @@ exports.inflateUndermine = inflateUndermine;
 */
 
 /***/ }),
-/* 571 */
+/* 573 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68414,7 +68564,7 @@ module.exports = function inflate_fast(strm, start) {
 };
 
 /***/ }),
-/* 572 */
+/* 574 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68732,7 +68882,7 @@ module.exports = function inflate_table(type, lens, lens_index, codes, table, ta
 };
 
 /***/ }),
-/* 573 */
+/* 575 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68786,7 +68936,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 574 */
+/* 576 */
 /***/ (function(module, exports) {
 
 /*
@@ -69538,7 +69688,7 @@ if (typeof module !== 'undefined' && module.exports) {
 // $lab:coverage:on$
 
 /***/ }),
-/* 575 */
+/* 577 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -69730,14 +69880,14 @@ function canonicalizeResource(resource) {
 module.exports.canonicalizeResource = canonicalizeResource;
 
 /***/ }),
-/* 576 */
+/* 578 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var aws4 = exports,
     url = __webpack_require__(24),
     querystring = __webpack_require__(41),
     crypto = __webpack_require__(11),
-    lru = __webpack_require__(577),
+    lru = __webpack_require__(579),
     credentialsCache = lru(1000);
 
 // http://docs.amazonwebservices.com/general/latest/gr/signature-version-4.html
@@ -70031,7 +70181,7 @@ aws4.sign = function (request, credentials) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 577 */
+/* 579 */
 /***/ (function(module, exports) {
 
 module.exports = function (size) {
@@ -70130,14 +70280,14 @@ function DoublyLinkedNode(key, val) {
 }
 
 /***/ }),
-/* 578 */
+/* 580 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright 2015 Joyent, Inc.
 
-var parser = __webpack_require__(579);
-var signer = __webpack_require__(587);
-var verify = __webpack_require__(591);
+var parser = __webpack_require__(581);
+var signer = __webpack_require__(589);
+var verify = __webpack_require__(593);
 var utils = __webpack_require__(68);
 
 ///--- API
@@ -70162,7 +70312,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 579 */
+/* 581 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright 2012 Joyent, Inc.  All rights reserved.
@@ -70454,7 +70604,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 580 */
+/* 582 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Named EC curves
@@ -70616,13 +70766,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 581 */
+/* 583 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 582 */
+/* 584 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
@@ -70630,8 +70780,8 @@ module.exports = {
 var errors = __webpack_require__(94);
 var types = __webpack_require__(95);
 
-var Reader = __webpack_require__(583);
-var Writer = __webpack_require__(584);
+var Reader = __webpack_require__(585);
+var Writer = __webpack_require__(586);
 
 ///--- Exports
 
@@ -70651,7 +70801,7 @@ for (var e in errors) {
 }
 
 /***/ }),
-/* 583 */
+/* 585 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
@@ -70881,7 +71031,7 @@ module.exports = Reader;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 584 */
+/* 586 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
@@ -71164,7 +71314,7 @@ module.exports = Writer;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 585 */
+/* 587 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2017 Joyent, Inc.
@@ -71459,7 +71609,7 @@ function getCertType(key) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 586 */
+/* 588 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2016 Joyent, Inc.
@@ -71539,7 +71689,7 @@ function write(cert, options) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 587 */
+/* 589 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2012 Joyent, Inc.  All rights reserved.
@@ -71549,7 +71699,7 @@ var crypto = __webpack_require__(11);
 var http = __webpack_require__(50);
 var util = __webpack_require__(7);
 var sshpk = __webpack_require__(93);
-var jsprim = __webpack_require__(588);
+var jsprim = __webpack_require__(590);
 var utils = __webpack_require__(68);
 
 var sprintf = __webpack_require__(7).format;
@@ -71901,7 +72051,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 588 */
+/* 590 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -71912,8 +72062,8 @@ var mod_assert = __webpack_require__(9);
 var mod_util = __webpack_require__(7);
 
 var mod_extsprintf = __webpack_require__(171);
-var mod_verror = __webpack_require__(589);
-var mod_jsonschema = __webpack_require__(590);
+var mod_verror = __webpack_require__(591);
+var mod_jsonschema = __webpack_require__(592);
 
 /*
  * Public interface
@@ -72541,7 +72691,7 @@ function mergeObjects(provided, overrides, defaults) {
 }
 
 /***/ }),
-/* 589 */
+/* 591 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -72681,7 +72831,7 @@ WError.prototype.cause = function we_cause(c) {
 };
 
 /***/ }),
-/* 590 */
+/* 592 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -72955,7 +73105,7 @@ empty list will be returned. A validation error will have two properties:
 });
 
 /***/ }),
-/* 591 */
+/* 593 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2015 Joyent, Inc.
@@ -73044,7 +73194,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 592 */
+/* 594 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73062,8 +73212,8 @@ module.exports = {
  * @private
  */
 
-var db = __webpack_require__(593);
-var extname = __webpack_require__(595).extname;
+var db = __webpack_require__(595);
+var extname = __webpack_require__(597).extname;
 
 /**
  * Module variables.
@@ -73233,7 +73383,7 @@ function populateMaps(extensions, types) {
 }
 
 /***/ }),
-/* 593 */
+/* 595 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -73246,10 +73396,10 @@ function populateMaps(extensions, types) {
  * Module exports.
  */
 
-module.exports = __webpack_require__(594);
+module.exports = __webpack_require__(596);
 
 /***/ }),
-/* 594 */
+/* 596 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -81950,7 +82100,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 595 */
+/* 597 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -82175,7 +82325,7 @@ var substr = 'ab'.substr(-1) === 'b' ? function (str, start, len) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ }),
-/* 596 */
+/* 598 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var util = __webpack_require__(7);
@@ -82283,7 +82433,7 @@ function alignedWrite(buffer) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 597 */
+/* 599 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = ForeverAgent;
@@ -82424,14 +82574,14 @@ function createConnectionSSL(port, host, options) {
 }
 
 /***/ }),
-/* 598 */
+/* 600 */
 /***/ (function(module, exports) {
 
 /* eslint-env browser */
 module.exports = typeof self == 'object' ? self.FormData : window.FormData;
 
 /***/ }),
-/* 599 */
+/* 601 */
 /***/ (function(module, exports) {
 
 module.exports = isTypedArray;
@@ -82464,7 +82614,7 @@ function isLooseTypedArray(arr) {
 }
 
 /***/ }),
-/* 600 */
+/* 602 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82542,7 +82692,7 @@ function getProxyFromURI(uri) {
 module.exports = getProxyFromURI;
 
 /***/ }),
-/* 601 */
+/* 603 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82590,7 +82740,7 @@ Querystring.prototype.unescape = querystring.unescape;
 exports.Querystring = Querystring;
 
 /***/ }),
-/* 602 */
+/* 604 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82756,7 +82906,7 @@ module.exports = function (object, opts) {
 };
 
 /***/ }),
-/* 603 */
+/* 605 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82923,7 +83073,7 @@ module.exports = function (str, opts) {
 };
 
 /***/ }),
-/* 604 */
+/* 606 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82931,7 +83081,7 @@ module.exports = function (str, opts) {
 
 var fs = __webpack_require__(37);
 var qs = __webpack_require__(41);
-var validate = __webpack_require__(605);
+var validate = __webpack_require__(607);
 var extend = __webpack_require__(82);
 
 function Har(request) {
@@ -83125,7 +83275,7 @@ Har.prototype.options = function (options) {
 exports.Har = Har;
 
 /***/ }),
-/* 605 */
+/* 607 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83154,15 +83304,15 @@ exports.request = request;
 exports.response = response;
 exports.timings = timings;
 
-var _harSchema = __webpack_require__(606);
+var _harSchema = __webpack_require__(608);
 
 var schemas = _interopRequireWildcard(_harSchema);
 
-var _ajv = __webpack_require__(625);
+var _ajv = __webpack_require__(627);
 
 var _ajv2 = _interopRequireDefault(_ajv);
 
-var _error = __webpack_require__(659);
+var _error = __webpack_require__(661);
 
 var _error2 = _interopRequireDefault(_error);
 
@@ -83275,35 +83425,35 @@ function timings(data) {
 }
 
 /***/ }),
-/* 606 */
+/* 608 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = {
-  afterRequest: __webpack_require__(607),
-  beforeRequest: __webpack_require__(608),
-  browser: __webpack_require__(609),
-  cache: __webpack_require__(610),
-  content: __webpack_require__(611),
-  cookie: __webpack_require__(612),
-  creator: __webpack_require__(613),
-  entry: __webpack_require__(614),
-  har: __webpack_require__(615),
-  header: __webpack_require__(616),
-  log: __webpack_require__(617),
-  page: __webpack_require__(618),
-  pageTimings: __webpack_require__(619),
-  postData: __webpack_require__(620),
-  query: __webpack_require__(621),
-  request: __webpack_require__(622),
-  response: __webpack_require__(623),
-  timings: __webpack_require__(624)
+  afterRequest: __webpack_require__(609),
+  beforeRequest: __webpack_require__(610),
+  browser: __webpack_require__(611),
+  cache: __webpack_require__(612),
+  content: __webpack_require__(613),
+  cookie: __webpack_require__(614),
+  creator: __webpack_require__(615),
+  entry: __webpack_require__(616),
+  har: __webpack_require__(617),
+  header: __webpack_require__(618),
+  log: __webpack_require__(619),
+  page: __webpack_require__(620),
+  pageTimings: __webpack_require__(621),
+  postData: __webpack_require__(622),
+  query: __webpack_require__(623),
+  request: __webpack_require__(624),
+  response: __webpack_require__(625),
+  timings: __webpack_require__(626)
 };
 
 /***/ }),
-/* 607 */
+/* 609 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83337,7 +83487,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 608 */
+/* 610 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83371,7 +83521,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 609 */
+/* 611 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83395,7 +83545,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 610 */
+/* 612 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83428,7 +83578,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 611 */
+/* 613 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83461,7 +83611,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 612 */
+/* 614 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83504,7 +83654,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 613 */
+/* 615 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83528,7 +83678,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 614 */
+/* 616 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83589,7 +83739,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 615 */
+/* 617 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83606,7 +83756,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 616 */
+/* 618 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83630,7 +83780,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 617 */
+/* 619 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83670,7 +83820,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 618 */
+/* 620 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83706,7 +83856,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 619 */
+/* 621 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83728,7 +83878,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 620 */
+/* 622 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83775,7 +83925,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 621 */
+/* 623 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83799,7 +83949,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 622 */
+/* 624 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83860,7 +84010,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 623 */
+/* 625 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83918,7 +84068,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 624 */
+/* 626 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -83964,20 +84114,20 @@ module.exports = {
 };
 
 /***/ }),
-/* 625 */
+/* 627 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var compileSchema = __webpack_require__(626),
+var compileSchema = __webpack_require__(628),
     resolve = __webpack_require__(176),
-    Cache = __webpack_require__(632),
+    Cache = __webpack_require__(634),
     SchemaObject = __webpack_require__(178),
     stableStringify = __webpack_require__(98),
-    formats = __webpack_require__(633),
-    rules = __webpack_require__(634),
-    v5 = __webpack_require__(650),
+    formats = __webpack_require__(635),
+    rules = __webpack_require__(636),
+    v5 = __webpack_require__(652),
     util = __webpack_require__(36),
     async = __webpack_require__(179),
     co = __webpack_require__(182);
@@ -83986,7 +84136,7 @@ module.exports = Ajv;
 
 Ajv.prototype.compileAsync = async.compile;
 
-var customKeyword = __webpack_require__(656);
+var customKeyword = __webpack_require__(658);
 Ajv.prototype.addKeyword = customKeyword.add;
 Ajv.prototype.getKeyword = customKeyword.get;
 Ajv.prototype.removeKeyword = customKeyword.remove;
@@ -84332,7 +84482,7 @@ function Ajv(opts) {
 
   function addDraft4MetaSchema() {
     if (self._opts.meta !== false) {
-      var metaSchema = __webpack_require__(658);
+      var metaSchema = __webpack_require__(660);
       addMetaSchema(metaSchema, META_SCHEMA_ID, true);
       self._refs['http://json-schema.org/schema'] = META_SCHEMA_ID;
     }
@@ -84363,7 +84513,7 @@ function Ajv(opts) {
 }
 
 /***/ }),
-/* 626 */
+/* 628 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84717,7 +84867,7 @@ function vars(arr, statement) {
 }
 
 /***/ }),
-/* 627 */
+/* 629 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84744,14 +84894,14 @@ module.exports = function ucs2length(str) {
 };
 
 /***/ }),
-/* 628 */
+/* 630 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.parse = __webpack_require__(629);
-exports.stringify = __webpack_require__(630);
+exports.parse = __webpack_require__(631);
+exports.stringify = __webpack_require__(632);
 
 /***/ }),
-/* 629 */
+/* 631 */
 /***/ (function(module, exports) {
 
 var at,
@@ -85026,7 +85176,7 @@ module.exports = function (source, reviver) {
 };
 
 /***/ }),
-/* 630 */
+/* 632 */
 /***/ (function(module, exports) {
 
 var cx = /[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,
@@ -85180,7 +85330,7 @@ module.exports = function (value, replacer, space) {
 };
 
 /***/ }),
-/* 631 */
+/* 633 */
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -85189,10 +85339,10 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 631;
+webpackEmptyContext.id = 633;
 
 /***/ }),
-/* 632 */
+/* 634 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85219,7 +85369,7 @@ Cache.prototype.clear = function Cache_clear() {
 };
 
 /***/ }),
-/* 633 */
+/* 635 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85376,13 +85526,13 @@ function compareDateTime(dt1, dt2) {
 }
 
 /***/ }),
-/* 634 */
+/* 636 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var ruleModules = __webpack_require__(635),
+var ruleModules = __webpack_require__(637),
     toHash = __webpack_require__(36).toHash;
 
 module.exports = function rules() {
@@ -85416,7 +85566,7 @@ module.exports = function rules() {
 };
 
 /***/ }),
-/* 635 */
+/* 637 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85425,13 +85575,13 @@ module.exports = function rules() {
 //all requires must be explicit because browserify won't work with dynamic requires
 
 module.exports = {
-  '$ref': __webpack_require__(636),
-  allOf: __webpack_require__(637),
-  anyOf: __webpack_require__(638),
-  dependencies: __webpack_require__(639),
-  'enum': __webpack_require__(640),
-  format: __webpack_require__(641),
-  items: __webpack_require__(642),
+  '$ref': __webpack_require__(638),
+  allOf: __webpack_require__(639),
+  anyOf: __webpack_require__(640),
+  dependencies: __webpack_require__(641),
+  'enum': __webpack_require__(642),
+  format: __webpack_require__(643),
+  items: __webpack_require__(644),
   maximum: __webpack_require__(184),
   minimum: __webpack_require__(184),
   maxItems: __webpack_require__(185),
@@ -85440,18 +85590,18 @@ module.exports = {
   minLength: __webpack_require__(186),
   maxProperties: __webpack_require__(187),
   minProperties: __webpack_require__(187),
-  multipleOf: __webpack_require__(643),
-  not: __webpack_require__(644),
-  oneOf: __webpack_require__(645),
-  pattern: __webpack_require__(646),
-  properties: __webpack_require__(647),
-  required: __webpack_require__(648),
-  uniqueItems: __webpack_require__(649),
+  multipleOf: __webpack_require__(645),
+  not: __webpack_require__(646),
+  oneOf: __webpack_require__(647),
+  pattern: __webpack_require__(648),
+  properties: __webpack_require__(649),
+  required: __webpack_require__(650),
+  uniqueItems: __webpack_require__(651),
   validate: __webpack_require__(181)
 };
 
 /***/ }),
-/* 636 */
+/* 638 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85578,7 +85728,7 @@ module.exports = function generate_ref(it, $keyword) {
 };
 
 /***/ }),
-/* 637 */
+/* 639 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85629,7 +85779,7 @@ module.exports = function generate_allOf(it, $keyword) {
 };
 
 /***/ }),
-/* 638 */
+/* 640 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85702,7 +85852,7 @@ module.exports = function generate_anyOf(it, $keyword) {
 };
 
 /***/ }),
-/* 639 */
+/* 641 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85859,7 +86009,7 @@ module.exports = function generate_dependencies(it, $keyword) {
 };
 
 /***/ }),
-/* 640 */
+/* 642 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85932,7 +86082,7 @@ module.exports = function generate_enum(it, $keyword) {
 };
 
 /***/ }),
-/* 641 */
+/* 643 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86078,7 +86228,7 @@ module.exports = function generate_format(it, $keyword) {
 };
 
 /***/ }),
-/* 642 */
+/* 644 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86231,7 +86381,7 @@ module.exports = function generate_items(it, $keyword) {
 };
 
 /***/ }),
-/* 643 */
+/* 645 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86315,7 +86465,7 @@ module.exports = function generate_multipleOf(it, $keyword) {
 };
 
 /***/ }),
-/* 644 */
+/* 646 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86406,7 +86556,7 @@ module.exports = function generate_not(it, $keyword) {
 };
 
 /***/ }),
-/* 645 */
+/* 647 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86491,7 +86641,7 @@ module.exports = function generate_oneOf(it, $keyword) {
 };
 
 /***/ }),
-/* 646 */
+/* 648 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86573,7 +86723,7 @@ module.exports = function generate_pattern(it, $keyword) {
 };
 
 /***/ }),
-/* 647 */
+/* 649 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87035,7 +87185,7 @@ module.exports = function generate_properties(it, $keyword) {
 };
 
 /***/ }),
-/* 648 */
+/* 650 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87296,7 +87446,7 @@ module.exports = function generate_required(it, $keyword) {
 };
 
 /***/ }),
-/* 649 */
+/* 651 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87375,7 +87525,7 @@ module.exports = function generate_uniqueItems(it, $keyword) {
 };
 
 /***/ }),
-/* 650 */
+/* 652 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87390,14 +87540,14 @@ module.exports = {
 
 function enableV5(ajv) {
   var inlineFunctions = {
-    'switch': __webpack_require__(651),
-    'constant': __webpack_require__(652),
-    '_formatLimit': __webpack_require__(653),
-    'patternRequired': __webpack_require__(654)
+    'switch': __webpack_require__(653),
+    'constant': __webpack_require__(654),
+    '_formatLimit': __webpack_require__(655),
+    'patternRequired': __webpack_require__(656)
   };
 
   if (ajv._opts.meta !== false) {
-    var metaSchema = __webpack_require__(655);
+    var metaSchema = __webpack_require__(657);
     ajv.addMetaSchema(metaSchema, META_SCHEMA_ID);
   }
   _addKeyword('constant');
@@ -87430,7 +87580,7 @@ function containsMacro(schema) {
 }
 
 /***/ }),
-/* 651 */
+/* 653 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87568,7 +87718,7 @@ module.exports = function generate_switch(it, $keyword) {
 };
 
 /***/ }),
-/* 652 */
+/* 654 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87628,7 +87778,7 @@ module.exports = function generate_constant(it, $keyword) {
 };
 
 /***/ }),
-/* 653 */
+/* 655 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87813,7 +87963,7 @@ module.exports = function generate__formatLimit(it, $keyword) {
 };
 
 /***/ }),
-/* 654 */
+/* 656 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87872,7 +88022,7 @@ module.exports = function generate_patternRequired(it, $keyword) {
 };
 
 /***/ }),
-/* 655 */
+/* 657 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -88372,14 +88522,14 @@ module.exports = {
 };
 
 /***/ }),
-/* 656 */
+/* 658 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var IDENTIFIER = /^[a-z_$][a-z0-9_$\-]*$/i;
-var customRuleCode = __webpack_require__(657);
+var customRuleCode = __webpack_require__(659);
 
 module.exports = {
   add: addKeyword,
@@ -88497,7 +88647,7 @@ function removeKeyword(keyword) {
 }
 
 /***/ }),
-/* 657 */
+/* 659 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88726,7 +88876,7 @@ module.exports = function generate_custom(it, $keyword) {
 };
 
 /***/ }),
-/* 658 */
+/* 660 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -88952,7 +89102,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 659 */
+/* 661 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88980,7 +89130,7 @@ HARError.prototype = Error.prototype;
 module.exports = exports['default'];
 
 /***/ }),
-/* 660 */
+/* 662 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89153,7 +89303,7 @@ Auth.prototype.onResponse = function (response) {
 exports.Auth = Auth;
 
 /***/ }),
-/* 661 */
+/* 663 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var rng = __webpack_require__(188);
@@ -89256,7 +89406,7 @@ function v1(options, buf, offset) {
 module.exports = v1;
 
 /***/ }),
-/* 662 */
+/* 664 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var rng = __webpack_require__(188);
@@ -89290,7 +89440,7 @@ function v4(options, buf, offset) {
 module.exports = v4;
 
 /***/ }),
-/* 663 */
+/* 665 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89300,7 +89450,7 @@ var url = __webpack_require__(24),
     qs = __webpack_require__(173),
     caseless = __webpack_require__(97),
     uuid = __webpack_require__(99),
-    oauth = __webpack_require__(664),
+    oauth = __webpack_require__(666),
     crypto = __webpack_require__(11),
     Buffer = __webpack_require__(18).Buffer;
 
@@ -89435,7 +89585,7 @@ OAuth.prototype.onRequest = function (_oauth) {
 exports.OAuth = OAuth;
 
 /***/ }),
-/* 664 */
+/* 666 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var crypto = __webpack_require__(11),
@@ -89555,14 +89705,14 @@ exports.rfc3986 = rfc3986;
 exports.generateBase = generateBase;
 
 /***/ }),
-/* 665 */
+/* 667 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var uuid = __webpack_require__(99),
-    CombinedStream = __webpack_require__(666),
+    CombinedStream = __webpack_require__(668),
     isstream = __webpack_require__(172),
     Buffer = __webpack_require__(18).Buffer;
 
@@ -89675,12 +89825,12 @@ Multipart.prototype.onRequest = function (options) {
 exports.Multipart = Multipart;
 
 /***/ }),
-/* 666 */
+/* 668 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var util = __webpack_require__(7);
 var Stream = __webpack_require__(22).Stream;
-var DelayedStream = __webpack_require__(667);
+var DelayedStream = __webpack_require__(669);
 
 module.exports = CombinedStream;
 function CombinedStream() {
@@ -89863,7 +90013,7 @@ CombinedStream.prototype._emitError = function (err) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
 
 /***/ }),
-/* 667 */
+/* 669 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stream = __webpack_require__(22).Stream;
@@ -89974,7 +90124,7 @@ DelayedStream.prototype._checkIfMaxDataSizeExceeded = function () {
 };
 
 /***/ }),
-/* 668 */
+/* 670 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90136,14 +90286,14 @@ Redirect.prototype.onResponse = function (response) {
 exports.Redirect = Redirect;
 
 /***/ }),
-/* 669 */
+/* 671 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var url = __webpack_require__(24),
-    tunnel = __webpack_require__(670);
+    tunnel = __webpack_require__(672);
 
 var defaultProxyHeaderWhiteList = ['accept', 'accept-charset', 'accept-encoding', 'accept-language', 'accept-ranges', 'cache-control', 'content-encoding', 'content-language', 'content-location', 'content-md5', 'content-range', 'content-type', 'connection', 'date', 'expect', 'max-forwards', 'pragma', 'referer', 'te', 'user-agent', 'via'];
 
@@ -90290,7 +90440,7 @@ Tunnel.defaultProxyHeaderExclusiveList = defaultProxyHeaderExclusiveList;
 exports.Tunnel = Tunnel;
 
 /***/ }),
-/* 670 */
+/* 672 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -90531,7 +90681,7 @@ exports.debug = debug; // for test
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ }),
-/* 671 */
+/* 673 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {// Generated by CoffeeScript 1.7.1
@@ -90568,13 +90718,13 @@ exports.debug = debug; // for test
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ }),
-/* 672 */
+/* 674 */
 /***/ (function(module, exports, __webpack_require__) {
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-const Sentence = __webpack_require__(673);
-const Token = __webpack_require__(674);
+const Sentence = __webpack_require__(675);
+const Token = __webpack_require__(676);
 
 const SENTENCE_SPLIT_REGEX_BASE = '[.](?!\\d)|[!?]+|[。]|[！？]+';
 const SENTENCE_SPLIT_REGEX = new RegExp(`(${SENTENCE_SPLIT_REGEX_BASE})`, 'gui');
@@ -90649,7 +90799,7 @@ module.exports = class SentenceParser {
 };
 
 /***/ }),
-/* 673 */
+/* 675 */
 /***/ (function(module, exports) {
 
 module.exports = class Sentence {
@@ -90664,7 +90814,7 @@ module.exports = class Sentence {
 };
 
 /***/ }),
-/* 674 */
+/* 676 */
 /***/ (function(module, exports) {
 
 module.exports = class Token {
@@ -90683,7 +90833,7 @@ module.exports = class Token {
 };
 
 /***/ }),
-/* 675 */
+/* 677 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const { matchAContainsMatchB } = __webpack_require__(0);
@@ -90700,7 +90850,7 @@ class MatchReducer {
       const matcher = this.matchersMap[matcherName];
       grammarMatches.push({
         id: matcher.id,
-        name: matcher.name,
+        structures: matcher.structures,
         description: matcher.description,
         sources: matcher.sources,
         examples: matcher.examples,
@@ -90752,7 +90902,7 @@ class MatchReducer {
 module.exports = MatchReducer;
 
 /***/ }),
-/* 676 */
+/* 678 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90760,11 +90910,11 @@ module.exports = MatchReducer;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scripts_allset_urls__ = __webpack_require__(677);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scripts_allset_urls__ = __webpack_require__(679);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scripts_allset_urls___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__scripts_allset_urls__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_patterns__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_patterns___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__src_patterns__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ProgressPage_scss__ = __webpack_require__(678);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ProgressPage_scss__ = __webpack_require__(680);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ProgressPage_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ProgressPage_scss__);
 
 
@@ -90990,17 +91140,16 @@ const ProgressPage = () => {
 /* harmony default export */ __webpack_exports__["a"] = (ProgressPage);
 
 /***/ }),
-/* 677 */
+/* 679 */
 /***/ (function(module, exports) {
 
 /* eslint-disable */
 
-const a1 = [
-// {
-//   label: "Negation of \"you\" with \"mei\"",
-//   url: "https://resources.allsetlearning.com/chinese/grammar/ASGPNV3Q",
-// },
-{
+const a1 = [{
+  label: 'Negation of "you" with "mei"',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPNV3Q',
+  matcherId: 'meiyou'
+}, {
   label: 'The "all" adverb "dou"',
   url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9YK09'
 }, {
@@ -91159,12 +91308,11 @@ const a2 = [{
 }, {
   label: 'Expressing "all along" with "yizhi"',
   url: 'https://resources.allsetlearning.com/chinese/grammar/ASGP000J'
-},
-// {
-//   label: "Expressing \"already\" with \"yijing\"",
-//   url: "https://resources.allsetlearning.com/chinese/grammar/ASGNXI27",
-// },
-{
+}, {
+  label: 'Expressing "already" with "yijing"',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGNXI27',
+  matcherId: 'yijingLe'
+}, {
   label: 'Expressing "always" with "zongshi"',
   url: 'https://resources.allsetlearning.com/chinese/grammar/ASGXJPJS'
 }, {
@@ -91978,10 +92126,15 @@ const b1 = [{
 }, {
   label: 'The "if" sandwich pattern',
   url: 'https://resources.allsetlearning.com/chinese/grammar/ASGN4VUU',
-  regexes: [/(如果)[^话]+(的话)?/, /(如果)?[^话]+(的话)/]
+  regexes: [/(如果)[^话]+(的话)?/, /(如果)?[^话]+(的话)/],
+  filterExamples: true,
+  matcherId: 'ruguoDehua'
 }, {
   label: 'The pattern "it\'s not…, it\'s…"',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGT9WYR'
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGT9WYR',
+  matcherId: 'bushiErshi',
+  regexes: [/(不是)[^是]+[，,](是)/, /(不是)[^是]+(而是)/],
+  skip: 'Identical to ASGAJGJD'
 }, {
   label: 'Topic-comment sentences',
   url: 'https://resources.allsetlearning.com/chinese/grammar/ASG5KNWW',
@@ -91999,7 +92152,8 @@ const b1 = [{
   skip: 'too hard'
 }, {
   label: 'Using the "shi... de" construction',
-  url: 'https://resources.allsetlearning.com/chinese/grammar/ASG8YTSF'
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASG8YTSF',
+  skip: "Look at when there's more time to focus on this"
 }, {
   label: 'Expressing "either... or..." with "yaome"',
   url: 'https://resources.allsetlearning.com/chinese/grammar/ASG30A60',
@@ -92392,12 +92546,11 @@ const b2 = [{
 }, {
   label: 'Expressing simultaneous actions with "yimian"',
   url: 'https://resources.allsetlearning.com/chinese/grammar/ASG1QB4K'
-},
-// {
-//   label: "Expressing the only two possibilities",
-//   url: "https://resources.allsetlearning.com/chinese/grammar/ASGEXR6R",
-// },
-{
+}, {
+  label: 'Expressing the only two possibilities',
+  url: 'https://resources.allsetlearning.com/chinese/grammar/ASGEXR6R',
+  matcherId: 'bushijiushi'
+}, {
   label: 'Occurring together with "shaobuliao"',
   url: 'https://resources.allsetlearning.com/chinese/grammar/ASG3IR71'
 }, {
@@ -92481,7 +92634,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 678 */
+/* 680 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
