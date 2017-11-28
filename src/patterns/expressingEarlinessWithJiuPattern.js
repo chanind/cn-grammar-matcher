@@ -14,7 +14,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingEarlinessWithJiu',
-  name: 'Subj. + Time Word + 就 + Verb',
+  structures: [
+    'Subj. + Time Word + 就 + Verb',
+    'Subj. + Time  Word + 就 + Verb + Obj. + 了',
+  ],
   description:
     'Just as 才 (cái) can express lateness, 就 (jiù) can be used to indicate that something happened earlier or sooner than expected.  It can also be used in the near future to indicate something will happen very soon. 早就 means "long ago," and is usually used to express a kind of impatience or surprise on the part of the speaker. It comes before the verb.',
   sources: [allSetSrc],

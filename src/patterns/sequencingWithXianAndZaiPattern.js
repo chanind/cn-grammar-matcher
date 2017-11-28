@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'sequencingWithXianAndZai',
-  name: '先 + [Verb Phrase 1] + 再 + [Verb Phrase 2]',
+  structures: ['先 + [Verb Phrase 1] + 再 + [Verb Phrase 2]', '先 + [Verb Phrase] + 再说'],
   description:
     'The word 再 (zài) actually has a lot of uses, beyond just "again."  "先⋯⋯， 再⋯⋯" (xiān..., zài...) is a pattern used for sequencing events, much like "First..., then..." in English. This pattern can also include "然后" (ránhòu) meaning "and after that."',
   sources: [allSetSrc],

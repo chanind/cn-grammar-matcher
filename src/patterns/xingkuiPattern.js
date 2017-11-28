@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'xingkui',
-  name: '幸亏 / 幸好 + [Lucky Incident]',
+  structures: [
+    '幸亏 / 幸好 + [Lucky Incident]',
+    '幸亏 / 幸好 + [Lucky Incident]， 不然 ……',
+    '还好 + [Lucky Incident]， 不然……',
+  ],
   description:
     '幸亏 (xìngkuī), 幸好 (xìnghǎo), and 还好 (háihǎo) mean "fortunately" or "luckily." They can be used to express that something has happened by chance, and has thereby enabled you to avoid some difficulty or bad luck. It is often followed with 不然 (which precedes the bad thing that could have happened).',
   sources: [allSetSrc],

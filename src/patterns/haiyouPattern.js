@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'haiyou',
-  name: '[Clause ]，+  还有 ，+ [Clause 2]',
+  structures: ['[Clause ]，+  还有 ，+ [Clause 2]'],
   description:
     '"还有" (háiyǒu) is used to express "in addition..." or "and also..." in a conversation. It is introducing new information to the topic the speaker is talking about, as an afterthought. While it\'s not the most challenging grammar structure, an important thing to keep in mind is that 还有 normally starts a completely new sentence or clause.',
   sources: [allSetSrc],

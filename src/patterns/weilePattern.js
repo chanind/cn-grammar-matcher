@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'weile',
-  name: '为了+ [Purpose]，Subject + Predicate',
+  structures: ['为了+ [Purpose]，Subject + Predicate', '⋯⋯是 + 为了 + Purpose / Reason'],
   description:
     '为了 (wèile) is most often used to indicate the purpose of an action, or the person that will benefit from some act of kindness.  In the "purpose" sense, it corresponds pretty well to "in order to" or "for the purpose of" in English.',
   sources: [allSetSrc],

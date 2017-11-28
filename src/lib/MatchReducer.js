@@ -12,7 +12,7 @@ class MatchReducer {
       const matcher = this.matchersMap[matcherName];
       grammarMatches.push({
         id: matcher.id,
-        name: matcher.name,
+        structures: matcher.structures,
         description: matcher.description,
         sources: matcher.sources,
         examples: matcher.examples,

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAfterWithJingguo',
-  name: '经过 + Event / Time，Subj. + Predicate',
+  structures: ['经过 + Event / Time，Subj. + Predicate'],
   description:
     'The first way that 经过 is used as a verb is that it means "to pass by" or "to pass through." It is like saying "I went through downtown" or "I passed by the shop." As a preposition, 经过 means "to experience something" or "going through a time." It emphasizes the process of that experience. If it is talking about "going through a time," it is usually talking about the past. As a noun, 经过 refers to the process of something.',
   sources: [allSetSrc],

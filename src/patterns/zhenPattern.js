@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhen',
-  name: '真 + Adj.',
+  structures: ['真 + Adj.', '真 + Verb'],
   description: 'As an adverb, the word 真 (zhēn) means "really" or "truly."',
   sources: [allSetSrc],
   match: sentence =>

@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yaobu',
-  name: '要不 + Option A，要不 + Option B',
+  structures: [
+    '要不 + Option A，要不 + Option B',
+    'Reason / Situation，要不 + Option B',
+    'Statement， 要不 + Result',
+  ],
   description:
     '要不 (yàobù) can have a number of meanings, ranging from "either/or" to "how about."',
   sources: [allSetSrc],

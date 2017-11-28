@@ -14,7 +14,13 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingTheMoreTheMoreWithYueYue',
-  name: 'Subj. + 越 + Verb + 越 + Adj.',
+  structures: [
+    'Subj. + 越 + Verb + 越 + Adj.',
+    'Subj. +  越 + Verb 1 + 越 + Verb 2',
+    'Subj. 1 + 越 + Verb，Subj. 2 + 越 + Adj.',
+    'Subj. 1 + 越 + Verb 1，Subj. 2 + 越 + Verb 2',
+    'Subj. + 越 + Verb + 越 + 想 + Verb',
+  ],
   description:
     'More than just throwing anything you want after two 越s, there are a number of specific patterns you will notice if you want to go beyond using the simpler 越来越.',
   sources: [allSetSrc],

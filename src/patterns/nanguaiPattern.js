@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'nanguai',
-  name: '难怪 / 怪不得 + ([Observation])',
+  structures: [
+    '难怪 / 怪不得 + ([Observation])',
+    '难怪 / 怪不得 + [Observation]，原来 + [Reason]',
+    '(这也 +) 难怪 + [Specific Person/People]',
+  ],
   description:
     '难怪 (nánguài) can be used to express that the speaker finds something unsurprising. It can be used alone or in a variety of different structures, as shown below.  怪不得 (guàibude) is another way to express exactly the same thing, in a slightly more informal way. 难怪 (nánguài) when used as a verb can be translated as "hard to blame." This is usually directed at a person, and it is similar to how in English we may say "He\'s always sleepy, but you can\'t blame him because he works a night shift."',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhiSuoyiShiYinwei',
-  name: 'Subj.+ 之所以 + Effect + 是因为 + Cause',
+  structures: ['Subj.+ 之所以 + Effect + 是因为 + Cause'],
   description:
     "之所以⋯⋯是因为 (zhī suǒyǐ... shì yīnwèi) can be translated as “the reason why... is because” and can be used if the speaker wishes to state the effect before the cause.  It's normally used in somewhat formal speech.",
   sources: [allSetSrc],

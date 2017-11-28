@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yibianYibian',
-  name: 'Subj. + 一边 + Verb（，）+ 一边 + Verb',
+  structures: ['Subj. + 一边 + Verb（，）+ 一边 + Verb'],
   description:
     'Multitasking is everywhere in the modern world (what else are you doing while you read this?), but you if can focus for just a minute, you can learn a way to express simultaneous tasks in Chinese! This can be done with 一边 (yībiān).',
   sources: [allSetSrc],

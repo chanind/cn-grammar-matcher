@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'advancedYesnoQuestionsWithMa',
-  name: 'Statement + 吗 ？',
+  structures: ['Statement + 吗 ？', '[Question-word Question] + 吗 ？'],
   description:
     'The question particle 吗 (ma) is a very simple way to convert it into a "yes/no question," and beginners will learn not to use 吗 with other question words, because it\'s redundant. More advanced students, however, will note that 吗 has some more complicated structures that do involve combining it with question words in order to ask very specific types of confirming questions. Note that the following examples typically contains some kind of "verb of understanding" such as 知道 (zhīdào),了解 (liǎojiě), 明白 (míngbai), 认识 (rènshi), etc. Then "吗" (ma) can still be added at the end of the question, turning it into a kind of confirmation.',
   sources: [allSetSrc],

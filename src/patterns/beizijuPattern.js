@@ -10,7 +10,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'beiziju',
-  name: 'Subj. + 被 + Doer + Verb Phrase',
+  structures: [
+    'Subj. + 被 + Doer + Verb Phrase',
+    'Subj. + 被 + Verb Phrase',
+    'Subj. + 没有 + 被 + Doer + Verb Phrase',
+    'Subj. + Adv. + 被 + Doer + Verb Phrase',
+  ],
   description:
     'Bei Sentences, which are called 被字句 (bèizìjù) in Chinese, are a key way to express the passive in modern Mandarin Chinese.  In passive sentences, the object of an action becomes the subject of the sentence, and what would have been the subject of the normal (active voice) sentence, the "doer" of the action, becomes secondary, and may or may not be included in the passive sentence.',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'youde',
-  name: '有的 + (Subj.) + Predicate， 有的 + (Subj.) + Predicate',
+  structures: ['有的 + (Subj.) + Predicate， 有的 + (Subj.) + Predicate'],
   description:
     'To refer to just certain members of group, you can use 有的 (yǒude). This usage is normally translated as "some" in English. It is often used multiple times in one sentence to refer to different groups.',
   sources: [allSetSrc],

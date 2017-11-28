@@ -14,7 +14,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'indicatingTheWholeWithQuan',
-  name: '全 + Noun + 都  + Verb',
+  structures: [
+    '全 + Noun + 都  + Verb',
+    'Subj. + 全 + 都 + Verb  / Adj.',
+    'Subj. + 全都 + 不 / 没 + Verb / Adj.',
+    'Subj.＋不 / 没＋全都＋Verb / Adj.',
+  ],
   description:
     'One of the uses of 全 (quán) is to indicate the entirety of something. It could be used for something like a whole household, an entire country, the whole world, etc.',
   sources: [allSetSrc],

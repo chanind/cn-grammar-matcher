@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'bothWithYou',
-  name: 'Subj. + 又 + Adj. 1 + 又 + Adj. 2',
+  structures: ['Subj. + 又 + Adj. 1 + 又 + Adj. 2'],
   description:
     'When you\'re getting descriptive, you may find yourself wanting to use multiple adjectives at a time. The character 又 (yòu) can be used to give two qualities to something. Using the double 又 (yòu) structure is like saying that something is "both… and…" in English.',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhongyu',
-  name: 'Subj. + 终于 + Verb Phrase + 了',
+  structures: ['Subj. + 终于 + Verb Phrase + 了'],
   description: '终于(zhōngyú) 表示经过很长时间的等待最后实现了愿望，通常都是说话人期待发生的事情，含喜悦、满意的感情色彩。',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(终于)[^了]+(了)/)]),

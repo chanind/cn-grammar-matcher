@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingRatherWithBijiao',
-  name: 'Subj. + 比较 + Adj.',
+  structures: ['Subj. + 比较 + Adj.'],
   description:
     'It\'s rather nice to be able to read an article on how to use 比较 to mean "rather." And here it is!',
   sources: [allSetSrc],

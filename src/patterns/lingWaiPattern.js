@@ -14,7 +14,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'lingWai',
-  name: '⋯⋯， 另外，⋯⋯',
+  structures: [
+    '⋯⋯， 另外，⋯⋯',
+    '另外 ＋ [Verb Phrase]',
+    '另外 ＋ 一 + Measure Word + Noun',
+    '另外 + [Plural Noun]',
+  ],
   description:
     '另外 (lìng wài) can be used to express "in addition," often with 还 used in the following phrase.',
   sources: [allSetSrc],

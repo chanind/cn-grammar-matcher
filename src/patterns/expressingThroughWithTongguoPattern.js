@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingThroughWithTongguo',
-  name: '通过 + Agent ，Subj. + ~',
+  structures: ['通过 + Agent ，Subj. + ~', '通过 + [Verb Phrase] ，Subj. + ~'],
   description: '',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(通过)/)]),

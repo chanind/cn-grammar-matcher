@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'ageWithSui',
-  name: 'Subj. + Number + 岁',
+  structures: ['Subj. + Number + 岁', 'Subj. + Number + 岁 + 半'],
   description:
     'Use 岁 (suì) to give a person\'s age, similar to how we say "years old" in English. There are a details that work differently from English, however.',
   sources: [allSetSrc],

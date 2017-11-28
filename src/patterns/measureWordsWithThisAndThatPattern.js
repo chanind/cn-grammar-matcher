@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'measureWordsWithThisAndThat',
-  name: '这 / 那 + Measure Word + Noun',
+  structures: ['这 / 那 + Measure Word + Noun'],
   description:
     'In English, when you refer to "this table" or "that girl" you only need two words: "this" or "that" plus the noun you\'re referring to.  In Chinese, though, you also need a measure word in the middle between the two.  In the very beginning you can get away with using 个 (gè) for everything, but pretty soon you\'re going to have to start using other measure words in these simple phrases.',
   sources: [allSetSrc],

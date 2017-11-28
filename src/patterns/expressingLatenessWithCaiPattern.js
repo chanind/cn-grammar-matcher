@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingLatenessWithCai',
-  name: 'Subj. + Time + 才 + Verb + Obj.',
+  structures: ['Subj. + Time + 才 + Verb + Obj.'],
   description: 'One of the ways to express lateness in Chinese is with 才 (cái).',
   sources: [allSetSrc],
   match: sentence =>

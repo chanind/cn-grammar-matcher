@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zheyang',
-  name: 'Condition, 这样 + Result / Purpose',
+  structures: ['Condition, 这样 + Result / Purpose', '（如果是 + ）这样的话，……'],
   description:
     '这样 (zhèyàng) is used at the beginning of a phrase to express "this way" or "in this way."',
   sources: [allSetSrc],

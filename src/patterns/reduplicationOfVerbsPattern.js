@@ -15,7 +15,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'reduplicationOfVerbs',
-  name: 'Subj. + Verb + Verb',
+  structures: ['Subj. + Verb + Verb'],
   description:
     'One of the fun things about Chinese is that when speaking, you can repeat a verb to express "a little bit" or "briefly." This is called reduplication. It creates a casual tone, and a sense that whatever the action is, it\'s not going to take long.',
   sources: [allSetSrc],

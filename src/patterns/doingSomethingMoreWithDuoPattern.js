@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'doingSomethingMoreWithDuo',
-  name: '多 + Verb + Obj.',
+  structures: ['多 + Verb + Obj.'],
   description:
     "In China, you often hear you should do this or that more (eat more, drink more water, wear more warm clothing etc.), and they often use the word 多 (duō). What's not intuitive to learners is that the word 多 should come before the verb.",
   sources: [allSetSrc],

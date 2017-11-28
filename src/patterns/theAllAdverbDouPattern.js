@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'theAllAdverbDou',
-  name: 'Subj. + 都 + [Verb Phrase]',
+  structures: ['Subj. + 都 + [Verb Phrase]'],
   description:
     'The adverb 都 (dōu) is used to express "all" in Chinese. It\'s common to use 都 (dōu) in a variety of sentences where it would seem unnecessary in English.',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'huxiang',
-  name: '互相 + Verb',
+  structures: ['互相 + Verb'],
   description:
     'When some action is mutual, you can use the word 互相 (hùxiāng). The word "mutual" feels formal in English, but in Chinese even everyday phrases such as "learn from each other" use the word 互相, which expresses this "each other" aspect.',
   sources: [allSetSrc],

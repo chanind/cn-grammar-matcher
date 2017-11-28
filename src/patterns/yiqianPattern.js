@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yiqian',
-  name: '以前 + Subj. + Verb + Obj.',
+  structures: ['以前 + Subj. + Verb + Obj.', 'Subj. + 以前 + Verb + Obj.'],
   description:
     'To talk about things that previously occurred, you can use the word 以前 (yǐqián). You can use this structure to talk about actions that happened at some unspecified time in the past.',
   sources: [allSetSrc],

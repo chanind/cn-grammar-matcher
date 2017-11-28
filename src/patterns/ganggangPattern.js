@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'ganggang',
-  name: 'Subj. + 刚 + Verb',
+  structures: [
+    'Subj. + 刚 + Verb',
+    'Subj. + 刚刚 + Verb',
+    'Subj. + 刚 + Verb (+ Obj.)  + Duration',
+  ],
   description:
     'For events that happened in the immediate past, in English we use the word "just." For example, if you pass a turn you were supposed to make, you might say, "I just passed it!" In Chinese, "just" can be expressed with 刚 (gāng) or 刚刚 (gānggāng).',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingNotVeryWithBuTai',
-  name: 'Subj. + 不太 + Adj.',
+  structures: ['Subj. + 不太 + Adj.', 'Subj. + 不太 + Verb'],
   description:
     'You may be familiar with using 太 (tài) to express "too," such as when something is "too expensive" or "too hot." 不太 (bù tài) is a similar pattern for the negative, which just means "not very" or "not so" (literally "not too").  Note that this pattern does not normally use 了 (le).',
   sources: [allSetSrc],

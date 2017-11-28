@@ -1,6 +1,7 @@
 const cheerio = require('cheerio');
 const camelCase = require('lodash.camelcase');
 const uniqBy = require('lodash.uniqby');
+const uniq = require('lodash.uniq');
 const removeDiacritics = require('diacritics').remove;
 const { requestWithCache } = require('../scriptUtils');
 const regexFromRule = require('./regexFromRule');
@@ -43,11 +44,11 @@ module.exports = async allsetUrl => {
     .toArray()
     .filter(x => x);
   const description = $('#ibox+ p, .stub+ p').text();
-  const name = rules[0];
+  const structures = uniq(rules.filter(rule => rule !== 'or'));
 
   return {
     url: allsetUrl,
-    name,
+    structures,
     matcherId,
     regexes,
     description,

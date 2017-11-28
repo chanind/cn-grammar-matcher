@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'duima',
-  name: '⋯⋯， 好 / 对 / 是 / 可以 +  吗？',
+  structures: ['⋯⋯， 好 / 对 / 是 / 可以 +  吗？'],
   description:
     'As well as yes/no questions, you can also form tag questions with 吗 (ma). Tag questions are quick questions that are tagged on the end of a sentence to ask for confirmation. In English, this is often done with "right?" or negatively with "isn\'t it?"',
   sources: [allSetSrc],

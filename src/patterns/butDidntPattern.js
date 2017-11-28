@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'butDidnt',
-  name: 'Subj. + 差点(儿) + [Verb Phrase] + 了',
+  structures: ['Subj. + 差点(儿) + [Verb Phrase] + 了'],
   description:
     "To say that something bad almost happened (but didn't), you can add the word 差点 (chàdiǎn) before the verb.  You will also hear 差点儿 (chàdiǎnr) in northern China.  There is no difference in meaning between 差点 and 差点儿.",
   sources: [allSetSrc],

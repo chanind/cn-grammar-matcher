@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingDistanceWithLi',
-  name: 'Place 1 + 离 + Place 2 + Adv. + 近 / 远',
+  structures: [
+    'Place 1 + 离 + Place 2 + Adv. + 近 / 远',
+    'Place 1 + 离 + Place 2 (+ Adv.) + 近 / 远 + 吗？',
+    'Place 1 + 离 + Place 2 (+ 有) + 多远？',
+  ],
   description:
     "Are we there yet? One of the ways to express distance is to use 离 (lí). The word order might seem a little tricky at first, but once you get it down, you'll be able to talk about distance with no problem.",
   sources: [allSetSrc],

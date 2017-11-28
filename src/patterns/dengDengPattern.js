@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'dengDeng',
-  name: 'A1，A2⋯⋯等 / 等等',
+  structures: ['A1，A2⋯⋯等 / 等等', 'A1，A2⋯⋯等 + [Category]'],
   description:
     '等等 (děng děng), or simply 等 (děng), is just like saying “and so on” or “etc.” in English, but just a bit more formal.  Both are placed after listing a series of items (generally with a list that exceeds two items).',
   sources: [allSetSrc],

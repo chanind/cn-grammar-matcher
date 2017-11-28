@@ -10,8 +10,8 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yixia',
-  name: 'Subj. + Verb + 一下 + Obj.',
   // TODO: improve description
+  structures: ['Subj. + Verb + 一下 + Obj.'],
   description:
     'After briefly reading this article, you will know how to use 一下 (yīxià) to express a brief action!',
   sources: [allSetSrc],

@@ -30,7 +30,7 @@ const getExamplesString = exampleFields => {
 };
 
 module.exports = (fields, options = {}) => {
-  const { matcherId, name, examples, description, url, regexes } = fields;
+  const { matcherId, structures, examples, description, url, regexes } = fields;
   const useRegexTokensMatch = options.regexTokensMatch;
   const useGraphMatch = options.graphMatch;
   const useRegexLocsMatch =
@@ -63,6 +63,10 @@ module.exports = (fields, options = {}) => {
     );
   }
   const importsStr = uniq(imports).join('\n');
+
+  const structuresStr = `structures: [${structures
+    .map(struct => `'${formatStr(struct)}'`)
+    .join(',')}],`;
 
   const matchStrings = [];
   if (useGraphMatch) {
@@ -112,7 +116,7 @@ const allSetSrc = {
 
 module.exports = {
   id: '${formatStr(matcherId)}',
-  name: '${formatStr(name)}',
+  ${structuresStr}
   description: '${formatStr(trim(description))}',
   sources: [
     allSetSrc,
@@ -150,6 +154,7 @@ test("doesn't match negative examples", async () => {
   `;
 
   return {
+    structuresStr,
     fullPatternName,
     mainTemplate,
     testTemplate,

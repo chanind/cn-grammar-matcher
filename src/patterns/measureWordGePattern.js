@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'measureWordGe',
-  name: 'Number + 个 + Noun',
+  structures: ['Number + 个 + Noun', 'Verb + 个 + Noun'],
   description:
     "个 (gè) is the most commonly used measure word. It can be used in a pinch for any noun if you can't think of a more precise measure word. (Although you might not sound quite as smart, you'll still get your point across). Also, for many nouns, 个 (gè) is the only correct measure word.",
   sources: [allSetSrc],

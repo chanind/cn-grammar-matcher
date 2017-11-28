@@ -19,7 +19,7 @@ const eChineseLearningSrc = {
 
 module.exports = {
   id: 'gen_guobuqu',
-  name: '跟 ... 过不去',
+  structures: ['跟 ... 过不去'],
   description: `Pattern indicating that a person is made to intentionally feel uncomfortable.
     It is used in spoken language, and requires a person-word (ex 我) between 跟 and 过不去.
     和 can also be used instead of 跟.`,

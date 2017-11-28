@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'wulun',
-  name: '无论 + Circumstances + 都 / 也 + Inevitable Result',
+  structures: ['无论 + Circumstances + 都 / 也 + Inevitable Result'],
   description:
     '无论 (wúlùn)  means "no matter," and is generally used in the first part of the sentence. As with many other constructions, 都 and 也 can be used in the second part of the sentence to emphasize the action or decision will not change. It is more formal than 不管.',
   sources: [allSetSrc],

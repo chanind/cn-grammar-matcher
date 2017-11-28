@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'reviewOptionsBa',
-  name: '[Option 1] + 吧，[Evaluation]； [Option 2] + 吧， [Evaluation]',
+  structures: ['[Option 1] + 吧，[Evaluation]； [Option 2] + 吧， [Evaluation]'],
   description:
     "When 吧 (ba) is used twice in a sentence, it is used to list two options that the speaker is debating. It gives the sentence an indecisive feel, as though the speaker doesn't know which one to choose. This construction often has a negative connotation, since the options usually are not ideal.",
   sources: [allSetSrc],

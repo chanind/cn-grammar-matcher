@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'questionsWithNe',
-  name: 'Topic + 呢 ？',
+  structures: ['Topic + 呢 ？', '[Missing Person / Thing] + 呢 ？'],
   description:
     'The particle 呢 (ne) can be used to ask reciprocal questions, also known as "bounce back" questions. 呢 (ne) can also be used to form simple questions asking "what about...?" or "how about...?"',
   sources: [allSetSrc],

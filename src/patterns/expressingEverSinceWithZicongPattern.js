@@ -9,7 +9,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingEverSinceWithZicong',
-  name: '自从 + [Starting Point]',
+  structures: ['自从 + [Starting Point]'],
   description:
     '自从 means "ever since" in English, and is used to express the starting point of an action in the past. It can be followed by phrases using the markers 起 and 以后',
   sources: [allSetSrc],

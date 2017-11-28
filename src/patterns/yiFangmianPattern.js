@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yiFangmian',
-  name: '一 方面 + Aspect 1， (另) 一 方面 + Aspect 2',
+  structures: ['一 方面 + Aspect 1， (另) 一 方面 + Aspect 2'],
   description:
     'When talking about various aspects of a situation, "一方面⋯⋯， (另)一方面⋯⋯" (yī fāngmiàn..., (lìng) yī fāngmiàn...) can be used in a similar way that "On one hand..., on the other hand..." is in English.',
   sources: [allSetSrc],

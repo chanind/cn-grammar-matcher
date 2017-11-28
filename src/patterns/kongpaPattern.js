@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'kongpa',
-  name: '(Reason,) 恐怕 + Fact / Conclusion',
+  structures: ['(Reason,) 恐怕 + Fact / Conclusion'],
   description:
     '恐怕 (kǒngpà) can be used to express "I\'m afraid that," or "I\'m concerned that," or even "I\'m worried that," followed by some sort of reason. It doesn\'t need to be something you\'re literally afraid of; it may be that you\'re just trying to soften the blow of some bad news, as in, "I\'m afraid that I\'m too busy washing my hair tomorrow night to come over and see the 2000 pictures of your trip to ComicCon."',
   sources: [allSetSrc],

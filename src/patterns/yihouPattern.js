@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yihou',
-  name: 'Subj. + Special Time + 以后／之后 + Action',
+  structures: [
+    'Subj. + Special Time + 以后／之后 + Action',
+    '以后，Comment',
+    'Subj. + Event， 之后 + Action',
+  ],
   description:
     'If you are trying to explain what you did after a certain event, you might want to use "以后" (yǐhòu) or "之后" (zhīhòu). After all, they do both mean "after," right? Well, it turns out that there are a few rules that you need to be aware of before you use them.',
   sources: [allSetSrc],

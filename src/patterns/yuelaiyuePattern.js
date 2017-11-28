@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yuelaiyue',
-  name: 'Subj. + 越来越 + Adj. + 了',
+  structures: ['Subj. + 越来越 + Adj. + 了', 'Subj. + 越来越 + Verb + 了'],
   description:
     '越来越 (yuèláiyuè) is used frequently in Chinese to express that some quality or state is increasing with time, or in tune with another factor.  There are two forms of this pattern, the "simple" one (using 来), and the more complex one (which uses two different adjectives/verbs).',
   sources: [allSetSrc],

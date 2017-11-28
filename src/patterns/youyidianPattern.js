@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'youyidian',
-  name: 'Subj. + 有一点(儿) + Adj.',
+  structures: ['Subj. + 有一点(儿) + Adj.', 'Subj. + 有点(儿) + Adj.'],
   description:
     'At times you may want to politely diss something using the phrase "a little too."  For example, if you are getting lunch with a friend who wants to be seated outside, you might say, "It is a little too hot" to suggest you sit inside. In a case like this, you can use 有一点 (yǒuyīdiǎn) or 有点 (yǒudiǎn). The two are interchangeable.',
   sources: [allSetSrc],

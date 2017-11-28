@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'xiang',
-  name: 'Subj. + 想 + Verb (+ Obj.)',
+  structures: ['Subj. + 想 + Verb (+ Obj.)', 'Subj. + 不 + 想 + Verb + Obj.'],
   description:
     'If you want to express something that you "would like to do," 想 (xiǎng) will be a very helpful auxiliary verb to know. Although similar to 要 (yào), 想 (xiǎng) will give you another more tactful option when you want to articulate a desire.',
   sources: [allSetSrc],

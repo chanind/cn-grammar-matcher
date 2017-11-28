@@ -13,6 +13,19 @@
     font-weight: bold;
 }
 
+.structures {
+    margin-bottom: 10px;
+}
+
+.structure {
+    color: #111;
+    font-weight: normal;
+    padding: 3px;
+    background: #ecf0f1;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
 .header-info {
     display: flex;
     justify-content: space-between;

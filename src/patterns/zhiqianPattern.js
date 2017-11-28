@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhiqian',
-  name: 'Event + 之前 / 之后',
+  structures: ['Event + 之前 / 之后'],
   description:
     "Before and after can be expressed using 之前 (zhīqián) and 之后 (zhīhòu). They are in relatively the same vein as 以前/以后, except that these two are adverbs, while 之前/之后 are prepositions. Don't forget that these two are talking about before and after in terms of time.",
   sources: [allSetSrc],

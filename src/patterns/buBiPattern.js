@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buBi',
-  name: 'Subj. + 不比 + Noun + Adj. / Verb',
+  structures: ['Subj. + 不比 + Noun + Adj. / Verb'],
   description:
     'You might wonder why you have 不比 (bù bǐ) for negative comparisons when you already have 没有 (méiyǒu) for comparisons. The answer is that they\'re not exactly the same thing! 没有 should be your "go to word" for expressing "not as... as...," but there are cases where 不比 (in all of its subtle glory) is a better choice.',
   sources: [allSetSrc],
