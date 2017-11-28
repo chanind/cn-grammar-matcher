@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'ordinalNumbersWithDi',
-  name: '第 + Number',
+  structures: ['第 + Number', '第 + Number + Measure Word + Noun'],
   description:
     'We use ordinal numbers to express things like "number one" or "second," so mastering them in Chinese is important. Fortunately, they are also very easy to learn by just adding the prefix 第 (dì).',
   sources: [allSetSrc],

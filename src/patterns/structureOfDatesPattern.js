@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'structureOfDates',
-  name: 'x 年 + y 月 + z 日',
+  structures: ['x 年 + y 月 + z 日', 'x 年 + y 月 + z 号'],
   description:
     'Dates in Chinese follow the order "year, month, day." This is in keeping with the "from big to small" trend which pervades many facets of Chinese culture.',
   sources: [allSetSrc],

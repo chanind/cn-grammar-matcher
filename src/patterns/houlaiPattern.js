@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'houlai',
-  name: 'Past Event 1 + 后来 + Past Event 2',
+  structures: ['Past Event 1 + 后来 + Past Event 2'],
   description:
     '"⋯⋯, 后来⋯⋯" (..., hòulái...) is used to sequence past events in the same way that "Afterward..." is in English. Something very important to note is that 后来 can only be used with two events that have already occurred.',
   sources: [allSetSrc],

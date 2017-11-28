@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingDontNeedToWithBuyong',
-  name: 'Subj. + 不用 + [Verb Phrase]',
+  structures: ['Subj. + 不用 + [Verb Phrase]'],
   description:
     'In Chinese, "要" has many meanings, one of which is "need to". However, when you want to express  "don\'t need to", you actually use "不用", not "不要".',
   sources: [allSetSrc],

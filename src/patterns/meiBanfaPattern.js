@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'meiBanfa',
-  name: 'Subj. + 没办法 + Verb + Obj.',
+  structures: ['Subj. + 没办法 + Verb + Obj.'],
   description:
     'If you are trying to express that something is impossible, you can use the phrase 没办法 (méi bànfǎ). 没办法 (méi bànfǎ) essentially means "there is no way," and whule it works just fine by itself, it can also come before verbs.',
   sources: [allSetSrc],

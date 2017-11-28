@@ -14,7 +14,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiran',
-  name: '既然＋Fact, 那 / 就 / 那就＋Suggestion / Inference',
+  structures: [
+    '既然＋Fact, 那 / 就 / 那就＋Suggestion / Inference',
+    '既然 + Fact,   （那 +）rhetorical question',
+  ],
   description:
     '既然 (jìrán) means "since," and is often followed by 就 to mean "since...then...." It is used like this:',
   sources: [allSetSrc],

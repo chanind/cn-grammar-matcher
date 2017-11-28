@@ -10,8 +10,8 @@ const allSetSrc = {
 
 module.exports = {
   id: 'resultComplementWanForFinishing',
-  name: 'Subj. + Verb + 完 (+ 了) + Obj.',
   // TODO: improve description
+  structures: ['Subj. + Verb + 完 (+ 了) + Obj.'],
   description:
     'On its own, 完 (wán) means "to finish" or "to complete." Using it in this grammar structure, it expresses the idea of doing some action to completion.',
   sources: [allSetSrc],

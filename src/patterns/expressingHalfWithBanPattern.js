@@ -14,7 +14,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingHalfWithBan',
-  name: '半 + Measure Word + Noun',
+  structures: [
+    '半 + Measure Word + Noun',
+    'Number + Measure Word + 半 + Noun',
+    '半 + 天 / 年',
+    'Number + 天 / 年 + 半',
+  ],
   description:
     'The Chinese word 半 (bàn) means "half." That\'s simple enough, but what can get slightly tricky is the rules for how it combines with measure words.',
   sources: [allSetSrc],

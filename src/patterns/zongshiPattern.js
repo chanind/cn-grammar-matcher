@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zongshi',
-  name: 'Subj. + 总是 + Verb',
+  structures: ['Subj. + 总是 + Verb', '总是 + Adv. + Adj.'],
   description:
     'If you are trying to describe a daily routine, a habit, or just something that consistently happens, you can use the word 总是 (zǒngshì). 总是 (zǒngshì) means "always," and like other adverbs, comes before the verb in a sentence.',
   sources: [allSetSrc],

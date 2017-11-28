@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'deShihou',
-  name: '(Subj.) + Verb / Adj. + 的 时候, ....',
+  structures: ['(Subj.) + Verb / Adj. + 的 时候, ....', 'Time Word + 的 时候, ....'],
   description:
     'In English, if we are reflecting on a past time, we often say, "when I was a child" or "when I was in school." In Chinese, this can also be expressed by using 的时候 (de shíhou).',
   sources: [allSetSrc],

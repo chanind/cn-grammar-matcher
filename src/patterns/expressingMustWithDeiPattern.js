@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingMustWithDei',
-  name: 'Subj. + 得 + Verb + Obj.',
+  structures: ['Subj. + 得 + Verb + Obj.'],
   description:
     'Learning how to use 得 to mean "must" must be done by those wishing to master Chinese!',
   sources: [allSetSrc],

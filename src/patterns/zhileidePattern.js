@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhileide',
-  name: '像 + [Items] + 之类的',
+  structures: ['像 + [Items] + 之类的', '[Items] + 之类的 + Noun'],
   description:
     '之类的 (zhīlèide) can be translated as "and so on" or "and stuff like that." As in English, this grammar point is used to continue a list without explicitly mentioning further items within it.',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buZhidaoHao',
-  name: 'Subj. + 不知道 + Verb Phrase + 好',
+  structures: ['Subj. + 不知道 + Verb Phrase + 好'],
   description:
     '"不知道⋯⋯好" (bù zhīdào...hǎo) is an expression used to indicate and emphasize that the speaker does not know how to do something, or at least does not know how to do something well.',
   sources: [allSetSrc],

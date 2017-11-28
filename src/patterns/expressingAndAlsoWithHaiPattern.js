@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAndAlsoWithHai',
-  name: 'Subj. + Verb + Obj. 1， 还 + Verb + Obj. 2',
+  structures: ['Subj. + Verb + Obj. 1， 还 + Verb + Obj. 2'],
   description:
     'In English we use "and also" when we want to connect separate and different thoughts. We can do the same thing in Chinese by using 还 (hái).',
   sources: [allSetSrc],

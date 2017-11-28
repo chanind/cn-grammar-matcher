@@ -10,7 +10,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingOngoingDurationWithDoubleLe',
-  name: 'Subj. + Verb + 了 + Duration + 了',
+  structures: [
+    'Subj. + Verb + 了 + Duration + 了',
+    'Subj. + Verb + Obj. + Verb + 了 + Duration + 了',
+  ],
   description:
     'The 了 (le) particle is used in many different ways. In this article, we will explore how to use the double 了 (le) to express the duration of an activity that is ongoing.',
   sources: [allSetSrc],

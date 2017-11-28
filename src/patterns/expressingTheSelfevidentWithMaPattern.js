@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingTheSelfevidentWithMa',
-  name: 'Statement + 嘛',
+  structures: ['Statement + 嘛', 'Topic + 嘛， + Statement'],
   description:
     'The particle 嘛 (ma) is a sentence-final particle identical in pronunciation to the simple "yes/no question" particle 吗 (ma) you learned back in the day, but with a rather different function.  It can be used when the speaker feels what he is saying is obvious (from his point of view).',
   sources: [allSetSrc],

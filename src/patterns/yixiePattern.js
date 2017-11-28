@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yixie',
-  name: '一些 + Noun',
+  structures: ['一些 + Noun'],
   description:
     'In order to express "some" or "a few," you can use 一些 (yīxiē). To use it in this way, 一些 (yīxiē) is placed before the noun it modifies. 一些 (yīxiē) can modify the subject or the object.',
   sources: [allSetSrc],

@@ -14,7 +14,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAsOneLikesWithJiu',
-  name: '想 + Verb (+ Obj.) + 就 + Verb (+ Obj.)',
+  structures: [
+    '想 + Verb (+ Obj.) + 就 + Verb (+ Obj.)',
+    '想 + Verb + Question Word + 就 + Verb + Question Word',
+  ],
   description:
     'When we want to express "to do something as one pleases," we can use the "想 + verb +就 + verb" form.',
   sources: [allSetSrc],

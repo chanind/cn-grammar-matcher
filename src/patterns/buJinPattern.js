@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buJin',
-  name: 'Subj. + 不仅 / 不但 / 不只 + ⋯⋯，而且 / 还 / 也 + ⋯⋯',
+  structures: ['Subj. + 不仅 / 不但 / 不只 + ⋯⋯，而且 / 还 / 也 + ⋯⋯'],
   description:
     'We\'ve seen 不但⋯⋯而且 in B1, but other than that there are a number of other structures which can be used to express "not only...but also." 不但 can be substituted with 不仅(bù jǐn) and 不只  (bù zhǐ), all meaning "not only," and can be followed by 而且 (ér qiě) , 还 (hái), or 也 (yě) \nOther than 不但⋯⋯而且 being more common than the others, they are all pretty similar in usage and meaning.',
   sources: [allSetSrc],

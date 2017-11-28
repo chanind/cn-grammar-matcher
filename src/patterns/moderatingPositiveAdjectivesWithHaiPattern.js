@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'moderatingPositiveAdjectivesWithHai',
-  name: 'Subj. + 还 + 好 / 可以 / 行 / 不错',
+  structures: ['Subj. + 还 + 好 / 可以 / 行 / 不错'],
   description:
     'Whenever you want to imply that something is "good," but also kind of "meh," you can use 还 (hái) in front of the "good" adjective.',
   sources: [allSetSrc],

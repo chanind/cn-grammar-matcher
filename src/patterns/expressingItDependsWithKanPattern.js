@@ -14,7 +14,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingItDependsWithKan',
-  name: '(这 / 那) + 得看 / 要看 + [What "It" Depends On]',
+  structures: [
+    '(这 / 那) + 得看 / 要看 + [What "It" Depends On]',
+    '[Unknown Outcome] + 得看 / 要看 + [What "It" Depends On]',
+  ],
   description:
     'Although there are a number of ways to express "it depends" in Chinese, the most common ones in spoken Chinese involve the verb 看 (kàn). Some common expressions include:',
   sources: [allSetSrc],

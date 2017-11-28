@@ -13,7 +13,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'tagQuestionsWithBu',
-  name: 'Verb + 不 + Verb',
+  structures: ['Verb + 不 + Verb'],
   description:
     'In the same way you can tag questions with 吗 (ma), tag questions can also be formed using 不 (bù). This is done by putting an affirmative-negative question at the end of a sentence.',
   sources: [allSetSrc],

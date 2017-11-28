@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'keshi',
-  name: 'Statement， 可是 / 但是 + [Contrary Statement]',
+  structures: ['Statement， 可是 / 但是 + [Contrary Statement]'],
   description:
     'Using "but" in Chinese is really simple to learn. It involves the two words 可是 (kěshì) and 但是 (dànshì). Make no "buts" about it; you\'ll understand it in no time!',
   sources: [allSetSrc],

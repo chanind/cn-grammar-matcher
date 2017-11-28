@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zenme',
-  name: 'Subj. + 怎么 + Verb + Obj.',
+  structures: ['Subj. + 怎么 + Verb + Obj.', 'Topic + 怎么 + Verb'],
   description:
     '怎么 (zěnme) means "how" in Chinese, and it\'s not hard to use at all: just put it before a verb.',
   sources: [allSetSrc],

@@ -9,7 +9,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yinggai',
-  name: 'Subj. + 应该 + Verb + Obj.',
+  structures: ['Subj. + 应该 + Verb + Obj.', 'Subj. + 不 + 应该 + Verb + Obj.'],
   description:
     '应该 (yīnggāi) translates to the English word "should," and is an essential word to know for your conversaitonal Chinese. You should definitely get comfortable using 应该 (yīnggāi) right away!',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yaoWoShuo',
-  name: '要我说， Opinion',
+  structures: ['要我说， Opinion'],
   description:
     '“要我说” (yào wǒ shuō) is another, more colloquial way to say "in my opinion" or "the way I see it." It is generally used to express a person\'s perspective or opinion about a matter.',
   sources: [allSetSrc],

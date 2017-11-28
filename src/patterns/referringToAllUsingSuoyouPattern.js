@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'referringToAllUsingSuoyou',
-  name: '所有的 + Noun + 都 + Verb / Adj.',
+  structures: ['所有的 + Noun + 都 + Verb / Adj.'],
   description:
     'In this grammar structure, we learn about a way to say "all" that is, well, a bit more epic. Sort of like how we might say "all the king\'s men" or "all the money in the world."',
   sources: [allSetSrc],

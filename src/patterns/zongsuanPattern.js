@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zongsuan',
-  name: 'Subj. + 总算 / 终于 + Verb',
+  structures: ['Subj. + 总算 / 终于 + Verb'],
   description:
     'One pair of confusing adverbs is 总算 (zǒngsuàn) and 终于 (zhōngyú). They both can be translated as "finally" or "in the end," but they subtly different in tone.',
   sources: [allSetSrc],

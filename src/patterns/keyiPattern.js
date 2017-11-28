@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'keyi',
-  name: 'Subj. + 可以 + Verb + Obj.',
+  structures: ['Subj. + 可以 + Verb + Obj.', 'Subj. + 不 + 可以 + Verb + Obj.'],
   description:
     '可以 (kěyǐ) is an auxiliary verb primarily used for expressing permission. It\'s often translated as "can," but in order to not get it confused with other words, it\'s best to think of it as "may" to emphasize the permission aspect.',
   sources: [allSetSrc],

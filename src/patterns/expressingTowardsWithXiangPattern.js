@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingTowardsWithXiang',
-  name: '向 + Direction / Person + Verb',
+  structures: ['向 + Direction / Person + Verb'],
   description:
     '向 (xiàng) is a preposition that means "towards," and is used often when expressing or referring to a certain point.',
   sources: [allSetSrc],

@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yilai',
-  name: 'Time or Event + 以来',
+  structures: [
+    'Time or Event + 以来',
+    '自 / 从 / 自从 + Time or Event + 以来',
+    'Time Interval + 来',
+  ],
   description:
     'There are a few ways to express "ever since" in Chinese. In English, we would say something like "ever since I came to Shanghai, my Chinese has improved a lot." In this article, we will first take a look at using 以来 (yǐlái) to mean "ever since." We will also take a quick look at using "ever since" with 来 (lái), which is similar but used in a somewhat different way.',
   sources: [allSetSrc],

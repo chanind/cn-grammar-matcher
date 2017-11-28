@@ -14,7 +14,13 @@ const allSetSrc = {
 
 module.exports = {
   id: 'structureOfTimesAdvanced',
-  name: 'x 点 y 分',
+  structures: [
+    'x 点 y 分',
+    'x 点 零 y 分',
+    'x 点 y 刻',
+    '差 + Minutes + 分 + Hour + 点',
+    'Hour + 点 + 差 + Minutes + 分',
+  ],
   description:
     'If you already know the basics of how to tell time in Chinese, you may want to get a little more specific or sophisticated, using words like 分 (fēn) and 刻 (kè).',
   sources: [allSetSrc],

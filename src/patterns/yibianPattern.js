@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yibian',
-  name: '[Action] +  以便 + [Outcome]',
+  structures: ['[Action] +  以便 + [Outcome]'],
   description:
     '以便 (yǐbiàn)  is a formal way to say "in order to" or "to facilitate," and is generally used to show that an outcome is the result of a particular action.',
   sources: [allSetSrc],

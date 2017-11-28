@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'bieShuo',
-  name: '别说 + A ， 连  / 就是+ B + 也 / 都 + Verb',
+  structures: ['别说 + A ， 连  / 就是+ B + 也 / 都 + Verb'],
   description:
     '别说 (bié shuō) means something like "leaving aside" or "don\'t think about," and is used in the following way:',
   sources: [allSetSrc],

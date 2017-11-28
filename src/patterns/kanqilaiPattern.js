@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'kanqilai',
-  name: 'Subj. + 看起来 + Adj.',
+  structures: ['Subj. + 看起来 + Adj.'],
   description:
     'One of the most common ways to express "it looks like" is to use 看起来 (kànqǐlái). This is what we would use if we wanted to express something like, "she looks tired."',
   sources: [allSetSrc],

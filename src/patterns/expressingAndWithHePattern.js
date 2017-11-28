@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAndWithHe',
-  name: 'Noun 1 + 和 + Noun 2',
+  structures: ['Noun 1 + 和 + Noun 2'],
   description:
     'When listing out multiple nouns, 和 (hé) is there to help you out. Just remember that 和 (hé) isn\'t a word you can use to translate just any usage of the English word "and."',
   sources: [allSetSrc],

@@ -14,7 +14,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'haoBuRongyi',
-  name: 'Subj. + 好容易 / 好不容易 + 才 + Verb，[Result Sentence]',
+  structures: [
+    'Subj. + 好容易 / 好不容易 + 才 + Verb，[Result Sentence]',
+    'Verb / [Verb Phrase] + 好容易 / 好不容易',
+  ],
   description:
     '好不容易 (hǎo bù róngyì) means "very difficult" or "really not easy." It is often used where the speaker wants to comment on the result of their hard work, something like "It was really hard for me do to do x, but then I realized y."',
   sources: [allSetSrc],

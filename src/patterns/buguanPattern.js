@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buguan',
-  name: '不管 + Situation + Subj. + (都 / 也) + Result',
+  structures: ['不管 + Situation + Subj. + (都 / 也) + Result'],
   description:
     '不管 (bùguǎn) is more informal than 无论, but it is used in more or less the same way. As with other constructions, 都 and 也 can be used in the second part of the sentence to emphasize the action or decision will not change.',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingHaveToWithBudebu',
-  name: 'Subj. + 不得不 + Verb',
+  structures: ['Subj. + 不得不 + Verb'],
   description:
     '不得不 (bùdébù) has a stronger tone than "必须 (bìxū)" meaning "someone cannot help but do something."',
   sources: [allSetSrc],

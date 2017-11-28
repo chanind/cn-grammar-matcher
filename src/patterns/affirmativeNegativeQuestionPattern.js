@@ -13,7 +13,14 @@ const allSetSrc = {
 
 module.exports = {
   id: 'affirmativenegativeQuestion',
-  name: 'Verb + 不 + Verb',
+  structures: [
+    'Verb + 不 + Verb',
+    'Subj. + Verb + 不 + Verb + Obj.',
+    'Adj. + 不 + Adj.',
+    '[First Character of Verb] + 不 + Verb',
+    '[First Character of Adj.] + 不 + Adj.',
+    'Subj. + 有 没有 + Obj.',
+  ],
   description: '',
   sources: [allSetSrc],
   match: sentence => {

@@ -14,7 +14,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'chabuduo',
-  name: 'Subj. + 差不多',
+  structures: [
+    'Subj. + 差不多',
+    'A + 跟 / 和 +  B + 差不多',
+    '差不多 + Adj. / Verb',
+    '差不多 ＋ [Quantity Phrase] / [Time Phrase]',
+  ],
   description:
     '差不多 (chàbuduō), translated literally, means "the difference is not much." In practice it means something like "more or less," and is useful for expressing rough approximations.',
   sources: [allSetSrc],

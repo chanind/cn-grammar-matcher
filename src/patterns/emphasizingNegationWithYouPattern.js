@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'emphasizingNegationWithYou',
-  name: '又 + 不 / 没 + Verb / Adj.',
+  structures: ['又 + 不 / 没 + Verb / Adj.'],
   description:
     'One of the many versatile uses of 又 is to emphasize negation, giving your negative sentence a little kick!',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAlmostUsingChadianMei',
-  name: 'Subj. + 差点 + 没 + Verb Phrase',
+  structures: ['Subj. + 差点 + 没 + Verb Phrase'],
   description:
     "Logically, 差点没 is not that different from 差点.  In fact, you shouldn't think of it as a single word; think of the 没 as belonging to what follows 差点 and it makes more sense.  Still, it can be a little confusing, and is worth a closer look.",
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'leYidianr',
-  name: 'Adj. + 了（一）点儿',
+  structures: ['Adj. + 了（一）点儿'],
   description:
     '了一点儿 (le yīdiǎnr), can be added after an adjective to mean "a little bit too." It is softer in tone than using 太, and so is often used when the speaker doesn\'t want to insult the listener by speaking too directly.',
   sources: [allSetSrc],

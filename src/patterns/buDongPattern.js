@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buDong',
-  name: 'Subj. +  Verb + 不懂',
+  structures: ['Subj. +  Verb + 不懂'],
   description:
     "Chinese learners often have to express that they don't understand something, especially in the beginning when they start learning. One of the ways to express that is to use the 不懂 (bù dǒng) verb complement.",
   sources: [allSetSrc],
