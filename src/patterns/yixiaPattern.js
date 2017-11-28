@@ -10,7 +10,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yixia',
-  name: 'Subj. + Verb + 一下 + Obj.',
   // TODO: improve description
   structures: ['Subj. + Verb + 一下 + Obj.'],
   description:

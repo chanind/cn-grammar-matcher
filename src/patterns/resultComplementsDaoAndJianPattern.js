@@ -10,7 +10,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'resultComplementsDaoAndJian',
-  name: 'Subj. + Verb + 到 + Obj.',
   // TODO: improve description
   structures: [
     'Subj. + Verb + 到 + Obj.',

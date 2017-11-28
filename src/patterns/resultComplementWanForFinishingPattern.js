@@ -10,7 +10,6 @@ const allSetSrc = {
 
 module.exports = {
   id: 'resultComplementWanForFinishing',
-  name: 'Subj. + Verb + 完 (+ 了) + Obj.',
   // TODO: improve description
   structures: ['Subj. + Verb + 完 (+ 了) + Obj.'],
   description:
