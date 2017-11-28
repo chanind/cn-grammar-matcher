@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yaome',
-  name: 'Situation，要么 + Option B',
+  structures: ['Situation，要么 + Option B', '要么 + Option A，要么 + Option B'],
   description:
     'You can give a series of alternatives by using 要么 (yàome). The structure is pretty versatile, as you can put a wide variety of things after each 要么:',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'suiranDanshi',
-  name: '虽然 + Subj. + 但是 + Contrary Reaction',
+  structures: ['虽然 + Subj. + 但是 + Contrary Reaction'],
   description:
     'The grammar pattern "虽然⋯⋯ 但是⋯⋯" (suīrán... dànshì...) is one of the most common used patterns in Chinese, especially in written Chinese. You can think of it as meaning "although," but unlike in English, you still need to follow it with a "but" word in Chinese.',
   sources: [allSetSrc],

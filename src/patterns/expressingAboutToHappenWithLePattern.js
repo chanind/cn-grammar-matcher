@@ -14,7 +14,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAboutToHappenWithLe',
-  name: '快+ Verb / Verb Phrase + 了',
+  structures: [
+    '快+ Verb / Verb Phrase + 了',
+    '快要 + Verb / Verb Phrase + 了',
+    '快 + Adj. + 了',
+    'Subj. + 要 + Verb / Verb Phrase / Adj. + 了',
+  ],
   description:
     'Remember that 了 (le) is not only for the past! When something is about to happen, you can also indicate this using 了 (le).  Normally it is paired with a 快 (kuài), 快要(kuàiyào) or a 要 (yào). This is a special form of using 了 to indicate a change of situation.',
   sources: [allSetSrc],

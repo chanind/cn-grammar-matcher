@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAgainInThePastWithYou',
-  name: '又 + Verb + 了',
+  structures: ['又 + Verb + 了', '又 + 是 + Noun', '又 + 要 / 可以 / 能 + Verb Phrase ( + 了)'],
   description:
     'Whenever you want to express something like "you did it again!" in Chinese, you generally want to use 又 (yòu).',
   sources: [allSetSrc],

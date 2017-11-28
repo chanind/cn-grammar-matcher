@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jinguan',
-  name: '尽管 A，还是 / 仍然 B',
+  structures: ['尽管 A，还是 / 仍然 B'],
   description:
     '尽管 (jǐnguǎn)  means "although," and is a little stronger than 虽然, perhaps more like "even though."',
   sources: [allSetSrc],

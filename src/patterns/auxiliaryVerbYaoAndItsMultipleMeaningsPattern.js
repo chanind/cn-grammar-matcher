@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'auxiliaryVerbYaoAndItsMultipleMeanings',
-  name: 'Subj. + 要 + Noun',
+  structures: ['Subj. + 要 + Noun', 'Subj. + 要 + Verb'],
   description:
     'You probably already know the basic meaning of 要 (yào) as "to want."  It is actually a quite versatile word, though, and can also take on the meanings of "to need" as well as "will (do something)."  In every case, context is crucial for figuring out which meaning someone is trying to express.',
   sources: [allSetSrc],

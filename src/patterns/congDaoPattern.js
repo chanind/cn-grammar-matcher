@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'congDao',
-  name: '从 + Time 1 + 到 + Time 2',
+  structures: ['从 + Time 1 + 到 + Time 2', '从 + Place 1 + 到 + Place 2'],
   description:
     '从⋯⋯ 到⋯⋯(cóng... dào...) is used in the same way as "from... to..." is used in English, and can be used both for times and places.',
   sources: [allSetSrc],

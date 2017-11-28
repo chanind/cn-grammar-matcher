@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'duoshaoqian',
-  name: 'Subj. + 多少钱 ?',
+  structures: ['Subj. + 多少钱 ?', 'Number + 块 + Number + 毛'],
   description:
     'Cash is king, even though China is now crazy for mobile payments. Either way, though, mastering how to say quantities of money is vital!',
   sources: [allSetSrc],

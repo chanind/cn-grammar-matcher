@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yiwei',
-  name: 'Subj. + 以为 ⋯⋯',
+  structures: ['Subj. + 以为 ⋯⋯'],
   description:
     'In English, the verb "to think" can imply that the belief is incorrect, e.g. in "I thought it was legal here." Chinese has a specific verb for this kind of mistaken belief: 以为 (yǐwéi). Literally these two characters mean "take to be," i.e. someone takes one thing to be something else.',
   sources: [allSetSrc],

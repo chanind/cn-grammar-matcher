@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'guanyu',
-  name: '关于 + Obj.，Subj.  ⋯⋯',
+  structures: ['关于 + Obj.，Subj.  ⋯⋯', '关于 + Modifier + 的 + Noun'],
   description:
     '关于 (guānyú) usually points to a range or scope, acting like the English word "about." It can be used in a few ways, often marking a topic of a statement, or modifying a noun.',
   sources: [allSetSrc],

@@ -12,7 +12,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'xiaqu',
-  name: 'Subj. + Verb + 下去',
+  structures: ['Subj. + Verb + 下去', 'Subj. + Verb + 不 + 下去'],
   description:
     '下去 (xiàqù) is one of the most often heard result complements. 下去 can be used as a result complement to talk about things continuing or carrying on. Think of it as a figurative way of "keeping the ball rolling" (downhill).',
   sources: [allSetSrc],

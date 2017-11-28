@@ -14,7 +14,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'chule',
-  name: '除了 + Noun Phrase + (以外) + Noun Phrase + 都 + Verb',
+  structures: [
+    '除了 + Noun Phrase + (以外) + Noun Phrase + 都 + Verb',
+    '除了 + Noun Phrase + (以外) + Noun Phrase + 也 / 还 + Verb',
+  ],
   description:
     'Using 除了 (chúle)⋯⋯ 以外 (yǐwài) will help you spruce up your sentences when you want to express "except," "besides," and "in addition."  You may feel that "except" has a pretty different meaning form the other two. Well, read on!',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buShiErShi',
-  name: '不是 + A + 而是 + B',
+  structures: ['不是 + A + 而是 + B'],
   description:
     '不是⋯⋯而是⋯⋯ (bù shì... ér shì) means "not A, but rather B." This is a useful phrase to use in arguments to overturn a point of view and state the opposite.',
   sources: [allSetSrc],

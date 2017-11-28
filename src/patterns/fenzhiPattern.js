@@ -14,7 +14,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'fenzhi',
-  name: 'Denominator + 分之 + Numerator',
+  structures: [
+    'Denominator + 分之 + Numerator',
+    'A + 是 / 占 (+ B) + 的 + Denominator + 分之 + Numerator',
+  ],
   description:
     '分之 (fēnzhī) is used to form a fraction in Chinese. When expressing a fraction, the denominator is always said before the numerator. This pattern is also the way percentages are expressed in Chinese.',
   sources: [allSetSrc],

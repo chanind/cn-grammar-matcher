@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'concedingAPointWithShi',
-  name: 'Adj. + 是 + Adj. ， 但是 / 就是 ⋯⋯',
+  structures: ['Adj. + 是 + Adj. ， 但是 / 就是 ⋯⋯'],
   description:
     'When conceding a point, we often put emphasis on the point we are conceding, and in Chinese there is a way to do that with 是 (shì).',
   sources: [allSetSrc],

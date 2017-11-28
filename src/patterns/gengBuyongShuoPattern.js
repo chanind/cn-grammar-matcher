@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'gengBuyongShuo',
-  name: '连 + A + 都 / 也 + Verb， 更不用说 + B + 了',
+  structures: ['连 + A + 都 / 也 + Verb， 更不用说 + B + 了'],
   description:
     '更不用说 (gèng bùyòng shuō) means "let alone," and is used in the same way as the English, where we might say: "he can\'t even boil an egg, let alone prepare a banquet"',
   sources: [allSetSrc],

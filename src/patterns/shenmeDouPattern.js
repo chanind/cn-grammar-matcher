@@ -14,7 +14,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'shenmeDou',
-  name: 'Topic (+ Subj.) + 什么 + 都 / 也 + Verb / Adj.',
+  structures: [
+    'Topic (+ Subj.) + 什么 + 都 / 也 + Verb / Adj.',
+    '什么 + Noun + 都 + Verb',
+    '什么 + Noun + 都 / 也 + 不 + Verb',
+    '什么 + Noun + 都 / 也 + 没 (有) + Verb',
+  ],
   description:
     '什么……都 (shénme... dōu) is a pattern often used to express "all" or "everything." Because it\'s not just one word, though, it can be a little tricky to get the hang of at first.',
   sources: [allSetSrc],

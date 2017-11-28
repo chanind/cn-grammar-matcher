@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingExperiencesWithGuo',
-  name: 'Subj. + Verb + 过 + Obj.',
+  structures: ['Subj. + Verb + 过 + Obj.', 'Subj. + 没 + Verb + 过 + Obj.'],
   description:
     'The aspect particle 过 (guo) is used to indicate that an action has been experienced in the past.',
   sources: [allSetSrc],

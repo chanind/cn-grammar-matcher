@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'chahenduo',
-  name: 'Subj. + 差 很 多',
+  structures: ['Subj. + 差 很 多', 'A + 跟 / 和 +  B + 差很多'],
   description:
     "You might be used to thinking of 差不多 (chàbùduō) as a single word, and that's totally OK. But if you want to negate the whole idea of rough equivalency, then you need to think of it as a phrase and use 差很多 (chà hěn duō). Not surprisingly, it's a little less versatile than 差不多 (chàbùduō).",
   sources: [allSetSrc],

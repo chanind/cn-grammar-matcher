@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'budanErqie',
-  name: 'Subj. + 不但 + Adj. / Verb， 而且 + Adj. / Verb',
+  structures: [
+    'Subj. + 不但 + Adj. / Verb， 而且 + Adj. / Verb',
+    'Subj. + 不但 +  Adj. / Verb， 而且 + Adj. / Verb',
+    '不但 + Subj. 1 + Adj. / Verb， 而且 + Subj. 2 + Adj. / Verb',
+  ],
   description:
     '"不但⋯⋯，而且⋯⋯" (bùdàn..., érqiě...) is a very commonly used pattern that indicates "not only, ... but also...."',
   sources: [allSetSrc],

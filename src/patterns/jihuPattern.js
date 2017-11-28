@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jihu',
-  name: '几乎 + Subj. + 都 + Verb / Adj.',
+  structures: [
+    '几乎 + Subj. + 都 + Verb / Adj.',
+    'Subj. + 几乎 + Predicate',
+    'Subj. + 几乎 + 不 / 没 + Predicate',
+  ],
   description:
     "几乎 (jīhū) means 'nearly', 'almost' or 'practically', and is used to emphasize that someone or something 'almost' meets a certain standard or is close to doing something.",
   sources: [allSetSrc],

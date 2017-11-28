@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'renhe',
-  name: '任何 + Noun',
+  structures: ['任何 + Noun'],
   description:
     '任何 (rènhé) is a modifier that means means "any," "whichever," or "whatsoever." It is also like the English phrases "any and all" or "no matter what."',
   sources: [allSetSrc],

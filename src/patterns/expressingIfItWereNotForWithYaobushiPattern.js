@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingIfItWereNotForWithYaobushi',
-  name: '要不是 ⋯⋯（的话），⋯⋯',
+  structures: ['要不是 ⋯⋯（的话），⋯⋯'],
   description:
     '要不是 (yàobushì) is almost the same as "如果不是⋯⋯ "， and it may followed by "的话," meaning "if it were not for" or "without."',
   sources: [allSetSrc],

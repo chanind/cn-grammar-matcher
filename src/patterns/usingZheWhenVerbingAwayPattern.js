@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingZheWhenVerbingAway',
-  name: 'Verb + 着 + Verb + 着 + 就 + Comment + 了',
+  structures: ['Verb + 着 + Verb + 着 + 就 + Comment + 了'],
   description:
     'A repeated verb followed by the particle 着 (zhe) is used to show that an action has be repeated for a period of time, and as a result a new situation has arisen which the speaker wishes to comment on.',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'positiveAdjectivesWithJile',
-  name: 'Subj. + Positive Adj. + 极了',
+  structures: ['Subj. + Positive Adj. + 极了'],
   description:
     'Just as 死了 (sǐle) can be used to intensify negative adjectives, 极了 (jíle) can be used to intensify positive adjectives. This is used in spoken, colloquial Chinese. 极 means "extreme" or "utmost," so using this grammar pattern takes your positive adjectives to the extreme!',
   sources: [allSetSrc],

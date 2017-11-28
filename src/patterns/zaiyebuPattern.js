@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zaiyebu',
-  name: 'Subj. + 再也不 + Verb + Obj. + 了',
+  structures: ['Subj. + 再也不 + Verb + Obj. + 了', 'Subj. + 再也没 + Verb + 过＋Obj.'],
   description:
     'Sometimes you may do something or experience something that you never ever want to do again. How do we express that in Chinese? One of the ways is to use 再也不 (zàiyěbù)!',
   sources: [allSetSrc],

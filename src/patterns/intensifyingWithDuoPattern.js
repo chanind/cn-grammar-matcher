@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'intensifyingWithDuo',
-  name: 'Subj. + 多 + Adj.',
+  structures: ['Subj. + 多 + Adj.'],
   description:
     'One way to intensify a sentence is to make it an exclamation. To do this, you can use 多 (duō).',
   sources: [allSetSrc],

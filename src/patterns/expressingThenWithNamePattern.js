@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingThenWithName',
-  name: 'Context ，那么 + Result / Decision',
+  structures: ['Context ，那么 + Result / Decision'],
   description:
     'When expressing "Then...," you can use "那么" (nàme) or "那" (nà) in order to begin a judgment or result from previous context. An example of this in English would be "Then, what should we do?"',
   sources: [allSetSrc],

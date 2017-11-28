@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'basicComparisonsWithYiyang',
-  name: 'Noun 1 + 跟 / 和 + Noun 2 + 一样',
+  structures: ['Noun 1 + 跟 / 和 + Noun 2 + 一样', 'Noun 1 + 跟 / 和 + Noun 2 + 一样 + Adj.'],
   description:
     'Along with 比 (bǐ) and 没有 (méiyǒu), 一样 (yīyàng) is another way to make basic comparisons. However, 一样 (yīyàng) is used to express that two things are the same in some way.',
   sources: [allSetSrc],

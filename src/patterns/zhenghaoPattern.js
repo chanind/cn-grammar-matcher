@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'zhenghao',
-  name: 'Subj. + 正好',
+  structures: ['Subj. + 正好', '正好 + Verb', 'Verb + 得 + 正好'],
   description:
     '正好 (zhènghǎo) can be used as an adjective or adverb to help express a coincidence, and it could be related to size, volume, quantity, degree, time, etc. This is similar to how we say in English “Oh, this shirt I grabbed was just the right size." or something like that. When used with a noun, use 正好 right after it. When used with a verb, the 正好 goes right before it. You can also use 正好 along with 得. This is usually a clause of its own.',
   sources: [allSetSrc],

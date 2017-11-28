@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'shenmeDe',
-  name: 'Noun 1, Noun 2 (+ Noun 3) + 什么的',
+  structures: ['Noun 1, Noun 2 (+ Noun 3) + 什么的'],
   description:
     '什么的(shénme de) is an informal way to express "etc.," and is used to end a list of items when it is obvious to the listener what class of things the speaker is talking about. 什么的 can also be used after a single item if it is obvious enough what might follow.',
   sources: [allSetSrc],

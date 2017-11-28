@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'usingHaoToMeanEasy',
-  name: '好 + Verb',
+  structures: ['好 + Verb', 'Subj. + (很) 好 + Verb'],
   description:
     'Of course 好 (hǎo) means "good." But it can also be used to express that something is "easy to do" or "good to do." And it is quite... easy to do! All you need to do is place a 好 (hǎo) before a verb.',
   sources: [allSetSrc],

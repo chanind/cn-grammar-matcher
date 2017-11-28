@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingAgeDifferenceWithDaAndXiao',
-  name: 'A + 比 + B + 大 / 小 + number + 岁',
+  structures: ['A + 比 + B + 大 / 小 + number + 岁', 'A + 跟 + B + 一样 + 大'],
   description: '如果你有兄弟姐妹，中国人常常会问你"他（她）比你小几岁" or "他（她）比你大几岁 "。注意，这里一定不能不用"年轻"或者"老"。',
   sources: [allSetSrc],
   match: sentence =>

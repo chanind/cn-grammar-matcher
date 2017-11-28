@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'continuationWithHai',
-  name: 'Subj. + 还在 + Verb',
+  structures: [
+    'Subj. + 还在 + Verb',
+    'Subj. + 还是 + Verb',
+    'Subj. + 还 + 不 / 没 + Verb + Obj.',
+  ],
   description:
     'If you "still" need help on how to use 还 (hái), then this is the page for you.',
   sources: [allSetSrc],

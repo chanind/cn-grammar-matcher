@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'qilai',
-  name: 'Verb + 起来',
+  structures: ['Verb + 起来', 'Verb / Adj. + 起来 +了', 'Subj. + Verb + 起来 + Adj.'],
   description:
     '起来 (qǐlái) comes up very frequently in Chinese and can be used both literally and figuratively. This is a little like the usage of "up" in English which can be used literally, as in "stand up," or figuratively, as in "add up."',
   sources: [allSetSrc],

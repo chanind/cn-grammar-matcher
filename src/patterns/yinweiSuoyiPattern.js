@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yinweiSuoyi',
-  name: 'Result, 因为 + Reason',
+  structures: ['Result, 因为 + Reason', 'Reason, 所以 + Result', '因为 + Cause, 所以 + Effect'],
   description:
     'You will often come across 因为……所以…… (yīnwèi... suǒyǐ...) in both written and spoken Chinese. This pattern will give your Chinese a clear logical structure, and can help make you more persuasive.',
   sources: [allSetSrc],

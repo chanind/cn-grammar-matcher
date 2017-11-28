@@ -14,7 +14,13 @@ const allSetSrc = {
 
 module.exports = {
   id: 'everyDou',
-  name: '谁 + 都 + Verb Phrase',
+  structures: [
+    '谁 + 都 + Verb Phrase',
+    '哪儿 / 哪里 + 都 + Verb Phrase',
+    '什么 时候 + 都 + Verb Phrase',
+    '多少 (+ Noun) + 都 + Verb Phrase',
+    '怎么 + 都 + Verb Phrase',
+  ],
   description:
     'This grammar point is not about how to use 每 (měi) to mean "every," but rather how to combine question words with 都 (dōu) to make words and phrases like "everywhere" or "everyone." You may have learned this same pattern for expressing "everything," but now it\'s time to extend it.',
   sources: [allSetSrc],

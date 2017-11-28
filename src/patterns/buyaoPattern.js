@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buyao',
-  name: '不要 + Verb',
+  structures: ['不要 + Verb'],
   description:
     'You can use 不要 (bùyào) to command someone: "don\'t" (do something). This is similar to the other negative command "别 (bié)."',
   sources: [allSetSrc],

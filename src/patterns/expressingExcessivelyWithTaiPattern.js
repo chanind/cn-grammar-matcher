@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingExcessivelyWithTai',
-  name: '太 + Adj. + 了',
+  structures: ['太 + Adj. + 了'],
   description:
     'In Chinese, the simplest structure for expressing "too" in the sense of "excessively" is by using the word 太 (tài). Don\'t forget to also add 了 (le) after the adjective to keep your Chinese sounding natural.',
   sources: [allSetSrc],

@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiushi',
-  name: '就 + 是 + Noun',
+  structures: ['就 + 是 + Noun', '就（是）+ Verb'],
   description:
     'As an adverb, 就 (jiù) can be placed before the predicate to add emphasis. It often has an intense or provocative feel to it, like how we sometimes say in English "it\'s just not right!," or other similar phrases. It often appears as 就是.',
   sources: [allSetSrc],

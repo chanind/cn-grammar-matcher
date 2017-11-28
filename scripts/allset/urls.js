@@ -1,10 +1,11 @@
 /* eslint-disable */
 
 const a1 = [
-  // {
-  //   label: "Negation of \"you\" with \"mei\"",
-  //   url: "https://resources.allsetlearning.com/chinese/grammar/ASGPNV3Q",
-  // },
+  {
+    label: 'Negation of "you" with "mei"',
+    url: 'https://resources.allsetlearning.com/chinese/grammar/ASGPNV3Q',
+    matcherId: 'meiyou',
+  },
   {
     label: 'The "all" adverb "dou"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG9YK09',
@@ -212,10 +213,11 @@ const a2 = [
     label: 'Expressing "all along" with "yizhi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGP000J',
   },
-  // {
-  //   label: "Expressing \"already\" with \"yijing\"",
-  //   url: "https://resources.allsetlearning.com/chinese/grammar/ASGNXI27",
-  // },
+  {
+    label: 'Expressing "already" with "yijing"',
+    url: 'https://resources.allsetlearning.com/chinese/grammar/ASGNXI27',
+    matcherId: 'yijingLe',
+  },
   {
     label: 'Expressing "always" with "zongshi"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGXJPJS',
@@ -1263,6 +1265,8 @@ const b1 = [
     label: 'The "if" sandwich pattern',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASGN4VUU',
     regexes: [/(如果)[^话]+(的话)?/, /(如果)?[^话]+(的话)/],
+    filterExamples: true,
+    matcherId: 'ruguoDehua',
   },
   {
     label: 'The pattern "it\'s not…, it\'s…"',
@@ -1801,10 +1805,11 @@ const b2 = [
     label: 'Expressing simultaneous actions with "yimian"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG1QB4K',
   },
-  // {
-  //   label: "Expressing the only two possibilities",
-  //   url: "https://resources.allsetlearning.com/chinese/grammar/ASGEXR6R",
-  // },
+  {
+    label: 'Expressing the only two possibilities',
+    url: 'https://resources.allsetlearning.com/chinese/grammar/ASGEXR6R',
+    matcherId: 'bushijiushi',
+  },
   {
     label: 'Occurring together with "shaobuliao"',
     url: 'https://resources.allsetlearning.com/chinese/grammar/ASG3IR71',

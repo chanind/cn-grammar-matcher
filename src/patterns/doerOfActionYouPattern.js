@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'doerOfActionYou',
-  name: 'Topic + 由 + Person + Verb',
+  structures: ['Topic + 由 + Person + Verb'],
   description:
     '由 (yóu)  is used to emphasize who is the doer or initiator of an action, a bit like in English where we might say: "Andy is the one who...."',
   sources: [allSetSrc],

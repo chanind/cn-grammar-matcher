@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingDifficultWithNan',
-  name: 'Subj. + (很) 难 + Verb',
+  structures: ['Subj. + (很) 难 + Verb', 'Subj. + (很) 难 + [Sense Verb]'],
   description:
     '难 (nán) is an adjective that means "difficult." When something is "hard to do" (as in difficult), the word 难 (nán) can be used before the verb.',
   sources: [allSetSrc],

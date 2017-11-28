@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'doingSomethingLessWithShao',
-  name: 'Subj. + 少 + Verb + Obj.',
+  structures: ['Subj. + 少 + Verb + Obj.'],
   description:
     'Often heard when scolding or giving advice (like when parents talk to children) is 少 (shǎo), which can mean "to do less of something."',
   sources: [allSetSrc],

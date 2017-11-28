@@ -10,7 +10,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingExistenceInAPlaceWithZai',
-  name: 'Subj. + 在 + Place',
+  structures: ['Subj. + 在 + Place'],
   description:
     'The verb 在 (zài) expresses existence in a location, similar to how we say in English, "to be at" or "to be in."',
   sources: [allSetSrc],

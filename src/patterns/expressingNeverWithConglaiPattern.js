@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingNeverWithConglai',
-  name: 'Subj. + 从来 + 不 + [Verb Phrase]',
+  structures: ['Subj. + 从来 + 不 + [Verb Phrase]', 'Subj. + 从来 + 没(有) + Verb + 过'],
   description:
     "Although it can also work in the positive, 从来 (cónglái) is usually used when you want to express that you never do something (as a habit, or as a rule), or that you have never done something (it's not a part of your life experience). In either usage, 从来 (cónglái) may be shortened to just 从 (cóng) in casual speech.",
   sources: [allSetSrc],

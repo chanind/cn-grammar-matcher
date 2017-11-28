@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yizhi',
-  name: 'Subj. + 一直 + Predicate',
+  structures: ['Subj. + 一直 + Predicate'],
   description:
     '一直 (yīzhí) literally means "straight."  Used as an adverb, 一直 (yīzhí) can also be used to express that you have been doing something all along, have been continuously doing something since a certain time, or that something will continuously happen in the future.',
   sources: [allSetSrc],

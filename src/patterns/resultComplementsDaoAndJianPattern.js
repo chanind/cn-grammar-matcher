@@ -10,8 +10,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'resultComplementsDaoAndJian',
-  name: 'Subj. + Verb + 到 + Obj.',
   // TODO: improve description
+  structures: [
+    'Subj. + Verb + 到 + Obj.',
+    'Subj. + Verb + 见 + Obj.',
+    'Subj. + 没 + Verb + 到 / 见 + Obj.',
+  ],
   description:
     'Two of the most common result complements in Chinese are 到 (dào) and 见 (jiàn). On this page we\'re only going to be talking about verbs related to the senses ("see," "hear," etc.), and for this usage, the two are interchangeable.',
   sources: [allSetSrc],

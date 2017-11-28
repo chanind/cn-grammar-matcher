@@ -14,7 +14,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'yidianrYeBu',
-  name: 'Subj. + 一点也 / 都 + 不 + Adj.',
+  structures: [
+    'Subj. + 一点也 / 都 + 不 + Adj.',
+    'Subj. + 一点也 / 都 + 不 + Verb',
+    'Subj. + 一点都 / 也 + 没 + Verb',
+  ],
   description:
     'Sometimes we may want to say something is "not even the least bit [adjective]." For example, we might say in English: "I am not at all hungry."  In Chinese, we can use 一点也不 (yīdiǎnr yě bù) or 一点都不 (yīdiǎnr dōu bù) to express "not at all [adjective]."',
   sources: [allSetSrc],

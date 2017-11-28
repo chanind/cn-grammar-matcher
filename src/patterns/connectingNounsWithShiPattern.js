@@ -11,7 +11,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'connectingNounsWithShi',
-  name: 'Noun 1 + 是 + Noun 2',
+  structures: ['Noun 1 + 是 + Noun 2'],
   description:
     'The verb to be is not used in Chinese the same way as it is in English. In Chinese, 是 (shì) is for connecting nouns, and is generally not used with adjectives.',
   sources: [allSetSrc],

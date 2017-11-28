@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiushiYe',
-  name: '就是 + Hypothetical Statement + 也 + Action',
+  structures: ['就是 + Hypothetical Statement + 也 + Action'],
   description:
     '就是 (jiùshì) is one of the many "even ifs." Like 即使 , 就算 and 哪怕 it is used to introduce a hypothetical statement, which can then disregarded with 也.',
   sources: [allSetSrc],

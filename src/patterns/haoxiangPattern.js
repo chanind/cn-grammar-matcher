@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'haoxiang',
-  name: 'Subj. + 好像 + [Observation]',
+  structures: ['Subj. + 好像 + [Observation]'],
   description: 'To express "seems," the word 好像 (hǎoxiàng) can be used.',
   sources: [allSetSrc],
   match: sentence => mergeLocMatchGroups([regexMatchLocs(sentence.text, /(好像)/)]),

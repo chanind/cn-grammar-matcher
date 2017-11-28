@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'nameZheme',
-  name: 'Subj. + 那么 / 这么 + Adj.',
+  structures: ['Subj. + 那么 / 这么 + Adj.'],
   description:
     'In  English, the words "that" and "so" are often used to increase the extent of an adjective (ex. "he is so tall" or "this food is so good"). In Chinese, 那么 (nàme) and 这么 (zhème) serve the same function.',
   sources: [allSetSrc],

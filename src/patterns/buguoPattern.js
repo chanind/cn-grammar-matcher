@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'buguo',
-  name: 'Clause 1， 不过 + Clause 2',
+  structures: ['Clause 1， 不过 + Clause 2'],
   description:
     'Instead of just using 可是 or 但是, you can also use the softer and more informal 不过 (búguò).',
   sources: [allSetSrc],

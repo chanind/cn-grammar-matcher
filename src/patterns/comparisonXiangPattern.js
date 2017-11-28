@@ -14,7 +14,12 @@ const allSetSrc = {
 
 module.exports = {
   id: 'comparisonXiang',
-  name: 'Noun 1 + 像 + Noun 2 + 一样 + Adj. / Verb',
+  structures: [
+    'Noun 1 + 像 + Noun 2 + 一样 + Adj. / Verb',
+    'Noun 1 + 像 + Noun 2 + 这么 / 那么 + Adj. / Verb',
+    'Noun 1 + 不像 + Noun 2 + 这么 / 那么 + Adj. / Verb',
+    'Noun 1 + 没有 + Noun 2 + 这么 / 那么 + Adj. / Verb',
+  ],
   description:
     '像  (xiàng) is used to compare a specific characteristic of two things or people, and can be used in the following structure:',
   sources: [allSetSrc],

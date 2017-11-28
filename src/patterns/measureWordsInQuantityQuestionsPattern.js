@@ -14,7 +14,10 @@ const allSetSrc = {
 
 module.exports = {
   id: 'measureWordsInQuantityQuestions',
-  name: 'Subj. + Verb + 几 + Measure Word + Noun？',
+  structures: [
+    'Subj. + Verb + 几 + Measure Word + Noun？',
+    'Subj. + Verb + 多少 + Measure Word + Noun ？',
+  ],
   description:
     'Quantity questions are phrases for asking questions like "how much?" or "how many?"  You\'ll need to use the question word 几 (jǐ) with measure words for this.',
   sources: [allSetSrc],

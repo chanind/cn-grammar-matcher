@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'jiashiJiu',
-  name: '假使 + Statement + 就 + Result',
+  structures: ['假使 + Statement + 就 + Result'],
   description:
     '"假使⋯⋯，就⋯⋯" (jiáshǐ..., jiù...) is another way to phrase "If..., then..." in Chinese, with this pattern being one of the most formal.',
   sources: [allSetSrc],

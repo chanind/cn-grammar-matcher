@@ -14,7 +14,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingOnlyWithZhi',
-  name: '只 + Verb',
+  structures: ['只 + Verb', '只 + 会 / 能 + Verb'],
   description:
     'There are a number of different ways to express "only" in Chinese, but 只 (zhǐ) is the most basic one you need to learn first. It\'s an adverb, so it normally comes before verbs.',
   sources: [allSetSrc],

@@ -11,6 +11,6 @@ test('it returns matching grammar rules', async () => {
   expect(results[0].grammar[0].id).toBe(meiyouPattern.id);
   expect(results[0].grammar[0].sources).toBe(meiyouPattern.sources);
   expect(results[0].grammar[0].examples).toBe(meiyouPattern.examples);
-  expect(results[0].grammar[0].name).toBe(meiyouPattern.name);
+  expect(results[0].grammar[0].strucutres).toBe(meiyouPattern.strucutres);
   expect(results[0].grammar[0].matches).toEqual([[{ start: 1, end: 3 }]]);
 });

@@ -13,7 +13,11 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingOrWithHaishiAndHuozhe',
-  name: 'Subj. + Verb + Option A + 还是 + Option B',
+  structures: [
+    'Subj. + Verb + Option A + 还是 + Option B',
+    'Option 1 + 或者 + Option 2',
+    '或者 A，或者 B',
+  ],
   description:
     'Both 还是 (háishì) and  或者 (huòzhě) mean “or” and are used to present a choice.  However, 还是 is normally used when asking a question, and 或者 is mostly for declarative sentences.',
   sources: [allSetSrc],

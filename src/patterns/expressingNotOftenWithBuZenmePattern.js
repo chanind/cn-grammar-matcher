@@ -13,7 +13,7 @@ const allSetSrc = {
 
 module.exports = {
   id: 'expressingNotOftenWithBuZenme',
-  name: 'Subj. + 不怎么 + Verb',
+  structures: ['Subj. + 不怎么 + Verb'],
   description:
     'You might be tempted to conclude that 不怎么 (bù zěnme) seems to mean "not how," but it actually means "not often" when used together with a verb.',
   sources: [allSetSrc],
