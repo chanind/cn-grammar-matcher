@@ -1,0 +1,43 @@
+.intro-outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+.intro-container {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.intro-description {
+    margin: 40px 0 20px;
+}
+
+.header {
+    text-transform: uppercase;
+    font-family: 'Farsan', cursive;
+    margin: 0;
+
+    @media screen and (max-width: 500px) {
+        font-size: 26px;
+    }
+}
+
+.sentence-input-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: 'row';
+
+    & > :last-child {
+        margin-left: 5px;
+    }
+}
+
+.samples {
+    margin-top: 40px;
+}
+
+.sample {
+    margin: 10px 0;
+}

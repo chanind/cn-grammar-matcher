@@ -1,43 +1,65 @@
-.intro-outer-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-}
-.intro-container {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.intro-description {
-    margin: 40px 0 20px;
-}
-
-.header {
-    text-transform: uppercase;
+.logo-text {
     font-family: 'Farsan', cursive;
-    margin: 0;
+    text-transform: uppercase;
+    padding-top: 22px;
+}
 
-    @media screen and (max-width: 500px) {
-        font-size: 26px;
+.hero {
+    text-align: center;
+    padding: 100px 0;
+    background: darken(#2c3e50, 10%);
+    vertical-align: center;
+    color: white;
+}
+
+.hero-text {
+    padding-top: 50px;
+}
+
+.actions {
+    padding-top: 50px;
+
+    a {
+        margin: 0 20px;
     }
 }
 
-.sentence-input-container {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: 'row';
+.getting-started {
+    padding: 50px 0;
+    width: 768px;
 
-    & > :last-child {
-        margin-left: 5px;
+}
+
+.mini-demo {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.json-container {
+    position: relative;
+    height: 300px;
+    margin: 20px 0;
+}
+
+.mini-demo-json {
+    text-align: left;
+    height: 300px;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    div {
+        transition: all 1000ms;
+        opacity: 0;
+
     }
-}
+    &.active {
+        z-index: 100;
+        div {
+            opacity: 1;
+        }
+    }
 
-.samples {
-    margin-top: 40px;
-}
-
-.sample {
-    margin: 10px 0;
 }
