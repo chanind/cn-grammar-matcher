@@ -16,7 +16,7 @@ class GrammarMatcher {
   }
 }
 
-GrammarMatcher.defaultNlpHost = 'http://localhost:9000';
+GrammarMatcher.defaultNlpHost = process.env.NLP_HOST || 'http://localhost:9000';
 
 // set up window.GrammarMatcher if we're in the browser
 if (typeof window !== 'undefined') {

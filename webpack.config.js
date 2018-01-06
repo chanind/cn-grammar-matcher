@@ -6,8 +6,45 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const output = process.env.OUTPUT || '/dist';
+const MATCH_ALL_NON_RELATIVE_IMPORTS = /^\w.*$/i;
 
-var config = {
+var config = [{
+  entry: {
+    lib: path.resolve(__dirname, 'src/GrammarMatcher.js'),
+  },
+  externals: [MATCH_ALL_NON_RELATIVE_IMPORTS],
+  output: {
+    path: path.join(__dirname, output),
+    filename: 'GrammarMatcher.js',
+    library: 'cn-grammar-matcher',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['stage-3'],
+        },
+      },
+    ],
+  },
+  node: {
+    net: 'empty',
+    fs: 'empty',
+    tls: 'empty',
+  },
+  plugins: [
+    new Clean(['dist']),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NLP_HOST: JSON.stringify(process.env.NLP_HOST),
+      },
+    }),
+  ],
+}, {
   entry: {
     demo: path.resolve(__dirname, 'demo/index.js'),
   },
@@ -55,7 +92,6 @@ var config = {
   },
   devtool: 'source-map',
   plugins: [
-    new Clean(['dist']),
     new webpack.DefinePlugin({
       'process.env': {
         NLP_HOST: JSON.stringify(process.env.NLP_HOST),
@@ -69,6 +105,6 @@ var config = {
     }),
     new CopyWebpackPlugin([{ from: path.resolve(__dirname, 'demo/assets') }]),
   ],
-};
+}];
 
 module.exports = config;

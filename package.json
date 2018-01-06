@@ -2,7 +2,7 @@
   "name": "cn-grammar-matcher",
   "version": "0.0.1",
   "description": "A Chinese grammar pattern matcher",
-  "main": "src/GrammarMatcher.js",
+  "main": "dist/GrammarMatcher.js",
   "repository": "git@github.com:chanind/cn-grammar-matcher.git",
   "author": "David Chanin <chanindav@gmail.com>",
   "license": "MIT",
@@ -10,8 +10,8 @@
     "test": "jest",
     "prettier": "prettier --single-quote --print-width 90 --trailing-comma es5 --write \"{*,{src,scripts,demo}/**/}*.js*\"",
     "lint": "eslint --ext .js --ext .jsx src demo scripts",
-    "build": "webpack",
-    "gh-pages": "OUTPUT=/assets NLP_HOST=https://3a8qxwd5h8.execute-api.us-west-2.amazonaws.com/prod webpack; node scripts/fixGhPagesIndex.js",
+    "build": "NLP_HOST=https://core-nlp.cn-grammar-matcher.com webpack",
+    "gh-pages": "OUTPUT=/assets NLP_HOST=https://core-nlp.cn-grammar-matcher.com webpack; node scripts/fixGhPagesIndex.js",
     "start": "webpack-dev-server --hot --inline",
     "gen-pattern": "node scripts/genPattern.js",
     "allset-full-import": "node scripts/allsetFullImport.js",
@@ -23,9 +23,10 @@
     "test-last": "yarn test `git st | grep test | awk '{print $NF}'`"
   },
   "dependencies": {
-    "request-promise-native": "^1.0.4"
+    "request-promise-native": "^1.0.5"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-check-es2015-constants": "^6.22.0",
     "babel-plugin-transform-es2015-block-scoping": "^6.24.1",
@@ -59,8 +60,8 @@
     "lodash.camelcase": "^4.3.0",
     "lodash.escaperegexp": "^4.1.2",
     "lodash.shuffle": "^4.2.0",
-    "lodash.uniqby": "^4.7.0",
     "lodash.uniq": "^4.5.0",
+    "lodash.uniqby": "^4.7.0",
     "node-debug": "^0.1.0",
     "node-sass": "^4.5.3",
     "pre-commit": "^1.2.2",
@@ -72,7 +73,9 @@
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
   },
-  "pre-commit": ["lint"],
+  "pre-commit": [
+    "lint"
+  ],
   "jest": {
     "setupTestFrameworkScriptFile": "./jestInit"
   }
