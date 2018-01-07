@@ -7,7 +7,7 @@
   "author": "David Chanin <chanindav@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
+    "test": "jest --maxWorkers=3",
     "prettier": "prettier --single-quote --print-width 90 --trailing-comma es5 --write \"{*,{src,scripts,demo}/**/}*.js*\"",
     "lint": "eslint --ext .js --ext .jsx src demo scripts",
     "build": "NLP_HOST=https://core-nlp.cn-grammar-matcher.com webpack",
