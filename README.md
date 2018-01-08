@@ -14,7 +14,7 @@ For most uses of Chinese Grammar Matcher that should be all you need to do!
 This library takes a string of chinese text as an input and analyzes it to find which Chinese grammar
 patterns are present. Usage looks like the following:
 
-```
+```javascript
 const GrammarMatcher = require('cn-grammar-matcher');
 const matcher = new GrammarMatcher();
 matcher.matchGrammar('中文太难了').then((results) => {
@@ -24,7 +24,7 @@ matcher.matchGrammar('中文太难了').then((results) => {
 
 For the above example, results for `'中文太难了'` should look something like the following:
 
-```
+```javascript
 /* results for '中文太难了' */
 [{
     // all grammar patterns found in this sentence
