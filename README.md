@@ -1,7 +1,7 @@
 ![Build status](https://circleci.com/gh/chanind/cn-grammar-matcher/tree/master.svg?style=shield&circle-token=91c14be1d2232021ab3d7ee3908315a8456d9859)
 
 # cn-grammar-matcher
-A tool to find grammar patterns in Chinese text. Find a live demo at [chanind.github.io/cn-grammar-matcher](https://chanind.github.io/cn-grammar-matcher/)
+A tool to find grammar patterns in Chinese text.
 
 
 ## Installation
